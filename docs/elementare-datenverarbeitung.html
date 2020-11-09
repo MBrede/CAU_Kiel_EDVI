@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 elementare Datenverarbeitung | EDV1</title>
+  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 elementare Datenverarbeitung | EDV1" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 elementare Datenverarbeitung | EDV1" />
+  
+  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  
+
+<meta name="author" content="Max Brede" />
+
+
+<meta name="date" content="2020-11-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="vorlesung-i-rste-schritte.html"/>
+<link rel="next" href="literatur-1.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EDV 1 <br> WiSe 20</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vorwort</a></li>
+<li class="chapter" data-level="2" data-path="lehrplan.html"><a href="lehrplan.html"><i class="fa fa-check"></i><b>2</b> Lehrplan</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lehrplan.html"><a href="lehrplan.html#semesterplan"><i class="fa fa-check"></i><b>2.1</b> Semesterplan</a></li>
+<li class="chapter" data-level="2.2" data-path="lehrplan.html"><a href="lehrplan.html#übungsformat"><i class="fa fa-check"></i><b>2.2</b> Übungsformat</a></li>
+<li class="chapter" data-level="2.3" data-path="lehrplan.html"><a href="lehrplan.html#lehrziele-für-jede-sitzung"><i class="fa fa-check"></i><b>2.3</b> Lehrziele für jede Sitzung</a></li>
+<li class="chapter" data-level="2.4" data-path="lehrplan.html"><a href="lehrplan.html#prüfungsleistung"><i class="fa fa-check"></i><b>2.4</b> Prüfungsleistung</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html"><i class="fa fa-check"></i><b>3</b> Vorlesung I - Rste Schritte</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#organisatorisches"><i class="fa fa-check"></i><b>3.1</b> Organisatorisches</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#semesterplan-1"><i class="fa fa-check"></i>Semesterplan</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#übungsablauf"><i class="fa fa-check"></i>Übungsablauf</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#prüfungsleistung-1"><i class="fa fa-check"></i>Prüfungsleistung</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#einführung"><i class="fa fa-check"></i><b>3.2</b> Einführung</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#rste-schritte"><i class="fa fa-check"></i>Rste Schritte</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#wozu-brauche-ich-das"><i class="fa fa-check"></i>Wozu brauche ich das?</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#warum-r"><i class="fa fa-check"></i>Warum R ?</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#literatur"><i class="fa fa-check"></i>Literatur</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#installation-verwendung"><i class="fa fa-check"></i>Installation &amp; Verwendung</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#benutzeroberfläche-rstudio"><i class="fa fa-check"></i>Benutzeroberfläche RStudio</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#allgemeine-hinweise"><i class="fa fa-check"></i>Allgemeine Hinweise</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#zum-besseren-verständnis"><i class="fa fa-check"></i>Zum besseren Verständnis</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-in-der-r-konsole"><i class="fa fa-check"></i>Ausdrücke in der R-Konsole</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#kommentare"><i class="fa fa-check"></i>Kommentare</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#grundlegende-rechenoperationen"><i class="fa fa-check"></i><b>3.3</b> Grundlegende Rechenoperationen</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#addition-subtraktion"><i class="fa fa-check"></i>Addition, Subtraktion</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#multiplikation-division"><i class="fa fa-check"></i>Multiplikation, Division</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#rechenregeln"><i class="fa fa-check"></i>Rechenregeln</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#potenz-quadratwurzel-squareroot-betrag-absolute"><i class="fa fa-check"></i>Potenz, Quadratwurzel (“squareroot”), Betrag (“absolute”)</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#runden"><i class="fa fa-check"></i>Runden</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#aufgabe"><i class="fa fa-check"></i>Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-funktionen-argumente"><i class="fa fa-check"></i><b>3.4</b> Ausdrücke, Funktionen, Argumente</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#funktionen-argumente"><i class="fa fa-check"></i>Funktionen &amp; Argumente</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte"><i class="fa fa-check"></i><b>3.5</b> Objekte</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-benennen"><i class="fa fa-check"></i>Objekte benennen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#zuweisungen-an-objekte"><i class="fa fa-check"></i>Zuweisungen an Objekte</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#verwenden-von-objekten"><i class="fa fa-check"></i>Verwenden von Objekten:</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-ausgeben"><i class="fa fa-check"></i>Objekte ausgeben</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-anzeigen-lassen"><i class="fa fa-check"></i>Objekte anzeigen lassen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-entfernen"><i class="fa fa-check"></i>Objekte entfernen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#datentypen"><i class="fa fa-check"></i>Datentypen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#datentypen-konvertieren"><i class="fa fa-check"></i>Datentypen konvertieren</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#logische-werte-operatoren-und-verknüpfungen"><i class="fa fa-check"></i>Logische Werte, Operatoren und Verknüpfungen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#aufgabe-1"><i class="fa fa-check"></i>Aufgabe</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#umgang-mit-dezimalzahlen"><i class="fa fa-check"></i>Umgang mit Dezimalzahlen:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#hausaufgabe"><i class="fa fa-check"></i><b>3.6</b> Hausaufgabe</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#hausaufgabe-erstellen-eines-r-skripts"><i class="fa fa-check"></i>Hausaufgabe: Erstellen eines R-Skripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html"><i class="fa fa-check"></i><b>4</b> elementare Datenverarbeitung</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#organisatorisches-1"><i class="fa fa-check"></i><b>4.1</b> Organisatorisches</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#semesterplan-2"><i class="fa fa-check"></i><b>4.1.1</b> Semesterplan</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren"><i class="fa fa-check"></i><b>4.2</b> Vektoren</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#begriff"><i class="fa fa-check"></i><b>4.2.1</b> Begriff</a></li>
+<li class="chapter" data-level="4.2.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-erzeugen"><i class="fa fa-check"></i><b>4.2.2</b> Vektoren erzeugen</a></li>
+<li class="chapter" data-level="4.2.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-verwenden"><i class="fa fa-check"></i><b>4.2.3</b> Vektoren verwenden</a></li>
+<li class="chapter" data-level="4.2.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#datentypen-in-vektoren"><i class="fa fa-check"></i><b>4.2.4</b> Datentypen in Vektoren</a></li>
+<li class="chapter" data-level="4.2.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#aufgabe-2"><i class="fa fa-check"></i><b>4.2.5</b> Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#indizierung"><i class="fa fa-check"></i><b>4.3</b> Indizierung</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-indizieren"><i class="fa fa-check"></i><b>4.3.1</b> Elemente indizieren</a></li>
+<li class="chapter" data-level="4.3.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#mehrere-elemente-gleichzeitig-indizieren"><i class="fa fa-check"></i><b>4.3.2</b> mehrere Elemente gleichzeitig indizieren</a></li>
+<li class="chapter" data-level="4.3.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-ausschließen"><i class="fa fa-check"></i><b>4.3.3</b> Elemente ausschließen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-löschen"><i class="fa fa-check"></i><b>4.3.4</b> Elemente löschen</a></li>
+<li class="chapter" data-level="4.3.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-operatoren"><i class="fa fa-check"></i><b>4.3.5</b> Logische Operatoren</a></li>
+<li class="chapter" data-level="4.3.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logischer-vergleich-von-vektoren"><i class="fa fa-check"></i><b>4.3.6</b> Logischer Vergleich von Vektoren</a></li>
+<li class="chapter" data-level="4.3.7" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-operatoren-1"><i class="fa fa-check"></i><b>4.3.7</b> Logische Operatoren</a></li>
+<li class="chapter" data-level="4.3.8" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung"><i class="fa fa-check"></i><b>4.3.8</b> Logische Indizierung</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#systematische-wertefolgen-erzeugen"><i class="fa fa-check"></i><b>4.4</b> Systematische Wertefolgen erzeugen</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-erstellen"><i class="fa fa-check"></i><b>4.4.1</b> Numerische Sequenzen erstellen</a></li>
+<li class="chapter" data-level="4.4.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#wertefolgen-wiederholen"><i class="fa fa-check"></i><b>4.4.2</b> Wertefolgen wiederholen</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#daten-transformieren"><i class="fa fa-check"></i><b>4.5</b> Daten transformieren</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren"><i class="fa fa-check"></i><b>4.5.1</b> Werte sortieren</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#einfache-deskriptiv-statistische-kennwerte"><i class="fa fa-check"></i><b>4.6</b> Einfache deskriptiv-statistische Kennwerte</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="literatur-1.html"><a href="literatur-1.html"><i class="fa fa-check"></i>Literatur</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EDV1</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="elementare-datenverarbeitung" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> elementare Datenverarbeitung</h1>
+<div id="organisatorisches-1" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Organisatorisches</h2>
+<div id="semesterplan-2" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Semesterplan</h3>
+<table class=" lightable-paper" style="font-size: 15px; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Einheit
+</th>
+<th style="text-align:left;">
+Vorlesung
+</th>
+<th style="text-align:left;">
+Übungswoche
+</th>
+<th style="text-align:left;">
+Thema
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+2.11.20
+</td>
+<td style="text-align:left;">
+keine Übung
+</td>
+<td style="text-align:left;">
+Grundlagen und Begriffe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+16.11.20
+</td>
+<td style="text-align:left;">
+KW 48
+</td>
+<td style="text-align:left;">
+Vektoren und Indizierung
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Datenformate erstellen und transformieren
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+30.11.20
+</td>
+<td style="text-align:left;">
+KW 50
+</td>
+<td style="text-align:left;">
+Pakete installieren und benutzen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Datensätze erstellen und ergänzen können
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Datensätze sortieren und indizieren können
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+14.12.20
+</td>
+<td style="text-align:left;">
+KW 1
+</td>
+<td style="text-align:left;">
+Faktoren
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+deskriptive Kennwerte
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Aggregation I
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+11.01.21
+</td>
+<td style="text-align:left;">
+KW 3
+</td>
+<td style="text-align:left;">
+Aggregation II
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+In- und Export von Datensätzen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+25.01.21
+</td>
+<td style="text-align:left;">
+KW 5
+</td>
+<td style="text-align:left;">
+Grafische Darstellungen I
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+08.02.21
+</td>
+<td style="text-align:left;">
+KW 7
+</td>
+<td style="text-align:left;">
+Grafische Darstellungen II
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+22.02.21
+</td>
+<td style="text-align:left;">
+keine Übung
+</td>
+<td style="text-align:left;">
+Puffer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Probeklausur
+</td>
+</tr>
+</tbody>
+</table>
+<!-- ### Zur Hausaufgabe -->
+<!-- \centering  -->
+<!-- **Ab jetzt werden keine Hausaufgaben-Lösungen mehr berücksichtigt, die auf anderen Wegen als über das Aufgaben-Segment im Olat eingereicht werden.** -->
+</div>
+</div>
+<div id="vektoren" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Vektoren</h2>
+<div id="begriff" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Begriff</h3>
+<p>Im Kontext von R ist ein Vektor als eine sequentiell geordnete Menge von Werten und nicht als das gleichnamige mathematische Konzept zu verstehen.</p>
+</div>
+<div id="vektoren-erzeugen" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Vektoren erzeugen</h3>
+<p>Leere Vektoren eines bestimmten Typs lassen sich mit dem Namen des Typs als Funktion und der Anzahl der gewünschten Stellen als Argument erstellen. z.B.:</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="elementare-datenverarbeitung.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">numeric</span>(<span class="dv">5</span>);</span>
+<span id="cb132-2"><a href="elementare-datenverarbeitung.html#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="fu">character</span>(<span class="dv">4</span>);</span>
+<span id="cb132-3"><a href="elementare-datenverarbeitung.html#cb132-3" aria-hidden="true" tabindex="-1"></a><span class="fu">logical</span>(<span class="dv">3</span>);</span></code></pre></div>
+<pre><code>## [1] 0 0 0 0 0
+## [1] &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## [1] FALSE FALSE FALSE</code></pre>
+<!-- ###  Vektoren erzeugen -->
+<p>Um mehrere Daten in einer eindimensinalen Anordnung zu verketten wird die <code>c()</code>-Funktion benutzt.
+Die Argumente werden in Reihenfolge der Eingabe hintereinander angeordnet und können beliebigen Datentypen angehören.</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="elementare-datenverarbeitung.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>);</span>
+<span id="cb134-2"><a href="elementare-datenverarbeitung.html#cb134-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&#39;dies&#39;</span>, <span class="st">&#39;ist&#39;</span>, <span class="st">&#39;ein&#39;</span>, <span class="st">&#39;Vektor&#39;</span>);</span>
+<span id="cb134-3"><a href="elementare-datenverarbeitung.html#cb134-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(T, F, T, F);</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4
+## [1] &quot;dies&quot;   &quot;ist&quot;    &quot;ein&quot;    &quot;Vektor&quot;
+## [1]  TRUE FALSE  TRUE FALSE</code></pre>
+<!-- ### Vektoren erzeugen -->
+<p>Das Ergebnis kann dann wie gewohnt in ein Objekt abgelegt werden.</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="elementare-datenverarbeitung.html#cb136-1" aria-hidden="true" tabindex="-1"></a>numericVector <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">4242</span>,<span class="dv">42</span>)</span></code></pre></div>
+<p>Außerdem lassen sich mit dem <code>c()</code>-Operator mehrere Vektoren kombinieren.</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="elementare-datenverarbeitung.html#cb137-1" aria-hidden="true" tabindex="-1"></a>additionToNumericVector <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">424242</span>, <span class="dv">42400</span>, <span class="dv">42000</span>,</span>
+<span id="cb137-2"><a href="elementare-datenverarbeitung.html#cb137-2" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">4224</span>, <span class="dv">24</span>)</span>
+<span id="cb137-3"><a href="elementare-datenverarbeitung.html#cb137-3" aria-hidden="true" tabindex="-1"></a>(numericVector <span class="ot">&lt;-</span> <span class="fu">c</span>(numericVector, </span>
+<span id="cb137-4"><a href="elementare-datenverarbeitung.html#cb137-4" aria-hidden="true" tabindex="-1"></a>                    additionToNumericVector))</span></code></pre></div>
+<pre><code>## [1]      4      2   4242     42 424242  42400  42000
+## [8]   4224     24</code></pre>
+</div>
+<div id="vektoren-verwenden" class="section level3" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Vektoren verwenden</h3>
+<p>Die Länge eines Vektors lässt sich mit der Funktion <code>length()</code> ausgeben.</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="elementare-datenverarbeitung.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(numericVector)</span></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<!-- ### vordefinierte Vektoren -->
+<!-- In R gibt es außerdem ein paar vordefinierte konstante Vektoren, zum Beispiel: -->
+<!-- ```{r} -->
+<!-- LETTERS  #alle Großbuchstaben -->
+<!-- letters  #alle Kleinbuchstaben -->
+<!-- ``` -->
+</div>
+<div id="datentypen-in-vektoren" class="section level3" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Datentypen in Vektoren</h3>
+<p>Bei dem Versuch Vektoren aus verschiedenen Datentypen anzulegen werden die Daten in den allgemeinsten Datentyp umgewandelt. Dabei gilt im Rahmen der Komplexität für die bisher vorgestellten Datentypen:</p>
+<p><code>logical &lt; numeric &lt; character</code></p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="elementare-datenverarbeitung.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mode</span>(<span class="fu">c</span>(T, T, F));</span>
+<span id="cb141-2"><a href="elementare-datenverarbeitung.html#cb141-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mode</span>(<span class="fu">c</span>(T, T, <span class="dv">0</span>));</span>
+<span id="cb141-3"><a href="elementare-datenverarbeitung.html#cb141-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mode</span>(<span class="fu">c</span>(T, <span class="dv">0</span>, <span class="st">&#39;false&#39;</span>));</span></code></pre></div>
+<pre><code>## [1] &quot;logical&quot;
+## [1] &quot;numeric&quot;
+## [1] &quot;character&quot;</code></pre>
+<p>In einem Vektor ist im Allgemeinen also immer nur ein Typ an Daten vertreten.</p>
+</div>
+<div id="aufgabe-2" class="section level3" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> Aufgabe</h3>
+<p><strong>Wenn ich <code>mode(c('TRUE',FALSE,1))</code> eingebe, dann…</strong>
+A) … wird <code>logical</code> ausgegeben
+B) … wird <code>vector</code> ausgegeben
+C) … wird <code>numerical</code> ausgegeben
+D) … wird <code>character</code> ausgegeben</p>
+<!-- ### Interaktion -->
+<!-- \begin{minipage}{.58\textwidth} -->
+<!-- \textbf{Wenn ich \texttt{mode(c('TRUE',FALSE,1))} eingebe, dann} -->
+<!-- \begin{itemize} -->
+<!-- \item[A] ... wird \texttt{logical} ausgegeben -->
+<!-- \item[B] ... wird \texttt{vector} ausgegeben -->
+<!-- \item[C] ... wird \texttt{character} ausgegeben -->
+<!-- \item[D] ... wird \texttt{numerical} ausgegeben -->
+<!-- \end{itemize} -->
+<!-- \end{minipage} -->
+<!-- \begin{minipage}{.4\textwidth} -->
+<!-- \centering -->
+<!-- https://tweedback.de/qya/ -->
+<!-- \end{minipage} -->
+</div>
+</div>
+<div id="indizierung" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Indizierung</h2>
+<div id="elemente-indizieren" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Elemente indizieren</h3>
+<p>Die beim Erstellen eines Vektors angelegten Positionen der Werte werden in R implizit mit fortlaufenden Indizes versehen und gespeichert. Diese Indizes starten bei jedem Vektor mit 1 und enden mit der Länge desselben.
+Die einzelnen Elemente eines Vektors lassen sich über ihren Index mit dem <code>[]</code> - Operator aufrufen.</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="elementare-datenverarbeitung.html#cb143-1" aria-hidden="true" tabindex="-1"></a>numericVector[<span class="dv">4</span>] <span class="do">## 4. Element des Vektors numericVector.</span></span></code></pre></div>
+<pre><code>## [1] 42</code></pre>
+<!-- ### Elemente indizieren -->
+<p>Wird ein Index über dem des letzten Eintrags eines Vektors aufgerufen, wird <code>NA</code> zurückgegeben.</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="elementare-datenverarbeitung.html#cb145-1" aria-hidden="true" tabindex="-1"></a>numericVector[<span class="fu">length</span>(numericVector)<span class="sc">+</span><span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+</div>
+<div id="mehrere-elemente-gleichzeitig-indizieren" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> mehrere Elemente gleichzeitig indizieren</h3>
+<p>Es lassen sich auch mehrere Werte eines Vektors über die Indizierung über Zuhilfenahme eines anderen Vektors aufrufen. Dabei kann der Index-Vektor als Objekt vordefiniert oder dem <code>[]</code>-Operator direkt übergeben werden.</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="elementare-datenverarbeitung.html#cb147-1" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">8</span>)</span>
+<span id="cb147-2"><a href="elementare-datenverarbeitung.html#cb147-2" aria-hidden="true" tabindex="-1"></a>numericVector[idx]</span></code></pre></div>
+<pre><code>## [1]    4    2 4242 4224</code></pre>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="elementare-datenverarbeitung.html#cb149-1" aria-hidden="true" tabindex="-1"></a>numericVector[<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)]</span></code></pre></div>
+<pre><code>## [1]     42 424242  42400  42000</code></pre>
+<!-- ### mehrere Elemente gleichzeitig indizieren -->
+<p>Der Index-Vektor kann dabei auch länger als der ursprüngliche Vektor sein, da mehrfacher Aufruf eines Index möglich ist.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="elementare-datenverarbeitung.html#cb151-1" aria-hidden="true" tabindex="-1"></a>numericVector <span class="do">## 9 Werte</span></span></code></pre></div>
+<pre><code>## [1]      4      2   4242     42 424242  42400  42000
+## [8]   4224     24</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="elementare-datenverarbeitung.html#cb153-1" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>)</span>
+<span id="cb153-2"><a href="elementare-datenverarbeitung.html#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 12 Aufrufe über die Indizes</span></span>
+<span id="cb153-3"><a href="elementare-datenverarbeitung.html#cb153-3" aria-hidden="true" tabindex="-1"></a>numericVector[idx]</span></code></pre></div>
+<pre><code>##  [1]      4      4      2      2   4242   4242     42
+##  [8]     42 424242 424242  42400  42400</code></pre>
+</div>
+<div id="elemente-ausschließen" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Elemente ausschließen</h3>
+<p>Durch das verwenden negativer Indizes wird das entsprechende Element von der Ausgabe ausgeschlossen.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="elementare-datenverarbeitung.html#cb155-1" aria-hidden="true" tabindex="-1"></a>numericVector[<span class="sc">-</span><span class="dv">3</span>] <span class="do">## Vektor ohne drittes Element</span></span></code></pre></div>
+<pre><code>## [1]      4      2     42 424242  42400  42000   4224
+## [8]     24</code></pre>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="elementare-datenverarbeitung.html#cb157-1" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>)</span>
+<span id="cb157-2"><a href="elementare-datenverarbeitung.html#cb157-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Vektor mit Ausnahme der in idx abgelegten Indizes:</span></span>
+<span id="cb157-3"><a href="elementare-datenverarbeitung.html#cb157-3" aria-hidden="true" tabindex="-1"></a>numericVector[<span class="sc">-</span>idx]</span></code></pre></div>
+<pre><code>## [1]     2    42 42400  4224</code></pre>
+<!-- ### Elemente austauschen -->
+<p>Die Indizierung kann außerdem genutzt werden um Elemente eines Vektors zu ersetzen oder als alternative Methode zu oben vorgestelltem Kombinieren von Vektoren via <code>c(&lt;Vektor1&gt;, &lt;Vektor2&gt;)</code>.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="elementare-datenverarbeitung.html#cb159-1" aria-hidden="true" tabindex="-1"></a>numericVector</span></code></pre></div>
+<pre><code>## [1]      4      2   4242     42 424242  42400  42000
+## [8]   4224     24</code></pre>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="elementare-datenverarbeitung.html#cb161-1" aria-hidden="true" tabindex="-1"></a>numericVector[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb161-2"><a href="elementare-datenverarbeitung.html#cb161-2" aria-hidden="true" tabindex="-1"></a>numericVector</span></code></pre></div>
+<pre><code>## [1]     12      2   4242     42 424242  42400  42000
+## [8]   4224     24</code></pre>
+<!-- ### Elemente austauschen -->
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="elementare-datenverarbeitung.html#cb163-1" aria-hidden="true" tabindex="-1"></a>numericVector[idx] <span class="ot">&lt;-</span>idx</span>
+<span id="cb163-2"><a href="elementare-datenverarbeitung.html#cb163-2" aria-hidden="true" tabindex="-1"></a>numericVector</span></code></pre></div>
+<pre><code>## [1]     1     2     3    42     5 42400     7  4224
+## [9]     9</code></pre>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="elementare-datenverarbeitung.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(numericVector)</span></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="elementare-datenverarbeitung.html#cb167-1" aria-hidden="true" tabindex="-1"></a>numericVector[<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>)] <span class="ot">&lt;-</span> idx</span>
+<span id="cb167-2"><a href="elementare-datenverarbeitung.html#cb167-2" aria-hidden="true" tabindex="-1"></a>numericVector</span></code></pre></div>
+<pre><code>##  [1]     1     2     3    42     5 42400     7  4224
+##  [9]     9     1     3     5     7     9</code></pre>
+</div>
+<div id="elemente-löschen" class="section level3" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Elemente löschen</h3>
+<p>Elemente eines Vektors lassen sich nicht im eigentlichen Sinne löschen, man kann aber sehr wohl das Objekt in dem der Vektor abgelegt ist mit einer verkürzten Version überschreiben.</p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="elementare-datenverarbeitung.html#cb169-1" aria-hidden="true" tabindex="-1"></a>numericVector <span class="ot">&lt;-</span> numericVector[<span class="sc">-</span>idx]</span>
+<span id="cb169-2"><a href="elementare-datenverarbeitung.html#cb169-2" aria-hidden="true" tabindex="-1"></a>numericVector</span></code></pre></div>
+<pre><code>## [1]     2    42 42400  4224     1     3     5     7
+## [9]     9</code></pre>
+<!-- ### Elemente benennen -->
+<!-- R bietet die Möglichkeit, einzelne Elemente eines Vektors mit einem Namen zu versehen. Die Elemente dieses Vektors lassen sich dann zusätzlich zu dem Aufruf über ihre Position mit ihrem Namen als Index aufrufen. -->
+<!-- ```{r} -->
+<!-- (thinksThisToBeFunny <- c(Kurs = F, Brede = T)) -->
+<!-- thinksThisToBeFunny['Kurs'] -->
+<!-- ``` -->
+<!-- ### Elemente benennen -->
+<!-- Diese Benennung lässt sich auch im Nachhinein über die `names()`-Funktion nachholen,...  -->
+<!-- ```{r} -->
+<!-- someNumbers <-  c(42, 21) -->
+<!-- names(someNumbers) <- c('the Answer', 'half the Answer') -->
+<!-- ``` -->
+<!-- ### Elemente benennen -->
+<!-- ...aufrufen... -->
+<!-- ```{r} -->
+<!-- someNumbers -->
+<!-- names(someNumbers) -->
+<!-- ``` -->
+<!-- ### Elemente benennen -->
+<!-- ...oder ändern. -->
+<!-- ```{r} -->
+<!-- names(someNumbers) <- c('good joke', 'bad joke') -->
+<!-- someNumbers -->
+<!-- ``` -->
+</div>
+<div id="logische-operatoren" class="section level3" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> Logische Operatoren</h3>
+<p>Verarbeitungsschritte mit logischen Operatoren treten häufig bei der Auswahl von Teilmengen von Daten
+sowie der Recodierung von Datenwerten auf, zwei häufigen Prozeduren in der statistischen Auswertung</p>
+</div>
+<div id="logischer-vergleich-von-vektoren" class="section level3" number="4.3.6">
+<h3><span class="header-section-number">4.3.6</span> Logischer Vergleich von Vektoren</h3>
+<p>Wie vorher Einzelwerte kann man auch Vektoren in logischen Vergleichen verwenden.</p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="elementare-datenverarbeitung.html#cb171-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">17</span>, <span class="dv">30</span>, <span class="dv">30</span>, <span class="dv">24</span>, <span class="dv">23</span>, <span class="dv">21</span>)</span>
+<span id="cb171-2"><a href="elementare-datenverarbeitung.html#cb171-2" aria-hidden="true" tabindex="-1"></a>age <span class="sc">&lt;</span> <span class="dv">24</span></span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE FALSE FALSE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="elementare-datenverarbeitung.html#cb173-1" aria-hidden="true" tabindex="-1"></a>age <span class="sc">&gt;=</span> <span class="dv">18</span></span></code></pre></div>
+<pre><code>## [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<p>Dabei werden logische Werte als Ergebnis für den Vergleich jeden Wertes ausgegeben.</p>
+</div>
+<div id="logische-operatoren-1" class="section level3" number="4.3.7">
+<h3><span class="header-section-number">4.3.7</span> Logische Operatoren</h3>
+<p>Die vorher gezeigten logischen Verknüpfungen lassen sich genauso anwenden</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="elementare-datenverarbeitung.html#cb175-1" aria-hidden="true" tabindex="-1"></a> <span class="do">## Alle Werte die mindestens 18 und kleiner als 30 sind</span></span>
+<span id="cb175-2"><a href="elementare-datenverarbeitung.html#cb175-2" aria-hidden="true" tabindex="-1"></a>(age <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">&amp;</span> (age <span class="sc">&lt;</span> <span class="dv">30</span>)</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="elementare-datenverarbeitung.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Alle Werte die kleiner als 18 oder mindestens 30 sind</span></span>
+<span id="cb177-2"><a href="elementare-datenverarbeitung.html#cb177-2" aria-hidden="true" tabindex="-1"></a>(age <span class="sc">&lt;</span> <span class="dv">18</span>) <span class="sc">|</span> (age <span class="sc">&gt;=</span> <span class="dv">30</span>) </span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE  TRUE FALSE FALSE FALSE</code></pre>
+<!-- ### Logische Vektoren -->
+<p>Die mit <code>sum()</code> gebildete Summe eines logischen Vektors gibt einem die Anzahl der wahren Werte im Vektor aus, da <code>TRUE</code> für die Berechnung in eine 1 und <code>FALSE</code> in eine 0 transformiert wird.</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="elementare-datenverarbeitung.html#cb179-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="sc">!</span>((age <span class="sc">&lt;</span> <span class="dv">18</span>) <span class="sc">|</span> (age <span class="sc">&gt;=</span> <span class="dv">30</span>))</span>
+<span id="cb179-2"><a href="elementare-datenverarbeitung.html#cb179-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(res)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<!-- ### Logische Vergeiche von Vektoren -->
+<p>Zwei <strong>gleichlange</strong> Vektoren lassen sich auch mit Hilfe logischer Operatoren vergleichen.</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="elementare-datenverarbeitung.html#cb181-1" aria-hidden="true" tabindex="-1"></a>age2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">19</span>, <span class="dv">31</span>, <span class="dv">29</span>, <span class="dv">24</span>, <span class="dv">30</span>, <span class="dv">22</span>)</span>
+<span id="cb181-2"><a href="elementare-datenverarbeitung.html#cb181-2" aria-hidden="true" tabindex="-1"></a>age <span class="sc">==</span> age2</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE FALSE FALSE</code></pre>
+<!-- ### Logische Vergeiche von Vektoren -->
+<p>Und natürlich lassen sich hier alle vorher besprochenen logischen Operatoren anwenden:</p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="elementare-datenverarbeitung.html#cb183-1" aria-hidden="true" tabindex="-1"></a>age <span class="sc">==</span> age2 </span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="elementare-datenverarbeitung.html#cb185-1" aria-hidden="true" tabindex="-1"></a>age <span class="sc">&lt;</span> age2 </span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE FALSE FALSE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="elementare-datenverarbeitung.html#cb187-1" aria-hidden="true" tabindex="-1"></a>age <span class="sc">!=</span> age2</span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE  TRUE FALSE  TRUE  TRUE</code></pre>
+</div>
+<div id="logische-indizierung" class="section level3" number="4.3.8">
+<h3><span class="header-section-number">4.3.8</span> Logische Indizierung</h3>
+<p>Indizierung funktioniert auch mit logischen Vektoren. Dabei wird im Indexvektor für jeden Wert des indizierten Vektors angegeben, ob dieser ausgewählt derden soll oder nicht.
+Eine einfach Methode zur Auswahl von Teilmengen von Elementen die einem bestimmten Kriterium entsprechen.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="elementare-datenverarbeitung.html#cb189-1" aria-hidden="true" tabindex="-1"></a>(res <span class="ot">&lt;-</span> age <span class="sc">&lt;</span> <span class="dv">24</span>)</span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE FALSE FALSE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="elementare-datenverarbeitung.html#cb191-1" aria-hidden="true" tabindex="-1"></a>age[res]</span></code></pre></div>
+<pre><code>## [1] 17 23 21</code></pre>
+<!-- ### Logische Indizierung -->
+<p>Der Indexvektor muss nicht vorher als Objekt angelegt werden.</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="elementare-datenverarbeitung.html#cb193-1" aria-hidden="true" tabindex="-1"></a>age[age<span class="sc">&lt;</span><span class="dv">24</span>]</span></code></pre></div>
+<pre><code>## [1] 17 23 21</code></pre>
+<!-- ### Logische Indizierung und fehlende Werte -->
+<p>Versucht man Vektoren mit fehlenden Werten zu erzeugen, stößt man auf folgendes Problem:</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="elementare-datenverarbeitung.html#cb195-1" aria-hidden="true" tabindex="-1"></a>age3 <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">23</span>, <span class="dv">32</span>, <span class="cn">NA</span>, <span class="dv">19</span>, <span class="dv">27</span>)</span>
+<span id="cb195-2"><a href="elementare-datenverarbeitung.html#cb195-2" aria-hidden="true" tabindex="-1"></a>(idx <span class="ot">&lt;-</span> age3 <span class="sc">&lt;</span> <span class="dv">24</span>)</span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE FALSE    NA  TRUE FALSE</code></pre>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="elementare-datenverarbeitung.html#cb197-1" aria-hidden="true" tabindex="-1"></a>age3[idx]</span></code></pre></div>
+<pre><code>## [1] 20 23 NA 19</code></pre>
+<!-- ### Umgang mit fehlenden Werten bei logischer Indizierung -->
+<p>Der fehlende Wert wird in den Index-Vektor und die Indizierung weitergetragen.<br />
+Umgehen lässt sich dieses Problem mit der <code>which()</code>-Funktion, die die Positionen aller <code>TRUE</code>-Werte des ihre übergebenen Arguments als numerischen Vektor ausgibt.</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="elementare-datenverarbeitung.html#cb199-1" aria-hidden="true" tabindex="-1"></a>(idx <span class="ot">&lt;-</span> <span class="fu">which</span>(idx))</span></code></pre></div>
+<pre><code>## [1] 1 2 5</code></pre>
+<p>Dieser kann dann wieder zur Indexierung benutzt werden.</p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="elementare-datenverarbeitung.html#cb201-1" aria-hidden="true" tabindex="-1"></a>age3[idx]</span></code></pre></div>
+<pre><code>## [1] 20 23 19</code></pre>
+<!-- ### Interaktion -->
+<!-- Was ergibt die Eingabe folgenden Code-Schnipsels? -->
+<!-- ```{r, eval = F} -->
+<!-- aVector <- c(1,3,2,NA,4,42) -->
+<!-- names(aVector) <- letters[c(1,2,3,4,5,6)] -->
+<!-- aVector['d'] <- 5 -->
+<!-- print(aVector) -->
+<!-- ``` -->
+<!-- \begin{minipage}{.58\textwidth} -->
+<!-- \textbf{Was ergibt die Eingabe des \\ Code-Schnipsels?} -->
+<!-- \begin{itemize} -->
+<!-- \item[A] Die mit den Buchstaben a-f überschriebenen Zahlen 1,2,3,4,5,42 -->
+<!-- \item[B] Die Zahlen 1,3,2,5,4,42 -->
+<!-- \item[C] Folgende Ausgabe: NA,NA,1,2,3,4 -->
+<!-- \item[D] Die mit den Buchstaben a-f überschriebenen Zahlen 1,3,2,5,4,42 -->
+<!-- \end{itemize} -->
+<!-- \end{minipage} -->
+<!-- \begin{minipage}{.4\textwidth} -->
+<!-- \centering -->
+<!-- https://tweedback.de/qya/ -->
+<!-- \end{minipage} -->
+</div>
+</div>
+<div id="systematische-wertefolgen-erzeugen" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Systematische Wertefolgen erzeugen</h2>
+<div id="numerische-sequenzen-erstellen" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Numerische Sequenzen erstellen</h3>
+<p>In R lassen sich durch einen Doppelpunkt Zahlensequenzen in Einserschritten zwischen einem Start- und Endwert erstellen.</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="elementare-datenverarbeitung.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> </span>
+<span id="cb203-2"><a href="elementare-datenverarbeitung.html#cb203-2" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span><span class="sc">:</span><span class="dv">1</span></span>
+<span id="cb203-3"><a href="elementare-datenverarbeitung.html#cb203-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb203-4"><a href="elementare-datenverarbeitung.html#cb203-4" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
+## [17] 17 18 19 20
+##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5
+## [17]  4  3  2  1
+##  [1] -10  -9  -8  -7  -6  -5  -4  -3  -2  -1   0   1
+## [13]   2   3   4   5   6   7   8   9  10
+##  [1]  -1  -2  -3  -4  -5  -6  -7  -8  -9 -10 -11 -12
+## [13] -13 -14 -15 -16 -17 -18 -19 -20</code></pre>
+<!-- ### Numerische Sequenzen mit definierter Schrittgröße -->
+<p>Sequenzen mit anderen Schrittgrößen lassen sich mit der <code>seq()</code>-Funktion erstellen.</p>
+<p>Dabei lässt sich entweder die Schrittgröße angeben:</p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="elementare-datenverarbeitung.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">42</span>, <span class="at">by =</span> <span class="dv">6</span>)</span></code></pre></div>
+<pre><code>## [1]  0  6 12 18 24 30 36 42</code></pre>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="elementare-datenverarbeitung.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">42</span>, <span class="at">by =</span> <span class="dv">5</span>) <span class="do">## Endpunkt nicht erreicht </span></span></code></pre></div>
+<pre><code>## [1]  0  5 10 15 20 25 30 35 40</code></pre>
+<!-- ### Numerische Sequenzen mit definierter Länge -->
+<p>Oder die gewünschte Anzahl der Werte in der Sequenz:</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="elementare-datenverarbeitung.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">42</span>, <span class="at">length.out =</span> <span class="dv">8</span>)</span></code></pre></div>
+<pre><code>## [1]  0  6 12 18 24 30 36 42</code></pre>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="elementare-datenverarbeitung.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">42</span>, <span class="at">length.out =</span> <span class="dv">6</span>)</span></code></pre></div>
+<pre><code>## [1]  0.0  8.4 16.8 25.2 33.6 42.0</code></pre>
+<!-- ### Numerische Sequenzen -->
+<p>Bei zweiterer Methode oder bei Angabe einer nicht-ganzzahligen Schrittgröße können auch nicht zur Indizierung geeignete Dezimalzahlen entstehen.</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="elementare-datenverarbeitung.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<pre><code>##  [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0</code></pre>
+<!-- ### Numerische Sequenzen mit definierter Länge -->
+<p>Mit dem <code>along</code> Argument lässt sich außerdem eine Sequenz in der Länge eines übergebenen Vektors erstellen.</p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="elementare-datenverarbeitung.html#cb215-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">43</span>, <span class="dv">30</span>, <span class="dv">22</span>,  <span class="dv">7</span>, <span class="dv">36</span>)</span>
+<span id="cb215-2"><a href="elementare-datenverarbeitung.html#cb215-2" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">along =</span> age)</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5 6</code></pre>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="elementare-datenverarbeitung.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">10</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">along =</span> age)</span></code></pre></div>
+<pre><code>## [1]  10  28  46  64  82 100</code></pre>
+</div>
+<div id="wertefolgen-wiederholen" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Wertefolgen wiederholen</h3>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="elementare-datenverarbeitung.html#cb219-1" aria-hidden="true" tabindex="-1"></a>someValues <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">42</span>, <span class="dv">16</span>, <span class="dv">12</span>)</span>
+<span id="cb219-2"><a href="elementare-datenverarbeitung.html#cb219-2" aria-hidden="true" tabindex="-1"></a> <span class="do">## Vektor 5-mal wiederholen</span></span>
+<span id="cb219-3"><a href="elementare-datenverarbeitung.html#cb219-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(someValues, <span class="at">times =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##  [1] 42 16 12 42 16 12 42 16 12 42 16 12 42 16 12</code></pre>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="elementare-datenverarbeitung.html#cb221-1" aria-hidden="true" tabindex="-1"></a> <span class="do">## Jeden Wert des Vektors 5 mal wiederholen</span></span>
+<span id="cb221-2"><a href="elementare-datenverarbeitung.html#cb221-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(someValues, <span class="at">each =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##  [1] 42 42 42 42 42 16 16 16 16 16 12 12 12 12 12</code></pre>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="elementare-datenverarbeitung.html#cb223-1" aria-hidden="true" tabindex="-1"></a> <span class="do">## Jeden Wert so oft wie in times individuell angegeben wiederholen</span></span>
+<span id="cb223-2"><a href="elementare-datenverarbeitung.html#cb223-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(someValues, <span class="at">times =</span> <span class="fu">c</span>(<span class="dv">42</span>, <span class="dv">1</span>, <span class="dv">5</span>))</span></code></pre></div>
+<pre><code>##  [1] 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42
+## [17] 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42
+## [33] 42 42 42 42 42 42 42 42 42 42 16 12 12 12 12 12</code></pre>
+<!-- ### Zufällig aus einer Urne ziehen -->
+<!-- \small -->
+<!-- Um aus einem vordefinierten Pool an Werten gleichverteilt zufällig zu ziehen verwendet man die `sample`-Funktion -->
+<!-- ```{r, error=TRUE} -->
+<!-- urn <- c(1:6) -->
+<!-- sample(urn, size = 42, replace = T) ## 42* ZmZ  -->
+<!-- ## 42* ZoZ aus 6 Werten nicht möglich -->
+<!-- sample(urn, size = 42, replace = F)  -->
+<!-- sample(urn, size = 6, replace = F) ## 6x ZoZ aus 6 -->
+<!-- ``` -->
+<!-- ### Zufällig aus irgendeiner Urne ziehen -->
+<!-- \scriptsize -->
+<!-- Dabei kann der Pool aus einem Vektor eines beliebigen Datentyps bestehen. -->
+<!-- ```{r} -->
+<!-- colorUrn <- c('green', 'red', 'blue') -->
+<!-- sample(colorUrn, size = 42, replace = TRUE) -->
+<!-- logicalUrn <-  c(TRUE, FALSE) -->
+<!-- sample(logicalUrn, size = 12, replace = TRUE) -->
+<!-- ``` -->
+<!-- Was natürlich bedeutet, dass man mit der `sample()`-Funktion jeden Vektor in randomisierte Reihenfolge bringen kann. -->
+<!-- ### Zufallszahlen aus bestimmten Verteilungen: Gleichverteilung -->
+<!-- ```{r} -->
+<!-- runif(n=20, min=1, max=100) -->
+<!-- round(runif(n=20, min=1, max=100)) ## ganzzahlige Werte -->
+<!-- ``` -->
+<!-- ### Zufallszahlen aus Gleichverteilung -->
+<!-- ```{r, out.width='10cm'} -->
+<!--  ## Histogramm von 20000 gleichverteilten Werten -->
+<!-- hist(runif(n=20000, min=0, max=1), breaks=50) -->
+<!-- ``` -->
+<!-- ### Zufallszahlen aus bestimmten Verteilungen: Binomialverteilung -->
+<!-- ```{r} -->
+<!-- rbinom(n=20, size=10, prob=0.5) -->
+<!-- ``` -->
+<!-- ### Zufallszahlen aus Binomialverteilung -->
+<!-- ```{r, out.width='10cm', eval=F} -->
+<!-- ## Histogramm von 20000 B(10,0.5) Werten -->
+<!-- hist(rbinom(n=20000, size=10, prob=0.5), breaks=11) -->
+<!-- ``` -->
+<!-- ```{r, out.width='10cm', echo=F} -->
+<!-- ## Histogramm von 20000 B(10,0.5) Werten -->
+<!-- hist(rnorm(n=20000, mean=0, sd=1), breaks=50, main = 'Histogram of rbinom(n=20000, size=10, prob=0.5)', xlab = 'rbinom(n=20000, size=10, prob=0.5)') -->
+<!-- ``` -->
+<!-- ### Zufallszahlen aus bestimmten Verteilungen: Normalverteilung -->
+<!-- \scriptsize -->
+<!-- ```{r} -->
+<!-- rnorm(n=20, mean=100, sd=15) ## IQ-Verteilung -->
+<!-- rnorm(n=20, mean=0, sd=1) ## Standard-Normalverteilung -->
+<!-- ``` -->
+<!-- ### Zufallszahlen aus Normalverteilung -->
+<!-- ```{r, out.width='10cm', eval=F} -->
+<!-- ## Histogramm von 20000 N(0,1) Werten -->
+<!-- hist(rnorm(n=20000, mean=0, sd=1), breaks=50) -->
+<!-- ``` -->
+<!-- ```{r, out.width='10cm', echo=F} -->
+<!-- ## Histogramm von 20000 B(10,0.5) Werten -->
+<!-- hist(rbinom(n=20000, size=10, prob=0.5), breaks=11, main = 'Histogram of rnorm(n=20000, mean=0, sd=1)', xlab = 'rnorm(n=20000, mean=0, sd=1)') -->
+<!-- ``` -->
+<!-- ### Zufallszahlen aus bestimmten Verteilungen: ${\chi}$²-Verteilung -->
+<!-- ```{r} -->
+<!-- rchisq(n=20, df=5, ncp=0) -->
+<!-- ``` -->
+<!-- ###  Zufallszahlen aus ${\chi}$²-Verteilung -->
+<!-- ```{r, out.width='10cm'} -->
+<!-- ## Histogramm von 20000 chi^2(5,0) Werten -->
+<!-- hist(rchisq(n=20000, df=5, ncp=0), breaks=50) -->
+<!-- ``` -->
+<!-- ### Zufallszahlen aus bestimmten Verteilungen: t-Verteilung -->
+<!-- ```{r} -->
+<!-- rt(n=20, df=5, ncp=0) -->
+<!-- ``` -->
+<!-- ###  Zufallszahlen aus t-Verteilung -->
+<!-- ```{r, out.width='10cm'} -->
+<!-- ## Histogramm von 20000 t(5,0) Werten -->
+<!-- hist(rt(n=20000, df=5, ncp=0), breaks=50) -->
+<!-- ``` -->
+<!-- ### Zufallszahlen aus bestimmten Verteilungen: F-Verteilung -->
+<!-- ```{r} -->
+<!-- rf(n=20, df1=5, df2=10, ncp=0) -->
+<!-- ``` -->
+<!-- ###  Zufallszahlen aus F-Verteilung -->
+<!-- ```{r, out.width='10cm'} -->
+<!-- ## Histogramm von 20000 F(5;10) Werten -->
+<!-- hist(rf(n=20000, df1=5, df2=10, ncp=0), breaks=50) -->
+<!-- ``` -->
+<!-- ### Interaktion -->
+<!-- Zwei Grafiken waren vertauscht. Welche? -->
+<!-- ```{r, echo = FALSE, out.width='10cm'} -->
+<!-- par(mfrow=c(2,3)) -->
+<!-- hist(runif(n=20000, min=0, max=1), breaks=50) -->
+<!-- hist(rnorm(n=20000, mean=0, sd=1), breaks=50, main = 'Histogram of rbinom(n=20000, size=10, prob=0.5)', xlab = 'rbinom(n=20000, size=10, prob=0.5)') -->
+<!-- hist(rbinom(n=20000, size=10, prob=0.5), breaks=11, main = 'Histogram of rnorm(n=20000, mean=0, sd=1)', xlab = 'rnorm(n=20000, mean=0, sd=1)') -->
+<!-- hist(rchisq(n=20000, df=5, ncp=0), breaks=50) -->
+<!-- hist(rt(n=20000, df=5, ncp=0), breaks=50) -->
+<!-- hist(rf(n=20000, df1=5, df2=10, ncp=0), breaks=50) -->
+<!-- ``` -->
+<!-- ### Interaktion -->
+<!-- \begin{minipage}{.58\textwidth} -->
+<!-- \textbf{Zwei Grafiken waren vertauscht. Welche?} -->
+<!-- \begin{itemize} -->
+<!-- \item[A] die zu \texttt{rbinom} und \texttt{rnorm} -->
+<!-- \item[B] die zu \texttt{rt} und \texttt{rchisq} -->
+<!-- \item[C] die zu \texttt{rf} und \texttt{runif} -->
+<!-- \item[D] die zu \texttt{rchisq} und \texttt{rbinom} -->
+<!-- \end{itemize} -->
+<!-- \end{minipage} -->
+<!-- \begin{minipage}{.4\textwidth} -->
+<!-- \centering -->
+<!-- https://tweedback.de/qya/ -->
+<!-- \end{minipage} -->
+</div>
+</div>
+<div id="daten-transformieren" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Daten transformieren</h2>
+<!-- ### Werte sortieren -->
+<!-- `rev()` kert die Reihenfolge eines übergebenen Vektors um -->
+<!-- ```{r} -->
+<!-- (someValues <- sample(c(1:42), size = 10, -->
+<!--                       replace = TRUE)) -->
+<!-- rev(someValues) -->
+<!-- ``` -->
+<div id="werte-sortieren" class="section level3" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Werte sortieren</h3>
+<p><code>sort()</code> sortiert je nach Angabe in auf- oder absteigender Reihenfolge</p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="elementare-datenverarbeitung.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(someValues, <span class="at">decreasing =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 12 16 42</code></pre>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="elementare-datenverarbeitung.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(someValues, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 42 16 12</code></pre>
+<!-- ### Werte sortieren -->
+<p><code>order()</code> macht im Prinzip dasselbe, gibt aber statt des sortierten Vektors die Indizes in entsprechender Ordnung aus.</p>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="elementare-datenverarbeitung.html#cb229-1" aria-hidden="true" tabindex="-1"></a>someValues</span></code></pre></div>
+<pre><code>## [1] 42 16 12</code></pre>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="elementare-datenverarbeitung.html#cb231-1" aria-hidden="true" tabindex="-1"></a>(idx <span class="ot">&lt;-</span> <span class="fu">order</span>(someValues, <span class="at">decreasing =</span> F))</span></code></pre></div>
+<pre><code>## [1] 3 2 1</code></pre>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="elementare-datenverarbeitung.html#cb233-1" aria-hidden="true" tabindex="-1"></a>someValues[idx]</span></code></pre></div>
+<pre><code>## [1] 12 16 42</code></pre>
+<!-- ### Werte sortieren -->
+<p>Dies funktioniert auch für <code>character</code>-Vektoren in alphabetischer Ordnung</p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="elementare-datenverarbeitung.html#cb235-1" aria-hidden="true" tabindex="-1"></a>(someCharacters <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">&quot;Z&quot;</span>, <span class="st">&quot;D&quot;</span>, <span class="st">&quot;L&quot;</span>, <span class="st">&quot;O&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;n&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;t&quot;</span>, <span class="st">&quot;R&quot;</span>))</span></code></pre></div>
+<pre><code>##  [1] &quot;Z&quot; &quot;D&quot; &quot;L&quot; &quot;O&quot; &quot;l&quot; &quot;n&quot; &quot;e&quot; &quot;N&quot; &quot;t&quot; &quot;R&quot;</code></pre>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="elementare-datenverarbeitung.html#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(someCharacters, <span class="at">decreasing =</span> F)</span></code></pre></div>
+<pre><code>##  [1] &quot;D&quot; &quot;e&quot; &quot;l&quot; &quot;L&quot; &quot;n&quot; &quot;N&quot; &quot;O&quot; &quot;R&quot; &quot;t&quot; &quot;Z&quot;</code></pre>
+<!-- ### Werte sortieren -->
+<p>Sind Zahlen an der ersten Stelle in <code>character</code>-Vektoren vertreten, werden diese vor das Alphabet sortiert.</p>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="elementare-datenverarbeitung.html#cb239-1" aria-hidden="true" tabindex="-1"></a>someCharacters <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb239-2"><a href="elementare-datenverarbeitung.html#cb239-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;42 is fairly overused&quot;</span>,</span>
+<span id="cb239-3"><a href="elementare-datenverarbeitung.html#cb239-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;India&quot;</span>,</span>
+<span id="cb239-4"><a href="elementare-datenverarbeitung.html#cb239-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Zulu&quot;</span>,</span>
+<span id="cb239-5"><a href="elementare-datenverarbeitung.html#cb239-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Whiskey&quot;</span>,</span>
+<span id="cb239-6"><a href="elementare-datenverarbeitung.html#cb239-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;42&quot;</span>,</span>
+<span id="cb239-7"><a href="elementare-datenverarbeitung.html#cb239-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;a string of characters&quot;</span>,</span>
+<span id="cb239-8"><a href="elementare-datenverarbeitung.html#cb239-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Tango&quot;</span>,</span>
+<span id="cb239-9"><a href="elementare-datenverarbeitung.html#cb239-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;not a number&quot;</span>,</span>
+<span id="cb239-10"><a href="elementare-datenverarbeitung.html#cb239-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;1&quot;</span></span>
+<span id="cb239-11"><a href="elementare-datenverarbeitung.html#cb239-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb239-12"><a href="elementare-datenverarbeitung.html#cb239-12" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(someCharacters, <span class="at">decreasing =</span> F)</span></code></pre></div>
+<pre><code>## [1] &quot;1&quot;                      &quot;42&quot;                    
+## [3] &quot;42 is fairly overused&quot;  &quot;a string of characters&quot;
+## [5] &quot;India&quot;                  &quot;not a number&quot;          
+## [7] &quot;Tango&quot;                  &quot;Whiskey&quot;               
+## [9] &quot;Zulu&quot;</code></pre>
+<!-- ## Teilmengen von Daten auswählen -->
+<!-- ### Teilmengen von Daten auswählen -->
+<!-- Für die kommenden Beispiele  -->
+<!-- ```{r} -->
+<!-- urn <- rep(c('red', 'green', 'blue'), -->
+<!--            times = c(15,15,12)) -->
+<!-- sample(urn, size = 5, replace=F) -->
+<!-- ``` -->
+<!-- ### Teilmengen von Daten auswählen -->
+<!-- \small -->
+<!-- 'Wählen Sie jedes 6. Element der Urne aus!' -->
+<!-- ```{r} -->
+<!-- (colorSample <- sample(urn, size = 42, replace = F)) -->
+<!-- idx <- seq(from = 6, to = 42, by = 6) -->
+<!-- colorSample[idx] -->
+<!-- ``` -->
+<!-- ### Teilmengen von Daten auswählen -->
+<!-- \small -->
+<!-- 'Wählen Sie im Mittel von 10 Elementen 1 aus!' -->
+<!-- ```{r} -->
+<!-- (idx <- as.logical(rbinom(n=length(colorSample), -->
+<!--                           size = 1, -->
+<!--                           prob = 0.1))) -->
+<!-- colorSample[idx] -->
+<!-- ``` -->
+<!-- ### Teilmengen von Daten auswählen -->
+<!-- \scriptsize -->
+<!-- 'Wählen Sie nur die roten und grünen Bälle aus!' -->
+<!-- Entweder über: -->
+<!-- ```{r} -->
+<!-- (idx <- (colorSample == 'red' | colorSample == 'green')) -->
+<!-- colorSample[idx] -->
+<!-- ``` -->
+<!-- ### Teilmengen von Daten auswählen -->
+<!-- \scriptsize -->
+<!-- oder: -->
+<!-- ```{r} -->
+<!-- (idx <- is.element(colorSample,c('red', 'green'))) -->
+<!-- colorSample[idx] -->
+<!-- ``` -->
+<!-- `is.element()` gibt aus, welche Elemente des ersten Arguments auch im zweiten Argument auftreten. -->
+<!-- ### Teilmengen von Daten auswählen -->
+<!--  'Geben Sie an, wie viele verschiedene Elemente in einem Vektor vorkommen!' -->
+<!-- ```{r} -->
+<!-- unique(colorSample) -->
+<!-- length(unique(colorSample)) -->
+<!-- ``` -->
+<!-- `unique()` gibt aus, welche Elemente mindestens einmal in einem Vektor auftauchen. -->
+</div>
+</div>
+<div id="einfache-deskriptiv-statistische-kennwerte" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Einfache deskriptiv-statistische Kennwerte</h2>
+<!-- ### Einfache deskriptiv-statistische Kennwerte -->
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="elementare-datenverarbeitung.html#cb241-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">60</span>, <span class="dv">44</span>, <span class="dv">56</span>, <span class="dv">8</span>, <span class="dv">58</span>, <span class="dv">87</span>, <span class="dv">8</span>, <span class="dv">55</span>, <span class="dv">83</span>)</span>
+<span id="cb241-2"><a href="elementare-datenverarbeitung.html#cb241-2" aria-hidden="true" tabindex="-1"></a>IQ <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">91</span>, <span class="dv">104</span>, <span class="dv">109</span>, <span class="dv">92</span>, <span class="dv">90</span>, <span class="dv">101</span>, <span class="dv">99</span>, <span class="dv">93</span>, <span class="dv">89</span>, <span class="dv">118</span>)</span>
+<span id="cb241-3"><a href="elementare-datenverarbeitung.html#cb241-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb241-4"><a href="elementare-datenverarbeitung.html#cb241-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(age)  <span class="do">## Mittelwert</span></span>
+<span id="cb241-5"><a href="elementare-datenverarbeitung.html#cb241-5" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(age)  <span class="do">## Varianz (korrigiert)</span></span>
+<span id="cb241-6"><a href="elementare-datenverarbeitung.html#cb241-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(age) <span class="do">## Streuung (korrigiert)</span></span></code></pre></div>
+<pre><code>## [1] 46.5
+## [1] 895.6111
+## [1] 29.92676</code></pre>
+<!-- ### Einfache deskriptiv-statistische Kennwerte -->
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="elementare-datenverarbeitung.html#cb243-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">length</span>(age)</span>
+<span id="cb243-2"><a href="elementare-datenverarbeitung.html#cb243-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(age)<span class="sc">/</span><span class="fu">sqrt</span>(N) <span class="do">## SEM</span></span></code></pre></div>
+<pre><code>## [1] 9.463673</code></pre>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="elementare-datenverarbeitung.html#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>((N<span class="dv">-1</span>) <span class="sc">/</span> N) <span class="sc">*</span> <span class="fu">sd</span>(age) <span class="do">## unkorrigierte Streuung</span></span></code></pre></div>
+<pre><code>## [1] 28.39102</code></pre>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="elementare-datenverarbeitung.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(<span class="at">x=</span>age, <span class="at">y=</span>IQ, <span class="at">method=</span><span class="st">&quot;pearson&quot;</span>)  <span class="do">## Kovarianz</span></span></code></pre></div>
+<pre><code>## [1] 167.6667</code></pre>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="elementare-datenverarbeitung.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x=</span>age, <span class="at">y=</span>IQ, <span class="at">method=</span><span class="st">&quot;pearson&quot;</span>)  <span class="do">## Korrelation</span></span></code></pre></div>
+<pre><code>## [1] 0.5875238</code></pre>
+<!-- ## Aufgabe -->
+<!-- ### Aufgabe für nächste Woche: -->
+<!-- \scriptsize -->
+<!-- Erstellen Sie vier Vektoren entsprechend der folgenden Tabelle: -->
+<!-- ```{r, echo = F, results='asis'} -->
+<!-- matrix <- matrix(character(0), nrow = 8, ncol = 4) -->
+<!-- matrix[,1] <- 8:1 -->
+<!-- matrix[,2] <- c('Snake', 'Vera', 'Gabi', 'Horst', 'Joe', 'Frank', 'Jürgen', 'Klaus') -->
+<!-- matrix[,3] <- round(rnorm(8,100,15)) -->
+<!-- matrix[,4] <- round(runif(8,0,63)) -->
+<!-- colnames(matrix) <- c('ID','Name','IQ','BDI-II') -->
+<!-- usefullFunctions::convertMatrixToLatex(matrix, alignment = c('r','|l','|r','|r')) -->
+<!-- ``` -->
+<!-- Bestimmen Sie die Korrelation zwischen dem IQ und dem BDI-Score. -->
+<!-- Lassen Sie sich anschließend mit Hilfe von logischer Indizierung die Namen der Versuchspersonen ausgeben, die einen BDI-Score haben, der unter dem Median liegt. -->
+<!-- Berechnen Sie für die andere Hälfte der Stichprobe den Mittelwert des IQs. -->
+<!-- Rechnen Sie zum Abschluss die IQ-Werte der Versuchspersonen, deren IQ über dem gerade berechneten Mittelwert liegt, in Wertpunkte(M=10, sd=3) um. \newline Kleiner Hinweis: hierfür müssen Sie mit der Formel zur z-Transformation arbeiten($z_x = \frac{x - M_x}{s_x}$). \newline Verwenden Sie zu dieser Berechnung bitte empirische Schätzer und nicht theoretische Kennwerte. -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="vorlesung-i-rste-schritte.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="literatur-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["EDV1_WS20.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
