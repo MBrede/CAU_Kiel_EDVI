@@ -1507,7 +1507,6 @@ Speichern Sie anschließend das R-\emph{Skript} unter `.R' ab.
 \hypertarget{semesterplan-2}{%
 \subsection{Semesterplan}\label{semesterplan-2}}
 
-\footnotesize \centering
 \begin{table}[H]
 \centering\begingroup\fontsize{15}{17}\selectfont
 
@@ -2453,6 +2452,730 @@ Sind Zahlen an der ersten Stelle in \texttt{character}-Vektoren vertreten, werde
 \begin{verbatim}
 ## [1] 0.5875238
 \end{verbatim}
+
+\hypertarget{tidyverse-und-tibbles}{%
+\chapter{\texorpdfstring{\texttt{tidyverse} und \texttt{tibbles}}{tidyverse und tibbles}}\label{tidyverse-und-tibbles}}
+
+\hypertarget{organisatorisches-2}{%
+\section{Organisatorisches}\label{organisatorisches-2}}
+
+\hypertarget{semesterplan-3}{%
+\subsection{Semesterplan}\label{semesterplan-3}}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}{l|l|l|l}
+\hline
+Einheit & Vorlesung & Übungswoche & Thema\\
+\hline
+1 & 2.11.20 & keine Übung & Grundlagen und Begriffe\\
+\hline
+2 & 16.11.20 & KW 48 & Vektoren und Indizierung\\
+\hline
+ &  &  & Datenformate erstellen und transformieren\\
+\hline
+3 & 30.11.20 & KW 50 & Pakete installieren und benutzen\\
+\hline
+ &  &  & Datensätze erstellen und ergänzen können\\
+\hline
+ &  &  & Datensätze sortieren und indizieren können\\
+\hline
+4 & 14.12.20 & KW 1 & Faktoren\\
+\hline
+ &  &  & deskriptive Kennwerte\\
+\hline
+ &  &  & Aggregation I\\
+\hline
+5 & 11.01.21 & KW 3 & Aggregation II\\
+\hline
+ &  &  & In- und Export von Datensätzen\\
+\hline
+6 & 25.01.21 & KW 5 & Grafische Darstellungen I\\
+\hline
+7 & 08.02.21 & KW 7 & Grafische Darstellungen II\\
+\hline
+8 & 22.02.21 & keine Übung & Puffer\\
+\hline
+ &  &  & Probeklausur\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{pakete-benutzen}{%
+\section{Pakete benutzen}\label{pakete-benutzen}}
+
+\hypertarget{das-cran-und-paketinstallation}{%
+\subsection{das CRAN und Paketinstallation}\label{das-cran-und-paketinstallation}}
+
+Wie in der ersten Sitzung schon angedeutet, ist eine der größten wenn nicht \emph{die} größte Stärke von R das \href{https://cran.r-project.org/}{Comprehensive R Archive Network}.
+
+Zum einen werden dort die Installationsdateien für die neuesten R-Versionen gehostet, für uns viel praktischer ist aber, dass dort auch fast unzählige Pakete zugänglich gemacht werden. Mit diesen Paketen oder auch \texttt{packages} lässt sich der Funktionsumfang von R beliebig erweitern.
+
+Diese Pakete lassen sich mit der naheliegend benannten Funktion \texttt{install.packages} installieren. Ein für uns wichtiges Paket, das eine ganze Sammlung von nützlichen Paketen beinhaltet, die wir ab jetzt regelmäßig benutzen werden, ist das \texttt{tidyverse}.
+
+Bitte installieren Sie diese Sammlung mit dem folgenden Code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}tidyverse\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{pakete-laden}{%
+\subsection{Pakete laden}\label{pakete-laden}}
+
+Wenn das Paket installiert ist, lässt es sich ganz einfach mit \texttt{library} in den genutzten Namensraum laden.
+
+\textbf{Pakete, die nicht vor der Benutzung geladen wurden, können nicht benutzt werden!}
+
+Da wir es gleich benutzen werden, laden wir schon einmal das \texttt{tidyverse}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{datensuxe4tze-erstellen-und-erguxe4nzen}{%
+\section{Datensätze erstellen und ergänzen}\label{datensuxe4tze-erstellen-und-erguxe4nzen}}
+
+\hypertarget{datensuxe4tze}{%
+\subsection{Datensätze}\label{datensuxe4tze}}
+
+Bisher haben wir nur einfache Vektoren benutzt um Daten auszudrücken. Das geht zwar, solange man nur Daten eines Formats und in überschaubarer Anzahl betrachtet, sobald wir aber an richtige experimentelle Kontexte denken, reicht das nicht mehr.
+
+Deswegen gibt es in R so genannte \emph{`rechteckige Datensätze'}, die Vektoren als Spalten zu einer Tabelle kombinieren. Die Spalten können dabei unterschiedliche Datenformate haben.
+
+\hypertarget{datensuxe4tze-erstellen}{%
+\subsection{Datensätze erstellen}\label{datensuxe4tze-erstellen}}
+
+Datensätze werden in R \texttt{data.frames} genannt und können mit \texttt{data.frame()} erstellt werden.
+
+Hier werden wir aber direkt auf die Basis-R Funktion verzichten und die etwas hübschere Funktion \texttt{tibble()} aus dem \texttt{tidyverse} nutzen.
+
+Ein \texttt{tibble} ist prinzipiell ein \texttt{data.frame}, hat aber ein paar zusätzliche quality-of-life-features, die den Umgang mit ihnen vereinfachen.
+
+\hypertarget{beispiel-datensatz}{%
+\subsection{Beispiel-Datensatz}\label{beispiel-datensatz}}
+
+Wir erstellen jetzt erstmal unseren ersten Datensatz:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{index =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{,}
+  \AttributeTok{name =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Agnes Nitt\textquotesingle{}}\NormalTok{,}
+           \StringTok{\textquotesingle{}Samuel Vimes\textquotesingle{}}\NormalTok{,}
+           \StringTok{\textquotesingle{}Esme Weatherwax\textquotesingle{}}\NormalTok{,}
+           \StringTok{\textquotesingle{}Gytha Ogg\textquotesingle{}}\NormalTok{,}
+           \StringTok{\textquotesingle{}Horace Worblehat\textquotesingle{}}\NormalTok{,}
+           \StringTok{\textquotesingle{}Mustrum Ridcully\textquotesingle{}}\NormalTok{,}
+           \StringTok{\textquotesingle{}Fred Colon\textquotesingle{}}\NormalTok{,}
+           \StringTok{\textquotesingle{}Leonard of Quirm\textquotesingle{}}\NormalTok{,}
+           \StringTok{\textquotesingle{}Havelock Vetinari\textquotesingle{}}\NormalTok{,}
+           \StringTok{\textquotesingle{}Reg Shoe\textquotesingle{}}
+\NormalTok{  ),}
+  \AttributeTok{group =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{tibble}{%
+\subsection{\texorpdfstring{\texttt{tibble}}{tibble}}\label{tibble}}
+
+Der Datensatz sieht dann so aus:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 3
+##    index name              group
+##    <int> <chr>             <dbl>
+##  1     1 Agnes Nitt            1
+##  2     2 Samuel Vimes          2
+##  3     3 Esme Weatherwax       1
+##  4     4 Gytha Ogg             1
+##  5     5 Horace Worblehat      3
+##  6     6 Mustrum Ridcully      3
+##  7     7 Fred Colon            2
+##  8     8 Leonard of Quirm      2
+##  9     9 Havelock Vetinari     2
+## 10    10 Reg Shoe              2
+\end{verbatim}
+
+Also: Jedes Argument von eben ist jetzt eine Spalte, jeder Wert in allen Vektoren jetzt ein Zeile.
+
+\hypertarget{uxfcberblick-uxfcber-den-datensatz-verschaffen}{%
+\subsection{Überblick über den Datensatz verschaffen}\label{uxfcberblick-uxfcber-den-datensatz-verschaffen}}
+
+Zwar ist in unserem Fall das \texttt{tibble} ziemlich überschaubar, sollten wir uns aber trotzdem einen Überblick verschaffen wollen, können wir die \texttt{glimpse}-Funktion benutzen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(my\_1st\_tibble)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 10
+## Columns: 3
+## $ index <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+## $ name  <chr> "Agnes Nitt", "Samuel Vimes", "Esme...
+## $ group <dbl> 1, 2, 1, 1, 3, 3, 2, 2, 2, 2
+\end{verbatim}
+
+\hypertarget{spalten-hinzufuxfcgen}{%
+\subsection{Spalten hinzufügen}\label{spalten-hinzufuxfcgen}}
+
+Wir stellen uns jetzt vor, dass unser Datensatz die Anmeldeliste für ein Experiment darstellt.\\
+Nach der Anmeldung haben die Probanden das Experiment durchgeführt und an zwei Testzeitpunkten in einem von uns designeten Aufmerksamkeitsparadigma die folgenden Punkte erhalten:
+
+\begin{table}[H]
+\centering
+\begin{tabular}[t]{l|r|r}
+\hline
+name & points\_t1 & points\_t2\\
+\hline
+Agnes Nitt & 4.8 & 2.8\\
+\hline
+Samuel Vimes & 3.2 & 5.8\\
+\hline
+Esme Weatherwax & 3.5 & 4.8\\
+\hline
+Gytha Ogg & 3.1 & 5.3\\
+\hline
+Horace Worblehat & 4.2 & 5.8\\
+\hline
+Mustrum Ridcully & 4.7 & 5.0\\
+\hline
+Fred Colon & 3.4 & 4.7\\
+\hline
+Leonard of Quirm & 2.8 & 6.2\\
+\hline
+Havelock Vetinari & 4.2 & 4.0\\
+\hline
+Reg Shoe & 4.0 & 5.2\\
+\hline
+\end{tabular}
+\end{table}
+
+Diese Daten wollen wir jetzt unserem Datensatz hinzufügen, um sie für unsere Auswertungen verwenden zu können (das Beispiel ist ein bisschen künstlich, später werden wir einfach Datensätze aus externen Dateien einlesen. Um das Prinzip zu demonstrieren, ergibt es hier aber Sinn).
+
+Um dies zu tun, benutzen wir die \texttt{mutate}-Funktion (auf deutsch `ändern' oder `mutieren').
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mutate}\NormalTok{(my\_1st\_tibble, }
+       \AttributeTok{points\_t1 =} \FunctionTok{c}\NormalTok{(}\FloatTok{4.8}\NormalTok{, }\FloatTok{3.2}\NormalTok{, }\FloatTok{3.5}\NormalTok{, }\FloatTok{3.1}\NormalTok{, }\FloatTok{4.2}\NormalTok{, }\FloatTok{4.7}\NormalTok{, }\FloatTok{3.4}\NormalTok{, }\FloatTok{2.8}\NormalTok{, }\FloatTok{4.2}\NormalTok{, }\DecValTok{4}\NormalTok{),}
+         \AttributeTok{points\_t2 =} \FunctionTok{c}\NormalTok{(}\FloatTok{2.8}\NormalTok{, }\FloatTok{5.8}\NormalTok{, }\FloatTok{4.8}\NormalTok{, }\FloatTok{5.3}\NormalTok{, }\FloatTok{5.8}\NormalTok{, }\DecValTok{5}\NormalTok{, }\FloatTok{4.7}\NormalTok{, }\FloatTok{6.2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{5.2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 5
+##    index name              group points_t1 points_t2
+##    <int> <chr>             <dbl>     <dbl>     <dbl>
+##  1     1 Agnes Nitt            1       4.8       2.8
+##  2     2 Samuel Vimes          2       3.2       5.8
+##  3     3 Esme Weatherwax       1       3.5       4.8
+##  4     4 Gytha Ogg             1       3.1       5.3
+##  5     5 Horace Worblehat      3       4.2       5.8
+##  6     6 Mustrum Ridcully      3       4.7       5  
+##  7     7 Fred Colon            2       3.4       4.7
+##  8     8 Leonard of Quirm      2       2.8       6.2
+##  9     9 Havelock Vetinari     2       4.2       4  
+## 10    10 Reg Shoe              2       4         5.2
+\end{verbatim}
+
+\texttt{mutate} funktioniert wieder wie alle bisher gesehenen Funktionen, wenn wir das Objekt nicht überschreiben, wird der Output nicht gespeichert.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(my\_1st\_tibble)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 10
+## Columns: 3
+## $ index <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+## $ name  <chr> "Agnes Nitt", "Samuel Vimes", "Esme...
+## $ group <dbl> 1, 2, 1, 1, 3, 3, 2, 2, 2, 2
+\end{verbatim}
+
+Wir könnten jetzt einfach den Datensatz wie gewohnt überschreiben, nutzen aber die Gelegenheit um ein weiteres wichtiges feature des \texttt{tidyverse} einzuführen.
+
+\texttt{\%\textgreater{}\%} ist die \emph{`pipe'}, ein Operator, der den Output des links genannten Ausdrucks als erstes Argument an den rechts genannten Ausdruck weitergibt.
+
+Mit diesem Operator können wir das Beispiel von eben wie folgt umformulieren:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\OtherTok{\textless{}{-}}\NormalTok{ my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{points\_t1 =} \FunctionTok{c}\NormalTok{(}\FloatTok{4.8}\NormalTok{, }\FloatTok{3.2}\NormalTok{, }\FloatTok{3.5}\NormalTok{, }\FloatTok{3.1}\NormalTok{, }\FloatTok{4.2}\NormalTok{, }\FloatTok{4.7}\NormalTok{, }\FloatTok{3.4}\NormalTok{, }\FloatTok{2.8}\NormalTok{, }\FloatTok{4.2}\NormalTok{, }\DecValTok{4}\NormalTok{),}
+         \AttributeTok{points\_t2 =} \FunctionTok{c}\NormalTok{(}\FloatTok{2.8}\NormalTok{, }\FloatTok{5.8}\NormalTok{, }\FloatTok{4.8}\NormalTok{, }\FloatTok{5.3}\NormalTok{, }\FloatTok{5.8}\NormalTok{, }\DecValTok{5}\NormalTok{, }\FloatTok{4.7}\NormalTok{, }\FloatTok{6.2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{5.2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Nur noch schnell gucken ob das geklappt hat:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 5
+##    index name              group points_t1 points_t2
+##    <int> <chr>             <dbl>     <dbl>     <dbl>
+##  1     1 Agnes Nitt            1       4.8       2.8
+##  2     2 Samuel Vimes          2       3.2       5.8
+##  3     3 Esme Weatherwax       1       3.5       4.8
+##  4     4 Gytha Ogg             1       3.1       5.3
+##  5     5 Horace Worblehat      3       4.2       5.8
+##  6     6 Mustrum Ridcully      3       4.7       5  
+##  7     7 Fred Colon            2       3.4       4.7
+##  8     8 Leonard of Quirm      2       2.8       6.2
+##  9     9 Havelock Vetinari     2       4.2       4  
+## 10    10 Reg Shoe              2       4         5.2
+\end{verbatim}
+
+Die \texttt{mutate}-Funktion wird richtig nützlich, wenn wir dem Datensatz Spalten hinzufügen wollen, die aus den anderen Spalten zusammengesetzt sind.
+
+So könnten wir in unserem Beispiel überlegen, die Veränderung zum zweiten Messzeitpunkt als Spalte hinzufügen zu wollen. Dafür können wir die nötige arithmetische Operation einfach in der mutate-Funktion ausführen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\OtherTok{\textless{}{-}}\NormalTok{ my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{change =}\NormalTok{ points\_t2 }\SpecialCharTok{{-}}\NormalTok{ points\_t1)}
+
+\NormalTok{my\_1st\_tibble}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 6
+##    index name         group points_t1 points_t2 change
+##    <int> <chr>        <dbl>     <dbl>     <dbl>  <dbl>
+##  1     1 Agnes Nitt       1       4.8       2.8 -2    
+##  2     2 Samuel Vimes     2       3.2       5.8  2.60 
+##  3     3 Esme Weathe~     1       3.5       4.8  1.30 
+##  4     4 Gytha Ogg        1       3.1       5.3  2.20 
+##  5     5 Horace Worb~     3       4.2       5.8  1.60 
+##  6     6 Mustrum Rid~     3       4.7       5    0.300
+##  7     7 Fred Colon       2       3.4       4.7  1.3  
+##  8     8 Leonard of ~     2       2.8       6.2  3.4  
+##  9     9 Havelock Ve~     2       4.2       4   -0.2  
+## 10    10 Reg Shoe         2       4         5.2  1.2
+\end{verbatim}
+
+\hypertarget{spalten-veruxe4ndern}{%
+\subsection{Spalten verändern}\label{spalten-veruxe4ndern}}
+
+Es funktionieren natürlich nicht nur arithmetische Operatoren, wir können auch alle anderen vektorisierten Funktionen benutzen. Vektorisiert heißt ganz einfach gesagt, dass ein Vektor eingegeben wird und ein genauso langer Vektor ausgegeben wird\footnote{Das ist nicht ganz richtig, aber für hier ausreichend nah genug an der richtigen Aussage.}.
+
+In unserem Beispiel könnten wir überlegen, dass wir statt der Differenz die Wurzel aus der quadrierten Differenz als Änderung haben wollen. Da wir die Differenz schon zum Datensatz hinzugefügt haben, können wir sie einfach überschreiben.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\OtherTok{\textless{}{-}}\NormalTok{ my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{change =} \FunctionTok{sqrt}\NormalTok{(change}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{))}
+
+\NormalTok{my\_1st\_tibble}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 6
+##    index name         group points_t1 points_t2 change
+##    <int> <chr>        <dbl>     <dbl>     <dbl>  <dbl>
+##  1     1 Agnes Nitt       1       4.8       2.8  2    
+##  2     2 Samuel Vimes     2       3.2       5.8  2.60 
+##  3     3 Esme Weathe~     1       3.5       4.8  1.30 
+##  4     4 Gytha Ogg        1       3.1       5.3  2.20 
+##  5     5 Horace Worb~     3       4.2       5.8  1.60 
+##  6     6 Mustrum Rid~     3       4.7       5    0.300
+##  7     7 Fred Colon       2       3.4       4.7  1.3  
+##  8     8 Leonard of ~     2       2.8       6.2  3.4  
+##  9     9 Havelock Ve~     2       4.2       4    0.2  
+## 10    10 Reg Shoe         2       4         5.2  1.2
+\end{verbatim}
+
+\hypertarget{datensuxe4tze-sortieren-und-indizieren}{%
+\section{Datensätze sortieren und indizieren}\label{datensuxe4tze-sortieren-und-indizieren}}
+
+\hypertarget{datensuxe4tze-sortieren}{%
+\subsection{Datensätze sortieren}\label{datensuxe4tze-sortieren}}
+
+Der erste Schritt bei vielen Auswertungen ist es, sich die größten und kleinsten Werte einer Gruppe oder Variable anzugucken. Das kann schnell erreicht werden, indem man den gegebenen Datensatz anhand einer Varaible sortiert.
+
+Wir benutzen weiter unseren Datensatz von eben und wollen zuerst absteigend nach den Änderungen sortieren.
+Dafür können wir die \texttt{arrange}-Funktion und unseren pipe-Operator benutzen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(change)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 6
+##    index name         group points_t1 points_t2 change
+##    <int> <chr>        <dbl>     <dbl>     <dbl>  <dbl>
+##  1     9 Havelock Ve~     2       4.2       4    0.2  
+##  2     6 Mustrum Rid~     3       4.7       5    0.300
+##  3    10 Reg Shoe         2       4         5.2  1.2  
+##  4     3 Esme Weathe~     1       3.5       4.8  1.30 
+##  5     7 Fred Colon       2       3.4       4.7  1.3  
+##  6     5 Horace Worb~     3       4.2       5.8  1.60 
+##  7     1 Agnes Nitt       1       4.8       2.8  2    
+##  8     4 Gytha Ogg        1       3.1       5.3  2.20 
+##  9     2 Samuel Vimes     2       3.2       5.8  2.60 
+## 10     8 Leonard of ~     2       2.8       6.2  3.4
+\end{verbatim}
+
+Wie man unschwer erkennen kann, ist hier der Standard, den Datensatz in aufsteigender Reihenfolge der Variable zu sortieren. Um das umzukehren, können wir die \texttt{desc}-Funktion nutzen, deren Name für `descending', also absteigend steht:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(change))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 6
+##    index name         group points_t1 points_t2 change
+##    <int> <chr>        <dbl>     <dbl>     <dbl>  <dbl>
+##  1     8 Leonard of ~     2       2.8       6.2  3.4  
+##  2     2 Samuel Vimes     2       3.2       5.8  2.60 
+##  3     4 Gytha Ogg        1       3.1       5.3  2.20 
+##  4     1 Agnes Nitt       1       4.8       2.8  2    
+##  5     5 Horace Worb~     3       4.2       5.8  1.60 
+##  6     7 Fred Colon       2       3.4       4.7  1.3  
+##  7     3 Esme Weathe~     1       3.5       4.8  1.30 
+##  8    10 Reg Shoe         2       4         5.2  1.2  
+##  9     6 Mustrum Rid~     3       4.7       5    0.300
+## 10     9 Havelock Ve~     2       4.2       4    0.2
+\end{verbatim}
+
+\hypertarget{mehrere-sortierschluxfcssel}{%
+\subsection{mehrere Sortierschlüssel}\label{mehrere-sortierschluxfcssel}}
+
+Wenn wir der \texttt{arrange}-Funktion mehr als eine Variable übergeben, werden die zusätzlichen Variablen als zusätzliche Sortierschlüssel interpretiert.
+
+Wir könnten zum Beispiel aufsteigend nach der Gruppe und dann pro Gruppe absteigend nach der Veränderung sortieren wollen. Das könnte dann so aussehen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(group, }\FunctionTok{desc}\NormalTok{(change))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 6
+##    index name         group points_t1 points_t2 change
+##    <int> <chr>        <dbl>     <dbl>     <dbl>  <dbl>
+##  1     4 Gytha Ogg        1       3.1       5.3  2.20 
+##  2     1 Agnes Nitt       1       4.8       2.8  2    
+##  3     3 Esme Weathe~     1       3.5       4.8  1.30 
+##  4     8 Leonard of ~     2       2.8       6.2  3.4  
+##  5     2 Samuel Vimes     2       3.2       5.8  2.60 
+##  6     7 Fred Colon       2       3.4       4.7  1.3  
+##  7    10 Reg Shoe         2       4         5.2  1.2  
+##  8     9 Havelock Ve~     2       4.2       4    0.2  
+##  9     5 Horace Worb~     3       4.2       5.8  1.60 
+## 10     6 Mustrum Rid~     3       4.7       5    0.300
+\end{verbatim}
+
+\hypertarget{auswahl-von-spalten}{%
+\subsection{Auswahl von Spalten}\label{auswahl-von-spalten}}
+
+Es passiert öfter, dass wir eine oder mehrere Variablen nicht mehr benötigen und der Übersichtlichkeit halber aus dem Datensatz entfernen wollen.
+
+Das \texttt{tidyverse} bietet dafür mit der \texttt{select}-Funktion eine sehr intuitiv zugängliche Syntax an, die wir zur Auswahl und zum Ausschluss von Spalten nutzen können. Dazu pipen wir einfach wieder den Datensatz in die Funktion und listen diejenigen Variablen auf, die wir behalten können.
+
+In unserem Beispiel könnten wir uns überlegen, den Index und die beiden Punkt-Spalten nicht mehr zu benötigen. Wir geben also einfach den Dantensatz in die \texttt{select}-Funktion und listen die restlichen Variablen auf:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(name, group, change)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 3
+##    name              group change
+##    <chr>             <dbl>  <dbl>
+##  1 Agnes Nitt            1  2    
+##  2 Samuel Vimes          2  2.60 
+##  3 Esme Weatherwax       1  1.30 
+##  4 Gytha Ogg             1  2.20 
+##  5 Horace Worblehat      3  1.60 
+##  6 Mustrum Ridcully      3  0.300
+##  7 Fred Colon            2  1.3  
+##  8 Leonard of Quirm      2  3.4  
+##  9 Havelock Vetinari     2  0.2  
+## 10 Reg Shoe              2  1.2
+\end{verbatim}
+
+Hier funktioniert auch die schon bei der numerischen Vektor-Indizierung vorgestellte Methode zum Ausschluss von Werten. Durch \texttt{-}-eingeleitete Variablennamen lassen sich einfach ausschließen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{index, }\SpecialCharTok{{-}}\NormalTok{points\_t1, }\SpecialCharTok{{-}}\NormalTok{points\_t2) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 3
+##    name              group change
+##    <chr>             <dbl>  <dbl>
+##  1 Agnes Nitt            1  2    
+##  2 Samuel Vimes          2  2.60 
+##  3 Esme Weatherwax       1  1.30 
+##  4 Gytha Ogg             1  2.20 
+##  5 Horace Worblehat      3  1.60 
+##  6 Mustrum Ridcully      3  0.300
+##  7 Fred Colon            2  1.3  
+##  8 Leonard of Quirm      2  3.4  
+##  9 Havelock Vetinari     2  0.2  
+## 10 Reg Shoe              2  1.2
+\end{verbatim}
+
+Wir können die Spalten-Auswahl auch benutzen, um den Datensatz für folgende Funktionen vorzubereiten. Ein Beispiel ist die schon aus der letzen Sitzung bekannte Funktion \texttt{cor}, die neben Vektoren auch einen Datensatz mit numerischen Spalten als Input versteht.
+
+Wir könnten uns zum Beispiel die Frage stellen, ob die Aufmerksamkeitswerte vor und nach dem Training miteinander korreliert sind.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(points\_t1, points\_t2) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{cor}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            points_t1  points_t2
+## points_t1  1.0000000 -0.6449612
+## points_t2 -0.6449612  1.0000000
+\end{verbatim}
+
+Das \texttt{tidyverse} bietet wie gesagt viele features, die unser Leben als empirische Forscher leichter machen, darunter eine Reihe von \href{https://tidyselect.r-lib.org/reference/language.html}{\texttt{selection\ helpers}}.
+
+Der erste, den wir hier verwenden wollen ist die \texttt{contains}-Funktion. Eine Funktion in der wir Teile von Spaltennamen suchen können, bei uns zum Beispiel \texttt{\textquotesingle{}points\textquotesingle{}}, um den Aufruf von eben ein bisschen zu vereinfachen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{contains}\NormalTok{(}\StringTok{\textquotesingle{}points\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{cor}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            points_t1  points_t2
+## points_t1  1.0000000 -0.6449612
+## points_t2 -0.6449612  1.0000000
+\end{verbatim}
+
+Der zweite helper, den wir ausprobieren ist \texttt{where}, ein helper, der uns erlaubt, mit Hilfe einer Funktion Spalten auszuwählen, auf die eine Bedingung zutrifft.
+
+In unserem Beispiel wollen wir alle numerischen Variablen miteinander korrelieren, indem wir \texttt{where} mit \texttt{is.numeric} kombinieren:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{cor}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 index      group   points_t1
+## index      1.00000000  0.4227600 -0.06127845
+## group      0.42276002  1.0000000  0.28205162
+## points_t1 -0.06127845  0.2820516  1.00000000
+## points_t2  0.24860383  0.4354397 -0.64496117
+## change    -0.32568808 -0.3039316 -0.65762107
+##            points_t2     change
+## index      0.2486038 -0.3256881
+## group      0.4354397 -0.3039316
+## points_t1 -0.6449612 -0.6576211
+## points_t2  1.0000000  0.4254564
+## change     0.4254564  1.0000000
+\end{verbatim}
+
+\hypertarget{logische-auswahl-von-zeilen}{%
+\subsection{logische Auswahl von Zeilen}\label{logische-auswahl-von-zeilen}}
+
+Um Zeilen aus einem Datensatz auszuwählen gibt es sowohl die Möglichkeit über \texttt{filter} mit logischen Angaben Zielen auszuwählen, als auch mit \texttt{slice} eine numerische Auswahl zu treffen.
+
+Logische Indizierung kann praktisch sein, wenn man die Einträge sehen möchte, die zum Beispiel unterdurchschnittlich viel Veränderung gezeigt haben. Das könnte so aussehen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(change }\SpecialCharTok{\textless{}} \FunctionTok{mean}\NormalTok{(change))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 6
+##   index name          group points_t1 points_t2 change
+##   <int> <chr>         <dbl>     <dbl>     <dbl>  <dbl>
+## 1     3 Esme Weather~     1       3.5       4.8  1.30 
+## 2     5 Horace Worbl~     3       4.2       5.8  1.60 
+## 3     6 Mustrum Ridc~     3       4.7       5    0.300
+## 4     7 Fred Colon        2       3.4       4.7  1.3  
+## 5     9 Havelock Vet~     2       4.2       4    0.2  
+## 6    10 Reg Shoe          2       4         5.2  1.2
+\end{verbatim}
+
+\hypertarget{numerische-auswahl-von-zeilen}{%
+\subsection{numerische Auswahl von Zeilen}\label{numerische-auswahl-von-zeilen}}
+
+Zusätzlich zur logischen Indizierung bietet das \texttt{tidyverse} mit der \texttt{slice}-Funktion auch die Möglichkeit numerisch zu indizieren.
+
+Das könnte in unserem Beispiel exemplarisch hilfreich sein, um die drei Versuchspersonen ausgeben zu lassen, die die größte Veränderung gezeigt haben.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_1st\_tibble }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(change)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{slice}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 6
+##   index name          group points_t1 points_t2 change
+##   <int> <chr>         <dbl>     <dbl>     <dbl>  <dbl>
+## 1     8 Leonard of Q~     2       2.8       6.2   3.4 
+## 2     2 Samuel Vimes      2       3.2       5.8   2.60
+## 3     4 Gytha Ogg         1       3.1       5.3   2.20
+\end{verbatim}
+
+\hypertarget{vorlesung}{%
+\section{Vorlesung}\label{vorlesung}}
+
+\hypertarget{skript-aus-der-vorlesung}{%
+\subsection{Skript aus der Vorlesung:}\label{skript-aus-der-vorlesung}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+
+\NormalTok{a }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{100}\NormalTok{,}
+                \AttributeTok{y =} \DecValTok{201}\SpecialCharTok{:}\DecValTok{300}\NormalTok{)}
+
+\NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{100}\NormalTok{,}
+            \AttributeTok{y =} \DecValTok{201}\SpecialCharTok{:}\DecValTok{300}\NormalTok{)}
+
+\FunctionTok{tibble}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\NormalTok{, }
+       \AttributeTok{y =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{, }
+       \AttributeTok{z =} \StringTok{\textquotesingle{}10\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 3
+##       x     y z    
+##   <dbl> <int> <chr>
+## 1     1     1 10   
+## 2     1     2 10   
+## 3     1     3 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tibble}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 150 x 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width
+##           <dbl>       <dbl>        <dbl>       <dbl>
+##  1          5.1         3.5          1.4         0.2
+##  2          4.9         3            1.4         0.2
+##  3          4.7         3.2          1.3         0.2
+##  4          4.6         3.1          1.5         0.2
+##  5          5           3.6          1.4         0.2
+##  6          5.4         3.9          1.7         0.4
+##  7          4.6         3.4          1.4         0.3
+##  8          5           3.4          1.5         0.2
+##  9          4.4         2.9          1.4         0.2
+## 10          4.9         3.1          1.5         0.1
+## # ... with 140 more rows, and 1 more variable:
+## #   Species <fct>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 150
+## Columns: 5
+## $ Sepal.Length <dbl> 5.1, 4.9, 4.7, 4.6, 5.0, 5.4...
+## $ Sepal.Width  <dbl> 3.5, 3.0, 3.2, 3.1, 3.6, 3.9...
+## $ Petal.Length <dbl> 1.4, 1.4, 1.3, 1.5, 1.4, 1.7...
+## $ Petal.Width  <dbl> 0.2, 0.2, 0.2, 0.2, 0.2, 0.4...
+## $ Species      <fct> setosa, setosa, setosa, seto...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OtherTok{\textless{}{-}}\NormalTok{ iris}
+
+\NormalTok{a }\OtherTok{\textless{}{-}} \FunctionTok{mutate}\NormalTok{(a, }\AttributeTok{new\_column =} \DecValTok{1}\NormalTok{)}
+
+
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}\AttributeTok{id =} \FunctionTok{sample}\NormalTok{(letters, }\DecValTok{20}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{),}
+             \AttributeTok{spr\_iq =} \FunctionTok{sample}\NormalTok{(}\DecValTok{80}\SpecialCharTok{:}\DecValTok{115}\NormalTok{, }\DecValTok{20}\NormalTok{, T),}
+             \AttributeTok{log\_iq =} \FunctionTok{sample}\NormalTok{(}\DecValTok{80}\SpecialCharTok{:}\DecValTok{115}\NormalTok{, }\DecValTok{20}\NormalTok{, T),}
+             \AttributeTok{smokes =} \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(T,F), }\DecValTok{20}\NormalTok{, T))}
+
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{ges\_iq =}\NormalTok{ (spr\_iq }\SpecialCharTok{+}\NormalTok{ log\_iq) }\SpecialCharTok{/} \DecValTok{2}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(ges\_iq) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(ges\_iq }\SpecialCharTok{\textgreater{}} \DecValTok{100}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{contains}\NormalTok{(}\StringTok{\textquotesingle{}iq\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{cor}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            spr_iq     log_iq     ges_iq
+## spr_iq  1.0000000 -0.8995771 -0.6769724
+## log_iq -0.8995771  1.0000000  0.9304494
+## ges_iq -0.6769724  0.9304494  1.0000000
+\end{verbatim}
+
+Als ergänzende Nebenbemerkung:
+
+mit \texttt{skim} aus dem \texttt{skimr}-Paket lässt sich der Überblick noch schöner gestalten:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{skimr}\SpecialCharTok{::}\FunctionTok{skim}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
 
   \bibliography{book.bib,packages.bib}
 

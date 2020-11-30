@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 tidyverse und tibbles | Psy_B_11: EDV I - Einheit 2</title>
+  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 tidyverse und tibbles | Psy_B_11: EDV I - Einheit 2" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 tidyverse und tibbles | Psy_B_11: EDV I - Einheit 2" />
+  
+  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  
+
+<meta name="author" content="Max Brede" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="elementare-datenverarbeitung.html"/>
+<link rel="next" href="literatur-1.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EDV 1 <br> WiSe 20</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vorwort</a></li>
+<li class="chapter" data-level="2" data-path="lehrplan.html"><a href="lehrplan.html"><i class="fa fa-check"></i><b>2</b> Lehrplan</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lehrplan.html"><a href="lehrplan.html#semesterplan"><i class="fa fa-check"></i><b>2.1</b> Semesterplan</a></li>
+<li class="chapter" data-level="2.2" data-path="lehrplan.html"><a href="lehrplan.html#übungsformat"><i class="fa fa-check"></i><b>2.2</b> Übungsformat</a></li>
+<li class="chapter" data-level="2.3" data-path="lehrplan.html"><a href="lehrplan.html#lehrziele-für-jede-sitzung"><i class="fa fa-check"></i><b>2.3</b> Lehrziele für jede Sitzung</a></li>
+<li class="chapter" data-level="2.4" data-path="lehrplan.html"><a href="lehrplan.html#prüfungsleistung"><i class="fa fa-check"></i><b>2.4</b> Prüfungsleistung</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html"><i class="fa fa-check"></i><b>3</b> Vorlesung I - Rste Schritte</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#organisatorisches"><i class="fa fa-check"></i><b>3.1</b> Organisatorisches</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#semesterplan-1"><i class="fa fa-check"></i>Semesterplan</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#übungsablauf"><i class="fa fa-check"></i>Übungsablauf</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#prüfungsleistung-1"><i class="fa fa-check"></i>Prüfungsleistung</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#einführung"><i class="fa fa-check"></i><b>3.2</b> Einführung</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#rste-schritte"><i class="fa fa-check"></i>Rste Schritte</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#wozu-brauche-ich-das"><i class="fa fa-check"></i>Wozu brauche ich das?</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#warum-r"><i class="fa fa-check"></i>Warum R ?</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#literatur"><i class="fa fa-check"></i>Literatur</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#installation-verwendung"><i class="fa fa-check"></i>Installation &amp; Verwendung</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#benutzeroberfläche-rstudio"><i class="fa fa-check"></i>Benutzeroberfläche RStudio</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#allgemeine-hinweise"><i class="fa fa-check"></i>Allgemeine Hinweise</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#zum-besseren-verständnis"><i class="fa fa-check"></i>Zum besseren Verständnis</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-in-der-r-konsole"><i class="fa fa-check"></i>Ausdrücke in der R-Konsole</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#kommentare"><i class="fa fa-check"></i>Kommentare</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#grundlegende-rechenoperationen"><i class="fa fa-check"></i><b>3.3</b> Grundlegende Rechenoperationen</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#addition-subtraktion"><i class="fa fa-check"></i>Addition, Subtraktion</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#multiplikation-division"><i class="fa fa-check"></i>Multiplikation, Division</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#rechenregeln"><i class="fa fa-check"></i>Rechenregeln</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#potenz-quadratwurzel-squareroot-betrag-absolute"><i class="fa fa-check"></i>Potenz, Quadratwurzel (“squareroot”), Betrag (“absolute”)</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#runden"><i class="fa fa-check"></i>Runden</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#aufgabe"><i class="fa fa-check"></i>Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-funktionen-argumente"><i class="fa fa-check"></i><b>3.4</b> Ausdrücke, Funktionen, Argumente</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#funktionen-argumente"><i class="fa fa-check"></i>Funktionen &amp; Argumente</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte"><i class="fa fa-check"></i><b>3.5</b> Objekte</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-benennen"><i class="fa fa-check"></i>Objekte benennen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#zuweisungen-an-objekte"><i class="fa fa-check"></i>Zuweisungen an Objekte</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#verwenden-von-objekten"><i class="fa fa-check"></i>Verwenden von Objekten:</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-ausgeben"><i class="fa fa-check"></i>Objekte ausgeben</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-anzeigen-lassen"><i class="fa fa-check"></i>Objekte anzeigen lassen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-entfernen"><i class="fa fa-check"></i>Objekte entfernen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#datentypen"><i class="fa fa-check"></i>Datentypen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#datentypen-konvertieren"><i class="fa fa-check"></i>Datentypen konvertieren</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#logische-werte-operatoren-und-verknüpfungen"><i class="fa fa-check"></i>Logische Werte, Operatoren und Verknüpfungen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#aufgabe-1"><i class="fa fa-check"></i>Aufgabe</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#umgang-mit-dezimalzahlen"><i class="fa fa-check"></i>Umgang mit Dezimalzahlen:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#hausaufgabe"><i class="fa fa-check"></i><b>3.6</b> Hausaufgabe</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#hausaufgabe-erstellen-eines-r-skripts"><i class="fa fa-check"></i>Hausaufgabe: Erstellen eines R-Skripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html"><i class="fa fa-check"></i><b>4</b> elementare Datenverarbeitung</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#organisatorisches-1"><i class="fa fa-check"></i><b>4.1</b> Organisatorisches</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#semesterplan-2"><i class="fa fa-check"></i><b>4.1.1</b> Semesterplan</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren"><i class="fa fa-check"></i><b>4.2</b> Vektoren</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#begriff"><i class="fa fa-check"></i><b>4.2.1</b> Begriff</a></li>
+<li class="chapter" data-level="4.2.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-erzeugen"><i class="fa fa-check"></i><b>4.2.2</b> Vektoren erzeugen</a></li>
+<li class="chapter" data-level="4.2.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-erzeugen-1"><i class="fa fa-check"></i><b>4.2.3</b> Vektoren erzeugen</a></li>
+<li class="chapter" data-level="4.2.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-erzeugen-2"><i class="fa fa-check"></i><b>4.2.4</b> Vektoren erzeugen</a></li>
+<li class="chapter" data-level="4.2.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-verwenden"><i class="fa fa-check"></i><b>4.2.5</b> Vektoren verwenden</a></li>
+<li class="chapter" data-level="4.2.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#datentypen-in-vektoren"><i class="fa fa-check"></i><b>4.2.6</b> Datentypen in Vektoren</a></li>
+<li class="chapter" data-level="4.2.7" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#aufgabe-2"><i class="fa fa-check"></i><b>4.2.7</b> Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#indizierung"><i class="fa fa-check"></i><b>4.3</b> Indizierung</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-indizieren"><i class="fa fa-check"></i><b>4.3.1</b> Elemente indizieren</a></li>
+<li class="chapter" data-level="4.3.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-indizieren-1"><i class="fa fa-check"></i><b>4.3.2</b> Elemente indizieren</a></li>
+<li class="chapter" data-level="4.3.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#mehrere-elemente-gleichzeitig-indizieren"><i class="fa fa-check"></i><b>4.3.3</b> mehrere Elemente gleichzeitig indizieren</a></li>
+<li class="chapter" data-level="4.3.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#mehrere-elemente-gleichzeitig-indizieren-1"><i class="fa fa-check"></i><b>4.3.4</b> mehrere Elemente gleichzeitig indizieren</a></li>
+<li class="chapter" data-level="4.3.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-ausschließen"><i class="fa fa-check"></i><b>4.3.5</b> Elemente ausschließen</a></li>
+<li class="chapter" data-level="4.3.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-austauschen"><i class="fa fa-check"></i><b>4.3.6</b> Elemente austauschen</a></li>
+<li class="chapter" data-level="4.3.7" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-austauschen-1"><i class="fa fa-check"></i><b>4.3.7</b> Elemente austauschen</a></li>
+<li class="chapter" data-level="4.3.8" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-löschen"><i class="fa fa-check"></i><b>4.3.8</b> Elemente löschen</a></li>
+<li class="chapter" data-level="4.3.9" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-operatoren"><i class="fa fa-check"></i><b>4.3.9</b> Logische Operatoren</a></li>
+<li class="chapter" data-level="4.3.10" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logischer-vergleich-von-vektoren"><i class="fa fa-check"></i><b>4.3.10</b> Logischer Vergleich von Vektoren</a></li>
+<li class="chapter" data-level="4.3.11" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-operatoren-1"><i class="fa fa-check"></i><b>4.3.11</b> Logische Operatoren</a></li>
+<li class="chapter" data-level="4.3.12" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-vektoren"><i class="fa fa-check"></i><b>4.3.12</b> Logische Vektoren</a></li>
+<li class="chapter" data-level="4.3.13" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-vergeiche-von-vektoren"><i class="fa fa-check"></i><b>4.3.13</b> Logische Vergeiche von Vektoren</a></li>
+<li class="chapter" data-level="4.3.14" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-vergeiche-von-vektoren-1"><i class="fa fa-check"></i><b>4.3.14</b> Logische Vergeiche von Vektoren</a></li>
+<li class="chapter" data-level="4.3.15" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung"><i class="fa fa-check"></i><b>4.3.15</b> Logische Indizierung</a></li>
+<li class="chapter" data-level="4.3.16" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung-1"><i class="fa fa-check"></i><b>4.3.16</b> Logische Indizierung</a></li>
+<li class="chapter" data-level="4.3.17" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung-und-fehlende-werte"><i class="fa fa-check"></i><b>4.3.17</b> Logische Indizierung und fehlende Werte</a></li>
+<li class="chapter" data-level="4.3.18" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#umgang-mit-fehlenden-werten-bei-logischer-indizierung"><i class="fa fa-check"></i><b>4.3.18</b> Umgang mit fehlenden Werten bei logischer Indizierung</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#systematische-wertefolgen-erzeugen"><i class="fa fa-check"></i><b>4.4</b> Systematische Wertefolgen erzeugen</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-erstellen"><i class="fa fa-check"></i><b>4.4.1</b> Numerische Sequenzen erstellen</a></li>
+<li class="chapter" data-level="4.4.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-mit-definierter-schrittgröße"><i class="fa fa-check"></i><b>4.4.2</b> Numerische Sequenzen mit definierter Schrittgröße</a></li>
+<li class="chapter" data-level="4.4.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-mit-definierter-länge"><i class="fa fa-check"></i><b>4.4.3</b> Numerische Sequenzen mit definierter Länge</a></li>
+<li class="chapter" data-level="4.4.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen"><i class="fa fa-check"></i><b>4.4.4</b> Numerische Sequenzen</a></li>
+<li class="chapter" data-level="4.4.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-mit-definierter-länge-1"><i class="fa fa-check"></i><b>4.4.5</b> Numerische Sequenzen mit definierter Länge</a></li>
+<li class="chapter" data-level="4.4.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#wertefolgen-wiederholen"><i class="fa fa-check"></i><b>4.4.6</b> Wertefolgen wiederholen</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#daten-transformieren"><i class="fa fa-check"></i><b>4.5</b> Daten transformieren</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren"><i class="fa fa-check"></i><b>4.5.1</b> Werte sortieren</a></li>
+<li class="chapter" data-level="4.5.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren-1"><i class="fa fa-check"></i><b>4.5.2</b> Werte sortieren</a></li>
+<li class="chapter" data-level="4.5.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren-2"><i class="fa fa-check"></i><b>4.5.3</b> Werte sortieren</a></li>
+<li class="chapter" data-level="4.5.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren-3"><i class="fa fa-check"></i><b>4.5.4</b> Werte sortieren</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#einfache-deskriptiv-statistische-kennwerte"><i class="fa fa-check"></i><b>4.6</b> Einfache deskriptiv-statistische Kennwerte</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#einfache-deskriptiv-statistische-kennwerte-1"><i class="fa fa-check"></i><b>4.6.1</b> Einfache deskriptiv-statistische Kennwerte</a></li>
+<li class="chapter" data-level="4.6.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#einfache-deskriptiv-statistische-kennwerte-2"><i class="fa fa-check"></i><b>4.6.2</b> Einfache deskriptiv-statistische Kennwerte</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i><b>5</b> <code>tidyverse</code> und <code>tibbles</code></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#organisatorisches-2"><i class="fa fa-check"></i><b>5.1</b> Organisatorisches</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#semesterplan-3"><i class="fa fa-check"></i><b>5.1.1</b> Semesterplan</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#pakete-benutzen"><i class="fa fa-check"></i><b>5.2</b> Pakete benutzen</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#das-cran-und-paketinstallation"><i class="fa fa-check"></i><b>5.2.1</b> das CRAN und Paketinstallation</a></li>
+<li class="chapter" data-level="5.2.2" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#pakete-laden"><i class="fa fa-check"></i><b>5.2.2</b> Pakete laden</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen-und-ergänzen"><i class="fa fa-check"></i><b>5.3</b> Datensätze erstellen und ergänzen</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze"><i class="fa fa-check"></i><b>5.3.1</b> Datensätze</a></li>
+<li class="chapter" data-level="5.3.2" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen"><i class="fa fa-check"></i><b>5.3.2</b> Datensätze erstellen</a></li>
+<li class="chapter" data-level="5.3.3" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#beispiel-datensatz"><i class="fa fa-check"></i><b>5.3.3</b> Beispiel-Datensatz</a></li>
+<li class="chapter" data-level="5.3.4" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#tibble"><i class="fa fa-check"></i><b>5.3.4</b> <code>tibble</code></a></li>
+<li class="chapter" data-level="5.3.5" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#überblick-über-den-datensatz-verschaffen"><i class="fa fa-check"></i><b>5.3.5</b> Überblick über den Datensatz verschaffen</a></li>
+<li class="chapter" data-level="5.3.6" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#spalten-hinzufügen"><i class="fa fa-check"></i><b>5.3.6</b> Spalten hinzufügen</a></li>
+<li class="chapter" data-level="5.3.7" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#spalten-verändern"><i class="fa fa-check"></i><b>5.3.7</b> Spalten verändern</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren-und-indizieren"><i class="fa fa-check"></i><b>5.4</b> Datensätze sortieren und indizieren</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren"><i class="fa fa-check"></i><b>5.4.1</b> Datensätze sortieren</a></li>
+<li class="chapter" data-level="5.4.2" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#mehrere-sortierschlüssel"><i class="fa fa-check"></i><b>5.4.2</b> mehrere Sortierschlüssel</a></li>
+<li class="chapter" data-level="5.4.3" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#auswahl-von-spalten"><i class="fa fa-check"></i><b>5.4.3</b> Auswahl von Spalten</a></li>
+<li class="chapter" data-level="5.4.4" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#logische-auswahl-von-zeilen"><i class="fa fa-check"></i><b>5.4.4</b> logische Auswahl von Zeilen</a></li>
+<li class="chapter" data-level="5.4.5" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#numerische-auswahl-von-zeilen"><i class="fa fa-check"></i><b>5.4.5</b> numerische Auswahl von Zeilen</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#vorlesung"><i class="fa fa-check"></i><b>5.5</b> Vorlesung</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#skript-aus-der-vorlesung"><i class="fa fa-check"></i><b>5.5.1</b> Skript aus der Vorlesung:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="literatur-1.html"><a href="literatur-1.html"><i class="fa fa-check"></i>Literatur</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Psy_B_11: EDV I - Einheit 2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tidyverse-und-tibbles" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> <code>tidyverse</code> und <code>tibbles</code></h1>
+<div id="organisatorisches-2" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Organisatorisches</h2>
+<div id="semesterplan-3" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Semesterplan</h3>
+<table class=" lightable-paper" style="font-size: 15px; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Einheit
+</th>
+<th style="text-align:left;">
+Vorlesung
+</th>
+<th style="text-align:left;">
+Übungswoche
+</th>
+<th style="text-align:left;">
+Thema
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+2.11.20
+</td>
+<td style="text-align:left;">
+keine Übung
+</td>
+<td style="text-align:left;">
+Grundlagen und Begriffe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+16.11.20
+</td>
+<td style="text-align:left;">
+KW 48
+</td>
+<td style="text-align:left;">
+Vektoren und Indizierung
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Datenformate erstellen und transformieren
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+30.11.20
+</td>
+<td style="text-align:left;">
+KW 50
+</td>
+<td style="text-align:left;">
+Pakete installieren und benutzen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Datensätze erstellen und ergänzen können
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Datensätze sortieren und indizieren können
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+14.12.20
+</td>
+<td style="text-align:left;">
+KW 1
+</td>
+<td style="text-align:left;">
+Faktoren
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+deskriptive Kennwerte
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Aggregation I
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+11.01.21
+</td>
+<td style="text-align:left;">
+KW 3
+</td>
+<td style="text-align:left;">
+Aggregation II
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+In- und Export von Datensätzen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+25.01.21
+</td>
+<td style="text-align:left;">
+KW 5
+</td>
+<td style="text-align:left;">
+Grafische Darstellungen I
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+08.02.21
+</td>
+<td style="text-align:left;">
+KW 7
+</td>
+<td style="text-align:left;">
+Grafische Darstellungen II
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+22.02.21
+</td>
+<td style="text-align:left;">
+keine Übung
+</td>
+<td style="text-align:left;">
+Puffer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Probeklausur
+</td>
+</tr>
+</tbody>
+</table>
+<!-- ## Aufgabe -->
+<!-- ### Aufgabe: -->
+<!-- \scriptsize -->
+<!-- Erstellen Sie vier Vektoren entsprechend der folgenden Tabelle: -->
+<!-- \centering -->
+<!-- ```{r, echo = F, results='asis'} -->
+<!-- matrix <- matrix(character(0), nrow = 8, ncol = 4) -->
+<!-- matrix[,1] <- 8:1 -->
+<!-- matrix[,2] <- c('Snake', 'Vera', 'Gabi', 'Horst', 'Joe', 'Frank', 'Jürgen', 'Klaus') -->
+<!-- matrix[,3] <- round(rnorm(8,100,15)) -->
+<!-- matrix[,4] <- round(runif(8,0,63)) -->
+<!-- colnames(matrix) <- c('ID','Name','IQ','BDI-II') -->
+<!-- usefullFunctions::convertMatrixToLatex(matrix, alignment = c('r','|l','|r','|r')) -->
+<!-- ``` -->
+<!-- \raggedright -->
+<!-- Bestimmen Sie die Korrelation zwischen dem IQ und dem BDI-Score. -->
+<!-- Lassen Sie sich anschließend mit Hilfe von logischer Indizierung die Namen der Versuchspersonen ausgeben, die einen BDI-Score haben, der unter dem Median liegt. -->
+<!-- Berechnen Sie für die andere Hälfte der Stichprobe den Mittelwert des IQs. -->
+<!-- Rechnen Sie zum Abschluss die IQ-Werte der Versuchspersonen, deren IQ über dem gerade berechneten Mittelwert liegt, in Wertpunkte(M=10, sd=3) um. \newline Kleiner Hinweis: hierfür müssen Sie mit der Formel zur z-Transformation arbeiten($z_x = \frac{x - M_x}{s_x}$). \newline Verwenden Sie zu dieser Berechnung bitte empirische Schätzer und nicht theoretische Kennwerte. -->
+<!-- ### Interaktion -->
+<!-- \begin{minipage}{.59\textwidth} -->
+<!-- \textbf{Konnte ich alles nachvollziehen!} -->
+<!-- \begin{itemize} -->
+<!-- \item[A] Ja! -->
+<!-- \item[B] zu 75% -->
+<!-- \item[C] zu 50% -->
+<!-- \item[D] zu 25% -->
+<!-- \item[E] Nein! -->
+<!-- \end{itemize} -->
+<!-- \end{minipage} -->
+<!-- \begin{minipage}{.39\textwidth} -->
+<!-- \centering -->
+<!-- https://tweedback.de/kkwn -->
+<!-- \includegraphics[width=.8\textwidth]{/home/brede/MEGA/Andres/EDV1/Folien/tweedback.png} -->
+<!-- \end{minipage} -->
+</div>
+</div>
+<div id="pakete-benutzen" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Pakete benutzen</h2>
+<div id="das-cran-und-paketinstallation" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> das CRAN und Paketinstallation</h3>
+<p>Wie in der ersten Sitzung schon angedeutet, ist eine der größten wenn nicht <em>die</em> größte Stärke von R das <a href="https://cran.r-project.org/">Comprehensive R Archive Network</a>.</p>
+<p>Zum einen werden dort die Installationsdateien für die neuesten R-Versionen gehostet, für uns viel praktischer ist aber, dass dort auch fast unzählige Pakete zugänglich gemacht werden. Mit diesen Paketen oder auch <code>packages</code> lässt sich der Funktionsumfang von R beliebig erweitern.</p>
+<p>Diese Pakete lassen sich mit der naheliegend benannten Funktion <code>install.packages</code> installieren. Ein für uns wichtiges Paket, das eine ganze Sammlung von nützlichen Paketen beinhaltet, die wir ab jetzt regelmäßig benutzen werden, ist das <code>tidyverse</code>.</p>
+<p>Bitte installieren Sie diese Sammlung mit dem folgenden Code:</p>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="tidyverse-und-tibbles.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>)</span></code></pre></div>
+</div>
+<div id="pakete-laden" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Pakete laden</h3>
+<p>Wenn das Paket installiert ist, lässt es sich ganz einfach mit <code>library</code> in den genutzten Namensraum laden.</p>
+<p><strong>Pakete, die nicht vor der Benutzung geladen wurden, können nicht benutzt werden!</strong></p>
+<p>Da wir es gleich benutzen werden, laden wir schon einmal das <code>tidyverse</code></p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="tidyverse-und-tibbles.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<!-- ### Pakete benutzen -->
+<!-- Eine Alternative zum Laden des ganzen Pakets stellt der `::`-Operator dar. Der ist besonders praktisch, wenn man mal gerade den Namen einer Funktion vergessen hat, sich aber noch an das Paket erinnert. -->
+<!-- ```{r} -->
+<!-- ``` -->
+</div>
+</div>
+<div id="datensätze-erstellen-und-ergänzen" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Datensätze erstellen und ergänzen</h2>
+<div id="datensätze" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Datensätze</h3>
+<p>Bisher haben wir nur einfache Vektoren benutzt um Daten auszudrücken. Das geht zwar, solange man nur Daten eines Formats und in überschaubarer Anzahl betrachtet, sobald wir aber an richtige experimentelle Kontexte denken, reicht das nicht mehr.</p>
+<p>Deswegen gibt es in R so genannte <em>‘rechteckige Datensätze’</em>, die Vektoren als Spalten zu einer Tabelle kombinieren. Die Spalten können dabei unterschiedliche Datenformate haben.</p>
+</div>
+<div id="datensätze-erstellen" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Datensätze erstellen</h3>
+<p>Datensätze werden in R <code>data.frames</code> genannt und können mit <code>data.frame()</code> erstellt werden.</p>
+<p>Hier werden wir aber direkt auf die Basis-R Funktion verzichten und die etwas hübschere Funktion <code>tibble()</code> aus dem <code>tidyverse</code> nutzen.</p>
+<p>Ein <code>tibble</code> ist prinzipiell ein <code>data.frame</code>, hat aber ein paar zusätzliche quality-of-life-features, die den Umgang mit ihnen vereinfachen.</p>
+</div>
+<div id="beispiel-datensatz" class="section level3" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Beispiel-Datensatz</h3>
+<p>Wir erstellen jetzt erstmal unseren ersten Datensatz:</p>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="tidyverse-und-tibbles.html#cb253-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb253-2"><a href="tidyverse-und-tibbles.html#cb253-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">index =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb253-3"><a href="tidyverse-und-tibbles.html#cb253-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&#39;Agnes Nitt&#39;</span>,</span>
+<span id="cb253-4"><a href="tidyverse-und-tibbles.html#cb253-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;Samuel Vimes&#39;</span>,</span>
+<span id="cb253-5"><a href="tidyverse-und-tibbles.html#cb253-5" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;Esme Weatherwax&#39;</span>,</span>
+<span id="cb253-6"><a href="tidyverse-und-tibbles.html#cb253-6" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;Gytha Ogg&#39;</span>,</span>
+<span id="cb253-7"><a href="tidyverse-und-tibbles.html#cb253-7" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;Horace Worblehat&#39;</span>,</span>
+<span id="cb253-8"><a href="tidyverse-und-tibbles.html#cb253-8" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;Mustrum Ridcully&#39;</span>,</span>
+<span id="cb253-9"><a href="tidyverse-und-tibbles.html#cb253-9" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;Fred Colon&#39;</span>,</span>
+<span id="cb253-10"><a href="tidyverse-und-tibbles.html#cb253-10" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;Leonard of Quirm&#39;</span>,</span>
+<span id="cb253-11"><a href="tidyverse-und-tibbles.html#cb253-11" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;Havelock Vetinari&#39;</span>,</span>
+<span id="cb253-12"><a href="tidyverse-und-tibbles.html#cb253-12" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;Reg Shoe&#39;</span></span>
+<span id="cb253-13"><a href="tidyverse-und-tibbles.html#cb253-13" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb253-14"><a href="tidyverse-und-tibbles.html#cb253-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb253-15"><a href="tidyverse-und-tibbles.html#cb253-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="tibble" class="section level3" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> <code>tibble</code></h3>
+<p>Der Datensatz sieht dann so aus:</p>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="tidyverse-und-tibbles.html#cb254-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 3
+##    index name              group
+##    &lt;int&gt; &lt;chr&gt;             &lt;dbl&gt;
+##  1     1 Agnes Nitt            1
+##  2     2 Samuel Vimes          2
+##  3     3 Esme Weatherwax       1
+##  4     4 Gytha Ogg             1
+##  5     5 Horace Worblehat      3
+##  6     6 Mustrum Ridcully      3
+##  7     7 Fred Colon            2
+##  8     8 Leonard of Quirm      2
+##  9     9 Havelock Vetinari     2
+## 10    10 Reg Shoe              2</code></pre>
+<p>Also: Jedes Argument von eben ist jetzt eine Spalte, jeder Wert in allen Vektoren jetzt ein Zeile.</p>
+</div>
+<div id="überblick-über-den-datensatz-verschaffen" class="section level3" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> Überblick über den Datensatz verschaffen</h3>
+<p>Zwar ist in unserem Fall das <code>tibble</code> ziemlich überschaubar, sollten wir uns aber trotzdem einen Überblick verschaffen wollen, können wir die <code>glimpse</code>-Funktion benutzen:</p>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="tidyverse-und-tibbles.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(my_1st_tibble)</span></code></pre></div>
+<pre><code>## Rows: 10
+## Columns: 3
+## $ index &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+## $ name  &lt;chr&gt; &quot;Agnes Nitt&quot;, &quot;Samuel Vimes&quot;, &quot;Esme W…
+## $ group &lt;dbl&gt; 1, 2, 1, 1, 3, 3, 2, 2, 2, 2</code></pre>
+</div>
+<div id="spalten-hinzufügen" class="section level3" number="5.3.6">
+<h3><span class="header-section-number">5.3.6</span> Spalten hinzufügen</h3>
+<p>Wir stellen uns jetzt vor, dass unser Datensatz die Anmeldeliste für ein Experiment darstellt.<br />
+Nach der Anmeldung haben die Probanden das Experiment durchgeführt und an zwei Testzeitpunkten in einem von uns designeten Aufmerksamkeitsparadigma die folgenden Punkte erhalten:</p>
+<table class=" lightable-minimal" style="font-family: &quot;Trebuchet MS&quot;, verdana, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+name
+</th>
+<th style="text-align:right;">
+points_t1
+</th>
+<th style="text-align:right;">
+points_t2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Agnes Nitt
+</td>
+<td style="text-align:right;">
+4.8
+</td>
+<td style="text-align:right;">
+2.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Samuel Vimes
+</td>
+<td style="text-align:right;">
+3.2
+</td>
+<td style="text-align:right;">
+5.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Esme Weatherwax
+</td>
+<td style="text-align:right;">
+3.5
+</td>
+<td style="text-align:right;">
+4.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gytha Ogg
+</td>
+<td style="text-align:right;">
+3.1
+</td>
+<td style="text-align:right;">
+5.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Horace Worblehat
+</td>
+<td style="text-align:right;">
+4.2
+</td>
+<td style="text-align:right;">
+5.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mustrum Ridcully
+</td>
+<td style="text-align:right;">
+4.7
+</td>
+<td style="text-align:right;">
+5.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fred Colon
+</td>
+<td style="text-align:right;">
+3.4
+</td>
+<td style="text-align:right;">
+4.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Leonard of Quirm
+</td>
+<td style="text-align:right;">
+2.8
+</td>
+<td style="text-align:right;">
+6.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Havelock Vetinari
+</td>
+<td style="text-align:right;">
+4.2
+</td>
+<td style="text-align:right;">
+4.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Reg Shoe
+</td>
+<td style="text-align:right;">
+4.0
+</td>
+<td style="text-align:right;">
+5.2
+</td>
+</tr>
+</tbody>
+</table>
+<!-- ### Spalten hinzufügen -->
+<p>Diese Daten wollen wir jetzt unserem Datensatz hinzufügen, um sie für unsere Auswertungen verwenden zu können (das Beispiel ist ein bisschen künstlich, später werden wir einfach Datensätze aus externen Dateien einlesen. Um das Prinzip zu demonstrieren, ergibt es hier aber Sinn).</p>
+<p>Um dies zu tun, benutzen wir die <code>mutate</code>-Funktion (auf deutsch ‘ändern’ oder ‘mutieren’).</p>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="tidyverse-und-tibbles.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(my_1st_tibble, </span>
+<span id="cb258-2"><a href="tidyverse-und-tibbles.html#cb258-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">points_t1 =</span> <span class="fu">c</span>(<span class="fl">4.8</span>, <span class="fl">3.2</span>, <span class="fl">3.5</span>, <span class="fl">3.1</span>, <span class="fl">4.2</span>, <span class="fl">4.7</span>, <span class="fl">3.4</span>, <span class="fl">2.8</span>, <span class="fl">4.2</span>, <span class="dv">4</span>),</span>
+<span id="cb258-3"><a href="tidyverse-und-tibbles.html#cb258-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">points_t2 =</span> <span class="fu">c</span>(<span class="fl">2.8</span>, <span class="fl">5.8</span>, <span class="fl">4.8</span>, <span class="fl">5.3</span>, <span class="fl">5.8</span>, <span class="dv">5</span>, <span class="fl">4.7</span>, <span class="fl">6.2</span>, <span class="dv">4</span>, <span class="fl">5.2</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 5
+##    index name              group points_t1 points_t2
+##    &lt;int&gt; &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+##  1     1 Agnes Nitt            1       4.8       2.8
+##  2     2 Samuel Vimes          2       3.2       5.8
+##  3     3 Esme Weatherwax       1       3.5       4.8
+##  4     4 Gytha Ogg             1       3.1       5.3
+##  5     5 Horace Worblehat      3       4.2       5.8
+##  6     6 Mustrum Ridcully      3       4.7       5  
+##  7     7 Fred Colon            2       3.4       4.7
+##  8     8 Leonard of Quirm      2       2.8       6.2
+##  9     9 Havelock Vetinari     2       4.2       4  
+## 10    10 Reg Shoe              2       4         5.2</code></pre>
+<!-- ### Spalten hinzufügen -->
+<p><code>mutate</code> funktioniert wieder wie alle bisher gesehenen Funktionen, wenn wir das Objekt nicht überschreiben, wird der Output nicht gespeichert.</p>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="tidyverse-und-tibbles.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(my_1st_tibble)</span></code></pre></div>
+<pre><code>## Rows: 10
+## Columns: 3
+## $ index &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+## $ name  &lt;chr&gt; &quot;Agnes Nitt&quot;, &quot;Samuel Vimes&quot;, &quot;Esme W…
+## $ group &lt;dbl&gt; 1, 2, 1, 1, 3, 3, 2, 2, 2, 2</code></pre>
+<!-- ### Spalten hinzufügen -->
+<p>Wir könnten jetzt einfach den Datensatz wie gewohnt überschreiben, nutzen aber die Gelegenheit um ein weiteres wichtiges feature des <code>tidyverse</code> einzuführen.</p>
+<p><code>%&gt;%</code> ist die <em>‘pipe’</em>, ein Operator, der den Output des links genannten Ausdrucks als erstes Argument an den rechts genannten Ausdruck weitergibt.</p>
+<p>Mit diesem Operator können wir das Beispiel von eben wie folgt umformulieren:</p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="tidyverse-und-tibbles.html#cb262-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="ot">&lt;-</span> my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb262-2"><a href="tidyverse-und-tibbles.html#cb262-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">points_t1 =</span> <span class="fu">c</span>(<span class="fl">4.8</span>, <span class="fl">3.2</span>, <span class="fl">3.5</span>, <span class="fl">3.1</span>, <span class="fl">4.2</span>, <span class="fl">4.7</span>, <span class="fl">3.4</span>, <span class="fl">2.8</span>, <span class="fl">4.2</span>, <span class="dv">4</span>),</span>
+<span id="cb262-3"><a href="tidyverse-und-tibbles.html#cb262-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">points_t2 =</span> <span class="fu">c</span>(<span class="fl">2.8</span>, <span class="fl">5.8</span>, <span class="fl">4.8</span>, <span class="fl">5.3</span>, <span class="fl">5.8</span>, <span class="dv">5</span>, <span class="fl">4.7</span>, <span class="fl">6.2</span>, <span class="dv">4</span>, <span class="fl">5.2</span>))</span></code></pre></div>
+<!-- ### Spalten hinzufügen -->
+<p>Nur noch schnell gucken ob das geklappt hat:</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="tidyverse-und-tibbles.html#cb263-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 5
+##    index name              group points_t1 points_t2
+##    &lt;int&gt; &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+##  1     1 Agnes Nitt            1       4.8       2.8
+##  2     2 Samuel Vimes          2       3.2       5.8
+##  3     3 Esme Weatherwax       1       3.5       4.8
+##  4     4 Gytha Ogg             1       3.1       5.3
+##  5     5 Horace Worblehat      3       4.2       5.8
+##  6     6 Mustrum Ridcully      3       4.7       5  
+##  7     7 Fred Colon            2       3.4       4.7
+##  8     8 Leonard of Quirm      2       2.8       6.2
+##  9     9 Havelock Vetinari     2       4.2       4  
+## 10    10 Reg Shoe              2       4         5.2</code></pre>
+<!-- ### Spalten hinzufügen -->
+<p>Die <code>mutate</code>-Funktion wird richtig nützlich, wenn wir dem Datensatz Spalten hinzufügen wollen, die aus den anderen Spalten zusammengesetzt sind.</p>
+<p>So könnten wir in unserem Beispiel überlegen, die Veränderung zum zweiten Messzeitpunkt als Spalte hinzufügen zu wollen. Dafür können wir die nötige arithmetische Operation einfach in der mutate-Funktion ausführen:</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="tidyverse-und-tibbles.html#cb265-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="ot">&lt;-</span> my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb265-2"><a href="tidyverse-und-tibbles.html#cb265-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">change =</span> points_t2 <span class="sc">-</span> points_t1)</span>
+<span id="cb265-3"><a href="tidyverse-und-tibbles.html#cb265-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb265-4"><a href="tidyverse-und-tibbles.html#cb265-4" aria-hidden="true" tabindex="-1"></a>my_1st_tibble</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 6
+##    index name         group points_t1 points_t2 change
+##    &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+##  1     1 Agnes Nitt       1       4.8       2.8 -2    
+##  2     2 Samuel Vimes     2       3.2       5.8  2.60 
+##  3     3 Esme Weathe…     1       3.5       4.8  1.30 
+##  4     4 Gytha Ogg        1       3.1       5.3  2.20 
+##  5     5 Horace Worb…     3       4.2       5.8  1.60 
+##  6     6 Mustrum Rid…     3       4.7       5    0.300
+##  7     7 Fred Colon       2       3.4       4.7  1.3  
+##  8     8 Leonard of …     2       2.8       6.2  3.4  
+##  9     9 Havelock Ve…     2       4.2       4   -0.2  
+## 10    10 Reg Shoe         2       4         5.2  1.2</code></pre>
+</div>
+<div id="spalten-verändern" class="section level3" number="5.3.7">
+<h3><span class="header-section-number">5.3.7</span> Spalten verändern</h3>
+<p>Es funktionieren natürlich nicht nur arithmetische Operatoren, wir können auch alle anderen vektorisierten Funktionen benutzen. Vektorisiert heißt ganz einfach gesagt, dass ein Vektor eingegeben wird und ein genauso langer Vektor ausgegeben wird<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>In unserem Beispiel könnten wir überlegen, dass wir statt der Differenz die Wurzel aus der quadrierten Differenz als Änderung haben wollen. Da wir die Differenz schon zum Datensatz hinzugefügt haben, können wir sie einfach überschreiben.</p>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="tidyverse-und-tibbles.html#cb267-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="ot">&lt;-</span> my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb267-2"><a href="tidyverse-und-tibbles.html#cb267-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">change =</span> <span class="fu">sqrt</span>(change<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb267-3"><a href="tidyverse-und-tibbles.html#cb267-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb267-4"><a href="tidyverse-und-tibbles.html#cb267-4" aria-hidden="true" tabindex="-1"></a>my_1st_tibble</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 6
+##    index name         group points_t1 points_t2 change
+##    &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+##  1     1 Agnes Nitt       1       4.8       2.8  2    
+##  2     2 Samuel Vimes     2       3.2       5.8  2.60 
+##  3     3 Esme Weathe…     1       3.5       4.8  1.30 
+##  4     4 Gytha Ogg        1       3.1       5.3  2.20 
+##  5     5 Horace Worb…     3       4.2       5.8  1.60 
+##  6     6 Mustrum Rid…     3       4.7       5    0.300
+##  7     7 Fred Colon       2       3.4       4.7  1.3  
+##  8     8 Leonard of …     2       2.8       6.2  3.4  
+##  9     9 Havelock Ve…     2       4.2       4    0.2  
+## 10    10 Reg Shoe         2       4         5.2  1.2</code></pre>
+</div>
+</div>
+<div id="datensätze-sortieren-und-indizieren" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Datensätze sortieren und indizieren</h2>
+<div id="datensätze-sortieren" class="section level3" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Datensätze sortieren</h3>
+<p>Der erste Schritt bei vielen Auswertungen ist es, sich die größten und kleinsten Werte einer Gruppe oder Variable anzugucken. Das kann schnell erreicht werden, indem man den gegebenen Datensatz anhand einer Varaible sortiert.</p>
+<p>Wir benutzen weiter unseren Datensatz von eben und wollen zuerst absteigend nach den Änderungen sortieren.
+Dafür können wir die <code>arrange</code>-Funktion und unseren pipe-Operator benutzen:</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="tidyverse-und-tibbles.html#cb269-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb269-2"><a href="tidyverse-und-tibbles.html#cb269-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(change)</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 6
+##    index name         group points_t1 points_t2 change
+##    &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+##  1     9 Havelock Ve…     2       4.2       4    0.2  
+##  2     6 Mustrum Rid…     3       4.7       5    0.300
+##  3    10 Reg Shoe         2       4         5.2  1.2  
+##  4     3 Esme Weathe…     1       3.5       4.8  1.30 
+##  5     7 Fred Colon       2       3.4       4.7  1.3  
+##  6     5 Horace Worb…     3       4.2       5.8  1.60 
+##  7     1 Agnes Nitt       1       4.8       2.8  2    
+##  8     4 Gytha Ogg        1       3.1       5.3  2.20 
+##  9     2 Samuel Vimes     2       3.2       5.8  2.60 
+## 10     8 Leonard of …     2       2.8       6.2  3.4</code></pre>
+<!-- ### Datensätze sortieren -->
+<p>Wie man unschwer erkennen kann, ist hier der Standard, den Datensatz in aufsteigender Reihenfolge der Variable zu sortieren. Um das umzukehren, können wir die <code>desc</code>-Funktion nutzen, deren Name für ‘descending,’ also absteigend steht:</p>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="tidyverse-und-tibbles.html#cb271-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb271-2"><a href="tidyverse-und-tibbles.html#cb271-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(change))</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 6
+##    index name         group points_t1 points_t2 change
+##    &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+##  1     8 Leonard of …     2       2.8       6.2  3.4  
+##  2     2 Samuel Vimes     2       3.2       5.8  2.60 
+##  3     4 Gytha Ogg        1       3.1       5.3  2.20 
+##  4     1 Agnes Nitt       1       4.8       2.8  2    
+##  5     5 Horace Worb…     3       4.2       5.8  1.60 
+##  6     7 Fred Colon       2       3.4       4.7  1.3  
+##  7     3 Esme Weathe…     1       3.5       4.8  1.30 
+##  8    10 Reg Shoe         2       4         5.2  1.2  
+##  9     6 Mustrum Rid…     3       4.7       5    0.300
+## 10     9 Havelock Ve…     2       4.2       4    0.2</code></pre>
+</div>
+<div id="mehrere-sortierschlüssel" class="section level3" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> mehrere Sortierschlüssel</h3>
+<p>Wenn wir der <code>arrange</code>-Funktion mehr als eine Variable übergeben, werden die zusätzlichen Variablen als zusätzliche Sortierschlüssel interpretiert.</p>
+<p>Wir könnten zum Beispiel aufsteigend nach der Gruppe und dann pro Gruppe absteigend nach der Veränderung sortieren wollen. Das könnte dann so aussehen:</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="tidyverse-und-tibbles.html#cb273-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb273-2"><a href="tidyverse-und-tibbles.html#cb273-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(group, <span class="fu">desc</span>(change))</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 6
+##    index name         group points_t1 points_t2 change
+##    &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+##  1     4 Gytha Ogg        1       3.1       5.3  2.20 
+##  2     1 Agnes Nitt       1       4.8       2.8  2    
+##  3     3 Esme Weathe…     1       3.5       4.8  1.30 
+##  4     8 Leonard of …     2       2.8       6.2  3.4  
+##  5     2 Samuel Vimes     2       3.2       5.8  2.60 
+##  6     7 Fred Colon       2       3.4       4.7  1.3  
+##  7    10 Reg Shoe         2       4         5.2  1.2  
+##  8     9 Havelock Ve…     2       4.2       4    0.2  
+##  9     5 Horace Worb…     3       4.2       5.8  1.60 
+## 10     6 Mustrum Rid…     3       4.7       5    0.300</code></pre>
+</div>
+<div id="auswahl-von-spalten" class="section level3" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Auswahl von Spalten</h3>
+<p>Es passiert öfter, dass wir eine oder mehrere Variablen nicht mehr benötigen und der Übersichtlichkeit halber aus dem Datensatz entfernen wollen.</p>
+<p>Das <code>tidyverse</code> bietet dafür mit der <code>select</code>-Funktion eine sehr intuitiv zugängliche Syntax an, die wir zur Auswahl und zum Ausschluss von Spalten nutzen können. Dazu pipen wir einfach wieder den Datensatz in die Funktion und listen diejenigen Variablen auf, die wir behalten können.</p>
+<p>In unserem Beispiel könnten wir uns überlegen, den Index und die beiden Punkt-Spalten nicht mehr zu benötigen. Wir geben also einfach den Dantensatz in die <code>select</code>-Funktion und listen die restlichen Variablen auf:</p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="tidyverse-und-tibbles.html#cb275-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb275-2"><a href="tidyverse-und-tibbles.html#cb275-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, group, change)</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 3
+##    name              group change
+##    &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;
+##  1 Agnes Nitt            1  2    
+##  2 Samuel Vimes          2  2.60 
+##  3 Esme Weatherwax       1  1.30 
+##  4 Gytha Ogg             1  2.20 
+##  5 Horace Worblehat      3  1.60 
+##  6 Mustrum Ridcully      3  0.300
+##  7 Fred Colon            2  1.3  
+##  8 Leonard of Quirm      2  3.4  
+##  9 Havelock Vetinari     2  0.2  
+## 10 Reg Shoe              2  1.2</code></pre>
+<!-- ### Ausschluss von Spalten -->
+<p>Hier funktioniert auch die schon bei der numerischen Vektor-Indizierung vorgestellte Methode zum Ausschluss von Werten. Durch <code>-</code>-eingeleitete Variablennamen lassen sich einfach ausschließen:</p>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="tidyverse-und-tibbles.html#cb277-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb277-2"><a href="tidyverse-und-tibbles.html#cb277-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>index, <span class="sc">-</span>points_t1, <span class="sc">-</span>points_t2) </span></code></pre></div>
+<pre><code>## # A tibble: 10 x 3
+##    name              group change
+##    &lt;chr&gt;             &lt;dbl&gt;  &lt;dbl&gt;
+##  1 Agnes Nitt            1  2    
+##  2 Samuel Vimes          2  2.60 
+##  3 Esme Weatherwax       1  1.30 
+##  4 Gytha Ogg             1  2.20 
+##  5 Horace Worblehat      3  1.60 
+##  6 Mustrum Ridcully      3  0.300
+##  7 Fred Colon            2  1.3  
+##  8 Leonard of Quirm      2  3.4  
+##  9 Havelock Vetinari     2  0.2  
+## 10 Reg Shoe              2  1.2</code></pre>
+<!-- ### Auswahl von Spalten -->
+<p>Wir können die Spalten-Auswahl auch benutzen, um den Datensatz für folgende Funktionen vorzubereiten. Ein Beispiel ist die schon aus der letzen Sitzung bekannte Funktion <code>cor</code>, die neben Vektoren auch einen Datensatz mit numerischen Spalten als Input versteht.</p>
+<p>Wir könnten uns zum Beispiel die Frage stellen, ob die Aufmerksamkeitswerte vor und nach dem Training miteinander korreliert sind.</p>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="tidyverse-und-tibbles.html#cb279-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb279-2"><a href="tidyverse-und-tibbles.html#cb279-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(points_t1, points_t2) <span class="sc">%&gt;%</span> </span>
+<span id="cb279-3"><a href="tidyverse-und-tibbles.html#cb279-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code></pre></div>
+<pre><code>##            points_t1  points_t2
+## points_t1  1.0000000 -0.6449612
+## points_t2 -0.6449612  1.0000000</code></pre>
+<!-- ### Auswahl von Spalten -->
+<p>Das <code>tidyverse</code> bietet wie gesagt viele features, die unser Leben als empirische Forscher leichter machen, darunter eine Reihe von <a href="https://tidyselect.r-lib.org/reference/language.html"><code>selection helpers</code></a>.</p>
+<p>Der erste, den wir hier verwenden wollen ist die <code>contains</code>-Funktion. Eine Funktion in der wir Teile von Spaltennamen suchen können, bei uns zum Beispiel <code>'points'</code>, um den Aufruf von eben ein bisschen zu vereinfachen:</p>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="tidyverse-und-tibbles.html#cb281-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb281-2"><a href="tidyverse-und-tibbles.html#cb281-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&#39;points&#39;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb281-3"><a href="tidyverse-und-tibbles.html#cb281-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code></pre></div>
+<pre><code>##            points_t1  points_t2
+## points_t1  1.0000000 -0.6449612
+## points_t2 -0.6449612  1.0000000</code></pre>
+<!-- ### Auswahl von Spalten -->
+<p>Der zweite helper, den wir ausprobieren ist <code>where</code>, ein helper, der uns erlaubt, mit Hilfe einer Funktion Spalten auszuwählen, auf die eine Bedingung zutrifft.</p>
+<p>In unserem Beispiel wollen wir alle numerischen Variablen miteinander korrelieren, indem wir <code>where</code> mit <code>is.numeric</code> kombinieren:</p>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="tidyverse-und-tibbles.html#cb283-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb283-2"><a href="tidyverse-und-tibbles.html#cb283-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> </span>
+<span id="cb283-3"><a href="tidyverse-und-tibbles.html#cb283-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code></pre></div>
+<pre><code>##                 index      group   points_t1
+## index      1.00000000  0.4227600 -0.06127845
+## group      0.42276002  1.0000000  0.28205162
+## points_t1 -0.06127845  0.2820516  1.00000000
+## points_t2  0.24860383  0.4354397 -0.64496117
+## change    -0.32568808 -0.3039316 -0.65762107
+##            points_t2     change
+## index      0.2486038 -0.3256881
+## group      0.4354397 -0.3039316
+## points_t1 -0.6449612 -0.6576211
+## points_t2  1.0000000  0.4254564
+## change     0.4254564  1.0000000</code></pre>
+</div>
+<div id="logische-auswahl-von-zeilen" class="section level3" number="5.4.4">
+<h3><span class="header-section-number">5.4.4</span> logische Auswahl von Zeilen</h3>
+<p>Um Zeilen aus einem Datensatz auszuwählen gibt es sowohl die Möglichkeit über <code>filter</code> mit logischen Angaben Zielen auszuwählen, als auch mit <code>slice</code> eine numerische Auswahl zu treffen.</p>
+<p>Logische Indizierung kann praktisch sein, wenn man die Einträge sehen möchte, die zum Beispiel unterdurchschnittlich viel Veränderung gezeigt haben. Das könnte so aussehen:</p>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="tidyverse-und-tibbles.html#cb285-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb285-2"><a href="tidyverse-und-tibbles.html#cb285-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(change <span class="sc">&lt;</span> <span class="fu">mean</span>(change))</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 6
+##   index name          group points_t1 points_t2 change
+##   &lt;int&gt; &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+## 1     3 Esme Weather…     1       3.5       4.8  1.30 
+## 2     5 Horace Worbl…     3       4.2       5.8  1.60 
+## 3     6 Mustrum Ridc…     3       4.7       5    0.300
+## 4     7 Fred Colon        2       3.4       4.7  1.3  
+## 5     9 Havelock Vet…     2       4.2       4    0.2  
+## 6    10 Reg Shoe          2       4         5.2  1.2</code></pre>
+</div>
+<div id="numerische-auswahl-von-zeilen" class="section level3" number="5.4.5">
+<h3><span class="header-section-number">5.4.5</span> numerische Auswahl von Zeilen</h3>
+<p>Zusätzlich zur logischen Indizierung bietet das <code>tidyverse</code> mit der <code>slice</code>-Funktion auch die Möglichkeit numerisch zu indizieren.</p>
+<p>Das könnte in unserem Beispiel exemplarisch hilfreich sein, um die drei Versuchspersonen ausgeben zu lassen, die die größte Veränderung gezeigt haben.</p>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="tidyverse-und-tibbles.html#cb287-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="sc">%&gt;%</span> </span>
+<span id="cb287-2"><a href="tidyverse-und-tibbles.html#cb287-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(change)) <span class="sc">%&gt;%</span> </span>
+<span id="cb287-3"><a href="tidyverse-und-tibbles.html#cb287-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 6
+##   index name          group points_t1 points_t2 change
+##   &lt;int&gt; &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+## 1     8 Leonard of Q…     2       2.8       6.2   3.4 
+## 2     2 Samuel Vimes      2       3.2       5.8   2.60
+## 3     4 Gytha Ogg         1       3.1       5.3   2.20</code></pre>
+<!-- ## Hausaufgabe -->
+<!-- ### Hausaufgabe für die nächste Woche -->
+<!-- Erstellen Sie -->
+<!-- -   einen Vekor mit dem Namen `test`, mit auf 2 Nachkommastellen gerundeten 50 Werten, die zufällig aus der $N(10,4)$ - Verteilung gezogen werden sollen -->
+<!-- -   einen Vektor mit 50 Werten, die jeweils aus 42 Ziehungen mit Zurücklegen aus einer Urne mit 50 Kugeln, wobei 21 Kugeln als Treffer und 29 Kugeln als Misserfolg gelten sollen, gewonnen werden sollen -->
+<!-- -   einen Faktor, der Das Geschlecht der VP als `'m'`, `'f'` und `'o'` zufällig codiert, dabei sollen die ersten beiden insgesamt mit 90% Wahrscheinlichkeit aber gleichwahrscheinlich gezogen werden. -->
+<!-- -   einen Faktor, der die Versuchspersonen nach dem Vektor `test` mit Hilfe eines Median-Splits in zwei Gruppen aufteilt. -->
+<!-- Bestimmen Sie anschließend das Maximum, das Minimum, den Range, den Median, die Quartile, den Mittelwert, die Standardabweichung, die korrigierte Stichprobenvarianz und die unkorrigierte Stichprobenvarianz der ersten ZVA. -->
+<!-- Bestimmen Sie mit Hilfe der Faktoren gruppenweise Median, Mittelwert und Standardabweichung für den zweiten Vektor. -->
+<!-- Bestimmen Sie zuletzt die Kovarianz und die Korrelation der beiden ZVA. -->
+</div>
+</div>
+<div id="vorlesung" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Vorlesung</h2>
+<div id="skript-aus-der-vorlesung" class="section level3" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Skript aus der Vorlesung:</h3>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="tidyverse-und-tibbles.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb289-2"><a href="tidyverse-und-tibbles.html#cb289-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-3"><a href="tidyverse-und-tibbles.html#cb289-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,</span>
+<span id="cb289-4"><a href="tidyverse-und-tibbles.html#cb289-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">201</span><span class="sc">:</span><span class="dv">300</span>)</span>
+<span id="cb289-5"><a href="tidyverse-und-tibbles.html#cb289-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-6"><a href="tidyverse-und-tibbles.html#cb289-6" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,</span>
+<span id="cb289-7"><a href="tidyverse-und-tibbles.html#cb289-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">y =</span> <span class="dv">201</span><span class="sc">:</span><span class="dv">300</span>)</span>
+<span id="cb289-8"><a href="tidyverse-und-tibbles.html#cb289-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-9"><a href="tidyverse-und-tibbles.html#cb289-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">x =</span> <span class="dv">1</span>, </span>
+<span id="cb289-10"><a href="tidyverse-und-tibbles.html#cb289-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, </span>
+<span id="cb289-11"><a href="tidyverse-und-tibbles.html#cb289-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">z =</span> <span class="st">&#39;10&#39;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 3
+##       x     y z    
+##   &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;
+## 1     1     1 10   
+## 2     1     2 10   
+## 3     1     3 10</code></pre>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="tidyverse-und-tibbles.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(iris)</span></code></pre></div>
+<pre><code>## # A tibble: 150 x 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
+##  1          5.1         3.5          1.4         0.2
+##  2          4.9         3            1.4         0.2
+##  3          4.7         3.2          1.3         0.2
+##  4          4.6         3.1          1.5         0.2
+##  5          5           3.6          1.4         0.2
+##  6          5.4         3.9          1.7         0.4
+##  7          4.6         3.4          1.4         0.3
+##  8          5           3.4          1.5         0.2
+##  9          4.4         2.9          1.4         0.2
+## 10          4.9         3.1          1.5         0.1
+## # … with 140 more rows, and 1 more variable:
+## #   Species &lt;fct&gt;</code></pre>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="tidyverse-und-tibbles.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(iris)</span></code></pre></div>
+<pre><code>## Rows: 150
+## Columns: 5
+## $ Sepal.Length &lt;dbl&gt; 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, …
+## $ Sepal.Width  &lt;dbl&gt; 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, …
+## $ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, …
+## $ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, …
+## $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa…</code></pre>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="tidyverse-und-tibbles.html#cb295-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> iris</span>
+<span id="cb295-2"><a href="tidyverse-und-tibbles.html#cb295-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb295-3"><a href="tidyverse-und-tibbles.html#cb295-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">mutate</span>(a, <span class="at">new_column =</span> <span class="dv">1</span>)</span>
+<span id="cb295-4"><a href="tidyverse-und-tibbles.html#cb295-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb295-5"><a href="tidyverse-und-tibbles.html#cb295-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb295-6"><a href="tidyverse-und-tibbles.html#cb295-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">id =</span> <span class="fu">sample</span>(letters, <span class="dv">20</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb295-7"><a href="tidyverse-und-tibbles.html#cb295-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">spr_iq =</span> <span class="fu">sample</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">115</span>, <span class="dv">20</span>, T),</span>
+<span id="cb295-8"><a href="tidyverse-und-tibbles.html#cb295-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">log_iq =</span> <span class="fu">sample</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">115</span>, <span class="dv">20</span>, T),</span>
+<span id="cb295-9"><a href="tidyverse-und-tibbles.html#cb295-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">smokes =</span> <span class="fu">sample</span>(<span class="fu">c</span>(T,F), <span class="dv">20</span>, T))</span>
+<span id="cb295-10"><a href="tidyverse-und-tibbles.html#cb295-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb295-11"><a href="tidyverse-und-tibbles.html#cb295-11" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb295-12"><a href="tidyverse-und-tibbles.html#cb295-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ges_iq =</span> (spr_iq <span class="sc">+</span> log_iq) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb295-13"><a href="tidyverse-und-tibbles.html#cb295-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(ges_iq) <span class="sc">%&gt;%</span> </span>
+<span id="cb295-14"><a href="tidyverse-und-tibbles.html#cb295-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ges_iq <span class="sc">&gt;</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb295-15"><a href="tidyverse-und-tibbles.html#cb295-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&#39;iq&#39;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb295-16"><a href="tidyverse-und-tibbles.html#cb295-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code></pre></div>
+<pre><code>##            spr_iq     log_iq    ges_iq
+## spr_iq  1.0000000 -0.6533949 0.1934518
+## log_iq -0.6533949  1.0000000 0.6163166
+## ges_iq  0.1934518  0.6163166 1.0000000</code></pre>
+<p>Als ergänzende Nebenbemerkung:</p>
+<p>mit <code>skim</code> aus dem <code>skimr</code>-Paket lässt sich der Überblick noch schöner gestalten:</p>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="tidyverse-und-tibbles.html#cb297-1" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(iris)</span></code></pre></div>
+<table style="width: auto;" class="table table-condensed">
+<caption>
+<span id="tab:unnamed-chunk-108">Tab. 5.1: </span>Data summary
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Name
+</td>
+<td style="text-align:left;">
+iris
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of rows
+</td>
+<td style="text-align:left;">
+150
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of columns
+</td>
+<td style="text-align:left;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+_______________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Column type frequency:
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+factor
+</td>
+<td style="text-align:left;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+________________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Group variables
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:left;">
+ordered
+</th>
+<th style="text-align:right;">
+n_unique
+</th>
+<th style="text-align:left;">
+top_counts
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Species
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+set: 50, ver: 50, vir: 50
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd
+</th>
+<th style="text-align:right;">
+p0
+</th>
+<th style="text-align:right;">
+p25
+</th>
+<th style="text-align:right;">
+p50
+</th>
+<th style="text-align:right;">
+p75
+</th>
+<th style="text-align:right;">
+p100
+</th>
+<th style="text-align:left;">
+hist
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Sepal.Length
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5.84
+</td>
+<td style="text-align:right;">
+0.83
+</td>
+<td style="text-align:right;">
+4.3
+</td>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+5.80
+</td>
+<td style="text-align:right;">
+6.4
+</td>
+<td style="text-align:right;">
+7.9
+</td>
+<td style="text-align:left;">
+▆▇▇▅▂
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sepal.Width
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3.06
+</td>
+<td style="text-align:right;">
+0.44
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:right;">
+2.8
+</td>
+<td style="text-align:right;">
+3.00
+</td>
+<td style="text-align:right;">
+3.3
+</td>
+<td style="text-align:right;">
+4.4
+</td>
+<td style="text-align:left;">
+▁▆▇▂▁
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Petal.Length
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3.76
+</td>
+<td style="text-align:right;">
+1.77
+</td>
+<td style="text-align:right;">
+1.0
+</td>
+<td style="text-align:right;">
+1.6
+</td>
+<td style="text-align:right;">
+4.35
+</td>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+6.9
+</td>
+<td style="text-align:left;">
+▇▁▆▇▂
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Petal.Width
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1.20
+</td>
+<td style="text-align:right;">
+0.76
+</td>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:right;">
+0.3
+</td>
+<td style="text-align:right;">
+1.30
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:left;">
+▇▁▇▅▃
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Das ist nicht ganz richtig, aber für hier ausreichend nah genug an der richtigen Aussage.<a href="tidyverse-und-tibbles.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="elementare-datenverarbeitung.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="literatur-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["EDV1_WS20.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
