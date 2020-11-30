@@ -1,0 +1,2459 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Psy\_B\_11: EDV I - Einheit 2},
+  pdfauthor={Max Brede},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{Psy\_B\_11: EDV I - Einheit 2}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{elementare Datenverarbeitung}
+\author{Max Brede}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{vorwort}{%
+\chapter{Vorwort}\label{vorwort}}
+
+Dieses mit \texttt{bookdown} erstellte Dokument ist das über das Wintersemester 2020 hinweg wachsende Skript zur Übung ``PSY\_B\_11-2: Computerunterstützte Datenanalyse I'' der CAU zu Kiel.
+
+\hypertarget{lehrplan}{%
+\chapter{Lehrplan}\label{lehrplan}}
+
+\hypertarget{semesterplan}{%
+\section{Semesterplan}\label{semesterplan}}
+
+\hypertarget{uxfcbungsformat}{%
+\section{Übungsformat}\label{uxfcbungsformat}}
+
+Die Übung soll zur Hälfte in 45-minütigen Sitzungen im Vorlesungsformat zur Vorstellung der Funktionen und zur anderen Hälfte als 45-minütige praktische Übung stattfinden.
+Es wird pro Übungs-Sitzung ein Übungszettel ausgegeben, der mit Hilfe der in der Zugehörigen Vorlesung besprochenen Funktionen bearbeitet werden können soll.
+Diese Zettel sollen nach der jeweiligen Vorlesung für die Übungen vorbereitet werden, in denen der Zettel dann besprochen und mögliche Fragen geklärt werden.
+Nach den Übungssitzungen haben die Studierenden dann eine Woche Zeit, zusätzliche Hausaufgaben zu bearbeiten.
+
+Eine Ausnahme von diesem Ablauf ist die erste Sitzung, in der organisatorisches und Grundlagen in 90 minütigem Vorlesungsstil besprochen werden sollen. Auch nach dieser Sitzung werden aber Übungszettel und Hausaufgaben ausgegeben.
+
+\hypertarget{lehrziele-fuxfcr-jede-sitzung}{%
+\section{Lehrziele für jede Sitzung}\label{lehrziele-fuxfcr-jede-sitzung}}
+
+Die Studierenden können nach dem Absolvieren der Übung\ldots{}
+
+\hypertarget{einheit-1}{%
+\subsubsection*{Einheit 1}\label{einheit-1}}
+\addcontentsline{toc}{subsubsection}{Einheit 1}
+
+\begin{itemize}
+\tightlist
+\item
+  Vor- und Nachteile von R und RStudio nennen und diese installieren.
+\item
+  erklären was Funktionen und was Argumente sind.
+\item
+  die Hilfe benutzen.
+\item
+  das Environment von R benutzen um Objekte anzulegen und zu löschen.
+\end{itemize}
+
+\hypertarget{einheit-2}{%
+\subsubsection*{Einheit 2}\label{einheit-2}}
+\addcontentsline{toc}{subsubsection}{Einheit 2}
+
+\begin{itemize}
+\tightlist
+\item
+  Vektoren erstellen, tranformieren und indizieren.
+\item
+  verschiedene Datenformate in R erstellen, benutzen und in einander überführen.
+\end{itemize}
+
+\hypertarget{einheit-3}{%
+\subsubsection*{Einheit 3}\label{einheit-3}}
+\addcontentsline{toc}{subsubsection}{Einheit 3}
+
+\begin{itemize}
+\tightlist
+\item
+  Pakete installieren und benutzen.
+\item
+  mit Hilfe des ``\texttt{tidyverse}'' Datensätze erstellen, ergänzen, sortieren und indizieren.
+\end{itemize}
+
+\hypertarget{einheit-4}{%
+\subsubsection*{Einheit 4}\label{einheit-4}}
+\addcontentsline{toc}{subsubsection}{Einheit 4}
+
+\begin{itemize}
+\tightlist
+\item
+  Faktoren erstellen.
+\item
+  deskriptive Kennwerte berechnen.
+\item
+  Daten auf Gruppenebene aggregieren.
+\end{itemize}
+
+\hypertarget{einheit-5}{%
+\subsubsection*{Einheit 5}\label{einheit-5}}
+\addcontentsline{toc}{subsubsection}{Einheit 5}
+
+\begin{itemize}
+\tightlist
+\item
+  Daten auf Gruppenebene noch besser aggregieren.
+\item
+  Häufigkeiten auszählen und tabellarisch darstellen.
+\item
+  Datensätze aus verschiedenen Formaten einlesen.
+\end{itemize}
+
+\hypertarget{einheit-6}{%
+\subsubsection*{Einheit 6}\label{einheit-6}}
+\addcontentsline{toc}{subsubsection}{Einheit 6}
+
+\begin{itemize}
+\tightlist
+\item
+  eine Anzahl von Grafiken erstellen.
+\end{itemize}
+
+\hypertarget{einheit-7}{%
+\subsubsection*{Einheit 7}\label{einheit-7}}
+\addcontentsline{toc}{subsubsection}{Einheit 7}
+
+\begin{itemize}
+\tightlist
+\item
+  kompliziertere Grafiken erstellen.
+\end{itemize}
+
+\hypertarget{einheit-8}{%
+\subsubsection*{Einheit 8}\label{einheit-8}}
+\addcontentsline{toc}{subsubsection}{Einheit 8}
+
+\begin{itemize}
+\tightlist
+\item
+  die Funktionsschreibweise lesen und anwenden.
+\item
+  erfolfreich an der Klausur teilnehmen.
+\end{itemize}
+
+\hypertarget{pruxfcfungsleistung}{%
+\section{Prüfungsleistung}\label{pruxfcfungsleistung}}
+
+Die Studierenden \textbf{müssen} während des Semesters die nach den Übungssitzungen ausgegebenen Hausaufgaben innerhalb einer Woche sinnvoll bearbeitet abgeben.
+
+Mit maximal einer nicht sinnvoll bearbeiteten Serie werden die Studierenden zur Klausur am Ende des Semesters zugelassen.
+
+\hypertarget{vorlesung-i---rste-schritte}{%
+\chapter{Vorlesung I - Rste Schritte}\label{vorlesung-i---rste-schritte}}
+
+\hypertarget{organisatorisches}{%
+\section{Organisatorisches}\label{organisatorisches}}
+
+\hypertarget{semesterplan-1}{%
+\subsection*{Semesterplan}\label{semesterplan-1}}
+\addcontentsline{toc}{subsection}{Semesterplan}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}{l|l|l|l}
+\hline
+Einheit & Vorlesung & Übungswoche & Thema\\
+\hline
+1 & 2.11.20 & keine Übung & Grundlagen und Begriffe\\
+\hline
+2 & 16.11.20 & KW 48 & Vektoren und Indizierung\\
+\hline
+ &  &  & Datenformate erstellen und transformieren\\
+\hline
+3 & 30.11.20 & KW 50 & Pakete installieren und benutzen\\
+\hline
+ &  &  & Datensätze erstellen und ergänzen können\\
+\hline
+ &  &  & Datensätze sortieren und indizieren können\\
+\hline
+4 & 14.12.20 & KW 1 & Faktoren\\
+\hline
+ &  &  & deskriptive Kennwerte\\
+\hline
+ &  &  & Aggregation I\\
+\hline
+5 & 11.01.21 & KW 3 & Aggregation II\\
+\hline
+ &  &  & In- und Export von Datensätzen\\
+\hline
+6 & 25.01.21 & KW 5 & Grafische Darstellungen I\\
+\hline
+7 & 08.02.21 & KW 7 & Grafische Darstellungen II\\
+\hline
+8 & 22.02.21 & keine Übung & Puffer\\
+\hline
+ &  &  & Probeklausur\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{uxfcbungsablauf}{%
+\subsection*{Übungsablauf}\label{uxfcbungsablauf}}
+\addcontentsline{toc}{subsection}{Übungsablauf}
+
+Die Übung wird zur Hälfte als Vorlesung, zur anderen Hälfte in Kleingruppen abgehalten.
+
+Die Daten sind im Kalender und im Semesterplan im Olat ersichtlich.
+
+\hypertarget{pruxfcfungsleistung-1}{%
+\subsection*{Prüfungsleistung}\label{pruxfcfungsleistung-1}}
+\addcontentsline{toc}{subsection}{Prüfungsleistung}
+
+Die Prüfungsleistung in dieser Veranstaltung besteht aus:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Dem \emph{regelmäßigen Bearbeiten} und \emph{Bestehen} von Hausaufgaben. Diese werden über das OLAT ausgeteilt und abgegeben, zu jeder Veranstaltung wird eine neue Serie herausgegeben. Das Bestehen der Hausaufgaben ist nötig, um zur Klausur zugelassen zu werden.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Als \emph{Bestanden} gilt eine Serie, wenn alle Aufgaben \textbf{sinnvoll} bearbeitet wurden.
+  \item
+    Unter \emph{regelmäßigem Bearbeiten} versteht sich das Bestehen aller Serien \textbf{mit einer Ausnahme}. \medskip  
+  \end{itemize}
+\item
+  Im Klausurzeitraum findet an einem Tag eine praktische Prüfung statt.
+\end{enumerate}
+
+\hypertarget{einfuxfchrung}{%
+\section{Einführung}\label{einfuxfchrung}}
+
+\hypertarget{rste-schritte}{%
+\subsection*{Rste Schritte}\label{rste-schritte}}
+\addcontentsline{toc}{subsection}{Rste Schritte}
+
+Diese Veranstaltung und das zugehörige Material sollen Ihnen einen Einstieg in das computergestützte Aufbereiten und Auswerten von empirischen Daten bieten.
+Dazu werden wir auf die von ihren Autoren als `software environment for statistical computing and graphics' bezeichnete, freie Umgebung R zurückgreifen.
+
+\hypertarget{wozu-brauche-ich-das}{%
+\subsection*{Wozu brauche ich das?}\label{wozu-brauche-ich-das}}
+\addcontentsline{toc}{subsection}{Wozu brauche ich das?}
+
+\begin{center}\includegraphics[width=0.8\linewidth]{imgs/relevanz} \end{center}
+
+\hypertarget{warum-r}{%
+\subsection*{Warum R ?}\label{warum-r}}
+\addcontentsline{toc}{subsection}{Warum R ?}
+
+\hypertarget{und-nicht-spss}{%
+\subsubsection*{(\ldots und nicht SPSS\ldots)}\label{und-nicht-spss}}
+\addcontentsline{toc}{subsubsection}{(\ldots und nicht SPSS\ldots)}
+
+\begin{table}[H]
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+  & SPSS & R\\
+\hline
+ &  & \\
+\hline
+Pro & einfache Bedienung & das `CRAN` (Comprehensive R Archive Network)\\
+\hline
+ & weit verbreitet & kostenlos\\
+\hline
+ &  & macht was angewiesen ist\\
+\hline
+ &  & \\
+\hline
+Contra & kann nicht alles & etwas Gewöhnung notwendig\\
+\hline
+ & relativ kostenintensive Lizenzen & \\
+\hline
+ & nimmt vieles ab & \\
+\hline
+ & nicht beliebig erweiterbar & \\
+\hline
+\end{tabular}
+\end{table}
+
+Aber die viel wichtigeren Argumente:
+R kann \textbf{Alles}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{imgs/drugs} \end{center}
+
+R macht \textbf{Spass}
+
+\begin{center}\includegraphics[width=0.45\linewidth]{imgs/thumbnail} \end{center}
+
+\hypertarget{literatur}{%
+\subsection*{Literatur}\label{literatur}}
+\addcontentsline{toc}{subsection}{Literatur}
+
+Die Veranstaltung orientiert sich an:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \citet{wollschlaegerKompaktSchnelleEinstieg2016} . R kompakt.(Link aus dem Uni-Netz).
+\item
+  \citet{grolemundDataScience} . R for Data Science (Link).
+\end{enumerate}
+
+\hypertarget{installation-verwendung}{%
+\subsection*{Installation \& Verwendung}\label{installation-verwendung}}
+\addcontentsline{toc}{subsection}{Installation \& Verwendung}
+
+Es wird die Verwendung der grafischen Benutzeroberfläche \href{http://www.rstudio.com}{RStudio} empfohlen.
+
+Beachten Sie, dass für die Verwendung von RStudio zuvor eine Basisinstallation von \href{http://cran.r-project.org}{R} erfolgen muss:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  (R) herunterladen und installieren.
+\item
+  (RStudio) herunterladen und installieren.
+\end{enumerate}
+
+\hypertarget{benutzeroberfluxe4che-rstudio}{%
+\subsection*{Benutzeroberfläche RStudio}\label{benutzeroberfluxe4che-rstudio}}
+\addcontentsline{toc}{subsection}{Benutzeroberfläche RStudio}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth,height=\textheight]{imgs/RStudio_003.jpg}
+\caption{Benutzeroberfläche von RStudio. Oben links: Editor; unten links: Konsole; oben rechts: Environment bzw. History; unten rechts: Files, Plots, Help, etc.}
+\end{figure}
+
+\hypertarget{allgemeine-hinweise}{%
+\subsection*{Allgemeine Hinweise}\label{allgemeine-hinweise}}
+\addcontentsline{toc}{subsection}{Allgemeine Hinweise}
+
+\begin{itemize}
+\tightlist
+\item
+  Verwenden Sie die Konsole (unten links) nur für einzeilige Berechnungen beim ``Ausprobieren''
+\item
+  Verwenden Sie stets den Editor (oben links), um mehrzeilige Berechnungen direkt in ein Skript zu schreiben
+\item
+  Kommentieren Sie Ihren Code ausreichend und sinnvoll mit Hilfe des \texttt{\#}-Zeichens
+\item
+  Speichern Sie Ihr Skript unter einem sinnvollen Namen in einem sinnvoll benannten Verzeichnis ab
+\end{itemize}
+
+\begin{itemize}
+\tightlist
+\item
+  Speichern Sie regelmäßig mit Strg+S zwischen
+\item
+  Eine einzelne Skript-Zeile (diejenige, in der sich der Cursor befindet) oder zuvor markierter Code lassen sich mit Strg+Enter ausführen
+\item
+  In der Konsole bricht ESC die Eingabe ab
+\end{itemize}
+
+\hypertarget{zum-besseren-verstuxe4ndnis}{%
+\subsection*{Zum besseren Verständnis}\label{zum-besseren-verstuxe4ndnis}}
+\addcontentsline{toc}{subsection}{Zum besseren Verständnis}
+
+In diesem Skript enthalten die grau hinterlegten Zeilen R-Input, die weiß hinterlegten Zeilen den R-Output. Ein ganz einfaches Beispiel zum Ausprobieren: Die simple Berechnung von 1 + 1.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{+} \DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\hypertarget{ausdruxfccke-in-der-r-konsole}{%
+\subsection*{Ausdrücke in der R-Konsole}\label{ausdruxfccke-in-der-r-konsole}}
+\addcontentsline{toc}{subsection}{Ausdrücke in der R-Konsole}
+
+Anweisungen in R funktionieren grundsätzlich über das Ausführen von Ausdrücken. Dabei werden Ausdrücke entweder durch Semikolons oder Zeilenumbrüche beendet.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{+} \DecValTok{1}\NormalTok{; }\DecValTok{2} \SpecialCharTok{+} \DecValTok{2}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{+}\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{+}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+\hypertarget{kommentare}{%
+\subsection*{Kommentare}\label{kommentare}}
+\addcontentsline{toc}{subsection}{Kommentare}
+
+R bietet außerdem die Möglichkeit, im Code Anmerkungen zu machen, die beim Ausführen ignoriert werden. Diese werden mit einem \texttt{\#}-Symbol eingeleitet.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{+} \DecValTok{1} \DocumentationTok{\#\#\# +1 +1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Dies ist ein Kommentar}
+\end{Highlighting}
+\end{Shaded}
+
+Nutzen Sie Kommentare innerhalb Ihrer Skripte, um Arbeitsschritte kenntlich zu machen und zu erklären. Die übersichtliche Gestaltung Ihrer Skripte ist von wirklich großem Vorteil bei der Arbeit mit R. Dies kann nicht oft genug betont werden.
+
+\hypertarget{grundlegende-rechenoperationen}{%
+\section{Grundlegende Rechenoperationen}\label{grundlegende-rechenoperationen}}
+
+\hypertarget{addition-subtraktion}{%
+\subsection*{Addition, Subtraktion}\label{addition-subtraktion}}
+\addcontentsline{toc}{subsection}{Addition, Subtraktion}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2} \SpecialCharTok{+} \DecValTok{3}  
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{28} \SpecialCharTok{{-}} \DecValTok{5}  
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 23
+\end{verbatim}
+
+\hypertarget{multiplikation-division}{%
+\subsection*{Multiplikation, Division}\label{multiplikation-division}}
+\addcontentsline{toc}{subsection}{Multiplikation, Division}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2} \SpecialCharTok{*} \DecValTok{21}   
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 42
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{92} \SpecialCharTok{/} \DecValTok{4}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 23
+\end{verbatim}
+
+\hypertarget{rechenregeln}{%
+\subsection*{Rechenregeln}\label{rechenregeln}}
+\addcontentsline{toc}{subsection}{Rechenregeln}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{+}\DecValTok{1}\SpecialCharTok{*}\DecValTok{1}\SpecialCharTok{+}\DecValTok{1}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{+}\DecValTok{1}\NormalTok{)}\SpecialCharTok{+}\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+Wie man sieht, befolgt R die Punkt-vor-Strich-Regel und berücksichtigt Klammerung.
+
+\hypertarget{potenz-quadratwurzel-squareroot-betrag-absolute}{%
+\subsection*{Potenz, Quadratwurzel (``squareroot''), Betrag (``absolute'')}\label{potenz-quadratwurzel-squareroot-betrag-absolute}}
+\addcontentsline{toc}{subsection}{Potenz, Quadratwurzel (``squareroot''), Betrag (``absolute'')}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{3}\SpecialCharTok{\^{}}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sqrt}\NormalTok{(}\DecValTok{9}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{abs}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{42}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 42
+\end{verbatim}
+
+\hypertarget{runden}{%
+\subsection*{Runden}\label{runden}}
+\addcontentsline{toc}{subsection}{Runden}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pi}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.141593
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(pi)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(pi, }\AttributeTok{digits=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.14
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(pi, }\AttributeTok{digits=}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.142
+\end{verbatim}
+
+\hypertarget{aufgabe}{%
+\subsection*{Aufgabe}\label{aufgabe}}
+\addcontentsline{toc}{subsection}{Aufgabe}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(pi, }\AttributeTok{digits =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{*} \DecValTok{3} \DocumentationTok{\#\#\# + 5}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{was-kommt-raus}{%
+\subsubsection*{Was kommt raus?}\label{was-kommt-raus}}
+\addcontentsline{toc}{subsubsection}{Was kommt raus?}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  \texttt{pi}
+\item
+  \texttt{14}
+\item
+  eine Fehlermeldung
+\item
+  \texttt{9}
+\item
+  \texttt{NULL}
+\end{enumerate}
+
+\hypertarget{ausdruxfccke-funktionen-argumente}{%
+\section{Ausdrücke, Funktionen, Argumente}\label{ausdruxfccke-funktionen-argumente}}
+
+\hypertarget{funktionen-argumente}{%
+\subsection*{Funktionen \& Argumente}\label{funktionen-argumente}}
+\addcontentsline{toc}{subsection}{Funktionen \& Argumente}
+
+In R werden sehr häufig \emph{Funktionen} verwendet. Diese repräsentieren eine Reihe von Anweisungen, die beim Aufrufen mit spezifischen Parametern ausgeführt werden sollen. Diese Parameter werde in Form von \emph{Argumenten} übergeben.
+Beispielsweise enthält die Funktion \texttt{round()} die nötigen Anweisungen, um eine Zahl zu runden. Hierfür erwartet \texttt{round()} die zu rundende Zahl und die Anzahl an Nachkommastellen auf die zu runden ist.
+Man schreibt immer \emph{Funktionsname}(\emph{Argumentliste}). Bei Funktionen müssen \emph{immer} runde Klammern vorhanden sein, auch wenn keine einzelnen Argumente vorgegeben werden.
+
+Es gibt \emph{obligatorische Argumente}, ohne deren Übergabe das Aufrufen einer Funktion zu einer Fehlermeldung führt:
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(pi)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{() }\DocumentationTok{\#\#\# Funktionsaufruf ohne Argument}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error in eval(expr, envir, enclos): 0 arguments passed to 'round' which requires 1 or 2 arguments
+\end{verbatim}
+
+\ldots{} und \emph{optionale Argumente}:
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(pi, }\AttributeTok{digits=}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.142
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(pi, }\AttributeTok{digits=}\NormalTok{pi)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.142
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(pi, }\AttributeTok{digits=}\DecValTok{15}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.141593
+\end{verbatim}
+
+Gibt man den Namen eines Arguments nicht an, entscheidet die Position in der Liste über die Interpretation des Arguments durch R. \textbf{Achtung: Fehlerquelle!}
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{42}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.024
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{42}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\hypertarget{objekte}{%
+\section{Objekte}\label{objekte}}
+
+\emph{Objekte} sind für den späteren Gebrauch mit einem Namen versehene und im Arbeitsspeicher abgelegte Ergebnisse von Ausdrücken.
+Dabei ist Objekt der Überbegriff für eine Vielzahl von möglichen Datenstrukturen.
+
+Ein paar Beispiele für Datenstrukturen in R:
+
+\begin{itemize}
+\tightlist
+\item
+  eindimensionale Vektoren (vector)
+\item
+  mehrdimensionale Matrizen (matrix)
+\item
+  Funktionen(function)
+\end{itemize}
+
+\hypertarget{objekte-benennen}{%
+\subsection*{Objekte benennen}\label{objekte-benennen}}
+\addcontentsline{toc}{subsection}{Objekte benennen}
+
+Wählen Sie kurze, aber aussagekräftige Objektnamen! Objektnamen dürfen dabei enthalten: Buchstaben, Zahlen, Punkte, Unterstriche
+
+\textbf{Achtung:}
+
+\begin{itemize}
+\tightlist
+\item
+  Immer mit einem Buchstaben beginnen
+\item
+  Groß-/Kleinschreibung ist relevant
+\item
+  Keine anderen Sonderzeichen
+\item
+  Keine durch R reservierte Namen von Funktionen, Konstanten, etc. (z.B. ``mean'', ``pi'', ``if'', etc.) (im Zweifel Überprüfen mit \texttt{exists()})
+\end{itemize}
+
+Hier nochmal der nachdrückliche Hinweis: Tun Sie sich selbst den Gefallen, Ihre Objekte eindeutig und nachvollziehbar zu benennen!
+
+\hypertarget{zuweisungen-an-objekte}{%
+\subsection*{Zuweisungen an Objekte}\label{zuweisungen-an-objekte}}
+\addcontentsline{toc}{subsection}{Zuweisungen an Objekte}
+
+Ergebnisse von Ausdrücken können benannten Objekten zugewiesen werden.
+
+Dabei sind folgende Ausdrücke äquivalent:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{firstObject }\OtherTok{=} \DecValTok{42}
+\DecValTok{42} \OtherTok{{-}\textgreater{}}\NormalTok{ firstObject}
+\NormalTok{firstObject }\OtherTok{\textless{}{-}} \DecValTok{42}
+\end{Highlighting}
+\end{Shaded}
+
+Die letzte Möglichkeit stellt dabei die Beste im Hinblick auf Übersichtlichkeit und Eindeutigkeit dar.
+
+\hypertarget{verwenden-von-objekten}{%
+\subsection*{Verwenden von Objekten:}\label{verwenden-von-objekten}}
+\addcontentsline{toc}{subsection}{Verwenden von Objekten:}
+
+Die Objektnamen können dann synonym zu ihrem Inhalt verwendet werden.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{firstObject }\SpecialCharTok{+} \DecValTok{1}\NormalTok{; }\DecValTok{42} \SpecialCharTok{+} \DecValTok{1}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 43
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 43
+\end{verbatim}
+
+\hypertarget{objekte-ausgeben}{%
+\subsection*{Objekte ausgeben}\label{objekte-ausgeben}}
+\addcontentsline{toc}{subsection}{Objekte ausgeben}
+
+Um diese Ausgabe nachzuholen gibt es folgende Möglichkeiten:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(firstObject)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 42
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{firstObject}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 42
+\end{verbatim}
+
+Diese beiden Versionen sind faktisch dieselbe, da das einfache Aufrufen eines Variablennamens implizit als ein Aufruf von \texttt{print()} interpretiert wird.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(object2 }\OtherTok{\textless{}{-}}\NormalTok{ firstObject}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1764
+\end{verbatim}
+
+Bei Setzen eines Befehls in Klammern wird die durch ihn ausgelöste Änderung ausgegeben, im Beispiel die Zuweisung des Ergebnisses zum neuen Objekt \texttt{object2}.
+
+Diese Methode ist eine gute Variante, Zwischenergebnisse regelmäßig zu kontrollieren.
+
+\hypertarget{objekte-anzeigen-lassen}{%
+\subsection*{Objekte anzeigen lassen}\label{objekte-anzeigen-lassen}}
+\addcontentsline{toc}{subsection}{Objekte anzeigen lassen}
+
+Alle Objekte im Workspace anzeigen lassen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ls}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "a"           "firstObject" "object2"    
+## [4] "plan"
+\end{verbatim}
+
+Diese Operation braucht man später nicht unbedingt, da alle angelegten Objekte auch im Environment-Tab in RStudio einsehen kann. Am Anfang kann diese Funktion aber helfen, sich über die Abläufe klar zu werden.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.4\textwidth,height=\textheight]{imgs/environment.png}
+\caption{Environment}
+\end{figure}
+
+\hypertarget{objekte-entfernen}{%
+\subsection*{Objekte entfernen}\label{objekte-entfernen}}
+\addcontentsline{toc}{subsection}{Objekte entfernen}
+
+Vorhandene Objekte lassen sich dann wie folgt entfernen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ls}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "a"           "firstObject" "object2"    
+## [4] "plan"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rm}\NormalTok{(object2)}
+\FunctionTok{ls}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "a"           "firstObject" "plan"
+\end{verbatim}
+
+Mit \texttt{rm(list=ls())} lassen sich alle Objekte aus dem Workspace entfernen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ls}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "a"           "firstObject" "plan"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=}\FunctionTok{ls}\NormalTok{())}
+\FunctionTok{ls}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## character(0)
+\end{verbatim}
+
+\hypertarget{datentypen}{%
+\subsection*{Datentypen}\label{datentypen}}
+\addcontentsline{toc}{subsection}{Datentypen}
+
+\small
+
+In R, wie in so gut wie jeder anderen Sprache, werden Objekte in unterschiedliche Subtypen gegliedert, die sich auf die in ihnen gespeicherten Informationen beziehen:
+
+\begin{tabular}[t]{l|l|l}
+\hline
+Beschreibung & Beispiel & Datentyp\\
+\hline
+leere Menge & `NULL` & `NULL`\\
+\hline
+logische Werte & `TRUE, FALSE, T,  F` & `logical`\\
+\hline
+ganze und reelle Zahlen & `42` & `numeric`\\
+\hline
+Buchstaben- o. Zeichenfolgen (immer in <br> Anführungszeichen) & `beware of the leopard.` & `character`\\
+\hline
+\end{tabular}
+
+Dabei ist das hier keine vollständige Liste, für den Anfang reicht sie aber.
+
+\texttt{mode()} gibt den Datentyp des übergebenen Arguments aus (braucht man selten, hier nur für das Beispiel):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mode}\NormalTok{(answer)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "numeric"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mode}\NormalTok{(}\StringTok{\textquotesingle{}answer\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\hypertarget{datentypen-konvertieren}{%
+\subsection*{Datentypen konvertieren}\label{datentypen-konvertieren}}
+\addcontentsline{toc}{subsection}{Datentypen konvertieren}
+
+\scriptsize
+
+\texttt{as.character(answer)} konvertiert den Datentyp des Objekts von \texttt{numeric} nach \texttt{character} ohne den ursprünglichen Eintrag von \texttt{answer} zu überschreiben.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mode}\NormalTok{(answer)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "numeric"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{as.character}\NormalTok{(answer)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "42"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mode}\NormalTok{(answer)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "numeric"
+\end{verbatim}
+
+Um das zu erreichen muss das Objekt überschrieben werden:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{answer }\OtherTok{\textless{}{-}} \FunctionTok{as.character}\NormalTok{(answer)}
+\FunctionTok{mode}\NormalTok{(answer)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+Mit \texttt{answer} als character-Element lässt sich nicht mehr rechnen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{answer }\SpecialCharTok{*} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error in answer * 2: non-numeric argument to binary operator
+\end{verbatim}
+
+Um das dann wieder zu ermöglichen muss das Objekt zurück nach numeric konvertiert werden:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{answer }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(answer)}
+\FunctionTok{mode}\NormalTok{(answer)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "numeric"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{answer }\SpecialCharTok{*} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 84
+\end{verbatim}
+
+Weitere Beispiele für Konvertierung:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{as.numeric}\NormalTok{(}\StringTok{"42"}\NormalTok{) }\DocumentationTok{\#\#\# konvertiert character nach numeric}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 42
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{as.numeric}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{) }\DocumentationTok{\#\#\# konvertiert logical nach numeric}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{as.logical}\NormalTok{(}\DecValTok{0}\NormalTok{)  }\DocumentationTok{\#\#\# konvertiert numeric nach logical}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{as.logical}\NormalTok{(}\DecValTok{1}\NormalTok{)  }\DocumentationTok{\#\#\# konvertiert numeric nach logical }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{as.logical}\NormalTok{(}\DecValTok{23}\NormalTok{)  }\DocumentationTok{\#\#\# konvertiert numeric nach logical}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{as.logical}\NormalTok{(}\StringTok{"true"}\NormalTok{)  }\DocumentationTok{\#\#\# konvertiert character nach logical}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\hypertarget{logische-werte-operatoren-und-verknuxfcpfungen}{%
+\subsection*{Logische Werte, Operatoren und Verknüpfungen}\label{logische-werte-operatoren-und-verknuxfcpfungen}}
+\addcontentsline{toc}{subsection}{Logische Werte, Operatoren und Verknüpfungen}
+
+Logische Vergleiche, Verknüpfungen und andere Operatoren:
+
+\begin{table}[H]
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}[t]{l|l}
+\hline
+Operator & Operation\\
+\hline
+`==` & ist gleich\\
+\hline
+`!=` & ist ungleich\\
+\hline
+> & ist größer\\
+\hline
+>= & ist größer gleich\\
+\hline
+< & ist kleiner\\
+\hline
+<= & ist kleiner gleich\\
+\hline
+`!` & logisches NICHT\\
+\hline
+\& & logisches UND\\
+\hline
+`|` & logisches ODER\\
+\hline
+`isTRUE()` & gibt an, ob übergebenes Argument TRUE ist\\
+\hline
+ & \\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+Das Ergebnis eines logischen Vergleichs sind logische Werte:\\
+WAHR: \texttt{TRUE\ =\ T\ =\ 1}\\
+FALSCH: \texttt{FALSE\ =\ F\ =\ 0}
+
+Beispiele:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{==} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{!=} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{\textless{}} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{\textgreater{}=} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{\textgreater{}}\DecValTok{2} \SpecialCharTok{\&} \DecValTok{1}\SpecialCharTok{\textless{}=}\DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{\textgreater{}}\DecValTok{1} \SpecialCharTok{|} \DecValTok{1}\SpecialCharTok{!=}\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{6}\SpecialCharTok{\textgreater{}}\DecValTok{5} \SpecialCharTok{\&} \SpecialCharTok{!}\NormalTok{(}\DecValTok{2}\SpecialCharTok{\textless{}=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{isTRUE}\NormalTok{(}\DecValTok{1} \SpecialCharTok{==} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{1} \SpecialCharTok{==} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\hypertarget{aufgabe-1}{%
+\subsection*{Aufgabe}\label{aufgabe-1}}
+\addcontentsline{toc}{subsection}{Aufgabe}
+
+\hypertarget{was-kommt-raus-1}{%
+\subsubsection*{Was kommt raus?}\label{was-kommt-raus-1}}
+\addcontentsline{toc}{subsubsection}{Was kommt raus?}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{2} \SpecialCharTok{\textgreater{}} \DecValTok{1} \SpecialCharTok{\&} \DecValTok{1} \SpecialCharTok{\textless{}} \DecValTok{3}\NormalTok{) }\SpecialCharTok{|} \DecValTok{1} \SpecialCharTok{!=} \DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  \texttt{TRUE}
+\item
+  \texttt{FALSE}
+\item
+  \texttt{NULL}
+\end{enumerate}
+
+\hypertarget{umgang-mit-dezimalzahlen}{%
+\subsection*{Umgang mit Dezimalzahlen:}\label{umgang-mit-dezimalzahlen}}
+\addcontentsline{toc}{subsection}{Umgang mit Dezimalzahlen:}
+
+\hypertarget{was-kommt-hier-raus}{%
+\subsubsection*{Was kommt hier raus?}\label{was-kommt-hier-raus}}
+\addcontentsline{toc}{subsubsection}{Was kommt hier raus?}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.1} \SpecialCharTok{+} \FloatTok{0.2} \SpecialCharTok{==} \FloatTok{0.3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  \texttt{TRUE}
+\item
+  \texttt{FALSE}
+\item
+  \texttt{NULL}
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{0.1} \SpecialCharTok{+} \FloatTok{0.2} \SpecialCharTok{==} \FloatTok{0.3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\textbf{0.1 + 0.2 != 0.3?}
+
+`Falsches' Ergebnis ist Resultat von Repräsentation von Gleitkommazahlen im Speicher des Rechners.\\
+Die Funktion \texttt{all.equal()} löst dieses Problem.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{all.equal}\NormalTok{(}\AttributeTok{target=}\FloatTok{0.1+0.2}\NormalTok{, }\AttributeTok{current=}\FloatTok{0.3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Mit dem \texttt{tolerance}-Argument lässt sich der Bereich der akzeptabeln Unterschiede in Dezimalstellen angeben.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{all.equal}\NormalTok{(}\AttributeTok{target =} \FloatTok{0.424242}\NormalTok{, }\AttributeTok{current =} \FloatTok{0.424243}\NormalTok{,}
+          \AttributeTok{tolerance =} \FloatTok{1e{-}5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{all.equal}\NormalTok{(}\AttributeTok{target =} \FloatTok{0.424242}\NormalTok{, }\AttributeTok{current =} \FloatTok{0.424243}\NormalTok{,}
+          \AttributeTok{tolerance =} \FloatTok{1e{-}6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Mean relative difference: 2.357145e-06"
+\end{verbatim}
+
+Hierbei fällt auf, dass bei Ungleichheit nicht \texttt{FALSE} sondern die Abweichung ausgegeben wird.
+
+Um \texttt{all.equal} sinnvoll in logischen Operationen benutzen zu können wird \texttt{isTRUE} benötigt:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{isTRUE}\NormalTok{(}\FunctionTok{all.equal}\NormalTok{(}\AttributeTok{target =} \FloatTok{0.424242}\NormalTok{,}
+                 \AttributeTok{current =} \FloatTok{0.424243}\NormalTok{,}
+                 \AttributeTok{tolerance =} \FloatTok{1e{-}6}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\hypertarget{hausaufgabe}{%
+\section{Hausaufgabe}\label{hausaufgabe}}
+
+\hypertarget{hausaufgabe-erstellen-eines-r-skripts}{%
+\subsection*{Hausaufgabe: Erstellen eines R-Skripts}\label{hausaufgabe-erstellen-eines-r-skripts}}
+\addcontentsline{toc}{subsection}{Hausaufgabe: Erstellen eines R-Skripts}
+
+Schreiben Sie den dem folgenden Ablauf entsprechenden Code in ein R-\emph{Skript} und führen Sie ihn von dort in der Konsole aus:
+
+Erstellen Sie drei Objekte wie folgt:
+
+\begin{itemize}
+\item
+  Als erstes ein Objekt namens \emph{whatDoIDoThis} mit der Zahl 4 als Inhalt.
+\item
+  Als zweites ein Objekt namens \emph{text} mit dem Inhalt : ``i\_like\_snake\_case\_better''.
+\item
+  Als drittes ein Objekt namens \emph{myFavouriteNumber} mit einer Zahl Ihrer Wahl als Inhalt.
+\end{itemize}
+
+Berechnen Sie nun den Mittelwert der Objekte mit numerischem Inhalt und legen Sie diesen in einem weiteren Objekt namens \emph{manualMean} ab.
+
+Lassen Sie sich in der Konsole durch eine Zeile in Ihrem Skript den Text \texttt{\textquotesingle{}I\ learned\ about\ the\ most\ important\ bugfixing\ tool\textquotesingle{}} ausgeben.
+
+Speichern Sie anschließend das R-\emph{Skript} unter `.R' ab.
+
+\hypertarget{elementare-datenverarbeitung}{%
+\chapter{elementare Datenverarbeitung}\label{elementare-datenverarbeitung}}
+
+\hypertarget{organisatorisches-1}{%
+\section{Organisatorisches}\label{organisatorisches-1}}
+
+\hypertarget{semesterplan-2}{%
+\subsection{Semesterplan}\label{semesterplan-2}}
+
+\footnotesize \centering
+\begin{table}[H]
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}{l|l|l|l}
+\hline
+Einheit & Vorlesung & Übungswoche & Thema\\
+\hline
+1 & 2.11.20 & keine Übung & Grundlagen und Begriffe\\
+\hline
+2 & 16.11.20 & KW 48 & Vektoren und Indizierung\\
+\hline
+ &  &  & Datenformate erstellen und transformieren\\
+\hline
+3 & 30.11.20 & KW 50 & Pakete installieren und benutzen\\
+\hline
+ &  &  & Datensätze erstellen und ergänzen können\\
+\hline
+ &  &  & Datensätze sortieren und indizieren können\\
+\hline
+4 & 14.12.20 & KW 1 & Faktoren\\
+\hline
+ &  &  & deskriptive Kennwerte\\
+\hline
+ &  &  & Aggregation I\\
+\hline
+5 & 11.01.21 & KW 3 & Aggregation II\\
+\hline
+ &  &  & In- und Export von Datensätzen\\
+\hline
+6 & 25.01.21 & KW 5 & Grafische Darstellungen I\\
+\hline
+7 & 08.02.21 & KW 7 & Grafische Darstellungen II\\
+\hline
+8 & 22.02.21 & keine Übung & Puffer\\
+\hline
+ &  &  & Probeklausur\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{vektoren}{%
+\section{Vektoren}\label{vektoren}}
+
+\hypertarget{begriff}{%
+\subsection{Begriff}\label{begriff}}
+
+Im Kontext von R ist ein Vektor als eine sequentiell geordnete Menge von Werten und nicht als das gleichnamige mathematische Konzept zu verstehen.
+
+\hypertarget{vektoren-erzeugen}{%
+\subsection{Vektoren erzeugen}\label{vektoren-erzeugen}}
+
+Leere Vektoren eines bestimmten Typs lassen sich mit dem Namen des Typs als Funktion und der Anzahl der gewünschten Stellen als Argument erstellen. z.B.:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{numeric}\NormalTok{(}\DecValTok{5}\NormalTok{);}
+\FunctionTok{character}\NormalTok{(}\DecValTok{4}\NormalTok{);}
+\FunctionTok{logical}\NormalTok{(}\DecValTok{3}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0 0 0 0 0
+## [1] "" "" "" ""
+## [1] FALSE FALSE FALSE
+\end{verbatim}
+
+\hypertarget{vektoren-erzeugen-1}{%
+\subsection{Vektoren erzeugen}\label{vektoren-erzeugen-1}}
+
+Um mehrere Daten in einer eindimensinalen Anordnung zu verketten wird die \texttt{c()}-Funktion benutzt.
+Die Argumente werden in Reihenfolge der Eingabe hintereinander angeordnet und können beliebigen Datentypen angehören.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{);}
+\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}dies\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}ist\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}ein\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Vektor\textquotesingle{}}\NormalTok{);}
+\FunctionTok{c}\NormalTok{(T, F, T, F);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4
+## [1] "dies"   "ist"    "ein"    "Vektor"
+## [1]  TRUE FALSE  TRUE FALSE
+\end{verbatim}
+
+\hypertarget{vektoren-erzeugen-2}{%
+\subsection{Vektoren erzeugen}\label{vektoren-erzeugen-2}}
+
+Das Ergebnis kann dann wie gewohnt in ein Objekt abgelegt werden.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericVector }\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4242}\NormalTok{,}\DecValTok{42}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Außerdem lassen sich mit dem \texttt{c()}-Operator mehrere Vektoren kombinieren.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{additionToNumericVector }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\DecValTok{424242}\NormalTok{, }\DecValTok{42400}\NormalTok{, }\DecValTok{42000}\NormalTok{,}
+                               \DecValTok{4224}\NormalTok{, }\DecValTok{24}\NormalTok{)}
+\NormalTok{(numericVector }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(numericVector, }
+\NormalTok{                    additionToNumericVector))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]      4      2   4242     42 424242  42400  42000
+## [8]   4224     24
+\end{verbatim}
+
+\hypertarget{vektoren-verwenden}{%
+\subsection{Vektoren verwenden}\label{vektoren-verwenden}}
+
+Die Länge eines Vektors lässt sich mit der Funktion \texttt{length()} ausgeben.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(numericVector)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 9
+\end{verbatim}
+
+\hypertarget{datentypen-in-vektoren}{%
+\subsection{Datentypen in Vektoren}\label{datentypen-in-vektoren}}
+
+Bei dem Versuch Vektoren aus verschiedenen Datentypen anzulegen werden die Daten in den allgemeinsten Datentyp umgewandelt. Dabei gilt im Rahmen der Komplexität für die bisher vorgestellten Datentypen:
+
+\texttt{logical\ \textless{}\ numeric\ \textless{}\ character}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mode}\NormalTok{(}\FunctionTok{c}\NormalTok{(T, T, F));}
+\FunctionTok{mode}\NormalTok{(}\FunctionTok{c}\NormalTok{(T, T, }\DecValTok{0}\NormalTok{));}
+\FunctionTok{mode}\NormalTok{(}\FunctionTok{c}\NormalTok{(T, }\DecValTok{0}\NormalTok{, }\StringTok{\textquotesingle{}false\textquotesingle{}}\NormalTok{));}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "logical"
+## [1] "numeric"
+## [1] "character"
+\end{verbatim}
+
+In einem Vektor ist im Allgemeinen also immer nur ein Typ an Daten vertreten.
+
+\hypertarget{aufgabe-2}{%
+\subsection{Aufgabe}\label{aufgabe-2}}
+
+\textbf{Wenn ich \texttt{mode(c(\textquotesingle{}TRUE\textquotesingle{},FALSE,1))} eingebe, dann\ldots{}}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  \ldots{} wird \texttt{logical} ausgegeben
+\item
+  \ldots{} wird \texttt{vector} ausgegeben
+\item
+  \ldots{} wird \texttt{numerical} ausgegeben
+\item
+  \ldots{} wird \texttt{character} ausgegeben
+\end{enumerate}
+
+\hypertarget{indizierung}{%
+\section{Indizierung}\label{indizierung}}
+
+\hypertarget{elemente-indizieren}{%
+\subsection{Elemente indizieren}\label{elemente-indizieren}}
+
+Die beim Erstellen eines Vektors angelegten Positionen der Werte werden in R implizit mit fortlaufenden Indizes versehen und gespeichert. Diese Indizes starten bei jedem Vektor mit 1 und enden mit der Länge desselben.
+Die einzelnen Elemente eines Vektors lassen sich über ihren Index mit dem \texttt{{[}{]}} - Operator aufrufen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericVector[}\DecValTok{4}\NormalTok{] }\DocumentationTok{\#\# 4. Element des Vektors numericVector.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 42
+\end{verbatim}
+
+\hypertarget{elemente-indizieren-1}{%
+\subsection{Elemente indizieren}\label{elemente-indizieren-1}}
+
+Wird ein Index über dem des letzten Eintrags eines Vektors aufgerufen, wird \texttt{NA} zurückgegeben.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericVector[}\FunctionTok{length}\NormalTok{(numericVector)}\SpecialCharTok{+}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\hypertarget{mehrere-elemente-gleichzeitig-indizieren}{%
+\subsection{mehrere Elemente gleichzeitig indizieren}\label{mehrere-elemente-gleichzeitig-indizieren}}
+
+Es lassen sich auch mehrere Werte eines Vektors über die Indizierung über Zuhilfenahme eines anderen Vektors aufrufen. Dabei kann der Index-Vektor als Objekt vordefiniert oder dem \texttt{{[}{]}}-Operator direkt übergeben werden.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{idx }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{8}\NormalTok{)}
+\NormalTok{numericVector[idx]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]    4    2 4242 4224
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericVector[}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]     42 424242  42400  42000
+\end{verbatim}
+
+\hypertarget{mehrere-elemente-gleichzeitig-indizieren-1}{%
+\subsection{mehrere Elemente gleichzeitig indizieren}\label{mehrere-elemente-gleichzeitig-indizieren-1}}
+
+Der Index-Vektor kann dabei auch länger als der ursprüngliche Vektor sein, da mehrfacher Aufruf eines Index möglich ist.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericVector }\DocumentationTok{\#\# 9 Werte}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]      4      2   4242     42 424242  42400  42000
+## [8]   4224     24
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{idx }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{)}
+\DocumentationTok{\#\# 12 Aufrufe über die Indizes}
+\NormalTok{numericVector[idx]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]      4      4      2      2   4242   4242     42
+##  [8]     42 424242 424242  42400  42400
+\end{verbatim}
+
+\hypertarget{elemente-ausschlieuxdfen}{%
+\subsection{Elemente ausschließen}\label{elemente-ausschlieuxdfen}}
+
+Durch das verwenden negativer Indizes wird das entsprechende Element von der Ausgabe ausgeschlossen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericVector[}\SpecialCharTok{{-}}\DecValTok{3}\NormalTok{] }\DocumentationTok{\#\# Vektor ohne drittes Element}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]      4      2     42 424242  42400  42000   4224
+## [8]     24
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{idx }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{)}
+\DocumentationTok{\#\# Vektor mit Ausnahme der in idx abgelegten Indizes:}
+\NormalTok{numericVector[}\SpecialCharTok{{-}}\NormalTok{idx]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]     2    42 42400  4224
+\end{verbatim}
+
+\hypertarget{elemente-austauschen}{%
+\subsection{Elemente austauschen}\label{elemente-austauschen}}
+
+Die Indizierung kann außerdem genutzt werden um Elemente eines Vektors zu ersetzen oder als alternative Methode zu oben vorgestelltem Kombinieren von Vektoren via \texttt{c(\textless{}Vektor1\textgreater{},\ \textless{}Vektor2\textgreater{})}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericVector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]      4      2   4242     42 424242  42400  42000
+## [8]   4224     24
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericVector[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \DecValTok{12}
+\NormalTok{numericVector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]     12      2   4242     42 424242  42400  42000
+## [8]   4224     24
+\end{verbatim}
+
+\hypertarget{elemente-austauschen-1}{%
+\subsection{Elemente austauschen}\label{elemente-austauschen-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericVector[idx] }\OtherTok{\textless{}{-}}\NormalTok{idx}
+\NormalTok{numericVector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]     1     2     3    42     5 42400     7  4224
+## [9]     9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(numericVector)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericVector[}\FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{12}\NormalTok{,}\DecValTok{13}\NormalTok{,}\DecValTok{14}\NormalTok{)] }\OtherTok{\textless{}{-}}\NormalTok{ idx}
+\NormalTok{numericVector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]     1     2     3    42     5 42400     7  4224
+##  [9]     9     1     3     5     7     9
+\end{verbatim}
+
+\hypertarget{elemente-luxf6schen}{%
+\subsection{Elemente löschen}\label{elemente-luxf6schen}}
+
+Elemente eines Vektors lassen sich nicht im eigentlichen Sinne löschen, man kann aber sehr wohl das Objekt in dem der Vektor abgelegt ist mit einer verkürzten Version überschreiben.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericVector }\OtherTok{\textless{}{-}}\NormalTok{ numericVector[}\SpecialCharTok{{-}}\NormalTok{idx]}
+\NormalTok{numericVector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]     2    42 42400  4224     1     3     5     7
+## [9]     9
+\end{verbatim}
+
+\hypertarget{logische-operatoren}{%
+\subsection{Logische Operatoren}\label{logische-operatoren}}
+
+Verarbeitungsschritte mit logischen Operatoren treten häufig bei der Auswahl von Teilmengen von Daten
+sowie der Recodierung von Datenwerten auf, zwei häufigen Prozeduren in der statistischen Auswertung
+
+\hypertarget{logischer-vergleich-von-vektoren}{%
+\subsection{Logischer Vergleich von Vektoren}\label{logischer-vergleich-von-vektoren}}
+
+Wie vorher Einzelwerte kann man auch Vektoren in logischen Vergleichen verwenden.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{17}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{21}\NormalTok{)}
+\NormalTok{age }\SpecialCharTok{\textless{}} \DecValTok{24}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE FALSE FALSE FALSE  TRUE  TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\SpecialCharTok{\textgreater{}=} \DecValTok{18}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
+\end{verbatim}
+
+Dabei werden logische Werte als Ergebnis für den Vergleich jeden Wertes ausgegeben.
+
+\hypertarget{logische-operatoren-1}{%
+\subsection{Logische Operatoren}\label{logische-operatoren-1}}
+
+Die vorher gezeigten logischen Verknüpfungen lassen sich genauso anwenden
+
+\begin{Shaded}
+\begin{Highlighting}[]
+ \DocumentationTok{\#\# Alle Werte die mindestens 18 und kleiner als 30 sind}
+\NormalTok{(age }\SpecialCharTok{\textgreater{}=} \DecValTok{18}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ (age }\SpecialCharTok{\textless{}} \DecValTok{30}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Alle Werte die kleiner als 18 oder mindestens 30 sind}
+\NormalTok{(age }\SpecialCharTok{\textless{}} \DecValTok{18}\NormalTok{) }\SpecialCharTok{|}\NormalTok{ (age }\SpecialCharTok{\textgreater{}=} \DecValTok{30}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE  TRUE  TRUE FALSE FALSE FALSE
+\end{verbatim}
+
+\hypertarget{logische-vektoren}{%
+\subsection{Logische Vektoren}\label{logische-vektoren}}
+
+Die mit \texttt{sum()} gebildete Summe eines logischen Vektors gibt einem die Anzahl der wahren Werte im Vektor aus, da \texttt{TRUE} für die Berechnung in eine 1 und \texttt{FALSE} in eine 0 transformiert wird.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{res }\OtherTok{\textless{}{-}} \SpecialCharTok{!}\NormalTok{((age }\SpecialCharTok{\textless{}} \DecValTok{18}\NormalTok{) }\SpecialCharTok{|}\NormalTok{ (age }\SpecialCharTok{\textgreater{}=} \DecValTok{30}\NormalTok{))}
+\FunctionTok{sum}\NormalTok{(res)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\hypertarget{logische-vergeiche-von-vektoren}{%
+\subsection{Logische Vergeiche von Vektoren}\label{logische-vergeiche-von-vektoren}}
+
+Zwei \textbf{gleichlange} Vektoren lassen sich auch mit Hilfe logischer Operatoren vergleichen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{19}\NormalTok{, }\DecValTok{31}\NormalTok{, }\DecValTok{29}\NormalTok{, }\DecValTok{24}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{22}\NormalTok{)}
+\NormalTok{age }\SpecialCharTok{==}\NormalTok{ age2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE FALSE FALSE  TRUE FALSE FALSE
+\end{verbatim}
+
+\hypertarget{logische-vergeiche-von-vektoren-1}{%
+\subsection{Logische Vergeiche von Vektoren}\label{logische-vergeiche-von-vektoren-1}}
+
+Und natürlich lassen sich hier alle vorher besprochenen logischen Operatoren anwenden:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\SpecialCharTok{==}\NormalTok{ age2 }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE FALSE FALSE  TRUE FALSE FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\SpecialCharTok{\textless{}}\NormalTok{ age2 }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE  TRUE FALSE FALSE  TRUE  TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\SpecialCharTok{!=}\NormalTok{ age2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE  TRUE  TRUE FALSE  TRUE  TRUE
+\end{verbatim}
+
+\hypertarget{logische-indizierung}{%
+\subsection{Logische Indizierung}\label{logische-indizierung}}
+
+Indizierung funktioniert auch mit logischen Vektoren. Dabei wird im Indexvektor für jeden Wert des indizierten Vektors angegeben, ob dieser ausgewählt derden soll oder nicht.
+Eine einfach Methode zur Auswahl von Teilmengen von Elementen die einem bestimmten Kriterium entsprechen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(res }\OtherTok{\textless{}{-}}\NormalTok{ age }\SpecialCharTok{\textless{}} \DecValTok{24}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE FALSE FALSE FALSE  TRUE  TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age[res]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 17 23 21
+\end{verbatim}
+
+\hypertarget{logische-indizierung-1}{%
+\subsection{Logische Indizierung}\label{logische-indizierung-1}}
+
+Der Indexvektor muss nicht vorher als Objekt angelegt werden.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age[age}\SpecialCharTok{\textless{}}\DecValTok{24}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 17 23 21
+\end{verbatim}
+
+\hypertarget{logische-indizierung-und-fehlende-werte}{%
+\subsection{Logische Indizierung und fehlende Werte}\label{logische-indizierung-und-fehlende-werte}}
+
+Versucht man Vektoren mit fehlenden Werten zu erzeugen, stößt man auf folgendes Problem:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age3 }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{32}\NormalTok{, }\ConstantTok{NA}\NormalTok{, }\DecValTok{19}\NormalTok{, }\DecValTok{27}\NormalTok{)}
+\NormalTok{(idx }\OtherTok{\textless{}{-}}\NormalTok{ age3 }\SpecialCharTok{\textless{}} \DecValTok{24}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE  TRUE FALSE    NA  TRUE FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age3[idx]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 20 23 NA 19
+\end{verbatim}
+
+\hypertarget{umgang-mit-fehlenden-werten-bei-logischer-indizierung}{%
+\subsection{Umgang mit fehlenden Werten bei logischer Indizierung}\label{umgang-mit-fehlenden-werten-bei-logischer-indizierung}}
+
+Der fehlende Wert wird in den Index-Vektor und die Indizierung weitergetragen.\\
+Umgehen lässt sich dieses Problem mit der \texttt{which()}-Funktion, die die Positionen aller \texttt{TRUE}-Werte des ihre übergebenen Arguments als numerischen Vektor ausgibt.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(idx }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(idx))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 5
+\end{verbatim}
+
+Dieser kann dann wieder zur Indexierung benutzt werden.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age3[idx]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 20 23 19
+\end{verbatim}
+
+\hypertarget{systematische-wertefolgen-erzeugen}{%
+\section{Systematische Wertefolgen erzeugen}\label{systematische-wertefolgen-erzeugen}}
+
+\hypertarget{numerische-sequenzen-erstellen}{%
+\subsection{Numerische Sequenzen erstellen}\label{numerische-sequenzen-erstellen}}
+
+\small
+
+In R lassen sich durch einen Doppelpunkt Zahlensequenzen in Einserschritten zwischen einem Start- und Endwert erstellen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{:}\DecValTok{20} 
+\DecValTok{20}\SpecialCharTok{:}\DecValTok{1}
+\SpecialCharTok{{-}}\DecValTok{10}\SpecialCharTok{:}\DecValTok{10}
+\SpecialCharTok{{-}}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{20}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
+## [17] 17 18 19 20
+##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5
+## [17]  4  3  2  1
+##  [1] -10  -9  -8  -7  -6  -5  -4  -3  -2  -1   0   1
+## [13]   2   3   4   5   6   7   8   9  10
+##  [1]  -1  -2  -3  -4  -5  -6  -7  -8  -9 -10 -11 -12
+## [13] -13 -14 -15 -16 -17 -18 -19 -20
+\end{verbatim}
+
+\hypertarget{numerische-sequenzen-mit-definierter-schrittgruxf6uxdfe}{%
+\subsection{Numerische Sequenzen mit definierter Schrittgröße}\label{numerische-sequenzen-mit-definierter-schrittgruxf6uxdfe}}
+
+Sequenzen mit anderen Schrittgrößen lassen sich mit der \texttt{seq()}-Funktion erstellen.
+
+Dabei lässt sich entweder die Schrittgröße angeben:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{0}\NormalTok{, }\AttributeTok{to =} \DecValTok{42}\NormalTok{, }\AttributeTok{by =} \DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  0  6 12 18 24 30 36 42
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{0}\NormalTok{, }\AttributeTok{to =} \DecValTok{42}\NormalTok{, }\AttributeTok{by =} \DecValTok{5}\NormalTok{) }\DocumentationTok{\#\# Endpunkt nicht erreicht }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  0  5 10 15 20 25 30 35 40
+\end{verbatim}
+
+\hypertarget{numerische-sequenzen-mit-definierter-luxe4nge}{%
+\subsection{Numerische Sequenzen mit definierter Länge}\label{numerische-sequenzen-mit-definierter-luxe4nge}}
+
+Oder die gewünschte Anzahl der Werte in der Sequenz:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{0}\NormalTok{, }\AttributeTok{to =} \DecValTok{42}\NormalTok{, }\AttributeTok{length.out =} \DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  0  6 12 18 24 30 36 42
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{0}\NormalTok{, }\AttributeTok{to =} \DecValTok{42}\NormalTok{, }\AttributeTok{length.out =} \DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  0.0  8.4 16.8 25.2 33.6 42.0
+\end{verbatim}
+
+\hypertarget{numerische-sequenzen}{%
+\subsection{Numerische Sequenzen}\label{numerische-sequenzen}}
+
+Bei zweiterer Methode oder bei Angabe einer nicht-ganzzahligen Schrittgröße können auch nicht zur Indizierung geeignete Dezimalzahlen entstehen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{0}\NormalTok{, }\AttributeTok{to =} \DecValTok{1}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+\end{verbatim}
+
+\hypertarget{numerische-sequenzen-mit-definierter-luxe4nge-1}{%
+\subsection{Numerische Sequenzen mit definierter Länge}\label{numerische-sequenzen-mit-definierter-luxe4nge-1}}
+
+Mit dem \texttt{along} Argument lässt sich außerdem eine Sequenz in der Länge eines übergebenen Vektors erstellen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{16}\NormalTok{, }\DecValTok{43}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{22}\NormalTok{,  }\DecValTok{7}\NormalTok{, }\DecValTok{36}\NormalTok{)}
+\FunctionTok{seq}\NormalTok{(}\AttributeTok{along =}\NormalTok{ age)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4 5 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{10}\NormalTok{, }\AttributeTok{to =} \DecValTok{100}\NormalTok{, }\AttributeTok{along =}\NormalTok{ age)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  10  28  46  64  82 100
+\end{verbatim}
+
+\hypertarget{wertefolgen-wiederholen}{%
+\subsection{Wertefolgen wiederholen}\label{wertefolgen-wiederholen}}
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{someValues }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{42}\NormalTok{, }\DecValTok{16}\NormalTok{, }\DecValTok{12}\NormalTok{)}
+ \DocumentationTok{\#\# Vektor 5{-}mal wiederholen}
+\FunctionTok{rep}\NormalTok{(someValues, }\AttributeTok{times =} \DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 42 16 12 42 16 12 42 16 12 42 16 12 42 16 12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+ \DocumentationTok{\#\# Jeden Wert des Vektors 5 mal wiederholen}
+\FunctionTok{rep}\NormalTok{(someValues, }\AttributeTok{each =} \DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 42 42 42 42 42 16 16 16 16 16 12 12 12 12 12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+ \DocumentationTok{\#\# Jeden Wert so oft wie in times individuell angegeben wiederholen}
+\FunctionTok{rep}\NormalTok{(someValues, }\AttributeTok{times =} \FunctionTok{c}\NormalTok{(}\DecValTok{42}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42
+## [17] 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42
+## [33] 42 42 42 42 42 42 42 42 42 42 16 12 12 12 12 12
+\end{verbatim}
+
+\hypertarget{daten-transformieren}{%
+\section{Daten transformieren}\label{daten-transformieren}}
+
+\hypertarget{werte-sortieren}{%
+\subsection{Werte sortieren}\label{werte-sortieren}}
+
+\texttt{sort()} sortiert je nach Angabe in auf- oder absteigender Reihenfolge
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sort}\NormalTok{(someValues, }\AttributeTok{decreasing =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 12 16 42
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sort}\NormalTok{(someValues, }\AttributeTok{decreasing =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 42 16 12
+\end{verbatim}
+
+\hypertarget{werte-sortieren-1}{%
+\subsection{Werte sortieren}\label{werte-sortieren-1}}
+
+\texttt{order()} macht im Prinzip dasselbe, gibt aber statt des sortierten Vektors die Indizes in entsprechender Ordnung aus.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{someValues}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 42 16 12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(idx }\OtherTok{\textless{}{-}} \FunctionTok{order}\NormalTok{(someValues, }\AttributeTok{decreasing =}\NormalTok{ F))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3 2 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{someValues[idx]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 12 16 42
+\end{verbatim}
+
+\hypertarget{werte-sortieren-2}{%
+\subsection{Werte sortieren}\label{werte-sortieren-2}}
+
+Dies funktioniert auch für \texttt{character}-Vektoren in alphabetischer Ordnung
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(someCharacters }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\StringTok{"Z"}\NormalTok{, }\StringTok{"D"}\NormalTok{, }\StringTok{"L"}\NormalTok{, }\StringTok{"O"}\NormalTok{, }\StringTok{"l"}\NormalTok{, }\StringTok{"n"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"N"}\NormalTok{, }\StringTok{"t"}\NormalTok{, }\StringTok{"R"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Z" "D" "L" "O" "l" "n" "e" "N" "t" "R"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sort}\NormalTok{(someCharacters, }\AttributeTok{decreasing =}\NormalTok{ F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "D" "e" "l" "L" "n" "N" "O" "R" "t" "Z"
+\end{verbatim}
+
+\hypertarget{werte-sortieren-3}{%
+\subsection{Werte sortieren}\label{werte-sortieren-3}}
+
+\small
+
+Sind Zahlen an der ersten Stelle in \texttt{character}-Vektoren vertreten, werden diese vor das Alphabet sortiert.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{someCharacters }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}
+  \StringTok{"42 is fairly overused"}\NormalTok{,}
+  \StringTok{"India"}\NormalTok{,}
+  \StringTok{"Zulu"}\NormalTok{,}
+  \StringTok{"Whiskey"}\NormalTok{,}
+  \StringTok{"42"}\NormalTok{,}
+  \StringTok{"a string of characters"}\NormalTok{,}
+  \StringTok{"Tango"}\NormalTok{,}
+  \StringTok{"not a number"}\NormalTok{,}
+  \StringTok{"1"}
+\NormalTok{)}
+\FunctionTok{sort}\NormalTok{(someCharacters, }\AttributeTok{decreasing =}\NormalTok{ F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "1"                      "42"                    
+## [3] "42 is fairly overused"  "a string of characters"
+## [5] "India"                  "not a number"          
+## [7] "Tango"                  "Whiskey"               
+## [9] "Zulu"
+\end{verbatim}
+
+\hypertarget{einfache-deskriptiv-statistische-kennwerte}{%
+\section{Einfache deskriptiv-statistische Kennwerte}\label{einfache-deskriptiv-statistische-kennwerte}}
+
+\hypertarget{einfache-deskriptiv-statistische-kennwerte-1}{%
+\subsection{Einfache deskriptiv-statistische Kennwerte}\label{einfache-deskriptiv-statistische-kennwerte-1}}
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{44}\NormalTok{, }\DecValTok{56}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{58}\NormalTok{, }\DecValTok{87}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{55}\NormalTok{, }\DecValTok{83}\NormalTok{)}
+\NormalTok{IQ }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{91}\NormalTok{, }\DecValTok{104}\NormalTok{, }\DecValTok{109}\NormalTok{, }\DecValTok{92}\NormalTok{, }\DecValTok{90}\NormalTok{, }\DecValTok{101}\NormalTok{, }\DecValTok{99}\NormalTok{, }\DecValTok{93}\NormalTok{, }\DecValTok{89}\NormalTok{, }\DecValTok{118}\NormalTok{)}
+
+\FunctionTok{mean}\NormalTok{(age)  }\DocumentationTok{\#\# Mittelwert}
+\FunctionTok{var}\NormalTok{(age)  }\DocumentationTok{\#\# Varianz (korrigiert)}
+\FunctionTok{sd}\NormalTok{(age) }\DocumentationTok{\#\# Streuung (korrigiert)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 46.5
+## [1] 895.6111
+## [1] 29.92676
+\end{verbatim}
+
+\hypertarget{einfache-deskriptiv-statistische-kennwerte-2}{%
+\subsection{Einfache deskriptiv-statistische Kennwerte}\label{einfache-deskriptiv-statistische-kennwerte-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{N }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(age)}
+\FunctionTok{sd}\NormalTok{(age)}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(N) }\DocumentationTok{\#\# SEM}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 9.463673
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sqrt}\NormalTok{((N}\DecValTok{{-}1}\NormalTok{) }\SpecialCharTok{/}\NormalTok{ N) }\SpecialCharTok{*} \FunctionTok{sd}\NormalTok{(age) }\DocumentationTok{\#\# unkorrigierte Streuung}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 28.39102
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cov}\NormalTok{(}\AttributeTok{x=}\NormalTok{age, }\AttributeTok{y=}\NormalTok{IQ, }\AttributeTok{method=}\StringTok{"pearson"}\NormalTok{)  }\DocumentationTok{\#\# Kovarianz}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 167.6667
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(}\AttributeTok{x=}\NormalTok{age, }\AttributeTok{y=}\NormalTok{IQ, }\AttributeTok{method=}\StringTok{"pearson"}\NormalTok{)  }\DocumentationTok{\#\# Korrelation}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.5875238
+\end{verbatim}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

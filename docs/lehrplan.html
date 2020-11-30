@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Lehrplan | Psy_B_11: EDV I - Einheit 2</title>
+  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Lehrplan | Psy_B_11: EDV I - Einheit 2" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Lehrplan | Psy_B_11: EDV I - Einheit 2" />
+  
+  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  
+
+<meta name="author" content="Max Brede" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="vorlesung-i-rste-schritte.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EDV 1 <br> WiSe 20</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vorwort</a></li>
+<li class="chapter" data-level="2" data-path="lehrplan.html"><a href="lehrplan.html"><i class="fa fa-check"></i><b>2</b> Lehrplan</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lehrplan.html"><a href="lehrplan.html#semesterplan"><i class="fa fa-check"></i><b>2.1</b> Semesterplan</a></li>
+<li class="chapter" data-level="2.2" data-path="lehrplan.html"><a href="lehrplan.html#übungsformat"><i class="fa fa-check"></i><b>2.2</b> Übungsformat</a></li>
+<li class="chapter" data-level="2.3" data-path="lehrplan.html"><a href="lehrplan.html#lehrziele-für-jede-sitzung"><i class="fa fa-check"></i><b>2.3</b> Lehrziele für jede Sitzung</a></li>
+<li class="chapter" data-level="2.4" data-path="lehrplan.html"><a href="lehrplan.html#prüfungsleistung"><i class="fa fa-check"></i><b>2.4</b> Prüfungsleistung</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html"><i class="fa fa-check"></i><b>3</b> Vorlesung I - Rste Schritte</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#organisatorisches"><i class="fa fa-check"></i><b>3.1</b> Organisatorisches</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#semesterplan-1"><i class="fa fa-check"></i>Semesterplan</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#übungsablauf"><i class="fa fa-check"></i>Übungsablauf</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#prüfungsleistung-1"><i class="fa fa-check"></i>Prüfungsleistung</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#einführung"><i class="fa fa-check"></i><b>3.2</b> Einführung</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#rste-schritte"><i class="fa fa-check"></i>Rste Schritte</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#wozu-brauche-ich-das"><i class="fa fa-check"></i>Wozu brauche ich das?</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#warum-r"><i class="fa fa-check"></i>Warum R ?</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#literatur"><i class="fa fa-check"></i>Literatur</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#installation-verwendung"><i class="fa fa-check"></i>Installation &amp; Verwendung</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#benutzeroberfläche-rstudio"><i class="fa fa-check"></i>Benutzeroberfläche RStudio</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#allgemeine-hinweise"><i class="fa fa-check"></i>Allgemeine Hinweise</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#zum-besseren-verständnis"><i class="fa fa-check"></i>Zum besseren Verständnis</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-in-der-r-konsole"><i class="fa fa-check"></i>Ausdrücke in der R-Konsole</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#kommentare"><i class="fa fa-check"></i>Kommentare</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#grundlegende-rechenoperationen"><i class="fa fa-check"></i><b>3.3</b> Grundlegende Rechenoperationen</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#addition-subtraktion"><i class="fa fa-check"></i>Addition, Subtraktion</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#multiplikation-division"><i class="fa fa-check"></i>Multiplikation, Division</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#rechenregeln"><i class="fa fa-check"></i>Rechenregeln</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#potenz-quadratwurzel-squareroot-betrag-absolute"><i class="fa fa-check"></i>Potenz, Quadratwurzel (“squareroot”), Betrag (“absolute”)</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#runden"><i class="fa fa-check"></i>Runden</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#aufgabe"><i class="fa fa-check"></i>Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-funktionen-argumente"><i class="fa fa-check"></i><b>3.4</b> Ausdrücke, Funktionen, Argumente</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#funktionen-argumente"><i class="fa fa-check"></i>Funktionen &amp; Argumente</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte"><i class="fa fa-check"></i><b>3.5</b> Objekte</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-benennen"><i class="fa fa-check"></i>Objekte benennen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#zuweisungen-an-objekte"><i class="fa fa-check"></i>Zuweisungen an Objekte</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#verwenden-von-objekten"><i class="fa fa-check"></i>Verwenden von Objekten:</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-ausgeben"><i class="fa fa-check"></i>Objekte ausgeben</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-anzeigen-lassen"><i class="fa fa-check"></i>Objekte anzeigen lassen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte-entfernen"><i class="fa fa-check"></i>Objekte entfernen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#datentypen"><i class="fa fa-check"></i>Datentypen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#datentypen-konvertieren"><i class="fa fa-check"></i>Datentypen konvertieren</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#logische-werte-operatoren-und-verknüpfungen"><i class="fa fa-check"></i>Logische Werte, Operatoren und Verknüpfungen</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#aufgabe-1"><i class="fa fa-check"></i>Aufgabe</a></li>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#umgang-mit-dezimalzahlen"><i class="fa fa-check"></i>Umgang mit Dezimalzahlen:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#hausaufgabe"><i class="fa fa-check"></i><b>3.6</b> Hausaufgabe</a>
+<ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#hausaufgabe-erstellen-eines-r-skripts"><i class="fa fa-check"></i>Hausaufgabe: Erstellen eines R-Skripts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html"><i class="fa fa-check"></i><b>4</b> elementare Datenverarbeitung</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#organisatorisches-1"><i class="fa fa-check"></i><b>4.1</b> Organisatorisches</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#semesterplan-2"><i class="fa fa-check"></i><b>4.1.1</b> Semesterplan</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren"><i class="fa fa-check"></i><b>4.2</b> Vektoren</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#begriff"><i class="fa fa-check"></i><b>4.2.1</b> Begriff</a></li>
+<li class="chapter" data-level="4.2.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-erzeugen"><i class="fa fa-check"></i><b>4.2.2</b> Vektoren erzeugen</a></li>
+<li class="chapter" data-level="4.2.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-erzeugen-1"><i class="fa fa-check"></i><b>4.2.3</b> Vektoren erzeugen</a></li>
+<li class="chapter" data-level="4.2.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-erzeugen-2"><i class="fa fa-check"></i><b>4.2.4</b> Vektoren erzeugen</a></li>
+<li class="chapter" data-level="4.2.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-verwenden"><i class="fa fa-check"></i><b>4.2.5</b> Vektoren verwenden</a></li>
+<li class="chapter" data-level="4.2.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#datentypen-in-vektoren"><i class="fa fa-check"></i><b>4.2.6</b> Datentypen in Vektoren</a></li>
+<li class="chapter" data-level="4.2.7" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#aufgabe-2"><i class="fa fa-check"></i><b>4.2.7</b> Aufgabe</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#indizierung"><i class="fa fa-check"></i><b>4.3</b> Indizierung</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-indizieren"><i class="fa fa-check"></i><b>4.3.1</b> Elemente indizieren</a></li>
+<li class="chapter" data-level="4.3.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-indizieren-1"><i class="fa fa-check"></i><b>4.3.2</b> Elemente indizieren</a></li>
+<li class="chapter" data-level="4.3.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#mehrere-elemente-gleichzeitig-indizieren"><i class="fa fa-check"></i><b>4.3.3</b> mehrere Elemente gleichzeitig indizieren</a></li>
+<li class="chapter" data-level="4.3.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#mehrere-elemente-gleichzeitig-indizieren-1"><i class="fa fa-check"></i><b>4.3.4</b> mehrere Elemente gleichzeitig indizieren</a></li>
+<li class="chapter" data-level="4.3.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-ausschließen"><i class="fa fa-check"></i><b>4.3.5</b> Elemente ausschließen</a></li>
+<li class="chapter" data-level="4.3.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-austauschen"><i class="fa fa-check"></i><b>4.3.6</b> Elemente austauschen</a></li>
+<li class="chapter" data-level="4.3.7" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-austauschen-1"><i class="fa fa-check"></i><b>4.3.7</b> Elemente austauschen</a></li>
+<li class="chapter" data-level="4.3.8" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-löschen"><i class="fa fa-check"></i><b>4.3.8</b> Elemente löschen</a></li>
+<li class="chapter" data-level="4.3.9" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-operatoren"><i class="fa fa-check"></i><b>4.3.9</b> Logische Operatoren</a></li>
+<li class="chapter" data-level="4.3.10" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logischer-vergleich-von-vektoren"><i class="fa fa-check"></i><b>4.3.10</b> Logischer Vergleich von Vektoren</a></li>
+<li class="chapter" data-level="4.3.11" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-operatoren-1"><i class="fa fa-check"></i><b>4.3.11</b> Logische Operatoren</a></li>
+<li class="chapter" data-level="4.3.12" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-vektoren"><i class="fa fa-check"></i><b>4.3.12</b> Logische Vektoren</a></li>
+<li class="chapter" data-level="4.3.13" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-vergeiche-von-vektoren"><i class="fa fa-check"></i><b>4.3.13</b> Logische Vergeiche von Vektoren</a></li>
+<li class="chapter" data-level="4.3.14" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-vergeiche-von-vektoren-1"><i class="fa fa-check"></i><b>4.3.14</b> Logische Vergeiche von Vektoren</a></li>
+<li class="chapter" data-level="4.3.15" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung"><i class="fa fa-check"></i><b>4.3.15</b> Logische Indizierung</a></li>
+<li class="chapter" data-level="4.3.16" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung-1"><i class="fa fa-check"></i><b>4.3.16</b> Logische Indizierung</a></li>
+<li class="chapter" data-level="4.3.17" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung-und-fehlende-werte"><i class="fa fa-check"></i><b>4.3.17</b> Logische Indizierung und fehlende Werte</a></li>
+<li class="chapter" data-level="4.3.18" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#umgang-mit-fehlenden-werten-bei-logischer-indizierung"><i class="fa fa-check"></i><b>4.3.18</b> Umgang mit fehlenden Werten bei logischer Indizierung</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#systematische-wertefolgen-erzeugen"><i class="fa fa-check"></i><b>4.4</b> Systematische Wertefolgen erzeugen</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-erstellen"><i class="fa fa-check"></i><b>4.4.1</b> Numerische Sequenzen erstellen</a></li>
+<li class="chapter" data-level="4.4.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-mit-definierter-schrittgröße"><i class="fa fa-check"></i><b>4.4.2</b> Numerische Sequenzen mit definierter Schrittgröße</a></li>
+<li class="chapter" data-level="4.4.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-mit-definierter-länge"><i class="fa fa-check"></i><b>4.4.3</b> Numerische Sequenzen mit definierter Länge</a></li>
+<li class="chapter" data-level="4.4.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen"><i class="fa fa-check"></i><b>4.4.4</b> Numerische Sequenzen</a></li>
+<li class="chapter" data-level="4.4.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-mit-definierter-länge-1"><i class="fa fa-check"></i><b>4.4.5</b> Numerische Sequenzen mit definierter Länge</a></li>
+<li class="chapter" data-level="4.4.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#wertefolgen-wiederholen"><i class="fa fa-check"></i><b>4.4.6</b> Wertefolgen wiederholen</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#daten-transformieren"><i class="fa fa-check"></i><b>4.5</b> Daten transformieren</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren"><i class="fa fa-check"></i><b>4.5.1</b> Werte sortieren</a></li>
+<li class="chapter" data-level="4.5.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren-1"><i class="fa fa-check"></i><b>4.5.2</b> Werte sortieren</a></li>
+<li class="chapter" data-level="4.5.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren-2"><i class="fa fa-check"></i><b>4.5.3</b> Werte sortieren</a></li>
+<li class="chapter" data-level="4.5.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren-3"><i class="fa fa-check"></i><b>4.5.4</b> Werte sortieren</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#einfache-deskriptiv-statistische-kennwerte"><i class="fa fa-check"></i><b>4.6</b> Einfache deskriptiv-statistische Kennwerte</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#einfache-deskriptiv-statistische-kennwerte-1"><i class="fa fa-check"></i><b>4.6.1</b> Einfache deskriptiv-statistische Kennwerte</a></li>
+<li class="chapter" data-level="4.6.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#einfache-deskriptiv-statistische-kennwerte-2"><i class="fa fa-check"></i><b>4.6.2</b> Einfache deskriptiv-statistische Kennwerte</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="literatur-1.html"><a href="literatur-1.html"><i class="fa fa-check"></i>Literatur</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Psy_B_11: EDV I - Einheit 2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lehrplan" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Lehrplan</h1>
+<div id="semesterplan" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Semesterplan</h2>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Einheit
+</th>
+<th style="text-align:left;">
+Vorlesung
+</th>
+<th style="text-align:left;">
+Übungswoche
+</th>
+<th style="text-align:left;">
+Thema
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+2.11.20
+</td>
+<td style="text-align:left;">
+keine Übung
+</td>
+<td style="text-align:left;">
+Grundlagen und Begriffe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+16.11.20
+</td>
+<td style="text-align:left;">
+KW 48
+</td>
+<td style="text-align:left;">
+Vektoren und Indizierung
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Datenformate erstellen und transformieren
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+30.11.20
+</td>
+<td style="text-align:left;">
+KW 50
+</td>
+<td style="text-align:left;">
+Pakete installieren und benutzen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Datensätze erstellen und ergänzen können
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Datensätze sortieren und indizieren können
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+14.12.20
+</td>
+<td style="text-align:left;">
+KW 1
+</td>
+<td style="text-align:left;">
+Faktoren
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+deskriptive Kennwerte
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Aggregation I
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+11.01.21
+</td>
+<td style="text-align:left;">
+KW 3
+</td>
+<td style="text-align:left;">
+Aggregation II
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+In- und Export von Datensätzen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+25.01.21
+</td>
+<td style="text-align:left;">
+KW 5
+</td>
+<td style="text-align:left;">
+Grafische Darstellungen I
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+08.02.21
+</td>
+<td style="text-align:left;">
+KW 7
+</td>
+<td style="text-align:left;">
+Grafische Darstellungen II
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+22.02.21
+</td>
+<td style="text-align:left;">
+keine Übung
+</td>
+<td style="text-align:left;">
+Puffer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Probeklausur
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="übungsformat" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Übungsformat</h2>
+<p>Die Übung soll zur Hälfte in 45-minütigen Sitzungen im Vorlesungsformat zur Vorstellung der Funktionen und zur anderen Hälfte als 45-minütige praktische Übung stattfinden.
+Es wird pro Übungs-Sitzung ein Übungszettel ausgegeben, der mit Hilfe der in der Zugehörigen Vorlesung besprochenen Funktionen bearbeitet werden können soll.
+Diese Zettel sollen nach der jeweiligen Vorlesung für die Übungen vorbereitet werden, in denen der Zettel dann besprochen und mögliche Fragen geklärt werden.
+Nach den Übungssitzungen haben die Studierenden dann eine Woche Zeit, zusätzliche Hausaufgaben zu bearbeiten.</p>
+<p>Eine Ausnahme von diesem Ablauf ist die erste Sitzung, in der organisatorisches und Grundlagen in 90 minütigem Vorlesungsstil besprochen werden sollen. Auch nach dieser Sitzung werden aber Übungszettel und Hausaufgaben ausgegeben.</p>
+</div>
+<div id="lehrziele-für-jede-sitzung" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Lehrziele für jede Sitzung</h2>
+<p>Die Studierenden können nach dem Absolvieren der Übung…</p>
+<div id="einheit-1" class="section level4 unnumbered">
+<h4>Einheit 1</h4>
+<ul>
+<li>Vor- und Nachteile von R und RStudio nennen und diese installieren.</li>
+<li>erklären was Funktionen und was Argumente sind.</li>
+<li>die Hilfe benutzen.</li>
+<li>das Environment von R benutzen um Objekte anzulegen und zu löschen.</li>
+</ul>
+</div>
+<div id="einheit-2" class="section level4 unnumbered">
+<h4>Einheit 2</h4>
+<ul>
+<li>Vektoren erstellen, tranformieren und indizieren.</li>
+<li>verschiedene Datenformate in R erstellen, benutzen und in einander überführen.</li>
+</ul>
+</div>
+<div id="einheit-3" class="section level4 unnumbered">
+<h4>Einheit 3</h4>
+<ul>
+<li>Pakete installieren und benutzen.</li>
+<li>mit Hilfe des “<code>tidyverse</code>” Datensätze erstellen, ergänzen, sortieren und indizieren.</li>
+</ul>
+</div>
+<div id="einheit-4" class="section level4 unnumbered">
+<h4>Einheit 4</h4>
+<ul>
+<li>Faktoren erstellen.</li>
+<li>deskriptive Kennwerte berechnen.</li>
+<li>Daten auf Gruppenebene aggregieren.</li>
+</ul>
+</div>
+<div id="einheit-5" class="section level4 unnumbered">
+<h4>Einheit 5</h4>
+<ul>
+<li>Daten auf Gruppenebene noch besser aggregieren.</li>
+<li>Häufigkeiten auszählen und tabellarisch darstellen.</li>
+<li>Datensätze aus verschiedenen Formaten einlesen.</li>
+</ul>
+</div>
+<div id="einheit-6" class="section level4 unnumbered">
+<h4>Einheit 6</h4>
+<ul>
+<li>eine Anzahl von Grafiken erstellen.</li>
+</ul>
+</div>
+<div id="einheit-7" class="section level4 unnumbered">
+<h4>Einheit 7</h4>
+<ul>
+<li>kompliziertere Grafiken erstellen.</li>
+</ul>
+</div>
+<div id="einheit-8" class="section level4 unnumbered">
+<h4>Einheit 8</h4>
+<ul>
+<li>die Funktionsschreibweise lesen und anwenden.</li>
+<li>erfolfreich an der Klausur teilnehmen.</li>
+</ul>
+</div>
+</div>
+<div id="prüfungsleistung" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Prüfungsleistung</h2>
+<p>Die Studierenden <strong>müssen</strong> während des Semesters die nach den Übungssitzungen ausgegebenen Hausaufgaben innerhalb einer Woche sinnvoll bearbeitet abgeben.</p>
+<p>Mit maximal einer nicht sinnvoll bearbeiteten Serie werden die Studierenden zur Klausur am Ende des Semesters zugelassen.</p>
+
+<!-- # --- -->
+<!-- # title: 'Psy_B_11: EDV I - Einheit 1' -->
+<!-- # subtitle: 'Rste Schritte' -->
+<!-- # author: "Max Brede" -->
+<!-- # date: \today -->
+<!-- # output: -->
+<!-- #   #beamer_presentation: -->
+<!-- #   #  includes: -->
+<!-- #   #      in_header: /home/brede/MEGA/Andres/Header/header_beamer.tex -->
+<!-- #   #  theme: "default" -->
+<!-- #   #  slide_level: 2 -->
+<!-- #   #  toc: TRUE -->
+<!-- #   #  incremental: false -->
+<!-- #   #  colortheme: "sidebartab" -->
+<!-- #   ioslides_presentation: -->
+<!-- #     transition: faster -->
+<!-- #     css: /home/brede/MEGA/Honorar/KfN160320/styles.css -->
+<!-- #     slide_level: 3 -->
+<!-- # widescreen: true -->
+<!-- # --- -->
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vorlesung-i-rste-schritte.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["EDV1_WS20.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
