@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 tidyverse und tibbles | Psy_B_11: EDV I - Einheit 2</title>
+  <title>5 tidyverse und tibbles | EDV1</title>
   <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 tidyverse und tibbles | Psy_B_11: EDV I - Einheit 2" />
+  <meta property="og:title" content="5 tidyverse und tibbles | EDV1" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 tidyverse und tibbles | Psy_B_11: EDV I - Einheit 2" />
+  <meta name="twitter:title" content="5 tidyverse und tibbles | EDV1" />
   
   <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
   
@@ -24,6 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
+<meta name="date" content="2020-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -207,54 +208,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#begriff"><i class="fa fa-check"></i><b>4.2.1</b> Begriff</a></li>
 <li class="chapter" data-level="4.2.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-erzeugen"><i class="fa fa-check"></i><b>4.2.2</b> Vektoren erzeugen</a></li>
-<li class="chapter" data-level="4.2.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-erzeugen-1"><i class="fa fa-check"></i><b>4.2.3</b> Vektoren erzeugen</a></li>
-<li class="chapter" data-level="4.2.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-erzeugen-2"><i class="fa fa-check"></i><b>4.2.4</b> Vektoren erzeugen</a></li>
-<li class="chapter" data-level="4.2.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-verwenden"><i class="fa fa-check"></i><b>4.2.5</b> Vektoren verwenden</a></li>
-<li class="chapter" data-level="4.2.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#datentypen-in-vektoren"><i class="fa fa-check"></i><b>4.2.6</b> Datentypen in Vektoren</a></li>
-<li class="chapter" data-level="4.2.7" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#aufgabe-2"><i class="fa fa-check"></i><b>4.2.7</b> Aufgabe</a></li>
+<li class="chapter" data-level="4.2.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren-verwenden"><i class="fa fa-check"></i><b>4.2.3</b> Vektoren verwenden</a></li>
+<li class="chapter" data-level="4.2.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#datentypen-in-vektoren"><i class="fa fa-check"></i><b>4.2.4</b> Datentypen in Vektoren</a></li>
+<li class="chapter" data-level="4.2.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#aufgabe-2"><i class="fa fa-check"></i><b>4.2.5</b> Aufgabe</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#indizierung"><i class="fa fa-check"></i><b>4.3</b> Indizierung</a>
 <ul>
 <li class="chapter" data-level="4.3.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-indizieren"><i class="fa fa-check"></i><b>4.3.1</b> Elemente indizieren</a></li>
-<li class="chapter" data-level="4.3.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-indizieren-1"><i class="fa fa-check"></i><b>4.3.2</b> Elemente indizieren</a></li>
-<li class="chapter" data-level="4.3.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#mehrere-elemente-gleichzeitig-indizieren"><i class="fa fa-check"></i><b>4.3.3</b> mehrere Elemente gleichzeitig indizieren</a></li>
-<li class="chapter" data-level="4.3.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#mehrere-elemente-gleichzeitig-indizieren-1"><i class="fa fa-check"></i><b>4.3.4</b> mehrere Elemente gleichzeitig indizieren</a></li>
-<li class="chapter" data-level="4.3.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-ausschließen"><i class="fa fa-check"></i><b>4.3.5</b> Elemente ausschließen</a></li>
-<li class="chapter" data-level="4.3.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-austauschen"><i class="fa fa-check"></i><b>4.3.6</b> Elemente austauschen</a></li>
-<li class="chapter" data-level="4.3.7" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-austauschen-1"><i class="fa fa-check"></i><b>4.3.7</b> Elemente austauschen</a></li>
-<li class="chapter" data-level="4.3.8" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-löschen"><i class="fa fa-check"></i><b>4.3.8</b> Elemente löschen</a></li>
-<li class="chapter" data-level="4.3.9" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-operatoren"><i class="fa fa-check"></i><b>4.3.9</b> Logische Operatoren</a></li>
-<li class="chapter" data-level="4.3.10" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logischer-vergleich-von-vektoren"><i class="fa fa-check"></i><b>4.3.10</b> Logischer Vergleich von Vektoren</a></li>
-<li class="chapter" data-level="4.3.11" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-operatoren-1"><i class="fa fa-check"></i><b>4.3.11</b> Logische Operatoren</a></li>
-<li class="chapter" data-level="4.3.12" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-vektoren"><i class="fa fa-check"></i><b>4.3.12</b> Logische Vektoren</a></li>
-<li class="chapter" data-level="4.3.13" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-vergeiche-von-vektoren"><i class="fa fa-check"></i><b>4.3.13</b> Logische Vergeiche von Vektoren</a></li>
-<li class="chapter" data-level="4.3.14" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-vergeiche-von-vektoren-1"><i class="fa fa-check"></i><b>4.3.14</b> Logische Vergeiche von Vektoren</a></li>
-<li class="chapter" data-level="4.3.15" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung"><i class="fa fa-check"></i><b>4.3.15</b> Logische Indizierung</a></li>
-<li class="chapter" data-level="4.3.16" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung-1"><i class="fa fa-check"></i><b>4.3.16</b> Logische Indizierung</a></li>
-<li class="chapter" data-level="4.3.17" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung-und-fehlende-werte"><i class="fa fa-check"></i><b>4.3.17</b> Logische Indizierung und fehlende Werte</a></li>
-<li class="chapter" data-level="4.3.18" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#umgang-mit-fehlenden-werten-bei-logischer-indizierung"><i class="fa fa-check"></i><b>4.3.18</b> Umgang mit fehlenden Werten bei logischer Indizierung</a></li>
+<li class="chapter" data-level="4.3.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#mehrere-elemente-gleichzeitig-indizieren"><i class="fa fa-check"></i><b>4.3.2</b> mehrere Elemente gleichzeitig indizieren</a></li>
+<li class="chapter" data-level="4.3.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-ausschließen"><i class="fa fa-check"></i><b>4.3.3</b> Elemente ausschließen</a></li>
+<li class="chapter" data-level="4.3.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-austauschen"><i class="fa fa-check"></i><b>4.3.4</b> Elemente austauschen</a></li>
+<li class="chapter" data-level="4.3.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#elemente-löschen"><i class="fa fa-check"></i><b>4.3.5</b> Elemente löschen</a></li>
+<li class="chapter" data-level="4.3.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-operatoren"><i class="fa fa-check"></i><b>4.3.6</b> Logische Operatoren</a></li>
+<li class="chapter" data-level="4.3.7" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logischer-vergleich-von-vektoren"><i class="fa fa-check"></i><b>4.3.7</b> Logischer Vergleich von Vektoren</a></li>
+<li class="chapter" data-level="4.3.8" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-vektoren"><i class="fa fa-check"></i><b>4.3.8</b> Logische Vektoren</a></li>
+<li class="chapter" data-level="4.3.9" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-vergeiche-von-vektoren"><i class="fa fa-check"></i><b>4.3.9</b> Logische Vergeiche von Vektoren</a></li>
+<li class="chapter" data-level="4.3.10" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung"><i class="fa fa-check"></i><b>4.3.10</b> Logische Indizierung</a></li>
+<li class="chapter" data-level="4.3.11" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#logische-indizierung-und-fehlende-werte"><i class="fa fa-check"></i><b>4.3.11</b> Logische Indizierung und fehlende Werte</a></li>
+<li class="chapter" data-level="4.3.12" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#umgang-mit-fehlenden-werten-bei-logischer-indizierung"><i class="fa fa-check"></i><b>4.3.12</b> Umgang mit fehlenden Werten bei logischer Indizierung</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#systematische-wertefolgen-erzeugen"><i class="fa fa-check"></i><b>4.4</b> Systematische Wertefolgen erzeugen</a>
 <ul>
 <li class="chapter" data-level="4.4.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-erstellen"><i class="fa fa-check"></i><b>4.4.1</b> Numerische Sequenzen erstellen</a></li>
-<li class="chapter" data-level="4.4.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-mit-definierter-schrittgröße"><i class="fa fa-check"></i><b>4.4.2</b> Numerische Sequenzen mit definierter Schrittgröße</a></li>
-<li class="chapter" data-level="4.4.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-mit-definierter-länge"><i class="fa fa-check"></i><b>4.4.3</b> Numerische Sequenzen mit definierter Länge</a></li>
-<li class="chapter" data-level="4.4.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen"><i class="fa fa-check"></i><b>4.4.4</b> Numerische Sequenzen</a></li>
-<li class="chapter" data-level="4.4.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#numerische-sequenzen-mit-definierter-länge-1"><i class="fa fa-check"></i><b>4.4.5</b> Numerische Sequenzen mit definierter Länge</a></li>
-<li class="chapter" data-level="4.4.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#wertefolgen-wiederholen"><i class="fa fa-check"></i><b>4.4.6</b> Wertefolgen wiederholen</a></li>
+<li class="chapter" data-level="4.4.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#wertefolgen-wiederholen"><i class="fa fa-check"></i><b>4.4.2</b> Wertefolgen wiederholen</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#daten-transformieren"><i class="fa fa-check"></i><b>4.5</b> Daten transformieren</a>
 <ul>
 <li class="chapter" data-level="4.5.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren"><i class="fa fa-check"></i><b>4.5.1</b> Werte sortieren</a></li>
-<li class="chapter" data-level="4.5.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren-1"><i class="fa fa-check"></i><b>4.5.2</b> Werte sortieren</a></li>
-<li class="chapter" data-level="4.5.3" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren-2"><i class="fa fa-check"></i><b>4.5.3</b> Werte sortieren</a></li>
-<li class="chapter" data-level="4.5.4" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#werte-sortieren-3"><i class="fa fa-check"></i><b>4.5.4</b> Werte sortieren</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#einfache-deskriptiv-statistische-kennwerte"><i class="fa fa-check"></i><b>4.6</b> Einfache deskriptiv-statistische Kennwerte</a>
-<ul>
-<li class="chapter" data-level="4.6.1" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#einfache-deskriptiv-statistische-kennwerte-1"><i class="fa fa-check"></i><b>4.6.1</b> Einfache deskriptiv-statistische Kennwerte</a></li>
-<li class="chapter" data-level="4.6.2" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#einfache-deskriptiv-statistische-kennwerte-2"><i class="fa fa-check"></i><b>4.6.2</b> Einfache deskriptiv-statistische Kennwerte</a></li>
-</ul></li>
+<li class="chapter" data-level="4.6" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#einfache-deskriptiv-statistische-kennwerte"><i class="fa fa-check"></i><b>4.6</b> Einfache deskriptiv-statistische Kennwerte</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i><b>5</b> <code>tidyverse</code> und <code>tibbles</code></a>
 <ul>
@@ -303,7 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Psy_B_11: EDV I - Einheit 2</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EDV1</a>
           </h1>
         </div>
 
@@ -1107,10 +1089,10 @@ Dafür können wir die <code>arrange</code>-Funktion und unseren pipe-Operator b
 <span id="cb295-14"><a href="tidyverse-und-tibbles.html#cb295-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ges_iq <span class="sc">&gt;</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb295-15"><a href="tidyverse-und-tibbles.html#cb295-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&#39;iq&#39;</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb295-16"><a href="tidyverse-und-tibbles.html#cb295-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code></pre></div>
-<pre><code>##           spr_iq    log_iq    ges_iq
-## spr_iq 1.0000000 0.0665866 0.5545429
-## log_iq 0.0665866 1.0000000 0.8672334
-## ges_iq 0.5545429 0.8672334 1.0000000</code></pre>
+<pre><code>##            spr_iq     log_iq    ges_iq
+## spr_iq  1.0000000 -0.1982297 0.4434219
+## log_iq -0.1982297  1.0000000 0.7906268
+## ges_iq  0.4434219  0.7906268 1.0000000</code></pre>
 <p>Als ergänzende Nebenbemerkung:</p>
 <p>mit <code>skim</code> aus dem <code>skimr</code>-Paket lässt sich der Überblick noch schöner gestalten:</p>
 <div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="tidyverse-und-tibbles.html#cb297-1" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(iris)</span></code></pre></div>

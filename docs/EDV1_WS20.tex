@@ -37,7 +37,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Psy\_B\_11: EDV I - Einheit 2},
+  pdftitle={EDV1},
   pdfauthor={Max Brede},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -130,16 +130,9 @@
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
-\title{Psy\_B\_11: EDV I - Einheit 2}
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{elementare Datenverarbeitung}
+\title{EDV1}
 \author{Max Brede}
-\date{\today}
+\date{2020-12-13}
 
 \begin{document}
 \maketitle
@@ -1576,9 +1569,6 @@ Leere Vektoren eines bestimmten Typs lassen sich mit dem Namen des Typs als Funk
 ## [1] FALSE FALSE FALSE
 \end{verbatim}
 
-\hypertarget{vektoren-erzeugen-1}{%
-\subsection{Vektoren erzeugen}\label{vektoren-erzeugen-1}}
-
 Um mehrere Daten in einer eindimensinalen Anordnung zu verketten wird die \texttt{c()}-Funktion benutzt.
 Die Argumente werden in Reihenfolge der Eingabe hintereinander angeordnet und können beliebigen Datentypen angehören.
 
@@ -1595,9 +1585,6 @@ Die Argumente werden in Reihenfolge der Eingabe hintereinander angeordnet und k�
 ## [1] "dies"   "ist"    "ein"    "Vektor"
 ## [1]  TRUE FALSE  TRUE FALSE
 \end{verbatim}
-
-\hypertarget{vektoren-erzeugen-2}{%
-\subsection{Vektoren erzeugen}\label{vektoren-erzeugen-2}}
 
 Das Ergebnis kann dann wie gewohnt in ein Objekt abgelegt werden.
 
@@ -1698,9 +1685,6 @@ Die einzelnen Elemente eines Vektors lassen sich über ihren Index mit dem \text
 ## [1] 42
 \end{verbatim}
 
-\hypertarget{elemente-indizieren-1}{%
-\subsection{Elemente indizieren}\label{elemente-indizieren-1}}
-
 Wird ein Index über dem des letzten Eintrags eines Vektors aufgerufen, wird \texttt{NA} zurückgegeben.
 
 \begin{Shaded}
@@ -1738,9 +1722,6 @@ Es lassen sich auch mehrere Werte eines Vektors über die Indizierung über Zuhi
 \begin{verbatim}
 ## [1]     42 424242  42400  42000
 \end{verbatim}
-
-\hypertarget{mehrere-elemente-gleichzeitig-indizieren-1}{%
-\subsection{mehrere Elemente gleichzeitig indizieren}\label{mehrere-elemente-gleichzeitig-indizieren-1}}
 
 Der Index-Vektor kann dabei auch länger als der ursprüngliche Vektor sein, da mehrfacher Aufruf eines Index möglich ist.
 
@@ -1823,9 +1804,6 @@ Die Indizierung kann außerdem genutzt werden um Elemente eines Vektors zu erset
 ## [1]     12      2   4242     42 424242  42400  42000
 ## [8]   4224     24
 \end{verbatim}
-
-\hypertarget{elemente-austauschen-1}{%
-\subsection{Elemente austauschen}\label{elemente-austauschen-1}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1912,9 +1890,6 @@ Wie vorher Einzelwerte kann man auch Vektoren in logischen Vergleichen verwenden
 
 Dabei werden logische Werte als Ergebnis für den Vergleich jeden Wertes ausgegeben.
 
-\hypertarget{logische-operatoren-1}{%
-\subsection{Logische Operatoren}\label{logische-operatoren-1}}
-
 Die vorher gezeigten logischen Verknüpfungen lassen sich genauso anwenden
 
 \begin{Shaded}
@@ -1970,9 +1945,6 @@ Zwei \textbf{gleichlange} Vektoren lassen sich auch mit Hilfe logischer Operator
 \begin{verbatim}
 ## [1] FALSE FALSE FALSE  TRUE FALSE FALSE
 \end{verbatim}
-
-\hypertarget{logische-vergeiche-von-vektoren-1}{%
-\subsection{Logische Vergeiche von Vektoren}\label{logische-vergeiche-von-vektoren-1}}
 
 Und natürlich lassen sich hier alle vorher besprochenen logischen Operatoren anwenden:
 
@@ -2031,9 +2003,6 @@ Eine einfach Methode zur Auswahl von Teilmengen von Elementen die einem bestimmt
 \begin{verbatim}
 ## [1] 17 23 21
 \end{verbatim}
-
-\hypertarget{logische-indizierung-1}{%
-\subsection{Logische Indizierung}\label{logische-indizierung-1}}
 
 Der Indexvektor muss nicht vorher als Objekt angelegt werden.
 
@@ -2131,9 +2100,6 @@ In R lassen sich durch einen Doppelpunkt Zahlensequenzen in Einserschritten zwis
 ## [13] -13 -14 -15 -16 -17 -18 -19 -20
 \end{verbatim}
 
-\hypertarget{numerische-sequenzen-mit-definierter-schrittgruxf6uxdfe}{%
-\subsection{Numerische Sequenzen mit definierter Schrittgröße}\label{numerische-sequenzen-mit-definierter-schrittgruxf6uxdfe}}
-
 Sequenzen mit anderen Schrittgrößen lassen sich mit der \texttt{seq()}-Funktion erstellen.
 
 Dabei lässt sich entweder die Schrittgröße angeben:
@@ -2158,9 +2124,6 @@ Dabei lässt sich entweder die Schrittgröße angeben:
 ## [1]  0  5 10 15 20 25 30 35 40
 \end{verbatim}
 
-\hypertarget{numerische-sequenzen-mit-definierter-luxe4nge}{%
-\subsection{Numerische Sequenzen mit definierter Länge}\label{numerische-sequenzen-mit-definierter-luxe4nge}}
-
 Oder die gewünschte Anzahl der Werte in der Sequenz:
 
 \begin{Shaded}
@@ -2183,9 +2146,6 @@ Oder die gewünschte Anzahl der Werte in der Sequenz:
 ## [1]  0.0  8.4 16.8 25.2 33.6 42.0
 \end{verbatim}
 
-\hypertarget{numerische-sequenzen}{%
-\subsection{Numerische Sequenzen}\label{numerische-sequenzen}}
-
 Bei zweiterer Methode oder bei Angabe einer nicht-ganzzahligen Schrittgröße können auch nicht zur Indizierung geeignete Dezimalzahlen entstehen.
 
 \begin{Shaded}
@@ -2197,9 +2157,6 @@ Bei zweiterer Methode oder bei Angabe einer nicht-ganzzahligen Schrittgröße k�
 \begin{verbatim}
 ##  [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
 \end{verbatim}
-
-\hypertarget{numerische-sequenzen-mit-definierter-luxe4nge-1}{%
-\subsection{Numerische Sequenzen mit definierter Länge}\label{numerische-sequenzen-mit-definierter-luxe4nge-1}}
 
 Mit dem \texttt{along} Argument lässt sich außerdem eine Sequenz in der Länge eines übergebenen Vektors erstellen.
 
@@ -2293,9 +2250,6 @@ Mit dem \texttt{along} Argument lässt sich außerdem eine Sequenz in der Länge
 ## [1] 42 16 12
 \end{verbatim}
 
-\hypertarget{werte-sortieren-1}{%
-\subsection{Werte sortieren}\label{werte-sortieren-1}}
-
 \texttt{order()} macht im Prinzip dasselbe, gibt aber statt des sortierten Vektors die Indizes in entsprechender Ordnung aus.
 
 \begin{Shaded}
@@ -2328,9 +2282,6 @@ Mit dem \texttt{along} Argument lässt sich außerdem eine Sequenz in der Länge
 ## [1] 12 16 42
 \end{verbatim}
 
-\hypertarget{werte-sortieren-2}{%
-\subsection{Werte sortieren}\label{werte-sortieren-2}}
-
 Dies funktioniert auch für \texttt{character}-Vektoren in alphabetischer Ordnung
 
 \begin{Shaded}
@@ -2352,9 +2303,6 @@ Dies funktioniert auch für \texttt{character}-Vektoren in alphabetischer Ordnun
 \begin{verbatim}
 ##  [1] "D" "e" "l" "L" "n" "N" "O" "R" "t" "Z"
 \end{verbatim}
-
-\hypertarget{werte-sortieren-3}{%
-\subsection{Werte sortieren}\label{werte-sortieren-3}}
 
 \small
 
@@ -2388,9 +2336,6 @@ Sind Zahlen an der ersten Stelle in \texttt{character}-Vektoren vertreten, werde
 \hypertarget{einfache-deskriptiv-statistische-kennwerte}{%
 \section{Einfache deskriptiv-statistische Kennwerte}\label{einfache-deskriptiv-statistische-kennwerte}}
 
-\hypertarget{einfache-deskriptiv-statistische-kennwerte-1}{%
-\subsection{Einfache deskriptiv-statistische Kennwerte}\label{einfache-deskriptiv-statistische-kennwerte-1}}
-
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{age }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{44}\NormalTok{, }\DecValTok{56}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{58}\NormalTok{, }\DecValTok{87}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{55}\NormalTok{, }\DecValTok{83}\NormalTok{)}
@@ -2407,9 +2352,6 @@ Sind Zahlen an der ersten Stelle in \texttt{character}-Vektoren vertreten, werde
 ## [1] 895.6111
 ## [1] 29.92676
 \end{verbatim}
-
-\hypertarget{einfache-deskriptiv-statistische-kennwerte-2}{%
-\subsection{Einfache deskriptiv-statistische Kennwerte}\label{einfache-deskriptiv-statistische-kennwerte-2}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3159,10 +3101,10 @@ Das könnte in unserem Beispiel exemplarisch hilfreich sein, um die drei Versuch
 \end{Shaded}
 
 \begin{verbatim}
-##             spr_iq     log_iq     ges_iq
-## spr_iq  1.00000000 -0.6796159 0.06743349
-## log_iq -0.67961588  1.0000000 0.68606953
-## ges_iq  0.06743349  0.6860695 1.00000000
+##             spr_iq      log_iq    ges_iq
+## spr_iq  1.00000000 -0.05160524 0.6025807
+## log_iq -0.05160524  1.00000000 0.7658983
+## ges_iq  0.60258067  0.76589830 1.0000000
 \end{verbatim}
 
 Als ergänzende Nebenbemerkung:
