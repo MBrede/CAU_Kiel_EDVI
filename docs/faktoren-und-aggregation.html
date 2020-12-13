@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Lehrplan | EDV1</title>
+  <title>6 Faktoren und Aggregation | EDV1</title>
   <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Lehrplan | EDV1" />
+  <meta property="og:title" content="6 Faktoren und Aggregation | EDV1" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Lehrplan | EDV1" />
+  <meta name="twitter:title" content="6 Faktoren und Aggregation | EDV1" />
   
   <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="vorlesung-i-rste-schritte.html"/>
+<link rel="prev" href="tidyverse-und-tibbles.html"/>
+<link rel="next" href="literatur-1.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -316,11 +316,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lehrplan" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Lehrplan</h1>
-<div id="semesterplan" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Semesterplan</h2>
-<table class="table" style="margin-left: auto; margin-right: auto;">
+<div id="faktoren-und-aggregation" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Faktoren und Aggregation</h1>
+<div id="organisatorisches-3" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Organisatorisches</h2>
+<div id="semesterplan-4" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Semesterplan</h3>
+<table class=" lightable-paper" style="font-size: 15px; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -530,101 +532,266 @@ Probeklausur
 </tbody>
 </table>
 </div>
-<div id="übungsformat" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Übungsformat</h2>
-<p>Die Übung soll zur Hälfte in 45-minütigen Sitzungen im Vorlesungsformat zur Vorstellung der Funktionen und zur anderen Hälfte als 45-minütige praktische Übung stattfinden.
-Es wird pro Übungs-Sitzung ein Übungszettel ausgegeben, der mit Hilfe der in der Zugehörigen Vorlesung besprochenen Funktionen bearbeitet werden können soll.
-Diese Zettel sollen nach der jeweiligen Vorlesung für die Übungen vorbereitet werden, in denen der Zettel dann besprochen und mögliche Fragen geklärt werden.
-Nach den Übungssitzungen haben die Studierenden dann eine Woche Zeit, zusätzliche Hausaufgaben zu bearbeiten.</p>
-<p>Eine Ausnahme von diesem Ablauf ist die erste Sitzung, in der organisatorisches und Grundlagen in 90 minütigem Vorlesungsstil besprochen werden sollen. Auch nach dieser Sitzung werden aber Übungszettel und Hausaufgaben ausgegeben.</p>
 </div>
-<div id="lehrziele-für-jede-sitzung" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Lehrziele für jede Sitzung</h2>
-<p>Die Studierenden können nach dem Absolvieren der Übung…</p>
-<div id="einheit-1" class="section level4 unnumbered">
-<h4>Einheit 1</h4>
-<ul>
-<li>Vor- und Nachteile von R und RStudio nennen und diese installieren.</li>
-<li>erklären was Funktionen und was Argumente sind.</li>
-<li>die Hilfe benutzen.</li>
-<li>das Environment von R benutzen um Objekte anzulegen und zu löschen.</li>
-</ul>
+<div id="faktoren" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Faktoren</h2>
+<div id="gruppierungsfaktoren" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Gruppierungsfaktoren</h3>
+<p>Mit der Klasse <code>factor</code> können die Eigenschaften kategorialer Variablen abgebildet werden. Sie wird insbesondere für Gruppierungsfaktoren im versuchsplanerischen Sinn verwendet und kann bei statistischen Auswertung und Darstellungen hiflreich sein.</p>
+<p>Eine Möglichkeit, ein Objekt der Klasse <code>factor</code> zu erstellen, ist die <code>factor()</code>-Funktion.</p>
+<!-- ### Nominalskalierte Faktoren -->
+<!-- #### Ungeordnete Faktoren -->
+<p>Die Stufen eines ungeordneten Faktors haben keine hierarchische Ordnung - Beispiel “Geschlecht”:</p>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="faktoren-und-aggregation.html#cb298-1" aria-hidden="true" tabindex="-1"></a>sex <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>, <span class="st">&quot;m&quot;</span>, <span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>)</span>
+<span id="cb298-2"><a href="faktoren-und-aggregation.html#cb298-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(sex)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="faktoren-und-aggregation.html#cb300-1" aria-hidden="true" tabindex="-1"></a>sexFac  <span class="ot">&lt;-</span>  <span class="fu">factor</span>(sex)</span>
+<span id="cb300-2"><a href="faktoren-und-aggregation.html#cb300-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(sexFac)</span></code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="faktoren-und-aggregation.html#cb302-1" aria-hidden="true" tabindex="-1"></a>sexFac </span></code></pre></div>
+<pre><code>## [1] m f f m m m f f
+## Levels: f m</code></pre>
+<!-- ### Ungeordnete Faktoren -->
+<p>Ebenso funktioniert dies mit numerischen Faktorstufen.</p>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="faktoren-und-aggregation.html#cb304-1" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>))</span></code></pre></div>
+<pre><code>## [1] 1 1 3 3 4 4
+## Levels: 1 3 4</code></pre>
+<p><code>factor()</code> bietet außerdem die Möglichkeit, nicht im Ursprungsvektor definierte Faktorstufen zu definieren:</p>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="faktoren-und-aggregation.html#cb306-1" aria-hidden="true" tabindex="-1"></a>numericfactor <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>), <span class="at">levels=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb306-2"><a href="faktoren-und-aggregation.html#cb306-2" aria-hidden="true" tabindex="-1"></a>numericfactor</span></code></pre></div>
+<pre><code>## [1] 1 1 3 3 4 4
+## Levels: 1 2 3 4 5</code></pre>
 </div>
-<div id="einheit-2" class="section level4 unnumbered">
-<h4>Einheit 2</h4>
-<ul>
-<li>Vektoren erstellen, tranformieren und indizieren.</li>
-<li>verschiedene Datenformate in R erstellen, benutzen und in einander überführen.</li>
-</ul>
+<div id="mit-faktorstufen-arbeiten" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Mit Faktorstufen arbeiten</h3>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="faktoren-und-aggregation.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 0=Mann, 1=Frau</span></span>
+<span id="cb308-2"><a href="faktoren-und-aggregation.html#cb308-2" aria-hidden="true" tabindex="-1"></a>(sexNum <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">30</span>,T)) </span></code></pre></div>
+<pre><code>##  [1] 1 0 1 0 0 0 1 1 1 0 1 1 0 0 1 1 0 1 0 1 0 1 0 1 0
+## [26] 1 0 1 1 1</code></pre>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="faktoren-und-aggregation.html#cb310-1" aria-hidden="true" tabindex="-1"></a>sexFac <span class="ot">&lt;-</span> <span class="fu">factor</span>(sexNum, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>))</span>
+<span id="cb310-2"><a href="faktoren-und-aggregation.html#cb310-2" aria-hidden="true" tabindex="-1"></a>sexFac</span></code></pre></div>
+<pre><code>##  [1] female male   female male   male   male   female
+##  [8] female female male   female female male   male  
+## [15] female female male   female male   female male  
+## [22] female male   female male   female male   female
+## [29] female female
+## Levels: male female</code></pre>
+<!-- ### Mit Faktorstufen arbeiten -->
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="faktoren-und-aggregation.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ausgeben, wie häufig welche Stufe vorkommt</span></span>
+<span id="cb312-2"><a href="faktoren-und-aggregation.html#cb312-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sexFac)</span></code></pre></div>
+<pre><code>##   male female 
+##     13     17</code></pre>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="faktoren-und-aggregation.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="do">## die Struktur des Faktors ausgeben</span></span>
+<span id="cb314-2"><a href="faktoren-und-aggregation.html#cb314-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sexFac)  </span></code></pre></div>
+<pre><code>##  Factor w/ 2 levels &quot;male&quot;,&quot;female&quot;: 2 1 2 1 1 1 2 2 2 1 ...</code></pre>
+<p><strong>Achtung:</strong> Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich “0” und “1” waren, s.o.).</p>
 </div>
-<div id="einheit-3" class="section level4 unnumbered">
-<h4>Einheit 3</h4>
-<ul>
-<li>Pakete installieren und benutzen.</li>
-<li>mit Hilfe des “<code>tidyverse</code>” Datensätze erstellen, ergänzen, sortieren und indizieren.</li>
-</ul>
+<div id="ändern-von-faktorstufen" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> ändern von Faktorstufen</h3>
+<p>Das <code>tidyverse</code> bietet einen netten Wrapper um Faktoren umzuwandeln.</p>
+<p>Zuerst wandeln wir die Stufen unseres <code>sexFac</code> in andere labels um:</p>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="faktoren-und-aggregation.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb316-2"><a href="faktoren-und-aggregation.html#cb316-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb316-3"><a href="faktoren-und-aggregation.html#cb316-3" aria-hidden="true" tabindex="-1"></a><span class="fu">recode_factor</span>(sexFac,</span>
+<span id="cb316-4"><a href="faktoren-und-aggregation.html#cb316-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">male =</span> <span class="st">&#39;männlich&#39;</span>,</span>
+<span id="cb316-5"><a href="faktoren-und-aggregation.html#cb316-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">female =</span> <span class="st">&#39;weiblich&#39;</span>)</span></code></pre></div>
+<pre><code>##  [1] weiblich männlich weiblich männlich männlich
+##  [6] männlich weiblich weiblich weiblich männlich
+## [11] weiblich weiblich männlich männlich weiblich
+## [16] weiblich männlich weiblich männlich weiblich
+## [21] männlich weiblich männlich weiblich männlich
+## [26] weiblich männlich weiblich weiblich weiblich
+## Levels: männlich weiblich</code></pre>
+<!-- ### ändern von Faktorstufen -->
+<p>Was aber im Zweifel noch praktischer sein kann, ist unnötige Stufen zusammenzufassen:</p>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="faktoren-und-aggregation.html#cb318-1" aria-hidden="true" tabindex="-1"></a>numericfactor</span></code></pre></div>
+<pre><code>## [1] 1 1 3 3 4 4
+## Levels: 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="faktoren-und-aggregation.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">recode_factor</span>(numericfactor,</span>
+<span id="cb320-2"><a href="faktoren-und-aggregation.html#cb320-2" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;1&#39;</span> <span class="ot">=</span> <span class="st">&#39;one&#39;</span>,</span>
+<span id="cb320-3"><a href="faktoren-und-aggregation.html#cb320-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;2&#39;</span> <span class="ot">=</span> <span class="st">&#39;two&#39;</span>,</span>
+<span id="cb320-4"><a href="faktoren-und-aggregation.html#cb320-4" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;3&#39;</span> <span class="ot">=</span> <span class="st">&#39;three&#39;</span>,</span>
+<span id="cb320-5"><a href="faktoren-und-aggregation.html#cb320-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">.default =</span> <span class="st">&#39;rest&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] one   one   three three rest  rest 
+## Levels: one two three rest</code></pre>
 </div>
-<div id="einheit-4" class="section level4 unnumbered">
-<h4>Einheit 4</h4>
-<ul>
-<li>Faktoren erstellen.</li>
-<li>deskriptive Kennwerte berechnen.</li>
-<li>Daten auf Gruppenebene aggregieren.</li>
-</ul>
+<div id="quantitative-in-kategoriale-variablen-umwandeln" class="section level3" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> Quantitative in kategoriale Variablen umwandeln</h3>
+<p>Für Median-Splits und ähnliches ist es sehr praktisch, direkt numerische Variablen in nach Grenzen eingeteilte Faktoren umzuwandeln. Dabei ist Variante 1 die schon bekannte <code>ifelse</code>-Funktion:</p>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="faktoren-und-aggregation.html#cb322-1" aria-hidden="true" tabindex="-1"></a>a_numeric_variable <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">100</span>, T)</span>
+<span id="cb322-2"><a href="faktoren-und-aggregation.html#cb322-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb322-3"><a href="faktoren-und-aggregation.html#cb322-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb322-4"><a href="faktoren-und-aggregation.html#cb322-4" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(<span class="fu">ifelse</span>(a_numeric_variable <span class="sc">&gt;</span> <span class="fu">median</span>(a_numeric_variable),</span>
+<span id="cb322-5"><a href="faktoren-und-aggregation.html#cb322-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;high&#39;</span>,</span>
+<span id="cb322-6"><a href="faktoren-und-aggregation.html#cb322-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;low&#39;</span>))</span></code></pre></div>
+<pre><code>##   [1] low  high high high high high high high high
+##  [10] high low  low  high high low  high high high
+##  [19] high high high low  low  high low  high high
+##  [28] low  low  high low  high low  low  low  low 
+##  [37] high low  low  high high low  low  low  low 
+##  [46] low  high high low  low  low  high low  high
+##  [55] high low  high high low  high high low  high
+##  [64] high low  low  low  low  high low  low  low 
+##  [73] low  high high low  high low  high low  low 
+##  [82] high low  high low  high low  high low  low 
+##  [91] low  low  high high low  low  high high high
+## [100] low 
+## Levels: high low</code></pre>
+<!-- ### Quantitative in kategoriale Variablen umwandeln -->
+<p>Wenn mehr als 2 Gruppen gewünscht sind, hilft die <code>cut</code>-Funktion
+IQ-Werte in 3 Klassen einteilen:</p>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="faktoren-und-aggregation.html#cb324-1" aria-hidden="true" tabindex="-1"></a>IQ <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">120</span>, <span class="dv">100</span>, T)</span>
+<span id="cb324-2"><a href="faktoren-und-aggregation.html#cb324-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Intervalle: [0;85], (85;115], (115;inf]</span></span>
+<span id="cb324-3"><a href="faktoren-und-aggregation.html#cb324-3" aria-hidden="true" tabindex="-1"></a>IQfac <span class="ot">&lt;-</span> <span class="fu">cut</span>(IQ, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">85</span>, <span class="dv">115</span>, <span class="cn">Inf</span>), </span>
+<span id="cb324-4"><a href="faktoren-und-aggregation.html#cb324-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;lo&quot;</span>, <span class="st">&quot;mid&quot;</span>, <span class="st">&quot;hi&quot;</span>))</span>
+<span id="cb324-5"><a href="faktoren-und-aggregation.html#cb324-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(IQfac)</span></code></pre></div>
+<pre><code>##  lo mid  hi 
+##  14  77   9</code></pre>
+<!-- ### Quantitative in kategoriale Variablen umwandeln -->
+<p><code>cut</code> kann man außerdem ganz einfach zusammen mit der <code>quantile</code>-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:</p>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="faktoren-und-aggregation.html#cb326-1" aria-hidden="true" tabindex="-1"></a>quantSplit <span class="ot">&lt;-</span> <span class="fu">cut</span>(IQ,</span>
+<span id="cb326-2"><a href="faktoren-und-aggregation.html#cb326-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">breaks=</span><span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, </span>
+<span id="cb326-3"><a href="faktoren-und-aggregation.html#cb326-3" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">quantile</span>(IQ, </span>
+<span id="cb326-4"><a href="faktoren-und-aggregation.html#cb326-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.25</span>,</span>
+<span id="cb326-5"><a href="faktoren-und-aggregation.html#cb326-5" aria-hidden="true" tabindex="-1"></a>                                            <span class="fl">0.5</span>, </span>
+<span id="cb326-6"><a href="faktoren-und-aggregation.html#cb326-6" aria-hidden="true" tabindex="-1"></a>                                            <span class="fl">0.75</span>)), </span>
+<span id="cb326-7"><a href="faktoren-und-aggregation.html#cb326-7" aria-hidden="true" tabindex="-1"></a>                           <span class="cn">Inf</span>))</span>
+<span id="cb326-8"><a href="faktoren-und-aggregation.html#cb326-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(quantSplit)</span></code></pre></div>
+<pre><code>##  (-Inf,91]   (91,101]  (101,110] (110, Inf] 
+##         28         24         23         25</code></pre>
 </div>
-<div id="einheit-5" class="section level4 unnumbered">
-<h4>Einheit 5</h4>
-<ul>
-<li>Daten auf Gruppenebene noch besser aggregieren.</li>
-<li>Häufigkeiten auszählen und tabellarisch darstellen.</li>
-<li>Datensätze aus verschiedenen Formaten einlesen.</li>
-</ul>
 </div>
-<div id="einheit-6" class="section level4 unnumbered">
-<h4>Einheit 6</h4>
-<ul>
-<li>eine Anzahl von Grafiken erstellen.</li>
-</ul>
-</div>
-<div id="einheit-7" class="section level4 unnumbered">
-<h4>Einheit 7</h4>
-<ul>
-<li>kompliziertere Grafiken erstellen.</li>
-</ul>
-</div>
-<div id="einheit-8" class="section level4 unnumbered">
-<h4>Einheit 8</h4>
-<ul>
-<li>die Funktionsschreibweise lesen und anwenden.</li>
-<li>erfolfreich an der Klausur teilnehmen.</li>
-</ul>
+<div id="daten-einlesen-i" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Daten einlesen I</h2>
+<div id="csv" class="section level3" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> <code>csv</code></h3>
+<p>Die nächste Veranstaltung wird sich nochmal umfassen mit dem Einlesen und Abspeichern von Datensätzen beschäftigen, um ein bisschen flexibler bei den Übungsaufgaben zu sein, führen wir hier aber schon mal eine Funktion aus dem <code>readr</code>-Paket (natürlich Teil des <code>tidyverse</code>) ein; die <code>read_csv</code>-Funktion. <code>.csv</code>-files sind eine weit verbreitete Art und Weise, tabellarische Daten abzuspeichern.</p>
+<p>Der einfachste Weg, solche files einzulesen, führt über die RStudio-GUI:</p>
+<p><img src="imgs/menu.png" width="500px" style="display: block; margin: auto;" /><img src="imgs/menu2.png" width="500px" style="display: block; margin: auto;" /></p>
+<!-- ### `csv` einlesen -->
+<p>Hier im Beispiel hab ich jetzt die Datei <code>test.csv</code> ausgewählt, die ein Beispiel aus der letzten Vorlesung enthält:</p>
+<p><img src="imgs/text_csv1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p>Was mir den den folgenden Code-Schnipsel liefert, den ich dann in mein Skript kopieren kann:</p>
+<p><img src="imgs/text_csv2.png" width="500px" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="faktoren-und-aggregation.html#cb328-1" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/test.csv&quot;</span>)</span></code></pre></div>
+<p>Für’s Erste soll uns das an Einlese-Strategien reichen.</p>
 </div>
 </div>
-<div id="prüfungsleistung" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Prüfungsleistung</h2>
-<p>Die Studierenden <strong>müssen</strong> während des Semesters die nach den Übungssitzungen ausgegebenen Hausaufgaben innerhalb einer Woche sinnvoll bearbeitet abgeben.</p>
-<p>Mit maximal einer nicht sinnvoll bearbeiteten Serie werden die Studierenden zur Klausur am Ende des Semesters zugelassen.</p>
+<div id="deskriptive-kennwerte" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> deskriptive Kennwerte</h2>
+<div id="einfache-deskriptiv-statistische-kennwerte-1" class="section level3" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Einfache deskriptiv-statistische Kennwerte</h3>
+<p>Wir hatten in der zweiten Veranstaltung ja schon ein paar deskriptive Kennwerte, die wollen wir jetzt auf Datensätze anwenden.</p>
+<p>Wir könnten uns beispielsweise fragen, was der Mittelwert der beiden Punkte pro Testzeitpunkt war.</p>
+<p>Dafür können wir die <code>pull</code>-Funktion nutzen, um uns einfache Spalten des Datensatzes als Vektor ausgeben zu lassen:</p>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="faktoren-und-aggregation.html#cb329-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
+<span id="cb329-2"><a href="faktoren-und-aggregation.html#cb329-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(points_t1) <span class="sc">%&gt;%</span> </span>
+<span id="cb329-3"><a href="faktoren-und-aggregation.html#cb329-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>()</span>
+<span id="cb329-4"><a href="faktoren-und-aggregation.html#cb329-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb329-5"><a href="faktoren-und-aggregation.html#cb329-5" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
+<span id="cb329-6"><a href="faktoren-und-aggregation.html#cb329-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(points_t2) <span class="sc">%&gt;%</span> </span>
+<span id="cb329-7"><a href="faktoren-und-aggregation.html#cb329-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>()</span></code></pre></div>
+<pre><code>## [1] 3.79
+## [1] 4.96</code></pre>
+<p>Das funktioniert zwar, wird aber umständlicher, je mehr Spalten und Kennwerte wir berechnen wollen.</p>
+<!-- ### deskriptive Statistik für mehrere Variablen gleichzeitig -->
+<p>Natürlich gibt es <code>tidyverse</code> auch dafür Funktionen, die uns die Arbeit leichter machen. Mit der <code>summarise</code>-Funktion können wir ähnlich wie mit der <code>mutate</code>-Funktion Variablen definieren, die dann aber Zusammenfassungen über angegebene Funktionen sind:</p>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="faktoren-und-aggregation.html#cb331-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span></span>
+<span id="cb331-2"><a href="faktoren-und-aggregation.html#cb331-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">m_t1 =</span> <span class="fu">mean</span>(points_t1),</span>
+<span id="cb331-3"><a href="faktoren-und-aggregation.html#cb331-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t1 =</span> <span class="fu">sd</span>(points_t1),</span>
+<span id="cb331-4"><a href="faktoren-und-aggregation.html#cb331-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">m_t2 =</span> <span class="fu">mean</span>(points_t2),</span>
+<span id="cb331-5"><a href="faktoren-und-aggregation.html#cb331-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t2 =</span> <span class="fu">sd</span>(points_t2),)</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 4
+##    m_t1 sd_t1  m_t2 sd_t2
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  3.79 0.689  4.96 0.989</code></pre>
+<!-- ### deskriptive Statistik für einzelne Gruppen -->
+<p>Das ist ja schon ganz nett, aber diese Infos sind selten hilfreich. In unserem Datensatz sind Experimentalgruppen eingeteilt, eigentlich wollen wir unsere Mittelwerte pro Gruppe ausrechnen. Mit der <code>group_by</code>-Funktion ist das auch ganz einfach möglich.</p>
+<p>In unsere <code>pipe</code> von eben bauen wir dazu einfach einen kurzen <code>group_by</code>-Aufruf ein und schon sind wir beim erwünschten Ergebnis:</p>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="faktoren-und-aggregation.html#cb333-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span></span>
+<span id="cb333-2"><a href="faktoren-und-aggregation.html#cb333-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span> </span>
+<span id="cb333-3"><a href="faktoren-und-aggregation.html#cb333-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">m_t1 =</span> <span class="fu">mean</span>(points_t1),</span>
+<span id="cb333-4"><a href="faktoren-und-aggregation.html#cb333-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t1 =</span> <span class="fu">sd</span>(points_t1),</span>
+<span id="cb333-5"><a href="faktoren-und-aggregation.html#cb333-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">m_t2 =</span> <span class="fu">mean</span>(points_t2),</span>
+<span id="cb333-6"><a href="faktoren-und-aggregation.html#cb333-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t2 =</span> <span class="fu">sd</span>(points_t2))</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 5
+##   group  m_t1 sd_t1  m_t2 sd_t2
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     1  3.8  0.889  4.3  1.32 
+## 2     2  3.52 0.576  5.18 0.873
+## 3     3  4.45 0.354  5.4  0.566</code></pre>
+<!-- ### deskriptive Statistik für einzelne Gruppen -->
+<p>Und diese Gruppierungen können wir jetzt einfach mit dem vorhin gesehenen <code>cut</code> zur Gruppierung kombinieren.</p>
+<p>So könnten wir uns zum Beispiel fragen, wie die Mittelwerte und Streuungen in den Quartilen aussehen. Dafür können wir einfach ein <code>mutate</code> vorschalten, indem wir die Verbesserung zum zweiten Termin und einen Quartilsplit einführen, den wir dann direkt zum Gruppieren benutzen:</p>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="faktoren-und-aggregation.html#cb335-1" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> test <span class="sc">%&gt;%</span></span>
+<span id="cb335-2"><a href="faktoren-und-aggregation.html#cb335-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">improvement =</span> points_t2 <span class="sc">-</span> points_t1,</span>
+<span id="cb335-3"><a href="faktoren-und-aggregation.html#cb335-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">quart_split =</span> <span class="fu">cut</span>(improvement,</span>
+<span id="cb335-4"><a href="faktoren-und-aggregation.html#cb335-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>,</span>
+<span id="cb335-5"><a href="faktoren-und-aggregation.html#cb335-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">quantile</span>(improvement,</span>
+<span id="cb335-6"><a href="faktoren-und-aggregation.html#cb335-6" aria-hidden="true" tabindex="-1"></a>                                               <span class="at">probs =</span> <span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">5</span>,.<span class="dv">75</span>)),</span>
+<span id="cb335-7"><a href="faktoren-und-aggregation.html#cb335-7" aria-hidden="true" tabindex="-1"></a>                                      <span class="cn">Inf</span>),</span>
+<span id="cb335-8"><a href="faktoren-und-aggregation.html#cb335-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">right =</span> T,</span>
+<span id="cb335-9"><a href="faktoren-und-aggregation.html#cb335-9" aria-hidden="true" tabindex="-1"></a>                           <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&#39;q1&#39;</span>, <span class="st">&#39;q2&#39;</span>, <span class="st">&#39;q3&#39;</span>, <span class="st">&#39;q4&#39;</span>)</span>
+<span id="cb335-10"><a href="faktoren-und-aggregation.html#cb335-10" aria-hidden="true" tabindex="-1"></a>                           )</span>
+<span id="cb335-11"><a href="faktoren-und-aggregation.html#cb335-11" aria-hidden="true" tabindex="-1"></a>         ) </span>
+<span id="cb335-12"><a href="faktoren-und-aggregation.html#cb335-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb335-13"><a href="faktoren-und-aggregation.html#cb335-13" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
+<span id="cb335-14"><a href="faktoren-und-aggregation.html#cb335-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(quart_split) <span class="sc">%&gt;%</span> </span>
+<span id="cb335-15"><a href="faktoren-und-aggregation.html#cb335-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">m_t1 =</span> <span class="fu">mean</span>(points_t1),</span>
+<span id="cb335-16"><a href="faktoren-und-aggregation.html#cb335-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t1 =</span> <span class="fu">sd</span>(points_t1),</span>
+<span id="cb335-17"><a href="faktoren-und-aggregation.html#cb335-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">m_t2 =</span> <span class="fu">mean</span>(points_t2),</span>
+<span id="cb335-18"><a href="faktoren-und-aggregation.html#cb335-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t2 =</span> <span class="fu">sd</span>(points_t2))</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 5
+##   quart_split  m_t1 sd_t1  m_t2 sd_t2
+##   &lt;fct&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 q1           4.57 0.321  3.93 1.10 
+## 2 q2           3.75 0.354  5    0.283
+## 3 q3           3.8  0.566  5.25 0.778
+## 4 q4           3.03 0.208  5.77 0.451</code></pre>
+</div>
+<div id="häufigkeitsauszählungen" class="section level3" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Häufigkeitsauszählungen</h3>
+<p>Diese <code>pipe</code> können wir auch verwenden, um uns Häufigkeiten von Bedingungskombinationen anzugucken. Dafür tauschen wir einfach die <code>summarise</code>- durch die <code>count</code>-Funktion aus und schon ist der Output eine Tabelle mit den absoluten Häufigkeiten:</p>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="faktoren-und-aggregation.html#cb337-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
+<span id="cb337-2"><a href="faktoren-und-aggregation.html#cb337-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(quart_split) <span class="sc">%&gt;%</span> </span>
+<span id="cb337-3"><a href="faktoren-und-aggregation.html#cb337-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 2
+## # Groups:   quart_split [4]
+##   quart_split     n
+##   &lt;fct&gt;       &lt;int&gt;
+## 1 q1              3
+## 2 q2              2
+## 3 q3              2
+## 4 q4              3</code></pre>
+<!-- ### Häufigkeitsauszählungen -->
+<p>Die <code>group_by</code>-Funktion kann dabei auch mehrere Argumente verstehen, wir können also auch nach Gruppe und Quantilen auszählen:</p>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="faktoren-und-aggregation.html#cb339-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
+<span id="cb339-2"><a href="faktoren-und-aggregation.html#cb339-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(quart_split,group) <span class="sc">%&gt;%</span> </span>
+<span id="cb339-3"><a href="faktoren-und-aggregation.html#cb339-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 9 x 3
+## # Groups:   quart_split, group [9]
+##   quart_split group     n
+##   &lt;fct&gt;       &lt;dbl&gt; &lt;int&gt;
+## 1 q1              1     1
+## 2 q1              2     1
+## 3 q1              3     1
+## 4 q2              1     1
+## 5 q2              2     1
+## 6 q3              2     1
+## 7 q3              3     1
+## 8 q4              1     1
+## 9 q4              2     2</code></pre>
+<!-- ## Aufgabe -->
+<!-- ### Hausaufgabe -->
+<!-- \small -->
+<!-- 100 VPn sollen ein Buch auf einem eigens entworfenen Witzigkeits-Inventar bewerten. Dieses erlaubt Testscores die $N(4,2.25)$-verteilt sind, wobei Werte unter 3 als 'nicht witzig' und von mindestens 3 als 'witzig' bewertet werden. Die Ergebnisse der Evaluation sollen aufbereitet werden. -->
+<!-- Erzeugen Sie dafür folgende Variablen: -->
+<!-- 1. Eine normalverteilte numerische Variable mit einem Mittelwert von 4 und einer Standardabweichung von 1.5 -->
+<!-- 2. Eine faktorielle Variable, die das Geschlecht der VPn beinhaltet. Dabei sollen die Werte `'m'` und `'f'` zufällig mit gleicher Wahrscheinlichkeit gezogen werden. -->
+<!-- 3. Eine faktorielle Variable, die die Testwerte (die erste, numerische Variable) in die oben genannten Kategorien einteilt. -->
+<!-- Erstellen Sie nun eine Kontingenztafel der relativen Häufigkeiten für die gemeinsame Verteilung von Geschlecht und der Bewertung in Witzigkeits-Kategorien. Fügen Sie der Kontingenztafel außerdem Randsummen hinzu. -->
 
-<!-- # --- -->
-<!-- # title: 'Psy_B_11: EDV I - Einheit 1' -->
-<!-- # subtitle: 'Rste Schritte' -->
-<!-- # author: "Max Brede" -->
-<!-- # date: \today -->
-<!-- # output: -->
-<!-- #   #beamer_presentation: -->
-<!-- #   #  includes: -->
-<!-- #   #      in_header: /home/brede/MEGA/Andres/Header/header_beamer.tex -->
-<!-- #   #  theme: "default" -->
-<!-- #   #  slide_level: 2 -->
-<!-- #   #  toc: TRUE -->
-<!-- #   #  incremental: false -->
-<!-- #   #  colortheme: "sidebartab" -->
-<!-- #   ioslides_presentation: -->
-<!-- #     transition: faster -->
-<!-- #     css: /home/brede/MEGA/Honorar/KfN160320/styles.css -->
-<!-- #     slide_level: 3 -->
-<!-- # widescreen: true -->
-<!-- # --- -->
+</div>
 </div>
 </div>
             </section>
@@ -632,8 +799,8 @@ Nach den Übungssitzungen haben die Studierenden dann eine Woche Zeit, zusätzli
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="vorlesung-i-rste-schritte.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tidyverse-und-tibbles.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="literatur-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

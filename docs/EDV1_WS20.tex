@@ -3101,10 +3101,10 @@ Das könnte in unserem Beispiel exemplarisch hilfreich sein, um die drei Versuch
 \end{Shaded}
 
 \begin{verbatim}
-##             spr_iq      log_iq    ges_iq
-## spr_iq  1.00000000 -0.05160524 0.6025807
-## log_iq -0.05160524  1.00000000 0.7658983
-## ges_iq  0.60258067  0.76589830 1.0000000
+##            spr_iq     log_iq    ges_iq
+## spr_iq  1.0000000 -0.4200961 0.4754705
+## log_iq -0.4200961  1.0000000 0.5985952
+## ges_iq  0.4754705  0.5985952 1.0000000
 \end{verbatim}
 
 Als ergänzende Nebenbemerkung:
@@ -3117,6 +3117,499 @@ mit \texttt{skim} aus dem \texttt{skimr}-Paket lässt sich der Überblick noch s
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{faktoren-und-aggregation}{%
+\chapter{Faktoren und Aggregation}\label{faktoren-und-aggregation}}
+
+\hypertarget{organisatorisches-3}{%
+\section{Organisatorisches}\label{organisatorisches-3}}
+
+\hypertarget{semesterplan-4}{%
+\subsection{Semesterplan}\label{semesterplan-4}}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}{l|l|l|l}
+\hline
+Einheit & Vorlesung & Übungswoche & Thema\\
+\hline
+1 & 2.11.20 & keine Übung & Grundlagen und Begriffe\\
+\hline
+2 & 16.11.20 & KW 48 & Vektoren und Indizierung\\
+\hline
+ &  &  & Datenformate erstellen und transformieren\\
+\hline
+3 & 30.11.20 & KW 50 & Pakete installieren und benutzen\\
+\hline
+ &  &  & Datensätze erstellen und ergänzen können\\
+\hline
+ &  &  & Datensätze sortieren und indizieren können\\
+\hline
+4 & 14.12.20 & KW 1 & Faktoren\\
+\hline
+ &  &  & deskriptive Kennwerte\\
+\hline
+ &  &  & Aggregation I\\
+\hline
+5 & 11.01.21 & KW 3 & Aggregation II\\
+\hline
+ &  &  & In- und Export von Datensätzen\\
+\hline
+6 & 25.01.21 & KW 5 & Grafische Darstellungen I\\
+\hline
+7 & 08.02.21 & KW 7 & Grafische Darstellungen II\\
+\hline
+8 & 22.02.21 & keine Übung & Puffer\\
+\hline
+ &  &  & Probeklausur\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{faktoren}{%
+\section{Faktoren}\label{faktoren}}
+
+\hypertarget{gruppierungsfaktoren}{%
+\subsection{Gruppierungsfaktoren}\label{gruppierungsfaktoren}}
+
+Mit der Klasse \texttt{factor} können die Eigenschaften kategorialer Variablen abgebildet werden. Sie wird insbesondere für Gruppierungsfaktoren im versuchsplanerischen Sinn verwendet und kann bei statistischen Auswertung und Darstellungen hiflreich sein.
+
+Eine Möglichkeit, ein Objekt der Klasse \texttt{factor} zu erstellen, ist die \texttt{factor()}-Funktion.
+
+Die Stufen eines ungeordneten Faktors haben keine hierarchische Ordnung - Beispiel ``Geschlecht'':
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sex }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"m"}\NormalTok{, }\StringTok{"f"}\NormalTok{, }\StringTok{"f"}\NormalTok{, }\StringTok{"m"}\NormalTok{, }\StringTok{"m"}\NormalTok{, }\StringTok{"m"}\NormalTok{, }\StringTok{"f"}\NormalTok{, }\StringTok{"f"}\NormalTok{)}
+\FunctionTok{class}\NormalTok{(sex)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sexFac  }\OtherTok{\textless{}{-}}  \FunctionTok{factor}\NormalTok{(sex)}
+\FunctionTok{class}\NormalTok{(sexFac)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "factor"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sexFac }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] m f f m m m f f
+## Levels: f m
+\end{verbatim}
+
+Ebenso funktioniert dies mit numerischen Faktorstufen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{factor}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 1 3 3 4 4
+## Levels: 1 3 4
+\end{verbatim}
+
+\texttt{factor()} bietet außerdem die Möglichkeit, nicht im Ursprungsvektor definierte Faktorstufen zu definieren:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericfactor }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{), }\AttributeTok{levels=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{)}
+\NormalTok{numericfactor}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 1 3 3 4 4
+## Levels: 1 2 3 4 5
+\end{verbatim}
+
+\hypertarget{mit-faktorstufen-arbeiten}{%
+\subsection{Mit Faktorstufen arbeiten}\label{mit-faktorstufen-arbeiten}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# 0=Mann, 1=Frau}
+\NormalTok{(sexNum }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{, }\DecValTok{30}\NormalTok{,T)) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 0 1 0 1 1 0 1 1 1 0 0 1 1 1 0 0 0 0 1 1 0 1 1 1 0
+## [26] 0 0 0 1 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sexFac }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(sexNum, }\AttributeTok{labels=}\FunctionTok{c}\NormalTok{(}\StringTok{"male"}\NormalTok{, }\StringTok{"female"}\NormalTok{))}
+\NormalTok{sexFac}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] male   female male   female female male   female
+##  [8] female female male   male   female female female
+## [15] male   male   male   male   female female male  
+## [22] female female female male   male   male   male  
+## [29] female female
+## Levels: male female
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# ausgeben, wie häufig welche Stufe vorkommt}
+\FunctionTok{summary}\NormalTok{(sexFac)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   male female 
+##     14     16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# die Struktur des Faktors ausgeben}
+\FunctionTok{str}\NormalTok{(sexFac)  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  Factor w/ 2 levels "male","female": 1 2 1 2 2 1 2 2 2 1 ...
+\end{verbatim}
+
+\textbf{Achtung:} Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich ``0'' und ``1'' waren, s.o.).
+
+\hypertarget{uxe4ndern-von-faktorstufen}{%
+\subsection{ändern von Faktorstufen}\label{uxe4ndern-von-faktorstufen}}
+
+Das \texttt{tidyverse} bietet einen netten Wrapper um Faktoren umzuwandeln.
+
+Zuerst wandeln wir die Stufen unseres \texttt{sexFac} in andere labels um:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+
+\FunctionTok{recode\_factor}\NormalTok{(sexFac,}
+              \AttributeTok{male =} \StringTok{\textquotesingle{}männlich\textquotesingle{}}\NormalTok{,}
+              \AttributeTok{female =} \StringTok{\textquotesingle{}weiblich\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] männlich weiblich männlich weiblich weiblich
+##  [6] männlich weiblich weiblich weiblich männlich
+## [11] männlich weiblich weiblich weiblich männlich
+## [16] männlich männlich männlich weiblich weiblich
+## [21] männlich weiblich weiblich weiblich männlich
+## [26] männlich männlich männlich weiblich weiblich
+## Levels: männlich weiblich
+\end{verbatim}
+
+Was aber im Zweifel noch praktischer sein kann, ist unnötige Stufen zusammenzufassen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numericfactor}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 1 3 3 4 4
+## Levels: 1 2 3 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{recode\_factor}\NormalTok{(numericfactor,}
+              \StringTok{\textquotesingle{}1\textquotesingle{}} \OtherTok{=} \StringTok{\textquotesingle{}one\textquotesingle{}}\NormalTok{,}
+              \StringTok{\textquotesingle{}2\textquotesingle{}} \OtherTok{=} \StringTok{\textquotesingle{}two\textquotesingle{}}\NormalTok{,}
+              \StringTok{\textquotesingle{}3\textquotesingle{}} \OtherTok{=} \StringTok{\textquotesingle{}three\textquotesingle{}}\NormalTok{,}
+              \AttributeTok{.default =} \StringTok{\textquotesingle{}rest\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] one   one   three three rest  rest 
+## Levels: one two three rest
+\end{verbatim}
+
+\hypertarget{quantitative-in-kategoriale-variablen-umwandeln}{%
+\subsection{Quantitative in kategoriale Variablen umwandeln}\label{quantitative-in-kategoriale-variablen-umwandeln}}
+
+Für Median-Splits und ähnliches ist es sehr praktisch, direkt numerische Variablen in nach Grenzen eingeteilte Faktoren umzuwandeln. Dabei ist Variante 1 die schon bekannte \texttt{ifelse}-Funktion:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a\_numeric\_variable }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{100}\NormalTok{, }\DecValTok{100}\NormalTok{, T)}
+
+
+\FunctionTok{factor}\NormalTok{(}\FunctionTok{ifelse}\NormalTok{(a\_numeric\_variable }\SpecialCharTok{\textgreater{}} \FunctionTok{median}\NormalTok{(a\_numeric\_variable),}
+              \StringTok{\textquotesingle{}high\textquotesingle{}}\NormalTok{,}
+              \StringTok{\textquotesingle{}low\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1] high low  high low  low  low  high low  low 
+##  [10] low  low  high low  low  low  high low  low 
+##  [19] high low  high low  high low  high low  high
+##  [28] low  high high high low  low  low  high high
+##  [37] low  high high low  low  low  high low  high
+##  [46] low  high low  low  high low  high high high
+##  [55] high high high low  high high low  low  low 
+##  [64] high high low  low  high low  high low  low 
+##  [73] high high low  high high low  low  low  low 
+##  [82] low  high high high high high high high low 
+##  [91] low  low  high high high high high low  low 
+## [100] high
+## Levels: high low
+\end{verbatim}
+
+Wenn mehr als 2 Gruppen gewünscht sind, hilft die \texttt{cut}-Funktion
+IQ-Werte in 3 Klassen einteilen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IQ }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{80}\SpecialCharTok{:}\DecValTok{120}\NormalTok{, }\DecValTok{100}\NormalTok{, T)}
+\DocumentationTok{\#\# Intervalle: [0;85], (85;115], (115;inf]}
+\NormalTok{IQfac }\OtherTok{\textless{}{-}} \FunctionTok{cut}\NormalTok{(IQ, }\AttributeTok{breaks=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{115}\NormalTok{, }\ConstantTok{Inf}\NormalTok{), }
+             \AttributeTok{labels=}\FunctionTok{c}\NormalTok{(}\StringTok{"lo"}\NormalTok{, }\StringTok{"mid"}\NormalTok{, }\StringTok{"hi"}\NormalTok{))}
+\FunctionTok{summary}\NormalTok{(IQfac)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  lo mid  hi 
+##  11  79  10
+\end{verbatim}
+
+\texttt{cut} kann man außerdem ganz einfach zusammen mit der \texttt{quantile}-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{quantSplit }\OtherTok{\textless{}{-}} \FunctionTok{cut}\NormalTok{(IQ,}
+                  \AttributeTok{breaks=}\FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\ConstantTok{Inf}\NormalTok{, }
+                           \FunctionTok{quantile}\NormalTok{(IQ, }
+                                    \AttributeTok{probs=}\FunctionTok{c}\NormalTok{(}\FloatTok{0.25}\NormalTok{,}
+                                            \FloatTok{0.5}\NormalTok{, }
+                                            \FloatTok{0.75}\NormalTok{)), }
+                           \ConstantTok{Inf}\NormalTok{))}
+\FunctionTok{summary}\NormalTok{(quantSplit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## (-Inf,92.5]  (92.5,101]   (101,108]  (108, Inf] 
+##          25          26          28          21
+\end{verbatim}
+
+\hypertarget{daten-einlesen-i}{%
+\section{Daten einlesen I}\label{daten-einlesen-i}}
+
+\hypertarget{csv}{%
+\subsection{\texorpdfstring{\texttt{csv}}{csv}}\label{csv}}
+
+Die nächste Veranstaltung wird sich nochmal umfassen mit dem Einlesen und Abspeichern von Datensätzen beschäftigen, um ein bisschen flexibler bei den Übungsaufgaben zu sein, führen wir hier aber schon mal eine Funktion aus dem \texttt{readr}-Paket (natürlich Teil des \texttt{tidyverse}) ein; die \texttt{read\_csv}-Funktion. \texttt{.csv}-files sind eine weit verbreitete Art und Weise, tabellarische Daten abzuspeichern.
+
+Der einfachste Weg, solche files einzulesen, führt über die RStudio-GUI:
+
+\begin{center}\includegraphics[width=166.666666666667pt]{imgs/menu} \end{center}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{imgs/menu2} \end{center}
+
+Hier im Beispiel hab ich jetzt die Datei \texttt{test.csv} ausgewählt, die ein Beispiel aus der letzten Vorlesung enthält:
+
+\begin{center}\includegraphics[width=166.666666666667pt]{imgs/text_csv1} \end{center}
+
+Was mir den den folgenden Code-Schnipsel liefert, den ich dann in mein Skript kopieren kann:
+
+\begin{center}\includegraphics[width=166.666666666667pt]{imgs/text_csv2} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/test.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Für's Erste soll uns das an Einlese-Strategien reichen.
+
+\hypertarget{deskriptive-kennwerte}{%
+\section{deskriptive Kennwerte}\label{deskriptive-kennwerte}}
+
+\hypertarget{einfache-deskriptiv-statistische-kennwerte-1}{%
+\subsection{Einfache deskriptiv-statistische Kennwerte}\label{einfache-deskriptiv-statistische-kennwerte-1}}
+
+Wir hatten in der zweiten Veranstaltung ja schon ein paar deskriptive Kennwerte, die wollen wir jetzt auf Datensätze anwenden.
+
+Wir könnten uns beispielsweise fragen, was der Mittelwert der beiden Punkte pro Testzeitpunkt war.
+
+Dafür können wir die \texttt{pull}-Funktion nutzen, um uns einfache Spalten des Datensatzes als Vektor ausgeben zu lassen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pull}\NormalTok{(points\_t1) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mean}\NormalTok{()}
+
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pull}\NormalTok{(points\_t2) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mean}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.79
+## [1] 4.96
+\end{verbatim}
+
+Das funktioniert zwar, wird aber umständlicher, je mehr Spalten und Kennwerte wir berechnen wollen.
+
+Natürlich gibt es \texttt{tidyverse} auch dafür Funktionen, die uns die Arbeit leichter machen. Mit der \texttt{summarise}-Funktion können wir ähnlich wie mit der \texttt{mutate}-Funktion Variablen definieren, die dann aber Zusammenfassungen über angegebene Funktionen sind:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{m\_t1 =} \FunctionTok{mean}\NormalTok{(points\_t1),}
+            \AttributeTok{sd\_t1 =} \FunctionTok{sd}\NormalTok{(points\_t1),}
+            \AttributeTok{m\_t2 =} \FunctionTok{mean}\NormalTok{(points\_t2),}
+            \AttributeTok{sd\_t2 =} \FunctionTok{sd}\NormalTok{(points\_t2),)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 4
+##    m_t1 sd_t1  m_t2 sd_t2
+##   <dbl> <dbl> <dbl> <dbl>
+## 1  3.79 0.689  4.96 0.989
+\end{verbatim}
+
+Das ist ja schon ganz nett, aber diese Infos sind selten hilfreich. In unserem Datensatz sind Experimentalgruppen eingeteilt, eigentlich wollen wir unsere Mittelwerte pro Gruppe ausrechnen. Mit der \texttt{group\_by}-Funktion ist das auch ganz einfach möglich.
+
+In unsere \texttt{pipe} von eben bauen wir dazu einfach einen kurzen \texttt{group\_by}-Aufruf ein und schon sind wir beim erwünschten Ergebnis:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(group) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{m\_t1 =} \FunctionTok{mean}\NormalTok{(points\_t1),}
+            \AttributeTok{sd\_t1 =} \FunctionTok{sd}\NormalTok{(points\_t1),}
+            \AttributeTok{m\_t2 =} \FunctionTok{mean}\NormalTok{(points\_t2),}
+            \AttributeTok{sd\_t2 =} \FunctionTok{sd}\NormalTok{(points\_t2))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 5
+##   group  m_t1 sd_t1  m_t2 sd_t2
+##   <dbl> <dbl> <dbl> <dbl> <dbl>
+## 1     1  3.8  0.889  4.3  1.32 
+## 2     2  3.52 0.576  5.18 0.873
+## 3     3  4.45 0.354  5.4  0.566
+\end{verbatim}
+
+Und diese Gruppierungen können wir jetzt einfach mit dem vorhin gesehenen \texttt{cut} zur Gruppierung kombinieren.
+
+So könnten wir uns zum Beispiel fragen, wie die Mittelwerte und Streuungen in den Quartilen aussehen. Dafür können wir einfach ein \texttt{mutate} vorschalten, indem wir die Verbesserung zum zweiten Termin und einen Quartilsplit einführen, den wir dann direkt zum Gruppieren benutzen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\OtherTok{\textless{}{-}}\NormalTok{ test }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{improvement =}\NormalTok{ points\_t2 }\SpecialCharTok{{-}}\NormalTok{ points\_t1,}
+         \AttributeTok{quart\_split =} \FunctionTok{cut}\NormalTok{(improvement,}
+                           \AttributeTok{breaks =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\ConstantTok{Inf}\NormalTok{,}
+                                      \FunctionTok{quantile}\NormalTok{(improvement,}
+                                               \AttributeTok{probs =} \FunctionTok{c}\NormalTok{(.}\DecValTok{25}\NormalTok{,.}\DecValTok{5}\NormalTok{,.}\DecValTok{75}\NormalTok{)),}
+                                      \ConstantTok{Inf}\NormalTok{),}
+                           \AttributeTok{right =}\NormalTok{ T,}
+                           \AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}q1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}q2\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}q3\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}q4\textquotesingle{}}\NormalTok{)}
+\NormalTok{                           )}
+\NormalTok{         ) }
+
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(quart\_split) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{m\_t1 =} \FunctionTok{mean}\NormalTok{(points\_t1),}
+            \AttributeTok{sd\_t1 =} \FunctionTok{sd}\NormalTok{(points\_t1),}
+            \AttributeTok{m\_t2 =} \FunctionTok{mean}\NormalTok{(points\_t2),}
+            \AttributeTok{sd\_t2 =} \FunctionTok{sd}\NormalTok{(points\_t2))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 4 x 5
+##   quart_split  m_t1 sd_t1  m_t2 sd_t2
+##   <fct>       <dbl> <dbl> <dbl> <dbl>
+## 1 q1           4.57 0.321  3.93 1.10 
+## 2 q2           3.75 0.354  5    0.283
+## 3 q3           3.8  0.566  5.25 0.778
+## 4 q4           3.03 0.208  5.77 0.451
+\end{verbatim}
+
+\hypertarget{huxe4ufigkeitsauszuxe4hlungen}{%
+\subsection{Häufigkeitsauszählungen}\label{huxe4ufigkeitsauszuxe4hlungen}}
+
+Diese \texttt{pipe} können wir auch verwenden, um uns Häufigkeiten von Bedingungskombinationen anzugucken. Dafür tauschen wir einfach die \texttt{summarise}- durch die \texttt{count}-Funktion aus und schon ist der Output eine Tabelle mit den absoluten Häufigkeiten:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(quart\_split) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{count}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 4 x 2
+## # Groups:   quart_split [4]
+##   quart_split     n
+##   <fct>       <int>
+## 1 q1              3
+## 2 q2              2
+## 3 q3              2
+## 4 q4              3
+\end{verbatim}
+
+Die \texttt{group\_by}-Funktion kann dabei auch mehrere Argumente verstehen, wir können also auch nach Gruppe und Quantilen auszählen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(quart\_split,group) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{count}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 9 x 3
+## # Groups:   quart_split, group [9]
+##   quart_split group     n
+##   <fct>       <dbl> <int>
+## 1 q1              1     1
+## 2 q1              2     1
+## 3 q1              3     1
+## 4 q2              1     1
+## 5 q2              2     1
+## 6 q3              2     1
+## 7 q3              3     1
+## 8 q4              1     1
+## 9 q4              2     2
+\end{verbatim}
 
   \bibliography{book.bib,packages.bib}
 
