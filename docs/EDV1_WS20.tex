@@ -83,6 +83,7 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -2390,8 +2391,6 @@ Sind Zahlen an der ersten Stelle in \texttt{character}-Vektoren vertreten, werde
 \hypertarget{einfache-deskriptiv-statistische-kennwerte-1}{%
 \subsection{Einfache deskriptiv-statistische Kennwerte}\label{einfache-deskriptiv-statistische-kennwerte-1}}
 
-\scriptsize
-
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{age }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{44}\NormalTok{, }\DecValTok{56}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{58}\NormalTok{, }\DecValTok{87}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{55}\NormalTok{, }\DecValTok{83}\NormalTok{)}
@@ -3160,10 +3159,10 @@ Das könnte in unserem Beispiel exemplarisch hilfreich sein, um die drei Versuch
 \end{Shaded}
 
 \begin{verbatim}
-##            spr_iq     log_iq     ges_iq
-## spr_iq  1.0000000 -0.8995771 -0.6769724
-## log_iq -0.8995771  1.0000000  0.9304494
-## ges_iq -0.6769724  0.9304494  1.0000000
+##             spr_iq     log_iq     ges_iq
+## spr_iq  1.00000000 -0.6796159 0.06743349
+## log_iq -0.67961588  1.0000000 0.68606953
+## ges_iq  0.06743349  0.6860695 1.00000000
 \end{verbatim}
 
 Als ergänzende Nebenbemerkung:
