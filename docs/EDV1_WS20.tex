@@ -3120,10 +3120,10 @@ Das könnte in unserem Beispiel exemplarisch hilfreich sein, um die drei Versuch
 \end{Shaded}
 
 \begin{verbatim}
-##            spr_iq     log_iq     ges_iq
-## spr_iq  1.0000000 -0.7324484  0.7905694
-## log_iq -0.7324484  1.0000000 -0.1621344
-## ges_iq  0.7905694 -0.1621344  1.0000000
+##            spr_iq     log_iq    ges_iq
+## spr_iq  1.0000000 -0.5354699 0.4656018
+## log_iq -0.5354699  1.0000000 0.4981101
+## ges_iq  0.4656018  0.4981101 1.0000000
 \end{verbatim}
 
 Als ergänzende Nebenbemerkung:
@@ -3269,8 +3269,8 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 1 1 1 1 1 0
-## [26] 1 1 0 0 1
+##  [1] 1 0 1 0 1 0 0 0 0 0 0 1 1 1 0 1 1 1 1 1 0 1 0 1 0
+## [26] 0 0 1 0 1
 \end{verbatim}
 
 \begin{Shaded}
@@ -3281,10 +3281,10 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] female female male   male   male   male   male  
-##  [8] male   female female male   male   male   male  
-## [15] male   male   female female male   female female
-## [22] female female female male   female female male  
+##  [1] female male   female male   female male   male  
+##  [8] male   male   male   male   female female female
+## [15] male   female female female female female male  
+## [22] female male   female male   male   male   female
 ## [29] male   female
 ## Levels: male female
 \end{verbatim}
@@ -3298,7 +3298,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 
 \begin{verbatim}
 ##   male female 
-##     16     14
+##     15     15
 \end{verbatim}
 
 \begin{Shaded}
@@ -3309,7 +3309,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  Factor w/ 2 levels "male","female": 2 2 1 1 1 1 1 1 2 2 ...
+##  Factor w/ 2 levels "male","female": 2 1 2 1 2 1 1 1 1 1 ...
 \end{verbatim}
 
 \textbf{Achtung:} Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich ``0'' und ``1'' waren, s.o.).
@@ -3332,12 +3332,12 @@ Zuerst wandeln wir die Stufen unseres \texttt{sexFac} in andere labels um:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] weiblich weiblich männlich männlich männlich
-##  [6] männlich männlich männlich weiblich weiblich
-## [11] männlich männlich männlich männlich männlich
-## [16] männlich weiblich weiblich männlich weiblich
-## [21] weiblich weiblich weiblich weiblich männlich
-## [26] weiblich weiblich männlich männlich weiblich
+##  [1] weiblich männlich weiblich männlich weiblich
+##  [6] männlich männlich männlich männlich männlich
+## [11] männlich weiblich weiblich weiblich männlich
+## [16] weiblich weiblich weiblich weiblich weiblich
+## [21] männlich weiblich männlich weiblich männlich
+## [26] männlich männlich weiblich männlich weiblich
 ## Levels: männlich weiblich
 \end{verbatim}
 
@@ -3386,18 +3386,18 @@ Für Median-Splits und ähnliches ist es sehr praktisch, direkt numerische Varia
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] high high high low  high low  high low  high
-##  [10] low  high low  high high low  low  low  low 
-##  [19] low  high high low  low  high high low  high
-##  [28] low  low  high low  high high high high low 
-##  [37] low  high low  high low  high low  low  high
-##  [46] low  high high high low  low  high low  low 
-##  [55] high high low  low  low  low  low  high high
-##  [64] low  high low  low  high low  high low  low 
-##  [73] low  high low  low  high high high low  low 
-##  [82] low  high high low  low  low  low  low  high
-##  [91] high high high low  high high high high high
-## [100] high
+##   [1] low  high low  high low  low  low  low  low 
+##  [10] high low  high low  high low  low  low  low 
+##  [19] low  high high high low  high high high low 
+##  [28] high high high low  low  low  high low  low 
+##  [37] low  low  low  low  high high high low  high
+##  [46] high low  low  high low  high high high low 
+##  [55] high high high high high low  high high high
+##  [64] high low  high high low  high high low  high
+##  [73] high low  low  low  high low  low  low  high
+##  [82] low  high low  low  high low  high low  high
+##  [91] high high high low  low  high low  low  high
+## [100] low 
 ## Levels: high low
 \end{verbatim}
 
@@ -3416,7 +3416,7 @@ IQ-Werte in 3 Klassen einteilen:
 
 \begin{verbatim}
 ##  lo mid  hi 
-##  16  76   8
+##  19  65  16
 \end{verbatim}
 
 \texttt{cut} kann man außerdem ganz einfach zusammen mit der \texttt{quantile}-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:
@@ -3435,8 +3435,8 @@ IQ-Werte in 3 Klassen einteilen:
 \end{Shaded}
 
 \begin{verbatim}
-##  (-Inf,90]   (90,102]  (102,109] (109, Inf] 
-##         27         27         21         25
+## (-Inf,90.8] (90.8,99.5]  (99.5,112]  (112, Inf] 
+##          25          25          25          25
 \end{verbatim}
 
 \hypertarget{daten-einlesen-i}{%
@@ -3739,9 +3739,6 @@ Dazu benutzen wir die \texttt{select}-helper, die wir schon kennen:
 ## 10       4         5.2
 \end{verbatim}
 
-\hypertarget{across-funktion-1}{%
-\subsection{\texorpdfstring{\texttt{across}-Funktion}{across-Funktion}}\label{across-funktion-1}}
-
 Diese praktischen Tools können wir jetzt mit der \texttt{across}-Funktion in unsere \texttt{summarise}-pipeline integrieren:
 
 \begin{Shaded}
@@ -3833,9 +3830,6 @@ Wenn wir also im ersten Argument Spalten erstellen, die zusätzlich zum ursprün
 ## 3        0.566
 \end{verbatim}
 
-\hypertarget{lazy-evaluation-1}{%
-\subsection{lazy evaluation}\label{lazy-evaluation-1}}
-
 Die lazy evaluation ist ein feature, das wir zum Beispiel dazu benutzen können, Zwischenergebnisse zu benutzen.
 Da die \texttt{summarise}-Argumente Schritt für Schritt ausgeführt werden, funktioniert der folgende Code:
 
@@ -3910,9 +3904,6 @@ Dazu einfach auf das `Import Dataset'- Menü über dem Environment klicken und `
 
 \begin{center}\includegraphics[width=200pt]{imgs/read_txt} \end{center}
 
-\hypertarget{daten-aus-textfiles-1}{%
-\subsection{Daten aus Textfiles}\label{daten-aus-textfiles-1}}
-
 Der mit der grafischen Oberfläche erstellte Code lässt sich dann einfach in's R-Skript kopieren:
 
 \begin{Shaded}
@@ -3952,9 +3943,6 @@ Der mit der grafischen Oberfläche erstellte Code lässt sich dann einfach in's 
 Daten aus Excel-Dateien lassen sich ganz ähnlich einlesen, nur dass wir statt `From Text (readr)\ldots{}' nun `From Excel\ldots{}' auswählen.
 
 \begin{center}\includegraphics[width=200pt]{imgs/read_excel} \end{center}
-
-\hypertarget{daten-aus-excel-dateien-1}{%
-\subsection{Daten aus Excel-Dateien}\label{daten-aus-excel-dateien-1}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4011,9 +3999,6 @@ Wir wollen mal die Datensätze zu den Haushalten und der Fläche der Kieler Stad
 ## $ Alleinerziehende               <dbl> 28, 34, 21...
 ## $ `Sonst. Mehrpersonenhaushalte` <dbl> 118, 110, ...
 \end{verbatim}
-
-\hypertarget{kombinieren-von-datensuxe4tzen-1}{%
-\subsection{Kombinieren von Datensätzen}\label{kombinieren-von-datensuxe4tzen-1}}
 
 Das sieht ja sehr nett aus, wir können den zusammengefügten Datensatz nun benutzen, um eine Korrelationsmatrix für alle numerischen Spalten zu erstellen:
 
