@@ -110,6 +110,25 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\usepackage{tikz}
+
+\newenvironment{cols}[1][]{}{}
+
+\newenvironment{col}[1]{\begin{minipage}{#1}\ignorespaces}{%
+\end{minipage}
+\ifhmode\unskip\fi
+\aftergroup\useignorespacesandallpars}
+
+\def\useignorespacesandallpars#1\ignorespaces\fi{%
+#1\fi\ignorespacesandallpars}
+
+\makeatletter
+\def\ignorespacesandallpars{%
+  \@ifnextchar\par
+    {\expandafter\ignorespacesandallpars\@gobble}%
+    {}%
+}
+\makeatother
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -132,7 +151,7 @@
 
 \title{EDV1}
 \author{Max Brede}
-\date{2021-01-02}
+\date{2021-01-04}
 
 \begin{document}
 \maketitle
@@ -3101,10 +3120,10 @@ Das könnte in unserem Beispiel exemplarisch hilfreich sein, um die drei Versuch
 \end{Shaded}
 
 \begin{verbatim}
-##            spr_iq     log_iq    ges_iq
-## spr_iq  1.0000000 -0.5856571 0.4792128
-## log_iq -0.5856571  1.0000000 0.4307722
-## ges_iq  0.4792128  0.4307722 1.0000000
+##            spr_iq     log_iq     ges_iq
+## spr_iq  1.0000000 -0.7324484  0.7905694
+## log_iq -0.7324484  1.0000000 -0.1621344
+## ges_iq  0.7905694 -0.1621344  1.0000000
 \end{verbatim}
 
 Als ergänzende Nebenbemerkung:
@@ -3250,8 +3269,8 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 0 1 1 0 1 1 0 1 1 1 0 1 1 0 1 0 1 0 0 1 1 0 0 1 0
-## [26] 0 1 1 0 0
+##  [1] 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 1 1 1 1 1 0
+## [26] 1 1 0 0 1
 \end{verbatim}
 
 \begin{Shaded}
@@ -3262,11 +3281,11 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] male   female female male   female female male  
-##  [8] female female female male   female female male  
-## [15] female male   female male   male   female female
-## [22] male   male   female male   male   female female
-## [29] male   male  
+##  [1] female female male   male   male   male   male  
+##  [8] male   female female male   male   male   male  
+## [15] male   male   female female male   female female
+## [22] female female female male   female female male  
+## [29] male   female
 ## Levels: male female
 \end{verbatim}
 
@@ -3279,7 +3298,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 
 \begin{verbatim}
 ##   male female 
-##     14     16
+##     16     14
 \end{verbatim}
 
 \begin{Shaded}
@@ -3290,7 +3309,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  Factor w/ 2 levels "male","female": 1 2 2 1 2 2 1 2 2 2 ...
+##  Factor w/ 2 levels "male","female": 2 2 1 1 1 1 1 1 2 2 ...
 \end{verbatim}
 
 \textbf{Achtung:} Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich ``0'' und ``1'' waren, s.o.).
@@ -3313,12 +3332,12 @@ Zuerst wandeln wir die Stufen unseres \texttt{sexFac} in andere labels um:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] männlich weiblich weiblich männlich weiblich
-##  [6] weiblich männlich weiblich weiblich weiblich
-## [11] männlich weiblich weiblich männlich weiblich
-## [16] männlich weiblich männlich männlich weiblich
-## [21] weiblich männlich männlich weiblich männlich
-## [26] männlich weiblich weiblich männlich männlich
+##  [1] weiblich weiblich männlich männlich männlich
+##  [6] männlich männlich männlich weiblich weiblich
+## [11] männlich männlich männlich männlich männlich
+## [16] männlich weiblich weiblich männlich weiblich
+## [21] weiblich weiblich weiblich weiblich männlich
+## [26] weiblich weiblich männlich männlich weiblich
 ## Levels: männlich weiblich
 \end{verbatim}
 
@@ -3367,18 +3386,18 @@ Für Median-Splits und ähnliches ist es sehr praktisch, direkt numerische Varia
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] low  high low  high high high high low  high
-##  [10] high low  low  high high low  high high high
-##  [19] high low  high low  low  low  low  high high
-##  [28] high high high high low  low  high low  high
-##  [37] high high high low  high high low  low  low 
-##  [46] low  low  high low  high high low  high low 
-##  [55] low  low  high high high high high high low 
-##  [64] low  low  high high low  high low  high high
-##  [73] low  low  low  low  low  low  high low  high
-##  [82] low  high low  high low  low  low  low  low 
-##  [91] low  high high low  high low  high low  low 
-## [100] low 
+##   [1] high high high low  high low  high low  high
+##  [10] low  high low  high high low  low  low  low 
+##  [19] low  high high low  low  high high low  high
+##  [28] low  low  high low  high high high high low 
+##  [37] low  high low  high low  high low  low  high
+##  [46] low  high high high low  low  high low  low 
+##  [55] high high low  low  low  low  low  high high
+##  [64] low  high low  low  high low  high low  low 
+##  [73] low  high low  low  high high high low  low 
+##  [82] low  high high low  low  low  low  low  high
+##  [91] high high high low  high high high high high
+## [100] high
 ## Levels: high low
 \end{verbatim}
 
@@ -3397,7 +3416,7 @@ IQ-Werte in 3 Klassen einteilen:
 
 \begin{verbatim}
 ##  lo mid  hi 
-##  17  69  14
+##  16  76   8
 \end{verbatim}
 
 \texttt{cut} kann man außerdem ganz einfach zusammen mit der \texttt{quantile}-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:
@@ -3416,8 +3435,8 @@ IQ-Werte in 3 Klassen einteilen:
 \end{Shaded}
 
 \begin{verbatim}
-## (-Inf,89.8]   (89.8,96]    (96,107]  (107, Inf] 
-##          25          26          24          25
+##  (-Inf,90]   (90,102]  (102,109] (109, Inf] 
+##         27         27         21         25
 \end{verbatim}
 
 \hypertarget{daten-einlesen-i}{%
@@ -3610,6 +3629,467 @@ Die \texttt{group\_by}-Funktion kann dabei auch mehrere Argumente verstehen, wir
 ## 8 q4              1     1
 ## 9 q4              2     2
 \end{verbatim}
+
+\hypertarget{aggregation-und-filemanagement}{%
+\chapter{Aggregation und Filemanagement}\label{aggregation-und-filemanagement}}
+
+\hypertarget{organisatorisches-4}{%
+\section{Organisatorisches}\label{organisatorisches-4}}
+
+\hypertarget{semesterplan-5}{%
+\subsection{Semesterplan}\label{semesterplan-5}}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}{l|l|l|l}
+\hline
+Einheit & Vorlesung & Übungswoche & Thema\\
+\hline
+1 & 2.11.20 & keine Übung & Grundlagen und Begriffe\\
+\hline
+2 & 16.11.20 & KW 48 & Vektoren und Indizierung\\
+\hline
+ &  &  & Datenformate erstellen und transformieren\\
+\hline
+3 & 30.11.20 & KW 50 & Pakete installieren und benutzen\\
+\hline
+ &  &  & Datensätze erstellen und ergänzen können\\
+\hline
+ &  &  & Datensätze sortieren und indizieren können\\
+\hline
+4 & 14.12.20 & KW 1 & Faktoren\\
+\hline
+ &  &  & deskriptive Kennwerte\\
+\hline
+ &  &  & Aggregation I\\
+\hline
+5 & 11.01.21 & KW 3 & Aggregation II\\
+\hline
+ &  &  & In- und Export von Datensätzen\\
+\hline
+6 & 25.01.21 & KW 5 & Grafische Darstellungen I\\
+\hline
+7 & 08.02.21 & KW 7 & Grafische Darstellungen II\\
+\hline
+8 & 22.02.21 & keine Übung & Puffer\\
+\hline
+ &  &  & Probeklausur\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{aggregation}{%
+\section{Aggregation}\label{aggregation}}
+
+\hypertarget{aggregation-uxfcber-mehrere-spalten}{%
+\subsection{Aggregation über mehrere Spalten}\label{aggregation-uxfcber-mehrere-spalten}}
+
+Beispiel aus der letzten Sitzung:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/test.csv"}\NormalTok{)}
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(group) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{m\_t1 =} \FunctionTok{mean}\NormalTok{(points\_t1),}
+            \AttributeTok{sd\_t1 =} \FunctionTok{sd}\NormalTok{(points\_t1),}
+            \AttributeTok{m\_t2 =} \FunctionTok{mean}\NormalTok{(points\_t2),}
+            \AttributeTok{sd\_t2 =} \FunctionTok{sd}\NormalTok{(points\_t2))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 5
+##   group  m_t1 sd_t1  m_t2 sd_t2
+##   <dbl> <dbl> <dbl> <dbl> <dbl>
+## 1     1  3.8  0.889  4.3  1.32 
+## 2     2  3.52 0.576  5.18 0.873
+## 3     3  4.45 0.354  5.4  0.566
+\end{verbatim}
+
+\hypertarget{across-funktion}{%
+\subsection{\texorpdfstring{\texttt{across}-Funktion}{across-Funktion}}\label{across-funktion}}
+
+Statt die Spalten auf denen wir Operationen durchführen wollen alle einzeln auszuwählen, können wir mit der \texttt{across}-Funktion auch eine Stapelweise Operation anstoßen.
+
+Dazu benutzen wir die \texttt{select}-helper, die wir schon kennen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{contains}\NormalTok{(}\StringTok{\textquotesingle{}points\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 2
+##    points_t1 points_t2
+##        <dbl>     <dbl>
+##  1       4.8       2.8
+##  2       3.2       5.8
+##  3       3.5       4.8
+##  4       3.1       5.3
+##  5       4.2       5.8
+##  6       4.7       5  
+##  7       3.4       4.7
+##  8       2.8       6.2
+##  9       4.2       4  
+## 10       4         5.2
+\end{verbatim}
+
+\hypertarget{across-funktion-1}{%
+\subsection{\texorpdfstring{\texttt{across}-Funktion}{across-Funktion}}\label{across-funktion-1}}
+
+Diese praktischen Tools können wir jetzt mit der \texttt{across}-Funktion in unsere \texttt{summarise}-pipeline integrieren:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(group) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{contains}\NormalTok{(}\StringTok{\textquotesingle{}points\textquotesingle{}}\NormalTok{),}
+                   \AttributeTok{.fns =}\NormalTok{ mean,}
+                   \AttributeTok{.names =} \StringTok{\textquotesingle{}m\_\{.col\}\textquotesingle{}}\NormalTok{),}
+            \FunctionTok{across}\NormalTok{(}\FunctionTok{contains}\NormalTok{(}\StringTok{\textquotesingle{}points\textquotesingle{}}\NormalTok{),}
+                   \AttributeTok{.fns =}\NormalTok{ sd,}
+                   \AttributeTok{.names =} \StringTok{\textquotesingle{}sd\_\{.col\}\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 7
+##   group m_points_t1 m_points_t2 sd_points_t1
+##   <dbl>       <dbl>       <dbl>        <dbl>
+## 1     1        3.8         4.3         0.889
+## 2     2        3.52        5.18        0.576
+## 3     3        4.45        5.4         0.354
+##   sd_points_t2 sd_m_points_t1 sd_m_points_t2
+##          <dbl>          <dbl>          <dbl>
+## 1        1.32              NA             NA
+## 2        0.873             NA             NA
+## 3        0.566             NA             NA
+\end{verbatim}
+
+\hypertarget{frage}{%
+\subsection{Frage}\label{frage}}
+
+\begin{verbatim}
+## # A tibble: 3 x 7
+##   group m_points_t1 m_points_t2 sd_points_t1
+##   <dbl>       <dbl>       <dbl>        <dbl>
+## 1     1        3.8         4.3         0.889
+## 2     2        3.52        5.18        0.576
+## 3     3        4.45        5.4         0.354
+##   sd_points_t2 sd_m_points_t1 sd_m_points_t2
+##          <dbl>          <dbl>          <dbl>
+## 1        1.32              NA             NA
+## 2        0.873             NA             NA
+## 3        0.566             NA             NA
+\end{verbatim}
+
+Warum sind da zwei leere Spalten?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Weil wir was falsch gemacht haben.
+\item
+  Weil auch die Streuungen der Mittelwerte berechnet wurde, also von jeweils einem Wert, was nicht geht.
+\item
+  Das ist das Ergebnis der Standardisierung der Streuungen am N, da das N hier 0 ist, wird durch 0 geteilt und es kommt nix raus.
+\end{enumerate}
+
+\hypertarget{lazy-evaluation}{%
+\subsection{lazy evaluation}\label{lazy-evaluation}}
+
+Die \texttt{tidyverse}-Funktionen folgen dem Prinzip der `lazy evaluation', das heißt ein Argument wird nach dem anderen ausgeführt.
+
+Wenn wir also im ersten Argument Spalten erstellen, die zusätzlich zum ursprünglichen Datensatz von \texttt{contains} betroffen werden, werden die folgenden Funktionen auch auf diese angewandt. Um das zu verhindern, können wir das \texttt{.fn}-Argument erweitern und im \texttt{.names}- Argument einen weiteren Platzhalter verwenden:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(group) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{contains}\NormalTok{(}\StringTok{\textquotesingle{}points\textquotesingle{}}\NormalTok{),}
+                   \AttributeTok{.fns =} \FunctionTok{list}\NormalTok{(}\AttributeTok{mean =}\NormalTok{ mean,}
+                               \AttributeTok{sd =}\NormalTok{ sd), }
+                   \AttributeTok{.names =} \StringTok{\textquotesingle{}\{.fn\}\_\{.col\}\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 5
+##   group mean_points_t1 sd_points_t1 mean_points_t2
+##   <dbl>          <dbl>        <dbl>          <dbl>
+## 1     1           3.8         0.889           4.3 
+## 2     2           3.52        0.576           5.18
+## 3     3           4.45        0.354           5.4 
+##   sd_points_t2
+##          <dbl>
+## 1        1.32 
+## 2        0.873
+## 3        0.566
+\end{verbatim}
+
+\hypertarget{lazy-evaluation-1}{%
+\subsection{lazy evaluation}\label{lazy-evaluation-1}}
+
+Die lazy evaluation ist ein feature, das wir zum Beispiel dazu benutzen können, Zwischenergebnisse zu benutzen.
+Da die \texttt{summarise}-Argumente Schritt für Schritt ausgeführt werden, funktioniert der folgende Code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(group) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{n =} \FunctionTok{n}\NormalTok{(),}
+            \AttributeTok{sd =} \FunctionTok{sd}\NormalTok{(points\_t1),}
+            \AttributeTok{sem =}\NormalTok{ sd }\SpecialCharTok{/} \FunctionTok{sqrt}\NormalTok{(n))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 4
+##   group     n    sd   sem
+##   <dbl> <int> <dbl> <dbl>
+## 1     1     3 0.889 0.513
+## 2     2     5 0.576 0.258
+## 3     3     2 0.354 0.25
+\end{verbatim}
+
+\hypertarget{mit-aggregierten-daten-weiterarbeiten}{%
+\subsection{Mit aggregierten Daten weiterarbeiten}\label{mit-aggregierten-daten-weiterarbeiten}}
+
+Um die Ergebnisse einer nach einer \texttt{group}ierten \texttt{summarise}-Funktion für weitere Manipulationen zu verwenden, müssen wir noch ein \texttt{ungroup} in die pipe einfügen, um R mitzuteilen dass die folgenden Operationen wieder Datensatz-übergreifend gedacht sind. So können wir zum Beispiel aus absoluten relative Häufigkeiten errechnen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(group) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{count}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ungroup}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{rel\_n =}\NormalTok{ n}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(n))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 3
+##   group     n rel_n
+##   <dbl> <int> <dbl>
+## 1     1     3   0.3
+## 2     2     5   0.5
+## 3     3     2   0.2
+\end{verbatim}
+
+\hypertarget{daten-einlesen-ii-und-zusammenfuxfcgen}{%
+\section{Daten einlesen II und zusammenfügen}\label{daten-einlesen-ii-und-zusammenfuxfcgen}}
+
+\hypertarget{daten-aus-textfiles}{%
+\subsection{Daten aus Textfiles}\label{daten-aus-textfiles}}
+
+Daten aus Textfiles lassen sich am Einfachsten (wie letzte Sitzung auch schon kurz gezeigt) über die RStudio-IDE einlesen.
+
+Dazu einfach auf das `Import Dataset'- Menü über dem Environment klicken und `From Text (readr)\ldots{}' auswählen:
+
+\begin{cols}
+
+\begin{col}{0.45\textwidth}
+
+\begin{center}\includegraphics[width=150pt]{imgs/menu} \end{center}
+
+\end{col}
+
+\begin{col}{0.45\textwidth}
+
+\begin{center}\includegraphics[width=150pt]{imgs/menu2} \end{center}
+
+\end{col}
+
+\end{cols}
+
+\begin{center}\includegraphics[width=200pt]{imgs/read_txt} \end{center}
+
+\hypertarget{daten-aus-textfiles-1}{%
+\subsection{Daten aus Textfiles}\label{daten-aus-textfiles-1}}
+
+Der mit der grafischen Oberfläche erstellte Code lässt sich dann einfach in's R-Skript kopieren:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/test.csv"}\NormalTok{)}
+
+\NormalTok{test2 }\OtherTok{\textless{}{-}} \FunctionTok{read\_delim}\NormalTok{(}\StringTok{"data/test2.txt"}\NormalTok{, }
+                    \StringTok{"}\SpecialCharTok{\textbackslash{}t}\StringTok{"}\NormalTok{,}
+                    \AttributeTok{escape\_double =} \ConstantTok{FALSE}\NormalTok{, }
+                    \AttributeTok{trim\_ws =} \ConstantTok{TRUE}\NormalTok{)}
+
+\NormalTok{stadtteile }\OtherTok{\textless{}{-}} \FunctionTok{read\_delim}\NormalTok{(}\StringTok{"data/test3.csv"}\NormalTok{, }
+                    \StringTok{";"}\NormalTok{, }
+                    \AttributeTok{escape\_double =} \ConstantTok{FALSE}\NormalTok{, }
+                    \AttributeTok{locale =} \FunctionTok{locale}\NormalTok{(}\AttributeTok{decimal\_mark =} \StringTok{","}\NormalTok{, }
+                                    \AttributeTok{encoding =} \StringTok{"ISO{-}8859{-}2"}\NormalTok{, }
+                                    \AttributeTok{asciify =} \ConstantTok{TRUE}\NormalTok{), }
+                    \AttributeTok{trim\_ws =} \ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{glimpse}\NormalTok{(stadtteile)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 30
+## Columns: 6
+## $ Land      <chr> "de-sh", "de-sh", "de-sh", "de-...
+## $ Stadt     <chr> "Kiel", "Kiel", "Kiel", "Kiel",...
+## $ Kategorie <chr> "geo", "geo", "geo", "geo", "ge...
+## $ Merkmal   <chr> "Flächen in Hektar", "Flächen i...
+## $ Stadtteil <chr> "Altstadt", "Vorstadt", "Exerzi...
+## $ Hektar    <dbl> 35.0983, 45.8515, 42.0120, 45.1...
+\end{verbatim}
+
+\hypertarget{daten-aus-excel-dateien}{%
+\subsection{Daten aus Excel-Dateien}\label{daten-aus-excel-dateien}}
+
+Daten aus Excel-Dateien lassen sich ganz ähnlich einlesen, nur dass wir statt `From Text (readr)\ldots{}' nun `From Excel\ldots{}' auswählen.
+
+\begin{center}\includegraphics[width=200pt]{imgs/read_excel} \end{center}
+
+\hypertarget{daten-aus-excel-dateien-1}{%
+\subsection{Daten aus Excel-Dateien}\label{daten-aus-excel-dateien-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readxl)}
+\NormalTok{kiel\_haushalte }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/kiel.xlsx"}\NormalTok{, }\AttributeTok{sheet =} \StringTok{"Haushalte"}\NormalTok{)}
+
+\FunctionTok{glimpse}\NormalTok{(kiel\_haushalte)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 30
+## Columns: 7
+## $ Stadtteile                     <chr> "Altstadt"...
+## $ Einpersonen                    <dbl> 384, 657, ...
+## $ `Paar ohne Kind`               <dbl> 305, 303, ...
+## $ `Paar mit Kindern`             <dbl> 165, 167, ...
+## $ `Paar mit Nachkommen`          <dbl> 29, 13, 56...
+## $ Alleinerziehende               <dbl> 28, 34, 21...
+## $ `Sonst. Mehrpersonenhaushalte` <dbl> 118, 110, ...
+\end{verbatim}
+
+\hypertarget{kombinieren-von-datensuxe4tzen}{%
+\subsection{Kombinieren von Datensätzen}\label{kombinieren-von-datensuxe4tzen}}
+
+Das \texttt{tidyverse} bietet eine sehr praktische Familie von Funktionen, um Datensätze zusammenzufügen, die \texttt{join}-Funktionen.
+
+Wir werden hier erstmal nur eine davon benutzen, die \texttt{left\_join}-Funktion. Sie nimmt zwei Datensätze als Argumente, gerne auch den ersten als Ergebnis einer pipeline, und fügt diese anhand einer im \texttt{by}-Argument angegebenen Spalte zusammen.
+
+Wir wollen mal die Datensätze zu den Haushalten und der Fläche der Kieler Stadtteile zusammenfügen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ stadtteile }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{left\_join}\NormalTok{(kiel\_haushalte,}\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Stadtteil\textquotesingle{}} \OtherTok{=} \StringTok{\textquotesingle{}Stadtteile\textquotesingle{}}\NormalTok{))}
+
+\FunctionTok{glimpse}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 30
+## Columns: 12
+## $ Land                           <chr> "de-sh", "...
+## $ Stadt                          <chr> "Kiel", "K...
+## $ Kategorie                      <chr> "geo", "ge...
+## $ Merkmal                        <chr> "Flächen i...
+## $ Stadtteil                      <chr> "Altstadt"...
+## $ Hektar                         <dbl> 35.0983, 4...
+## $ Einpersonen                    <dbl> 384, 657, ...
+## $ `Paar ohne Kind`               <dbl> 305, 303, ...
+## $ `Paar mit Kindern`             <dbl> 165, 167, ...
+## $ `Paar mit Nachkommen`          <dbl> 29, 13, 56...
+## $ Alleinerziehende               <dbl> 28, 34, 21...
+## $ `Sonst. Mehrpersonenhaushalte` <dbl> 118, 110, ...
+\end{verbatim}
+
+\hypertarget{kombinieren-von-datensuxe4tzen-1}{%
+\subsection{Kombinieren von Datensätzen}\label{kombinieren-von-datensuxe4tzen-1}}
+
+Das sieht ja sehr nett aus, wir können den zusammengefügten Datensatz nun benutzen, um eine Korrelationsmatrix für alle numerischen Spalten zu erstellen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{cor}\NormalTok{() }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}[t]{l|r|r|r|r|r|r|r}
+\hline
+  & Hektar & Einpersonen & Paar ohne Kind & Paar mit Kindern & Paar mit Nachkommen & Alleinerziehende & Sonst. Mehrpersonenhaushalte\\
+\hline
+Hektar & 1.000 & -0.029 & 0.364 & 0.314 & 0.445 & 0.199 & 0.204\\
+\hline
+Einpersonen & -0.029 & 1.000 & 0.766 & 0.565 & 0.426 & 0.617 & 0.750\\
+\hline
+Paar ohne Kind & 0.364 & 0.766 & 1.000 & 0.822 & 0.814 & 0.739 & 0.853\\
+\hline
+Paar mit Kindern & 0.314 & 0.565 & 0.822 & 1.000 & 0.950 & 0.932 & 0.933\\
+\hline
+Paar mit Nachkommen & 0.445 & 0.426 & 0.814 & 0.950 & 1.000 & 0.880 & 0.877\\
+\hline
+Alleinerziehende & 0.199 & 0.617 & 0.739 & 0.932 & 0.880 & 1.000 & 0.968\\
+\hline
+Sonst. Mehrpersonenhaushalte & 0.204 & 0.750 & 0.853 & 0.933 & 0.877 & 0.968 & 1.000\\
+\hline
+\end{tabular}
+
+\hypertarget{exportieren-von-datensuxe4tzen-in-csv-format}{%
+\subsection{Exportieren von Datensätzen in csv-Format}\label{exportieren-von-datensuxe4tzen-in-csv-format}}
+
+Um diesen Datensatz jetzt wieder zu exportieren, können wir uns eins von den schon beim Einlesen kennengelernten Formaten aussuchen. Hier können wir dann aber leider nicht so einfach die GUI benutzen, wenn wir nicht ein \texttt{.RData}-File erstellen wollen (was wir dieses Semester nicht tun).
+
+Um in \texttt{csv}-Dateien zu exportieren, können wir einfach die \texttt{write\_csv}-Funktion aus dem \texttt{tidyverse} verwenden. Sie nimmt wieder einen Datensatz als erstes Argument (pipeline!) und dazu einen Pfad, in den wir unser Ergebnis abspeichern wollen. Wir versuchen mal unsere Korrelationstabelle von eben abzuspeichern. Dabei müssen wir aber darauf achten, dass wir aus der Tabelle ein \texttt{tibble} und am Besten noch die Zeilennamen zu einer Spalte machen, damit diese erhalten bleiben:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{correlations }\OtherTok{\textless{}{-}} 
+\NormalTok{  df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{cor}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{as\_tibble}\NormalTok{(}\AttributeTok{rownames =} \StringTok{\textquotesingle{}Masseinheit\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{correlations }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{write\_csv}\NormalTok{(}\StringTok{\textquotesingle{}data/correlations.csv\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{exportieren-von-datensuxe4tzen-in-excel-format}{%
+\subsection{Exportieren von Datensätzen in Excel-Format}\label{exportieren-von-datensuxe4tzen-in-excel-format}}
+
+Manchmal ist es aber praktischer (vor allem wenn man einen Bericht in MS Office erstellt), die Ergebnisse als \texttt{.xlsx} zu exportieren.
+
+Das ist leider nicht mit dem \texttt{readxl}-Paket möglich. Dafür benötigen wir das \texttt{openxlsx}-Paket, das natürlich zuerst mit \texttt{install.packages} installiert werden muss.
+
+Mit den Funktionen \texttt{createWorkbook} und \texttt{addWorksheet} können wir ein Excel-Dokument und Tabellen in diesem anlegen, die wir dann mit \texttt{writeData} füllen und mit \texttt{saveWorkbook} abspeichern können.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(openxlsx)}
+
+\NormalTok{excel\_output }\OtherTok{\textless{}{-}} \FunctionTok{createWorkbook}\NormalTok{()}
+
+\FunctionTok{addWorksheet}\NormalTok{(excel\_output, }\StringTok{\textquotesingle{}correlations\textquotesingle{}}\NormalTok{)}
+\FunctionTok{writeData}\NormalTok{(excel\_output, }\StringTok{\textquotesingle{}correlations\textquotesingle{}}\NormalTok{, correlations)}
+
+\FunctionTok{addWorksheet}\NormalTok{(excel\_output, }\StringTok{\textquotesingle{}original\_data\textquotesingle{}}\NormalTok{)}
+\FunctionTok{writeData}\NormalTok{(excel\_output, }\StringTok{\textquotesingle{}original\_data\textquotesingle{}}\NormalTok{, df)}
+
+\FunctionTok{saveWorkbook}\NormalTok{(excel\_output,}\StringTok{\textquotesingle{}data/output.xlsx\textquotesingle{}}\NormalTok{,}\AttributeTok{overwrite =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
 
   \bibliography{book.bib,packages.bib}
 
