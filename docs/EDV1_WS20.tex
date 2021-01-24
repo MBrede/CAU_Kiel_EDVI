@@ -4,14 +4,13 @@
 %
 \documentclass[
 ]{book}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
-  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -82,7 +81,7 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -151,7 +150,7 @@
 
 \title{EDV1}
 \author{Max Brede}
-\date{2021-01-04}
+\date{2021-01-24}
 
 \begin{document}
 \maketitle
@@ -3123,9 +3122,9 @@ Das könnte in unserem Beispiel exemplarisch hilfreich sein, um die drei Versuch
 
 \begin{verbatim}
 ##            spr_iq     log_iq    ges_iq
-## spr_iq  1.0000000 -0.6017903 0.5488161
-## log_iq -0.6017903  1.0000000 0.3373572
-## ges_iq  0.5488161  0.3373572 1.0000000
+## spr_iq  1.0000000 -0.7616538 0.3989711
+## log_iq -0.7616538  1.0000000 0.2903000
+## ges_iq  0.3989711  0.2903000 1.0000000
 \end{verbatim}
 
 Als ergänzende Nebenbemerkung:
@@ -3271,8 +3270,8 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 1 1 1 1 1 0 0 1 0 1 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0
-## [26] 1 1 0 0 0
+##  [1] 0 1 0 0 0 1 1 0 0 1 1 0 0 0 1 0 0 0 0 0 1 1 1 1 0
+## [26] 0 1 0 0 1
 \end{verbatim}
 
 \begin{Shaded}
@@ -3283,11 +3282,11 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] female female female female female male   male  
-##  [8] female male   female male   male   female male  
-## [15] male   female male   female male   male   male  
-## [22] female male   female male   female female male  
-## [29] male   male  
+##  [1] male   female male   male   male   female female
+##  [8] male   male   female female male   male   male  
+## [15] female male   male   male   male   male   female
+## [22] female female female male   male   female male  
+## [29] male   female
 ## Levels: male female
 \end{verbatim}
 
@@ -3300,7 +3299,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 
 \begin{verbatim}
 ##   male female 
-##     16     14
+##     18     12
 \end{verbatim}
 
 \begin{Shaded}
@@ -3311,7 +3310,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  Factor w/ 2 levels "male","female": 2 2 2 2 2 1 1 2 1 2 ...
+##  Factor w/ 2 levels "male","female": 1 2 1 1 1 2 2 1 1 2 ...
 \end{verbatim}
 
 \textbf{Achtung:} Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich ``0'' und ``1'' waren, s.o.).
@@ -3334,12 +3333,12 @@ Zuerst wandeln wir die Stufen unseres \texttt{sexFac} in andere labels um:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] weiblich weiblich weiblich weiblich weiblich
-##  [6] männlich männlich weiblich männlich weiblich
-## [11] männlich männlich weiblich männlich männlich
-## [16] weiblich männlich weiblich männlich männlich
-## [21] männlich weiblich männlich weiblich männlich
-## [26] weiblich weiblich männlich männlich männlich
+##  [1] männlich weiblich männlich männlich männlich
+##  [6] weiblich weiblich männlich männlich weiblich
+## [11] weiblich männlich männlich männlich weiblich
+## [16] männlich männlich männlich männlich männlich
+## [21] weiblich weiblich weiblich weiblich männlich
+## [26] männlich weiblich männlich männlich weiblich
 ## Levels: männlich weiblich
 \end{verbatim}
 
@@ -3388,18 +3387,18 @@ Für Median-Splits und ähnliches ist es sehr praktisch, direkt numerische Varia
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] high high high high low  high high low  low 
-##  [10] high low  high high low  high high high low 
-##  [19] low  high high low  low  low  low  high high
-##  [28] high low  high high high low  high low  low 
-##  [37] high high high low  low  low  high low  high
-##  [46] high high low  low  high high low  high low 
-##  [55] low  high low  high high low  high high high
-##  [64] low  low  low  high low  low  low  high high
-##  [73] low  high low  low  low  low  high low  low 
-##  [82] high low  high low  high low  low  low  low 
-##  [91] low  high high high low  high low  low  low 
-## [100] low 
+##   [1] high low  low  high high low  low  high low 
+##  [10] high high high high high high high high high
+##  [19] high low  high high high low  low  low  high
+##  [28] low  low  low  high low  low  low  high low 
+##  [37] low  low  low  low  high low  low  low  high
+##  [46] high low  high low  low  high high high low 
+##  [55] high high high high low  low  low  high low 
+##  [64] high high low  low  high high low  low  low 
+##  [73] low  low  high low  high low  high high low 
+##  [82] high low  high high high low  low  high low 
+##  [91] low  high high low  high low  low  low  high
+## [100] high
 ## Levels: high low
 \end{verbatim}
 
@@ -3418,7 +3417,7 @@ IQ-Werte in 3 Klassen einteilen:
 
 \begin{verbatim}
 ##  lo mid  hi 
-##  14  78   8
+##  16  71  13
 \end{verbatim}
 
 \texttt{cut} kann man außerdem ganz einfach zusammen mit der \texttt{quantile}-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:
@@ -3437,8 +3436,8 @@ IQ-Werte in 3 Klassen einteilen:
 \end{Shaded}
 
 \begin{verbatim}
-##  (-Inf,91]    (91,99]   (99,109] (109, Inf] 
-##         28         23         28         21
+##  (-Inf,88]    (88,98]   (98,110] (110, Inf] 
+##         26         25         25         24
 \end{verbatim}
 
 \hypertarget{daten-einlesen-i}{%
@@ -4077,6 +4076,654 @@ Mit den Funktionen \texttt{createWorkbook} und \texttt{addWorksheet} können wir
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{abbildungen-i}{%
+\chapter{Abbildungen I}\label{abbildungen-i}}
+
+\hypertarget{organisatorisches-5}{%
+\section{Organisatorisches}\label{organisatorisches-5}}
+
+\hypertarget{semesterplan-6}{%
+\subsection{Semesterplan}\label{semesterplan-6}}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}{l|l|l|l}
+\hline
+Einheit & Vorlesung & Übungswoche & Thema\\
+\hline
+1 & 2.11.20 & keine Übung & Grundlagen und Begriffe\\
+\hline
+2 & 16.11.20 & KW 48 & Vektoren und Indizierung\\
+\hline
+ &  &  & Datenformate erstellen und transformieren\\
+\hline
+3 & 30.11.20 & KW 50 & Pakete installieren und benutzen\\
+\hline
+ &  &  & Datensätze erstellen und ergänzen können\\
+\hline
+ &  &  & Datensätze sortieren und indizieren können\\
+\hline
+4 & 14.12.20 & KW 1 & Faktoren\\
+\hline
+ &  &  & deskriptive Kennwerte\\
+\hline
+ &  &  & Aggregation I\\
+\hline
+5 & 11.01.21 & KW 3 & Aggregation II\\
+\hline
+ &  &  & In- und Export von Datensätzen\\
+\hline
+6 & 25.01.21 & KW 5 & Grafische Darstellungen I\\
+\hline
+7 & 08.02.21 & KW 7 & Grafische Darstellungen II\\
+\hline
+8 & 22.02.21 & keine Übung & Puffer\\
+\hline
+ &  &  & Probeklausur\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{pivotieren-von-datensuxe4tzen}{%
+\section{Pivotieren von Datensätzen}\label{pivotieren-von-datensuxe4tzen}}
+
+Als Vorbereitung auf die Darstellung von Daten brauchen wir noch eine Funktion.
+
+Für das Grafikpaket, das wir benutzen wollen, müssen die Daten im \texttt{long\ format} vorliegen. Das heißt, dass jede Variable eine Spalte und jede Zeile eine Beobachtung darstellt.
+
+\begin{cols}
+
+\begin{col}{0.450\textwidth}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}{l|r|l}
+\hline
+Name & RT & Bedingung\\
+\hline
+Snake Müller & 2624 & t\_1\\
+\hline
+Snake Müller & 3902 & t\_2\\
+\hline
+Snake Müller & 6293 & t\_3\\
+\hline
+Vera Baum & 1252 & t\_1\\
+\hline
+Vera Baum & 2346 & t\_2\\
+\hline
+Vera Baum & 4321 & t\_3\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\end{col}
+
+\begin{col}{0.45\textwidth}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}{l|r|r|r}
+\hline
+Name & t\_1 & t\_2 & t\_3\\
+\hline
+Snake Müller & 2624 & 3902 & 6293\\
+\hline
+Vera Baum & 1252 & 2346 & 4321\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\end{col}
+
+\end{cols}
+
+Insbesondere müssen wir darauf achten, dass alle Werte, die wir zum Beispiel an einer Achse darstellen wollen in einer Variable vorliegen.
+
+\hypertarget{datensatz}{%
+\subsection{Datensatz}\label{datensatz}}
+
+Wir nutzen den zusammengefügten Datensatz aus der letzten Sitzung:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readxl)}
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read\_xlsx}\NormalTok{(}\StringTok{\textquotesingle{}data/output.xlsx\textquotesingle{}}\NormalTok{, }\AttributeTok{sheet =} \DecValTok{2}\NormalTok{)}
+
+\FunctionTok{summary}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Land              Stadt          
+##  Length:30          Length:30         
+##  Class :character   Class :character  
+##  Mode  :character   Mode  :character  
+##                                       
+##                                       
+##                                       
+##   Kategorie           Merkmal         
+##  Length:30          Length:30         
+##  Class :character   Class :character  
+##  Mode  :character   Mode  :character  
+##                                       
+##                                       
+##                                       
+##   Stadtteil             Hektar       Einpersonen    
+##  Length:30          Min.   : 35.1   Min.   :  70.0  
+##  Class :character   1st Qu.:237.3   1st Qu.: 821.5  
+##  Mode  :character   Median :357.6   Median :1823.5  
+##                     Mean   :380.1   Mean   :2609.1  
+##                     3rd Qu.:573.8   3rd Qu.:3795.8  
+##                     Max.   :803.5   Max.   :7257.0  
+##  Paar ohne Kind   Paar mit Kindern
+##  Min.   : 144.0   Min.   : 131.0  
+##  1st Qu.: 696.5   1st Qu.: 906.8  
+##  Median :1817.5   Median :1831.5  
+##  Mean   :1859.6   Mean   :2091.2  
+##  3rd Qu.:2573.2   3rd Qu.:2715.5  
+##  Max.   :4856.0   Max.   :7703.0  
+##  Paar mit Nachkommen Alleinerziehende
+##  Min.   :  13.0      Min.   :  17.0  
+##  1st Qu.: 141.5      1st Qu.: 150.8  
+##  Median : 294.0      Median : 380.5  
+##  Mean   : 369.8      Mean   : 504.9  
+##  3rd Qu.: 537.0      3rd Qu.: 677.8  
+##  Max.   :1271.0      Max.   :1926.0  
+##  Sonst. Mehrpersonenhaushalte
+##  Min.   :  45.0              
+##  1st Qu.: 235.2              
+##  Median : 541.5              
+##  Mean   : 613.8              
+##  3rd Qu.: 850.8              
+##  Max.   :1763.0
+\end{verbatim}
+
+Um den Datensatz richtig darstellen zu können, müssen wir nun alle Werte, die auf einer Dimension dargestellt werden, in eine Variable pivotieren. Wir wollen als erstes die Anzahl der einzelnen Haushalte in einer Grafik darstellen, pivotieren den Datensatz also so, dass alle Haushalts-Spalten in einer Spalte landen. Dafür nutzen wir die \texttt{pivot\_longer}-Funktion:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_long }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols =} \FunctionTok{all\_of}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"Einpersonen"}\NormalTok{, }
+                               \StringTok{"Paar ohne Kind"}\NormalTok{, }
+                               \StringTok{"Paar mit Kindern"}\NormalTok{, }
+                               \StringTok{"Paar mit Nachkommen"}\NormalTok{,}
+                               \StringTok{"Alleinerziehende"}\NormalTok{, }
+                               \StringTok{"Sonst. Mehrpersonenhaushalte"}\NormalTok{)),}
+               \AttributeTok{names\_to =} \StringTok{\textquotesingle{}Haushaltsform\textquotesingle{}}\NormalTok{,}
+               \AttributeTok{values\_to =} \StringTok{\textquotesingle{}Anzahl\textquotesingle{}}\NormalTok{)}
+\NormalTok{df\_long}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 180 x 8
+##    Land  Stadt Kategorie Merkmal           Stadtteil
+##    <chr> <chr> <chr>     <chr>             <chr>    
+##  1 de-sh Kiel  geo       Flächen in Hektar Altstadt 
+##  2 de-sh Kiel  geo       Flächen in Hektar Altstadt 
+##  3 de-sh Kiel  geo       Flächen in Hektar Altstadt 
+##  4 de-sh Kiel  geo       Flächen in Hektar Altstadt 
+##  5 de-sh Kiel  geo       Flächen in Hektar Altstadt 
+##  6 de-sh Kiel  geo       Flächen in Hektar Altstadt 
+##  7 de-sh Kiel  geo       Flächen in Hektar Vorstadt 
+##  8 de-sh Kiel  geo       Flächen in Hektar Vorstadt 
+##  9 de-sh Kiel  geo       Flächen in Hektar Vorstadt 
+## 10 de-sh Kiel  geo       Flächen in Hektar Vorstadt 
+##    Hektar Haushaltsform                Anzahl
+##     <dbl> <chr>                         <dbl>
+##  1   35.1 Einpersonen                     384
+##  2   35.1 Paar ohne Kind                  305
+##  3   35.1 Paar mit Kindern                165
+##  4   35.1 Paar mit Nachkommen              29
+##  5   35.1 Alleinerziehende                 28
+##  6   35.1 Sonst. Mehrpersonenhaushalte    118
+##  7   45.9 Einpersonen                     657
+##  8   45.9 Paar ohne Kind                  303
+##  9   45.9 Paar mit Kindern                167
+## 10   45.9 Paar mit Nachkommen              13
+## # ... with 170 more rows
+\end{verbatim}
+
+\hypertarget{diagramme-erstellen}{%
+\section{Diagramme erstellen}\label{diagramme-erstellen}}
+
+\hypertarget{diagramme}{%
+\subsection{Diagramme}\label{diagramme}}
+
+Diagramme als grafische Darstellung deskriptiver und inferenzstatistischer Ergebnisse sind ein wichtiger Teil jeder Auswertung. Natürlich lassen sich diese als Schritt der Auswertung auch in \texttt{R} realisieren. Im Core-Paket von R gibt es einen großen Satz an mitgelieferten Grafikfunktionen. Diese sind aber oft nur mit Mühe zu ästhetischem Wert zu bewegen und oft aufwändig von gewünschter Form zu überzeugen.
+
+\hypertarget{ggplot2}{%
+\subsection{\texorpdfstring{\texttt{ggplot2}}{ggplot2}}\label{ggplot2}}
+
+Eine Alternative stellt das Zusatzpaket \texttt{ggplot2} dar. Dieses hat den Vorteil einer einheitlichen Syntax für die meisten Grafiken, die wir brauchen werden und macht einige häufig nötige Aspekte grafischer Darstellungen mit deutlich weniger Komplikation zugänglich. Dabei ist die Syntax aber ein wenig gewöhnungsbedürftig.
+
+Dafür müssen wir zuerst eine Grundebene erstellen, auf die wir die Grafik anschließend layern können.
+
+Diese Grundebene kann man sich ein bisschen wie eine leere Leinwand vorstellen.
+Dabei wird beim Erstellen der `Leinwand' direkt festgelegt, auf welchen Daten die Abbildung basieren soll und welche Variablen wie dargestellt werden sollen.
+
+\hypertarget{grafiken-erstellen}{%
+\subsection{Grafiken erstellen}\label{grafiken-erstellen}}
+
+Grafiken in \texttt{ggplot2} werden alle unabhängig vom Typ der am Ende erzeugten Grafik auf Basis eines \texttt{ggplot}-Objekts erstellt und manipuliert. Dieses \texttt{ggplot}-Objekt wird mit der \texttt{ggplot}-Funktion erstellt und kann sich ein bisschen wie eine leere Leinwand vorgestellt werden.
+
+Diese `leere Leinwand' erwartet einen Datensatz als 1. und das Ergebnis eines Aufrufes der \texttt{aes()}-Funktion als 2. Argument.
+Der Datensatz dient dazu einen Variablenraum für die Darstellungen zur Verfügung zu stellen, die \texttt{aesthetics} geben unter anderem an, welche Werte für \emph{x}- und \emph{y}-Achse herangezogen werden.
+
+So wollen wir einen Plot vorbereiten, in dem die mittlere Anzahl der Haushalte als Scatterplot gegen die Größe des Viertels abgetragen wird. Dafür pipen wir einfach die mittleren Größen in eine \texttt{ggplot}-Funktion und legen fest, was auf der x und was auf der y-Achse abgetragen werden soll:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_long }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Stadtteil) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{mittlere Anzahl}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{mean}\NormalTok{(Anzahl),}
+            \AttributeTok{Hektar =}\NormalTok{ Hektar) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Hektar,}
+             \AttributeTok{y =} \StringTok{\textasciigrave{}}\AttributeTok{mittlere Anzahl}\StringTok{\textasciigrave{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-159-1} \end{center}
+
+\hypertarget{geoms}{%
+\section{\texorpdfstring{\texttt{geom}s}{geoms}}\label{geoms}}
+
+Auf diese \emph{`Leinwand'} können wir jetzt sogenannte \texttt{geom}s legen, die unsere Daten darstellen. Da wir einen Scatterplot planen, müssen wir nur noch Punkte hinzufügen. Dafür können wir einfach ein \texttt{point}-\texttt{geom} mit der \texttt{geom\_point}-Funktion hinzufügen. Um den layer abzutragen, addieren wir einfach das geom hinzu.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_long }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Stadtteil) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{mittlere Anzahl}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{mean}\NormalTok{(Anzahl),}
+            \AttributeTok{Hektar =}\NormalTok{ Hektar) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Hektar,}
+             \AttributeTok{y =} \StringTok{\textasciigrave{}}\AttributeTok{mittlere Anzahl}\StringTok{\textasciigrave{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-160-1} \end{center}
+
+\hypertarget{aesthetics-zur-darstellung-zusuxe4tzlicher-variablen}{%
+\subsection{\texorpdfstring{\texttt{aesthetics} zur Darstellung zusätzlicher Variablen}{aesthetics zur Darstellung zusätzlicher Variablen}}\label{aesthetics-zur-darstellung-zusuxe4tzlicher-variablen}}
+
+Die \texttt{aes}-Funktion kann mit einer ganzen Reihe von zusätzlichen Argumenten umgehen und so mehr grafische Eigenschaften des Plots anpassen.
+
+So könnten wir zum Beispiel die Original-Haushaltsgrößen darstellen wollen, jetzt aber ohne zu mitteln sondern als nach den Stadtteilen eingefärbten Punkten. Außerdem wollen wir jetzt mal die Größe der Punkte mit der Anzahl an Haushalten skalieren und mit den für die Punkte genutzten Symbolen die Haushalte.
+Um das ganze übersichtlich zu halten, legen wir uns aber auf die Stadtteile Altstadt, Schreventeich, Exerzierplatz, Gaarden-Ost und Blücherplatz fest.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_long }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(Stadtteil }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Altstadt\textquotesingle{}}\NormalTok{, }
+                          \StringTok{\textquotesingle{}Schreventeich\textquotesingle{}}\NormalTok{, }
+                          \StringTok{\textquotesingle{}Exerzierplatz\textquotesingle{}}\NormalTok{, }
+                          \StringTok{\textquotesingle{}Blücherplatz\textquotesingle{}}\NormalTok{,}
+                          \StringTok{\textquotesingle{}Gaarden{-}Ost\textquotesingle{}}\NormalTok{))}\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Hektar,}
+             \AttributeTok{y =}\NormalTok{ Anzahl,}
+             \AttributeTok{colour =}\NormalTok{ Stadtteil,}
+             \AttributeTok{shape =}\NormalTok{ Haushaltsform,}
+             \AttributeTok{size =}\NormalTok{ Anzahl)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{imgs/point_aes} \end{center}
+
+Schön ist das jetzt nicht, aber es gibt einen Eindruck für die Möglichkeiten, die \texttt{ggplot} bietet.
+
+Die möglichen \texttt{aes()}-Argumente sind die folgenden:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{colour}: Eine Variable, die farblich zu codierende Einträge kennzeichnet
+\item
+  \texttt{fill}: Eine Variable, die bei Säulendiagrammen u.ä. die zu unterscheidenen Einträge kennzeichnet
+\item
+  \texttt{shape}: die bei Punktdiagrammen zu nutzenden Symbole
+\item
+  \texttt{linetype}: der bei Liniendiagrammen zu nutzende Linientyp
+\item
+  \texttt{group}: Ein für zukünftige Schichten zu berücksichtigender Gruppierungsfaktor
+\item
+  \texttt{alpha}: Transparenz der Farben
+\end{itemize}
+
+\hypertarget{grafiken-fine-tunen}{%
+\subsection{Grafiken fine-tunen}\label{grafiken-fine-tunen}}
+
+Zusätzlich zu der Grundebene und den \texttt{geom}s bietet ggplot noch eine Reihe von Oprimierungs-Stellschrauben an denen wir schrauben können. Die erste die wir angucken, ist die \texttt{theme}-Funktion. Mit der können wir sehr sehr viele Parameter der Grafik anpassen, wir geben uns hier jetzt aber mal mit der Legenden-Position zufrieden:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_long }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(Stadtteil }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Altstadt\textquotesingle{}}\NormalTok{, }
+                          \StringTok{\textquotesingle{}Schreventeich\textquotesingle{}}\NormalTok{, }
+                          \StringTok{\textquotesingle{}Exerzierplatz\textquotesingle{}}\NormalTok{, }
+                          \StringTok{\textquotesingle{}Blücherplatz\textquotesingle{}}\NormalTok{,}
+                          \StringTok{\textquotesingle{}Gaarden{-}Ost\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Hektar,}
+             \AttributeTok{y =}\NormalTok{ Anzahl,}
+             \AttributeTok{colour =}\NormalTok{ Stadtteil,}
+             \AttributeTok{shape =}\NormalTok{ Haushaltsform,}
+             \AttributeTok{size =}\NormalTok{ Anzahl)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{\textquotesingle{}bottom\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{imgs/point_aes2} \end{center}
+
+Nicht viel besser, wir bleiben bei der alten Variante.
+
+\hypertarget{parameter-mit-den-scale-funktionen-anpassen}{%
+\subsection{\texorpdfstring{Parameter mit den \texttt{scale}-Funktionen anpassen}{Parameter mit den scale-Funktionen anpassen}}\label{parameter-mit-den-scale-funktionen-anpassen}}
+
+Wir könnten zum Beispiel neue Farben für unseren Plot festlegen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_long }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(Stadtteil }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Altstadt\textquotesingle{}}\NormalTok{, }
+                          \StringTok{\textquotesingle{}Schreventeich\textquotesingle{}}\NormalTok{, }
+                          \StringTok{\textquotesingle{}Exerzierplatz\textquotesingle{}}\NormalTok{, }
+                          \StringTok{\textquotesingle{}Blücherplatz\textquotesingle{}}\NormalTok{,}
+                          \StringTok{\textquotesingle{}Gaarden{-}Ost\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Hektar,}
+             \AttributeTok{y =}\NormalTok{ Anzahl,}
+             \AttributeTok{colour =}\NormalTok{ Stadtteil,}
+             \AttributeTok{shape =}\NormalTok{ Haushaltsform,}
+             \AttributeTok{size =}\NormalTok{ Anzahl)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{\textquotesingle{}Set1\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{imgs/point_aes3} \end{center}
+
+\hypertarget{line-charts}{%
+\section{line-charts}\label{line-charts}}
+
+Andere Darstellungsformen lassen sich dann einfach mit anderen geomen umsetzen. So könnten wir zum Beispiel versuchen die mittleren Temperaturen in Kiel seit beginn der Aufzeichnungen darstellen. Dafür lesen wir zuerst den Datensatz ein:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{weather\_df }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{\textquotesingle{}data/mean\_weather.csv\textquotesingle{}}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(weather\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       year           temp       
+##  Min.   :1880   Min.   : 6.250  
+##  1st Qu.:1914   1st Qu.: 7.662  
+##  Median :1950   Median : 8.308  
+##  Mean   :1950   Mean   : 8.374  
+##  3rd Qu.:1984   3rd Qu.: 9.051  
+##  Max.   :2019   Max.   :10.710
+\end{verbatim}
+
+Diese Daten können wir jetzt einfach wieder einer \texttt{ggplot}-Funktion übergeben, auf die wir dann ein Linien-\texttt{geom} layern:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{weather\_df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ year,}
+             \AttributeTok{y =}\NormalTok{ temp)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-171-1} \end{center}
+
+Da wir Temperaturen darstellen liegt nahe, die Werte mit einer Farbskala einzufärben:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{weather\_df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ year,}
+             \AttributeTok{y =}\NormalTok{ temp,}
+             \AttributeTok{color =}\NormalTok{ temp)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-172-1} \end{center}
+
+Da es sich um Temperaturen handelt ist eine Farbskala von blau bis rot vielleicht näher an der Konvention, dafür können wir eine andere \texttt{scale}-Funktion benutzen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{weather\_df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ year,}
+             \AttributeTok{y =}\NormalTok{ temp,}
+             \AttributeTok{color =}\NormalTok{ temp)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_gradient}\NormalTok{(}\AttributeTok{low =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                       \AttributeTok{high =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-173-1} \end{center}
+
+Um das ein bisschen eindeutiger zu machen, können wir noch die Achsenbeschriftungen ändern und eine Überschrift hinzufügen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{weather\_df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ year,}
+             \AttributeTok{y =}\NormalTok{ temp,}
+             \AttributeTok{color =}\NormalTok{ temp)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_gradient}\NormalTok{(}\AttributeTok{low =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                       \AttributeTok{high =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}mittlere Jahrestemperatur in Kiel\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{\textquotesingle{}Jahr\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}mittlere Temperatur °C\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}°C\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-174-1} \end{center}
+
+\hypertarget{balkendiagramme}{%
+\section{Balkendiagramme}\label{balkendiagramme}}
+
+In vielen Publikationen finden sich Balkendiagramme mit Streuungsbalken, die zur Illustration von Mittelwertsvergleichen eingesetzt werden.
+
+Um so ein Diagramm zu erstellen, beginnen wir mit der Aggregation unserer Werte. Da wir die oberen un unteren Grenzen der Fehlerbalken festlegen müssen, erstellen wir gleich je eine Spalte mit den Mittelwerten plus und minus den SEM.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{agg\_df }\OtherTok{\textless{}{-}}\NormalTok{ df\_long }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Haushaltsform) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{m\_anzahl =} \FunctionTok{mean}\NormalTok{(Anzahl),}
+            \AttributeTok{sem\_anzahl =} \FunctionTok{sqrt}\NormalTok{(}\FunctionTok{var}\NormalTok{(Anzahl) }\SpecialCharTok{/} \FunctionTok{length}\NormalTok{(Anzahl)),}
+            \AttributeTok{lower =}\NormalTok{ m\_anzahl }\SpecialCharTok{{-}}\NormalTok{ sem\_anzahl,}
+            \AttributeTok{upper =}\NormalTok{ m\_anzahl }\SpecialCharTok{+}\NormalTok{ sem\_anzahl)}
+\end{Highlighting}
+\end{Shaded}
+
+Diesen Datensatz übergeben wir jetzt wieder der \texttt{ggplot}-Funktion:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OtherTok{\textless{}{-}}\NormalTok{ agg\_df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Haushaltsform,}
+             \AttributeTok{y =}\NormalTok{ m\_anzahl))}
+\end{Highlighting}
+\end{Shaded}
+
+Auf deren Ergebnis wir dann das \texttt{geom\_col}-\texttt{geom} addieren:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\SpecialCharTok{+} \FunctionTok{geom\_col}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-177-1} \end{center}
+
+Das können wir ein bisschen schöner machen, indem wir die Balken einfärben:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OtherTok{\textless{}{-}}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{geom\_col}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ Haushaltsform)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{\textquotesingle{}Set1\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-178-1} \end{center}
+
+Jetzt fügen wir der Grafik mit \texttt{geom\_errorbar} die SEM-Fehlerbalken hinzu:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OtherTok{\textless{}{-}}\NormalTok{ p }\SpecialCharTok{+} \FunctionTok{geom\_errorbar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{ymin =}\NormalTok{ lower, }
+                      \AttributeTok{ymax =}\NormalTok{ upper),}
+                  \AttributeTok{width =}\NormalTok{ .}\DecValTok{25}\NormalTok{)}
+
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-179-1} \end{center}
+
+Um den Graphen ein bisschen lesbarer zu machen, tauschen wir x- und y-Achse:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\SpecialCharTok{+} \FunctionTok{coord\_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-180-1} \end{center}
+
+\ldots und ändern wieder die Achsenbeschriftung:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\SpecialCharTok{+} \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{\textquotesingle{}mittlere Anzahl +/{-} SEM\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{\textquotesingle{}Haushaltsform\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-181-1} \end{center}
+
+\hypertarget{verteilungsdarstellungen}{%
+\section{Verteilungsdarstellungen}\label{verteilungsdarstellungen}}
+
+\hypertarget{histogramme}{%
+\subsection{Histogramme}\label{histogramme}}
+
+Um ein Histogramm zu erstellen, müssen wir nur auf einen \texttt{ggplot} mit einem festgelegt \texttt{x}-aesthetic ein \texttt{geom\_histogram} addieren. So könnten wir uns die Hektarzahlen in unserem originalen, nicht pivotierten Kiel-Datensatz anschauen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Hektar)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-182-1} \end{center}
+
+Das ist jetzt nciht besonders schön, mit einem Festlegen von aesthetics außerhalb der \texttt{aes}-Funktion können wir aber für alle Teile des Plots einen Wert festlegen. So können wir die Flächen mit weiß füllen und hellgrau umreißen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Hektar)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{fill =} \StringTok{\textquotesingle{}white\textquotesingle{}}\NormalTok{,}
+                 \AttributeTok{color =} \StringTok{\textquotesingle{}grey\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-183-1} \end{center}
+
+Wir können außerdem die Breite der dargestellten Balken anpassen. mit dem \texttt{bins}-Argument können wir eine Anzahl an Balken festlegen\ldots{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Hektar)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{fill =} \StringTok{\textquotesingle{}white\textquotesingle{}}\NormalTok{,}
+                 \AttributeTok{color =} \StringTok{\textquotesingle{}grey\textquotesingle{}}\NormalTok{,}
+                 \AttributeTok{bins =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-184-1} \end{center}
+
+\ldots mit dem \texttt{binwidth}-Argument eine Breite für die Balken:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Hektar)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{fill =} \StringTok{\textquotesingle{}white\textquotesingle{}}\NormalTok{,}
+                 \AttributeTok{color =} \StringTok{\textquotesingle{}grey\textquotesingle{}}\NormalTok{,}
+                 \AttributeTok{binwidth =} \DecValTok{50}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-185-1} \end{center}
+
+\hypertarget{boxplots}{%
+\subsection{Boxplots}\label{boxplots}}
+
+Eine sehr praktische Art und Weise Verteilungen darzustellen, vor allem wenn man die Verteilungen von Gruppen darstellen möchte, sind \emph{Boxplots}. Hierfür definieren wir einfach einen base-layer mit der Gruppierungsvariable auf der x-Achse und einer numerischen Variable auf der y-Achse:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_long }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Stadtteil, }
+             \AttributeTok{y =}\NormalTok{ Anzahl)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-186-1} \end{center}
+
+Um die Achsenbeschriftung lesbarer zu machen könnten wir jetzt entweder erneut die Achsen flippen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_long }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Stadtteil, }
+             \AttributeTok{y =}\NormalTok{ Anzahl)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{coord\_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-187-1} \end{center}
+
+Oder die Achsenbeschriftung mit einem neuen Argument der \texttt{theme}-Funktion drehen. Dieses erwartet ein Ergebnis der \texttt{element\_text}-Funktion, die die Möglichkeit bietet, ästhetische Parameter für Schriftzüge festzulegen, so zum Beispiel den Winkel (\texttt{angle} in °) und die Adjustierung entlang der x-Achse (\texttt{hjust}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_long }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Stadtteil, }
+             \AttributeTok{y =}\NormalTok{ Anzahl)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{45}\NormalTok{,}
+                                   \AttributeTok{hjust =} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-188-1} \end{center}
 
   \bibliography{book.bib,packages.bib}
 
