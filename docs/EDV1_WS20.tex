@@ -150,7 +150,7 @@
 
 \title{EDV1}
 \author{Max Brede}
-\date{2021-01-24}
+\date{2021-02-07}
 
 \begin{document}
 \maketitle
@@ -3122,9 +3122,9 @@ Das könnte in unserem Beispiel exemplarisch hilfreich sein, um die drei Versuch
 
 \begin{verbatim}
 ##            spr_iq     log_iq    ges_iq
-## spr_iq  1.0000000 -0.7616538 0.3989711
-## log_iq -0.7616538  1.0000000 0.2903000
-## ges_iq  0.3989711  0.2903000 1.0000000
+## spr_iq  1.0000000 -0.2436392 0.7287236
+## log_iq -0.2436392  1.0000000 0.4866263
+## ges_iq  0.7287236  0.4866263 1.0000000
 \end{verbatim}
 
 Als ergänzende Nebenbemerkung:
@@ -3270,8 +3270,8 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 0 1 0 0 0 1 1 0 0 1 1 0 0 0 1 0 0 0 0 0 1 1 1 1 0
-## [26] 0 1 0 0 1
+##  [1] 1 0 0 1 1 0 0 0 1 0 1 1 1 0 1 0 0 1 0 1 0 1 0 0 0
+## [26] 0 0 0 1 1
 \end{verbatim}
 
 \begin{Shaded}
@@ -3282,11 +3282,11 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] male   female male   male   male   female female
-##  [8] male   male   female female male   male   male  
-## [15] female male   male   male   male   male   female
-## [22] female female female male   male   female male  
-## [29] male   female
+##  [1] female male   male   female female male   male  
+##  [8] male   female male   female female female male  
+## [15] female male   male   female male   female male  
+## [22] female male   male   male   male   male   male  
+## [29] female female
 ## Levels: male female
 \end{verbatim}
 
@@ -3299,7 +3299,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 
 \begin{verbatim}
 ##   male female 
-##     18     12
+##     17     13
 \end{verbatim}
 
 \begin{Shaded}
@@ -3310,7 +3310,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  Factor w/ 2 levels "male","female": 1 2 1 1 1 2 2 1 1 2 ...
+##  Factor w/ 2 levels "male","female": 2 1 1 2 2 1 1 1 2 1 ...
 \end{verbatim}
 
 \textbf{Achtung:} Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich ``0'' und ``1'' waren, s.o.).
@@ -3333,12 +3333,12 @@ Zuerst wandeln wir die Stufen unseres \texttt{sexFac} in andere labels um:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] männlich weiblich männlich männlich männlich
-##  [6] weiblich weiblich männlich männlich weiblich
-## [11] weiblich männlich männlich männlich weiblich
-## [16] männlich männlich männlich männlich männlich
-## [21] weiblich weiblich weiblich weiblich männlich
-## [26] männlich weiblich männlich männlich weiblich
+##  [1] weiblich männlich männlich weiblich weiblich
+##  [6] männlich männlich männlich weiblich männlich
+## [11] weiblich weiblich weiblich männlich weiblich
+## [16] männlich männlich weiblich männlich weiblich
+## [21] männlich weiblich männlich männlich männlich
+## [26] männlich männlich männlich weiblich weiblich
 ## Levels: männlich weiblich
 \end{verbatim}
 
@@ -3387,17 +3387,17 @@ Für Median-Splits und ähnliches ist es sehr praktisch, direkt numerische Varia
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] high low  low  high high low  low  high low 
-##  [10] high high high high high high high high high
-##  [19] high low  high high high low  low  low  high
-##  [28] low  low  low  high low  low  low  high low 
-##  [37] low  low  low  low  high low  low  low  high
-##  [46] high low  high low  low  high high high low 
-##  [55] high high high high low  low  low  high low 
-##  [64] high high low  low  high high low  low  low 
-##  [73] low  low  high low  high low  high high low 
-##  [82] high low  high high high low  low  high low 
-##  [91] low  high high low  high low  low  low  high
+##   [1] high high low  low  high low  high high high
+##  [10] low  high low  high high low  high high high
+##  [19] low  high high high high high low  high low 
+##  [28] high low  low  low  high high high low  high
+##  [37] low  low  high low  high low  low  high low 
+##  [46] low  low  low  low  low  high low  low  high
+##  [55] low  low  low  high low  high low  low  high
+##  [64] low  high low  low  low  high high low  high
+##  [73] high low  low  low  low  low  high high high
+##  [82] high low  high low  high low  low  low  high
+##  [91] high low  high low  high low  high low  high
 ## [100] high
 ## Levels: high low
 \end{verbatim}
@@ -3417,7 +3417,7 @@ IQ-Werte in 3 Klassen einteilen:
 
 \begin{verbatim}
 ##  lo mid  hi 
-##  16  71  13
+##  13  82   5
 \end{verbatim}
 
 \texttt{cut} kann man außerdem ganz einfach zusammen mit der \texttt{quantile}-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:
@@ -3436,8 +3436,8 @@ IQ-Werte in 3 Klassen einteilen:
 \end{Shaded}
 
 \begin{verbatim}
-##  (-Inf,88]    (88,98]   (98,110] (110, Inf] 
-##         26         25         25         24
+##  (-Inf,91]  (91,99.5] (99.5,107] (107, Inf] 
+##         26         24         26         24
 \end{verbatim}
 
 \hypertarget{daten-einlesen-i}{%
@@ -4639,7 +4639,7 @@ Um ein Histogramm zu erstellen, müssen wir nur auf einen \texttt{ggplot} mit ei
 
 \begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-182-1} \end{center}
 
-Das ist jetzt nciht besonders schön, mit einem Festlegen von aesthetics außerhalb der \texttt{aes}-Funktion können wir aber für alle Teile des Plots einen Wert festlegen. So können wir die Flächen mit weiß füllen und hellgrau umreißen:
+Das ist jetzt nicht besonders schön, mit einem Festlegen von aesthetics außerhalb der \texttt{aes}-Funktion können wir aber für alle Teile des Plots einen Wert festlegen. So können wir die Flächen mit weiß füllen und hellgrau umreißen:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4724,6 +4724,762 @@ Oder die Achsenbeschriftung mit einem neuen Argument der \texttt{theme}-Funktion
 \end{Shaded}
 
 \begin{center}\includegraphics[width=200pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-188-1} \end{center}
+
+\hypertarget{abbildungen-ii}{%
+\chapter{Abbildungen II}\label{abbildungen-ii}}
+
+\hypertarget{organisatorisches-6}{%
+\section{Organisatorisches}\label{organisatorisches-6}}
+
+\hypertarget{semesterplan-7}{%
+\subsection{Semesterplan}\label{semesterplan-7}}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}{l|l|l|l}
+\hline
+Einheit & Vorlesung & Übungswoche & Thema\\
+\hline
+1 & 2.11.20 & keine Übung & Grundlagen und Begriffe\\
+\hline
+2 & 16.11.20 & KW 48 & Vektoren und Indizierung\\
+\hline
+ &  &  & Datenformate erstellen und transformieren\\
+\hline
+3 & 30.11.20 & KW 50 & Pakete installieren und benutzen\\
+\hline
+ &  &  & Datensätze erstellen und ergänzen können\\
+\hline
+ &  &  & Datensätze sortieren und indizieren können\\
+\hline
+4 & 14.12.20 & KW 1 & Faktoren\\
+\hline
+ &  &  & deskriptive Kennwerte\\
+\hline
+ &  &  & Aggregation I\\
+\hline
+5 & 11.01.21 & KW 3 & Aggregation II\\
+\hline
+ &  &  & In- und Export von Datensätzen\\
+\hline
+6 & 25.01.21 & KW 5 & Grafische Darstellungen I\\
+\hline
+7 & 08.02.21 & KW 7 & Grafische Darstellungen II\\
+\hline
+8 & 22.02.21 & keine Übung & Puffer\\
+\hline
+ &  &  & Probeklausur\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\hypertarget{gruppierte-darstellungen}{%
+\section{Gruppierte Darstellungen}\label{gruppierte-darstellungen}}
+
+\hypertarget{balkendiagramme-1}{%
+\subsection{Balkendiagramme}\label{balkendiagramme-1}}
+
+Bei dem Versuch zwei kategoriale mit einer numerischen zu kombinieren oder kombinierte Häufigkeiten von zwei Gruppierungsfaktoren darzustellen kommen wir mit den bisher benutzten \texttt{aesthetics} nicht unbedingt weiter.
+
+Als Beispiel betrachten wir folgenden Ausschnitt des \href{https://data.europa.eu/euodp/de/data/dataset/VarZwbQ6Vy3cFkW2UbITzA}{hier} verfügbaren Datensatz:
+
+\begin{verbatim}
+## # A tibble: 21 x 3
+##    sex   age       DE
+##    <chr> <chr>  <dbl>
+##  1 F     Y15-19  82.7
+##  2 F     Y20-24  73.4
+##  3 F     Y25-29  73.2
+##  4 F     Y30-44  76.9
+##  5 F     Y45-54  74  
+##  6 F     Y55-64  81.7
+##  7 F     Y65-74  91.1
+##  8 M     Y15-19  81.4
+##  9 M     Y20-24  68.7
+## 10 M     Y25-29  65.1
+## # ... with 11 more rows
+\end{verbatim}
+
+Diese Anteile an Rauchern pro Altersgruppe wollen wir jetzt in einem Balkendiagramm darstellen, in dem an der x-Achse die Altersgruppen abgetragen sind. Außerdem wollen wir die Balken nach Geschlecht gruppieren:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age, }\AttributeTok{fill =}\NormalTok{ sex, }\AttributeTok{y =}\NormalTok{ DE)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-191-1} \end{center}
+
+Diese Darstellung ist zwar ganz nett um einen Eindruck für den den Verlauf über die Kohorten zu sehen, die Balken nebeneinander zu gruppieren ist aber vielleicht eher wünschenswert. Dafür können wir das \texttt{position}-Argument und die \texttt{position\_dodge()}-Funktion benutzen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age, }\AttributeTok{fill =}\NormalTok{ sex, }\AttributeTok{y =}\NormalTok{ DE)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{position =} \FunctionTok{position\_dodge}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-192-1} \end{center}
+
+Den Graphen können wir jetzt wie gewohnt verschönern, zum Beispiel indem wir die Farben ändern und die Achsenbeschriftung anpassen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age, }\AttributeTok{fill =}\NormalTok{ sex, }\AttributeTok{y =}\NormalTok{ DE)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{position =} \FunctionTok{position\_dodge}\NormalTok{()) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\AttributeTok{F =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{M =} \StringTok{\textquotesingle{}brown3\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{T =} \StringTok{\textquotesingle{}darkorchid4\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{\textquotesingle{}Alter\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Prozent Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{fill =} \StringTok{\textquotesingle{}Geschlecht\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{\textquotesingle{}Anteil Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{\textquotesingle{}Pro Altergruppe in Deutschland im Jahr 2014\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-193-1} \end{center}
+
+\hypertarget{boxplots-1}{%
+\subsection{Boxplots}\label{boxplots-1}}
+
+Wenn wir den Datensatz ein bisschen anders aufbereiten, können wir die Verteilungen der Raucher-Anteile über Europa darstellen.
+
+\begin{verbatim}
+## # A tibble: 651 x 4
+##    sex   age    country percentage
+##    <chr> <chr>  <chr>        <dbl>
+##  1 F     Y15-19 BE            76.6
+##  2 F     Y15-19 BG            83.2
+##  3 F     Y15-19 CZ            83.5
+##  4 F     Y15-19 DK            82.1
+##  5 F     Y15-19 DE            82.7
+##  6 F     Y15-19 EE            91.2
+##  7 F     Y15-19 IE            86.3
+##  8 F     Y15-19 EL            87.7
+##  9 F     Y15-19 ES            89.8
+## 10 F     Y15-19 FR            80.8
+## # ... with 641 more rows
+\end{verbatim}
+
+Um einen Eindruck über die Verteilung der Raucherzahlen über Europa zu bekommen, stellen wir diesen Datensatz als gruppierte Boxplots dar:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age,}
+             \AttributeTok{y =}\NormalTok{ percentage,}
+             \AttributeTok{color =}\NormalTok{ sex)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-195-1} \end{center}
+
+Hier können wir auch wieder die grafischen Optimierungen anwenden, die wir beim Balkendiagramm genutzt haben:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age,}
+             \AttributeTok{y =}\NormalTok{ percentage,}
+             \AttributeTok{color =}\NormalTok{ sex)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\AttributeTok{F =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{M =} \StringTok{\textquotesingle{}brown3\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{T =} \StringTok{\textquotesingle{}darkorchid4\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{\textquotesingle{}Alter\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Prozent Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}Geschlecht\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{\textquotesingle{}Anteil Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{\textquotesingle{}Pro Altergruppe in Europa im Jahr 2014\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-196-1} \end{center}
+
+\hypertarget{layer-fuxfcr-zusuxe4tzliche-informationen}{%
+\section{Layer für zusätzliche Informationen}\label{layer-fuxfcr-zusuxe4tzliche-informationen}}
+
+\hypertarget{gruppenzusammenfassungen}{%
+\subsection{Gruppenzusammenfassungen}\label{gruppenzusammenfassungen}}
+
+Zu unserem gerade erstellten Boxplot wollen wir jetzt die mittleren Raucherquoten als horizontale Linie einfügen.
+
+Dazu erstellen wir zuerst einen Datensatz mit den Mittelwerten:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mean\_per\_sex }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(sex) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{percentage =} \FunctionTok{mean}\NormalTok{(percentage,}\AttributeTok{na.rm =}\NormalTok{ T))}
+\NormalTok{mean\_per\_sex}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 2
+##   sex   percentage
+##   <chr>      <dbl>
+## 1 F           79.0
+## 2 M           68.5
+## 3 T           73.9
+\end{verbatim}
+
+Diese können wir dann als eigenen Datensatz einem neuen \texttt{geom} hinzufügen. Da wir horizontale Linien hinzufügen wollen, nutzen wir dafür \texttt{geom\_hline}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age,}
+             \AttributeTok{y =}\NormalTok{ percentage,}
+             \AttributeTok{color =}\NormalTok{ sex)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\AttributeTok{F =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{M =} \StringTok{\textquotesingle{}brown3\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{T =} \StringTok{\textquotesingle{}darkorchid4\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{\textquotesingle{}Alter\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Prozent Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}Geschlecht\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{\textquotesingle{}Anteil Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{\textquotesingle{}Pro Altergruppe in Europa im Jahr 2014\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_per\_sex,}
+             \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{yintercept =}\NormalTok{ percentage,}
+                           \AttributeTok{color =}\NormalTok{ sex))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-198-1} \end{center}
+
+Mit außerhalb der \texttt{aes}-Funktion gesetzten `aesthetics' können wir die Linien noch ein bisschen mehr von den Boxplots abheben.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age,}
+             \AttributeTok{y =}\NormalTok{ percentage,}
+             \AttributeTok{color =}\NormalTok{ sex)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\AttributeTok{F =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{M =} \StringTok{\textquotesingle{}brown3\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{T =} \StringTok{\textquotesingle{}darkorchid4\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{\textquotesingle{}Alter\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Prozent Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}Geschlecht\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{\textquotesingle{}Anteil Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{\textquotesingle{}Pro Altergruppe in Europa im Jahr 2014\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_per\_sex,}
+             \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{yintercept =}\NormalTok{ percentage,}
+                           \AttributeTok{color =}\NormalTok{ sex),}
+             \AttributeTok{alpha =}\NormalTok{ .}\DecValTok{5}\NormalTok{,}
+             \AttributeTok{lty =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-199-1} \end{center}
+
+Wir können auch komplexere Informationen nachträglich hinzufügen, so zum Beispiel wenn wir die jeweiligen Mittelwerte als Punkte und die SEMs als Fehlerbalken hinzufügen. Wir fangen wieder damit an, einen Datensatz zu erstellen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mean\_sem\_per\_box }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(sex, age) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{sem =} \FunctionTok{sqrt}\NormalTok{(}\FunctionTok{var}\NormalTok{(percentage,}\AttributeTok{na.rm =}\NormalTok{ T) }\SpecialCharTok{/} \FunctionTok{length}\NormalTok{(percentage)),}
+            \AttributeTok{percentage =} \FunctionTok{mean}\NormalTok{(percentage,}\AttributeTok{na.rm =}\NormalTok{ T),}
+            \AttributeTok{upper =}\NormalTok{ percentage }\SpecialCharTok{+}\NormalTok{ sem,}
+            \AttributeTok{lower =}\NormalTok{ percentage }\SpecialCharTok{{-}}\NormalTok{ sem)}
+\NormalTok{mean\_sem\_per\_box}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 21 x 6
+## # Groups:   sex [3]
+##    sex   age      sem percentage upper lower
+##    <chr> <chr>  <dbl>      <dbl> <dbl> <dbl>
+##  1 F     Y15-19 1.04        85.8  86.8  84.7
+##  2 F     Y20-24 1.16        74.2  75.4  73.1
+##  3 F     Y25-29 1.07        73.7  74.7  72.6
+##  4 F     Y30-44 1.27        74.7  75.9  73.4
+##  5 F     Y45-54 1.22        74.8  76.0  73.6
+##  6 F     Y55-64 0.952       79.7  80.7  78.7
+##  7 F     Y65-74 0.678       89.8  90.4  89.1
+##  8 M     Y15-19 1.03        80.8  81.9  79.8
+##  9 M     Y20-24 1.53        62.8  64.3  61.3
+## 10 M     Y25-29 1.75        59.3  61.0  57.5
+## # ... with 11 more rows
+\end{verbatim}
+
+Diesen Datensatz können wir dann wieder zu dem Plot hinzufügen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age,}
+             \AttributeTok{y =}\NormalTok{ percentage,}
+             \AttributeTok{color =}\NormalTok{ sex)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\AttributeTok{F =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{M =} \StringTok{\textquotesingle{}brown3\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{T =} \StringTok{\textquotesingle{}darkorchid4\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{\textquotesingle{}Alter\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Prozent Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}Geschlecht\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{\textquotesingle{}Anteil Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{\textquotesingle{}Pro Altergruppe in Europa im Jahr 2014\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_per\_sex,}
+             \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{yintercept =}\NormalTok{ percentage,}
+                           \AttributeTok{color =}\NormalTok{ sex),}
+             \AttributeTok{alpha =}\NormalTok{ .}\DecValTok{5}\NormalTok{,}
+             \AttributeTok{lty =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_sem\_per\_box) }\SpecialCharTok{+}
+  \FunctionTok{geom\_errorbar}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_sem\_per\_box,}
+                \FunctionTok{aes}\NormalTok{(}\AttributeTok{ymin =}\NormalTok{ lower,}
+                    \AttributeTok{ymax =}\NormalTok{ upper))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-201-1} \end{center}
+
+Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungsschritt benutzen wir wieder das \texttt{position}-Argument, vie vorher bei den Balkendiagrammen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age,}
+             \AttributeTok{y =}\NormalTok{ percentage,}
+             \AttributeTok{color =}\NormalTok{ sex)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\AttributeTok{F =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{M =} \StringTok{\textquotesingle{}brown3\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{T =} \StringTok{\textquotesingle{}darkorchid4\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{\textquotesingle{}Alter\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Prozent Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}Geschlecht\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{\textquotesingle{}Anteil Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{\textquotesingle{}Pro Altergruppe in Europa im Jahr 2014\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_per\_sex,}
+             \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{yintercept =}\NormalTok{ percentage,}
+                           \AttributeTok{color =}\NormalTok{ sex),}
+             \AttributeTok{alpha =}\NormalTok{ .}\DecValTok{5}\NormalTok{,}
+             \AttributeTok{lty =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_sem\_per\_box,}
+             \AttributeTok{position =} \FunctionTok{position\_dodge}\NormalTok{()) }\SpecialCharTok{+}
+  \FunctionTok{geom\_errorbar}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_sem\_per\_box,}
+                \FunctionTok{aes}\NormalTok{(}\AttributeTok{ymin =}\NormalTok{ lower,}
+                    \AttributeTok{ymax =}\NormalTok{ upper),}
+             \AttributeTok{position =} \FunctionTok{position\_dodge}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-202-1} \end{center}
+
+Die \texttt{position\_dodge}-Funktion kann ein \texttt{width}-Argument annehmen, das uns die Menge der Verschiebung zu bestimmen erlaubt:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age,}
+             \AttributeTok{y =}\NormalTok{ percentage,}
+             \AttributeTok{color =}\NormalTok{ sex)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\AttributeTok{F =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{M =} \StringTok{\textquotesingle{}brown3\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{T =} \StringTok{\textquotesingle{}darkorchid4\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{\textquotesingle{}Alter\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Prozent Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}Geschlecht\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{\textquotesingle{}Anteil Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{\textquotesingle{}Pro Altergruppe in Europa im Jahr 2014\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_per\_sex,}
+             \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{yintercept =}\NormalTok{ percentage,}
+                           \AttributeTok{color =}\NormalTok{ sex),}
+             \AttributeTok{alpha =}\NormalTok{ .}\DecValTok{5}\NormalTok{,}
+             \AttributeTok{lty =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_sem\_per\_box,}
+             \AttributeTok{position =} \FunctionTok{position\_dodge}\NormalTok{(.}\DecValTok{75}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_errorbar}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_sem\_per\_box,}
+                \FunctionTok{aes}\NormalTok{(}\AttributeTok{ymin =}\NormalTok{ lower,}
+                    \AttributeTok{ymax =}\NormalTok{ upper),}
+             \AttributeTok{position =} \FunctionTok{position\_dodge}\NormalTok{(.}\DecValTok{75}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-203-1} \end{center}
+
+Um das noch ein bisschen zu verbessern, verkleinern wir die Breite der Fehlerbalken und machen die neuen Farben ein wenig transparent um sie abzuheben:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age,}
+             \AttributeTok{y =}\NormalTok{ percentage,}
+             \AttributeTok{color =}\NormalTok{ sex)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\AttributeTok{F =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{M =} \StringTok{\textquotesingle{}brown3\textquotesingle{}}\NormalTok{,}
+                               \AttributeTok{T =} \StringTok{\textquotesingle{}darkorchid4\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{\textquotesingle{}Alter\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Prozent Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}Geschlecht\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{\textquotesingle{}Anteil Raucher\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{\textquotesingle{}Pro Altergruppe in Europa im Jahr 2014\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{caption =} \StringTok{"Punkte und Fehlerbalken stellen die jeweiligen Mittelwerte +/{-} SEM dar, }\SpecialCharTok{\textbackslash{}n}\StringTok{ die gestrichelten Linien stellen die Mittelwerte pro Geschlechtsgruppe dar."}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_per\_sex,}
+             \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{yintercept =}\NormalTok{ percentage,}
+                           \AttributeTok{color =}\NormalTok{ sex),}
+             \AttributeTok{alpha =}\NormalTok{ .}\DecValTok{5}\NormalTok{,}
+             \AttributeTok{lty =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_sem\_per\_box,}
+             \AttributeTok{position =} \FunctionTok{position\_dodge}\NormalTok{(.}\DecValTok{75}\NormalTok{),}
+             \AttributeTok{alpha =}\NormalTok{ .}\DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_errorbar}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mean\_sem\_per\_box,}
+                \FunctionTok{aes}\NormalTok{(}\AttributeTok{ymin =}\NormalTok{ lower,}
+                    \AttributeTok{ymax =}\NormalTok{ upper),}
+             \AttributeTok{position =} \FunctionTok{position\_dodge}\NormalTok{(.}\DecValTok{75}\NormalTok{),}
+             \AttributeTok{width =}\NormalTok{ .}\DecValTok{5}\NormalTok{,}
+             \AttributeTok{alpha =}\NormalTok{ .}\DecValTok{3}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-204-1} \end{center}
+
+\hypertarget{zusuxe4tzliche-tweaks}{%
+\section{Zusätzliche tweaks}\label{zusuxe4tzliche-tweaks}}
+
+\hypertarget{sortieren-von-labels}{%
+\subsection{Sortieren von labels}\label{sortieren-von-labels}}
+
+Wir gucken uns den folgenden, von \href{http://www.fao.org/faostat/en/\#data/QC}{dieser website} bezogenen Datensatz an, die die Produktion grüner Kaffeebohnen pro Land in hg/ha beinhaltet:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{coffee\_df }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{\textquotesingle{}data/coffee\_data.csv\textquotesingle{}}\NormalTok{) }
+\NormalTok{coffee\_df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 77 x 4
+##    Area                              Year Unit  Value
+##    <chr>                            <dbl> <chr> <dbl>
+##  1 Angola                            2019 hg/ha  3073
+##  2 Belize                            2019 hg/ha  7273
+##  3 Benin                             2019 hg/ha  1900
+##  4 Bolivia (Plurinational State of)  2019 hg/ha  9742
+##  5 Brazil                            2019 hg/ha 16504
+##  6 Burundi                           2019 hg/ha  9136
+##  7 Cambodia                          2019 hg/ha  8000
+##  8 Cameroon                          2019 hg/ha  3121
+##  9 Central African Republic          2019 hg/ha  2075
+## 10 China                             2019 hg/ha 30298
+## # ... with 67 more rows
+\end{verbatim}
+
+Hektogramm pro Hektar ist ein bisschen ungewöhnlich, deshalb rechnen wir die Angabe in Kilogramm pro Hektar um:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{coffee\_df }\OtherTok{\textless{}{-}}\NormalTok{ coffee\_df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\StringTok{\textquotesingle{}kg/ha\textquotesingle{}} \OtherTok{=}\NormalTok{ .}\DecValTok{1} \SpecialCharTok{*}\NormalTok{ Value)}
+\end{Highlighting}
+\end{Shaded}
+
+Diesen Datensatz wollen wir jetzt als Balkendiagramm darstellen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{coffee\_df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Area,}
+             \AttributeTok{y =} \StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{fill =} \StringTok{\textquotesingle{}\#59ca19\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-207-1} \end{center}
+
+Das sind sehr, sehr viele Einträge. Wir fangen damit an alle Länder unter dem 3. Quartil in eine Kategorie ``other'' zusammenzufassen und diese Werte dann zu mitteln:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{coffee\_df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Area =} \FunctionTok{ifelse}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}} \SpecialCharTok{\textless{}} \FunctionTok{quantile}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}}\NormalTok{,}\AttributeTok{probs =}\NormalTok{ .}\DecValTok{75}\NormalTok{),}
+                       \StringTok{\textquotesingle{}other (mean)\textquotesingle{}}\NormalTok{,}
+\NormalTok{                       Area)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Area) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{mean}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Area,}
+             \AttributeTok{y =} \StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{fill =} \StringTok{\textquotesingle{}\#59ca19\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-208-1} \end{center}
+
+Die y-Achse ist jetzt alphabetisch sortiert. Für einen Länder-Vergleich ist aber eine Ordnung nach Größe vorzuziehen, also machen wir das mal:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{coffee\_df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Area =} \FunctionTok{ifelse}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}} \SpecialCharTok{\textless{}} \FunctionTok{quantile}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}}\NormalTok{,}\AttributeTok{probs =}\NormalTok{ .}\DecValTok{75}\NormalTok{),}
+                       \StringTok{\textquotesingle{}other (mean)\textquotesingle{}}\NormalTok{,}
+\NormalTok{                       Area)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Area) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{mean}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Area =}\NormalTok{ forcats}\SpecialCharTok{::}\FunctionTok{fct\_reorder}\NormalTok{(Area, }\StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Area,}
+             \AttributeTok{y =} \StringTok{\textasciigrave{}}\AttributeTok{kg/ha}\StringTok{\textasciigrave{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{fill =} \StringTok{\textquotesingle{}\#59ca19\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Kilogramm pro Hektar\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{\textquotesingle{}Produktionsmenge grünen Kaffees\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-209-1} \end{center}
+
+\hypertarget{facets}{%
+\subsection{facets}\label{facets}}
+
+Wir betrachten den folgenden Datensatz, der ursprünglich von \href{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical/}{der open-data Plattform des dwd} stammt.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flensburg\_kiel\_weather }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/flensburg\_kiel\_weather.csv"}\NormalTok{)}
+\FunctionTok{str}\NormalTok{(flensburg\_kiel\_weather)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [78,283 x 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ station         : chr [1:78283] "Flensburg" "Flensburg" "Flensburg" "Flensburg" ...
+##  $ jahr            : num [1:78283] 1985 1985 1985 1985 1985 ...
+##  $ monat           : chr [1:78283] "07" "07" "07" "07" ...
+##  $ tag             : chr [1:78283] "01" "02" "03" "04" ...
+##  $ tagesmittel     : num [1:78283] 14.4 13.8 15.6 18 19.2 18.9 14.8 14.2 14.7 15.5 ...
+##  $ niederschlaege  : num [1:78283] 0 0 0 0 0 0 0 7.6 0.2 0 ...
+##  $ niederschlagsart: chr [1:78283] "kein Niederschlag" "kein Niederschlag" "kein Niederschlag" "kein Niederschlag" ...
+##  - attr(*, "spec")=
+##   .. cols(
+##   ..   station = col_character(),
+##   ..   jahr = col_double(),
+##   ..   monat = col_character(),
+##   ..   tag = col_character(),
+##   ..   tagesmittel = col_double(),
+##   ..   niederschlaege = col_double(),
+##   ..   niederschlagsart = col_character()
+##   .. )
+\end{verbatim}
+
+Diesen Datensatz können wir jetzt benutzen um die mittlere Monatstemperatur über die Jahre darzustellen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(jahr, monat) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mit\_temp =} \FunctionTok{mean}\NormalTok{(tagesmittel)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ monat, }\AttributeTok{y =}\NormalTok{ mit\_temp)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-212-1} \end{center}
+
+Mit der \texttt{group}-aesthetic können wir diesen Graph jetzt per Jahreszahl aufteilen und mit color wieder die Temperatur verdeutlichen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(jahr, monat) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mit\_temp =} \FunctionTok{mean}\NormalTok{(tagesmittel)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ monat, }
+             \AttributeTok{y =}\NormalTok{ mit\_temp,}
+             \AttributeTok{group =}\NormalTok{ jahr,}
+             \AttributeTok{color =}\NormalTok{ mit\_temp)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_gradient}\NormalTok{(}\AttributeTok{low =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                       \AttributeTok{high =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{\textquotesingle{}mittlere °C\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}°C\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{\textquotesingle{}Monat\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-213-1} \end{center}
+
+Das ist zwar ganz hübsch, aber nicht alle Informationen, die wir darstellen können.
+Im Datensatz sind noch Angaben zu den Messstationen, die wir auch gern unterscheiden würden.
+\texttt{facets} können uns helfen, wir können so die einzelnen Stationen in Unterplots darstellen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(jahr, monat, station) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mit\_temp =} \FunctionTok{mean}\NormalTok{(tagesmittel)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ monat, }
+             \AttributeTok{y =}\NormalTok{ mit\_temp,}
+             \AttributeTok{group =}\NormalTok{ jahr,}
+             \AttributeTok{color =}\NormalTok{ mit\_temp)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_gradient}\NormalTok{(}\AttributeTok{low =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                       \AttributeTok{high =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{\textquotesingle{}mittlere °C\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}°C\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{\textquotesingle{}Monat\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{station)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-214-1} \end{center}
+
+Auf diesen Graphen können wir noch Zusatzinformationen legen, so zum Beipiel einen layer, der die mittleren Monatstemperaturen über alle Jahre pro Station darstellt:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{means\_per\_station }\OtherTok{\textless{}{-}}\NormalTok{ flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(monat, station) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mit\_temp =} \FunctionTok{mean}\NormalTok{(tagesmittel,}\AttributeTok{na.rm =}\NormalTok{ T),}
+            \AttributeTok{jahr =} \StringTok{\textquotesingle{}mean\textquotesingle{}}\NormalTok{)}
+
+
+\NormalTok{flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(jahr, monat, station) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mit\_temp =} \FunctionTok{mean}\NormalTok{(tagesmittel)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ monat, }
+             \AttributeTok{y =}\NormalTok{ mit\_temp,}
+             \AttributeTok{group =}\NormalTok{ jahr,}
+             \AttributeTok{color =}\NormalTok{ mit\_temp)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{alpha =}\NormalTok{ .}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data =}\NormalTok{ means\_per\_station) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_gradient}\NormalTok{(}\AttributeTok{low =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                       \AttributeTok{high =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{\textquotesingle{}mittlere °C\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}°C\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{\textquotesingle{}Monat\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{station)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-215-1} \end{center}
+
+Mit einem Layer nach dem \texttt{facet-wrap} kann man auch einen Wert für alle hinzufügen. So könnten wir uns überlegen, in jeden Plot noch einen Mittelwertsverlauf für alle Stationen aufnehmen zu wollen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{means\_per\_station }\OtherTok{\textless{}{-}}\NormalTok{ flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(monat, station) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mit\_temp =} \FunctionTok{mean}\NormalTok{(tagesmittel,}\AttributeTok{na.rm =}\NormalTok{ T),}
+            \AttributeTok{jahr =} \StringTok{\textquotesingle{}mean\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{means\_for\_all }\OtherTok{\textless{}{-}}\NormalTok{ flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(monat) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mit\_temp =} \FunctionTok{mean}\NormalTok{(tagesmittel,}\AttributeTok{na.rm =}\NormalTok{ T),}
+            \AttributeTok{jahr =} \StringTok{\textquotesingle{}mean\textquotesingle{}}\NormalTok{)}
+
+
+\NormalTok{flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(jahr, monat, station) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mit\_temp =} \FunctionTok{mean}\NormalTok{(tagesmittel)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ monat, }
+             \AttributeTok{y =}\NormalTok{ mit\_temp,}
+             \AttributeTok{group =}\NormalTok{ jahr,}
+             \AttributeTok{color =}\NormalTok{ mit\_temp)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{alpha =}\NormalTok{ .}\DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data =}\NormalTok{ means\_per\_station) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_gradient}\NormalTok{(}\AttributeTok{low =} \StringTok{\textquotesingle{}darkblue\textquotesingle{}}\NormalTok{,}
+                       \AttributeTok{high =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{\textquotesingle{}mittlere °C\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{\textquotesingle{}°C\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{\textquotesingle{}Monat\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{station)}\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data =}\NormalTok{ means\_for\_all,}
+            \AttributeTok{color =} \StringTok{\textquotesingle{}green\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-216-1} \end{center}
+
+\hypertarget{deskripitv-statische-layer}{%
+\subsection{Deskripitv-statische Layer}\label{deskripitv-statische-layer}}
+
+In dem Datensatz von eben waren auch Werte zur Niederschlagsmenge. Wir könntn uns jetzt die Frage stellen, ob es einen Zusammenhang zwischen der Art und Menge des Niederschlags und der Temperatur gibt.
+
+Dafür erstellen wir zuerst einen Scatterplot, der die Niederschlagsmenge gegen die Temperatur abträgt:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ niederschlaege, }
+             \AttributeTok{y =}\NormalTok{ tagesmittel)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-217-1} \end{center}
+
+Das ist ein bisschen unübersichtlich, wir aggregieren mal pro Niederschlagsart, Jahr und Station:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(niederschlagsart, jahr, station) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric),mean)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ niederschlaege, }
+             \AttributeTok{y =}\NormalTok{ tagesmittel)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-218-1} \end{center}
+
+Jetzt könnten wir die Hypothese haben, dass es eine Korrelation zwischen Temperatur und Niederschlagsmenge gibt. \texttt{ggplot2} stellt mit der \texttt{geom\_smooth}-Funktion eine einfache Möglichkeit dar, eine lineare Regression auf die Daten zu fitten. Wir setzen hier die Argumente \texttt{method\ =\ \textquotesingle{}lm\textquotesingle{}} um anzugeben, dass wir ein lineares Modell fitten wollen und das Argument \texttt{se\ =\ F}, weil wir keine Fehlerbereiche anzeigen wollen:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(niederschlagsart, jahr, station) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric),mean)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ niederschlaege, }
+             \AttributeTok{y =}\NormalTok{ tagesmittel)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{\textquotesingle{}lm\textquotesingle{}}\NormalTok{,}
+              \AttributeTok{se =}\NormalTok{ F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-219-1} \end{center}
+
+Das ist ein bisschen unbefriedigend. Wenn wir die Niederschlagsart als Gruppierung hinzufügen wird's aber ein bisschen schicker:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flensburg\_kiel\_weather }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(niederschlagsart, jahr, station) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric),mean)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ niederschlaege, }
+             \AttributeTok{y =}\NormalTok{ tagesmittel)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ niederschlagsart),}
+             \AttributeTok{alpha =}\NormalTok{ .}\DecValTok{5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{\textquotesingle{}lm\textquotesingle{}}\NormalTok{,}
+              \AttributeTok{se =}\NormalTok{ F,}
+              \FunctionTok{aes}\NormalTok{(}\AttributeTok{color =} \StringTok{\textquotesingle{}gesamt\textquotesingle{}}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{\textquotesingle{}lm\textquotesingle{}}\NormalTok{,}
+              \AttributeTok{se =}\NormalTok{ F,}
+              \FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ niederschlagsart)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{\textquotesingle{}Set1\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=166.666666666667pt]{EDV1_WS20_files/figure-latex/unnamed-chunk-220-1} \end{center}
 
   \bibliography{book.bib,packages.bib}
 

@@ -24,7 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-01-24" />
+<meta name="date" content="2021-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="aggregation-und-filemanagement.html"/>
-<link rel="next" href="literatur-1.html"/>
+<link rel="next" href="abbildungen-ii.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -194,6 +194,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#line-charts"><i class="fa fa-check"></i>line-charts</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#balkendiagramme"><i class="fa fa-check"></i>Balkendiagramme</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#verteilungsdarstellungen"><i class="fa fa-check"></i>Verteilungsdarstellungen</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html"><i class="fa fa-check"></i>Abbildungen II</a>
+<ul>
+<li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#organisatorisches-6"><i class="fa fa-check"></i>Organisatorisches</a></li>
+<li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#gruppierte-darstellungen"><i class="fa fa-check"></i>Gruppierte Darstellungen</a></li>
+<li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#layer-für-zusätzliche-informationen"><i class="fa fa-check"></i>Layer für zusätzliche Informationen</a></li>
+<li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#zusätzliche-tweaks"><i class="fa fa-check"></i>Zusätzliche tweaks</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="literatur-1.html"><a href="literatur-1.html"><i class="fa fa-check"></i>Literatur</a></li>
 <li class="divider"></li>
@@ -902,7 +909,7 @@ Um den Graphen ein bisschen lesbarer zu machen, tauschen wir x- und y-Achse:</p>
 <span id="cb385-2"><a href="abbildungen-i.html#cb385-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
 <span id="cb385-3"><a href="abbildungen-i.html#cb385-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-182-1.png" width="600px" style="display: block; margin: auto;" />
-Das ist jetzt nciht besonders schön, mit einem Festlegen von aesthetics außerhalb der <code>aes</code>-Funktion können wir aber für alle Teile des Plots einen Wert festlegen. So können wir die Flächen mit weiß füllen und hellgrau umreißen:</p>
+Das ist jetzt nicht besonders schön, mit einem Festlegen von aesthetics außerhalb der <code>aes</code>-Funktion können wir aber für alle Teile des Plots einen Wert festlegen. So können wir die Flächen mit weiß füllen und hellgrau umreißen:</p>
 <div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="abbildungen-i.html#cb386-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb386-2"><a href="abbildungen-i.html#cb386-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
 <span id="cb386-3"><a href="abbildungen-i.html#cb386-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;white&#39;</span>,</span>
@@ -1442,6 +1449,18 @@ Oder die Achsenbeschriftung mit einem neuen Argument der <code>theme</code>-Funk
 <!-- 5. Erstellen Sie eine Kontingenztafel mit den absoluten Häufigkeiten der gemeinsamen Verteilung der Gruppe und des das Durchfallen codierenden Faktors. -->
 <!-- 6. Stellen Sie die Verteilung der Gesamtpunktzahlen in einem  Boxplot dar und Fügen Sie eine rote horizontale Linie ein, die den Mittelwert darstellt. -->
 
+<!-- #--- -->
+<!-- title: 'Psy_B_11: EDV I - Kapitel 7' -->
+<!-- subtitle: 'Abbildungen II' -->
+<!-- author: "Max Brede" -->
+<!-- date: \today -->
+<!-- output: -->
+<!--   ioslides_presentation: -->
+<!--     transition: faster -->
+<!--     css: /home/brede/MEGA/Honorar/111220_KfN/styles.css -->
+<!--     slide_level: 3 -->
+<!-- widescreen: true -->
+<!-- --- -->
 </div>
 </div>
 </div>
@@ -1451,7 +1470,7 @@ Oder die Achsenbeschriftung mit einem neuen Argument der <code>theme</code>-Funk
         </div>
       </div>
 <a href="aggregation-und-filemanagement.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="literatur-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="abbildungen-ii.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
