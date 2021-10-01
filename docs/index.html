@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>EDV1</title>
-  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="EDV1" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="EDV1" />
   
-  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R" />
   
 
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-02-07" />
+<meta name="date" content="2021-10-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 
 <link rel="next" href="lehrplan.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -122,6 +122,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -135,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">EDV 1 <br> WiSe 20</a></li>
+<li><a href="./">EDV 1</li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Vorwort</a></li>
@@ -148,7 +171,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html"><i class="fa fa-check"></i>Vorlesung I - Rste Schritte</a>
 <ul>
-<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#organisatorisches"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#einführung"><i class="fa fa-check"></i>Einführung</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#grundlegende-rechenoperationen"><i class="fa fa-check"></i>Grundlegende Rechenoperationen</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-funktionen-argumente"><i class="fa fa-check"></i>Ausdrücke, Funktionen, Argumente</a></li>
@@ -157,7 +179,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html"><i class="fa fa-check"></i>elementare Datenverarbeitung</a>
 <ul>
-<li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#organisatorisches-1"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren"><i class="fa fa-check"></i>Vektoren</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#indizierung"><i class="fa fa-check"></i>Indizierung</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#systematische-wertefolgen-erzeugen"><i class="fa fa-check"></i>Systematische Wertefolgen erzeugen</a></li>
@@ -166,28 +187,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="tidyverse-und-tibbles.html#tidyverse-und-tibbles"><code>tidyverse</code> und <code>tibbles</code></a>
 <ul>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Organisatorisches</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#pakete-benutzen"><i class="fa fa-check"></i>Pakete benutzen</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Pakete benutzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen-und-ergänzen"><i class="fa fa-check"></i>Datensätze erstellen und ergänzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren-und-indizieren"><i class="fa fa-check"></i>Datensätze sortieren und indizieren</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#vorlesung"><i class="fa fa-check"></i>Vorlesung</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html"><i class="fa fa-check"></i>Faktoren und Aggregation</a>
 <ul>
-<li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#organisatorisches-3"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#faktoren"><i class="fa fa-check"></i>Faktoren</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#daten-einlesen-i"><i class="fa fa-check"></i>Daten einlesen I</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#deskriptive-kennwerte"><i class="fa fa-check"></i>deskriptive Kennwerte</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html"><i class="fa fa-check"></i>Aggregation und Filemanagement</a>
 <ul>
-<li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#organisatorisches-4"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#aggregation"><i class="fa fa-check"></i>Aggregation</a></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#daten-einlesen-ii-und-zusammenfügen"><i class="fa fa-check"></i>Daten einlesen II und zusammenfügen</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html"><i class="fa fa-check"></i>Abbildungen I</a>
 <ul>
-<li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#organisatorisches-5"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#pivotieren-von-datensätzen"><i class="fa fa-check"></i>Pivotieren von Datensätzen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#diagramme-erstellen"><i class="fa fa-check"></i>Diagramme erstellen</a></li>
 <li><a href="abbildungen-i.html#geoms"><code>geom</code>s</a></li>
@@ -197,14 +214,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html"><i class="fa fa-check"></i>Abbildungen II</a>
 <ul>
-<li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#organisatorisches-6"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#gruppierte-darstellungen"><i class="fa fa-check"></i>Gruppierte Darstellungen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#layer-für-zusätzliche-informationen"><i class="fa fa-check"></i>Layer für zusätzliche Informationen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#zusätzliche-tweaks"><i class="fa fa-check"></i>Zusätzliche tweaks</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="literatur-1.html"><a href="literatur-1.html"><i class="fa fa-check"></i>Literatur</a></li>
 <li class="divider"></li>
-<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></li>
 
 </ul>
 
@@ -226,14 +242,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">EDV1</h1>
 <p class="author"><em>Max Brede</em></p>
-<p class="date"><em>2021-02-07</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-10-01</em></p>
 </div>
 <div id="vorwort" class="section level1">
 <h1>Vorwort</h1>
-<p>Dieses mit <code>bookdown</code> erstellte Dokument ist das über das Wintersemester 2020 hinweg wachsende Skript zur Übung “PSY_B_11-2: Computerunterstützte Datenanalyse I” der CAU zu Kiel.</p>
+<p>Dieses mit <code>bookdown</code> erstellte Dokument ist das Skript zur Übung “PSY_B_11-2: Computerunterstützte Datenanalyse I” der CAU zu Kiel.</p>
 <footer>
 <div style="font-size: 75%; display: flex; align-items: center; justify-content: center;style="padding-top: 50px;">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="padding-right: 10px;"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></li><p> Dieses Skript steht, wo nicht anders angegeben, unter der <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0-Lizenz</a>.</p>
+ <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p> 
 </div>
 </footer>
 </div>
@@ -266,6 +282,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

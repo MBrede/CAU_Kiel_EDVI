@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Aggregation und Filemanagement | EDV1</title>
-  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Aggregation und Filemanagement | EDV1" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Aggregation und Filemanagement | EDV1" />
   
-  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R" />
   
 
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-02-07" />
+<meta name="date" content="2021-10-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="faktoren-und-aggregation.html"/>
 <link rel="next" href="abbildungen-i.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -122,6 +122,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -135,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">EDV 1 <br> WiSe 20</a></li>
+<li><a href="./">EDV 1</li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Vorwort</a></li>
@@ -148,7 +171,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html"><i class="fa fa-check"></i>Vorlesung I - Rste Schritte</a>
 <ul>
-<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#organisatorisches"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#einführung"><i class="fa fa-check"></i>Einführung</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#grundlegende-rechenoperationen"><i class="fa fa-check"></i>Grundlegende Rechenoperationen</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-funktionen-argumente"><i class="fa fa-check"></i>Ausdrücke, Funktionen, Argumente</a></li>
@@ -157,7 +179,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html"><i class="fa fa-check"></i>elementare Datenverarbeitung</a>
 <ul>
-<li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#organisatorisches-1"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren"><i class="fa fa-check"></i>Vektoren</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#indizierung"><i class="fa fa-check"></i>Indizierung</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#systematische-wertefolgen-erzeugen"><i class="fa fa-check"></i>Systematische Wertefolgen erzeugen</a></li>
@@ -166,28 +187,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="tidyverse-und-tibbles.html#tidyverse-und-tibbles"><code>tidyverse</code> und <code>tibbles</code></a>
 <ul>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Organisatorisches</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#pakete-benutzen"><i class="fa fa-check"></i>Pakete benutzen</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Pakete benutzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen-und-ergänzen"><i class="fa fa-check"></i>Datensätze erstellen und ergänzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren-und-indizieren"><i class="fa fa-check"></i>Datensätze sortieren und indizieren</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#vorlesung"><i class="fa fa-check"></i>Vorlesung</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html"><i class="fa fa-check"></i>Faktoren und Aggregation</a>
 <ul>
-<li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#organisatorisches-3"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#faktoren"><i class="fa fa-check"></i>Faktoren</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#daten-einlesen-i"><i class="fa fa-check"></i>Daten einlesen I</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#deskriptive-kennwerte"><i class="fa fa-check"></i>deskriptive Kennwerte</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html"><i class="fa fa-check"></i>Aggregation und Filemanagement</a>
 <ul>
-<li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#organisatorisches-4"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#aggregation"><i class="fa fa-check"></i>Aggregation</a></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#daten-einlesen-ii-und-zusammenfügen"><i class="fa fa-check"></i>Daten einlesen II und zusammenfügen</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html"><i class="fa fa-check"></i>Abbildungen I</a>
 <ul>
-<li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#organisatorisches-5"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#pivotieren-von-datensätzen"><i class="fa fa-check"></i>Pivotieren von Datensätzen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#diagramme-erstellen"><i class="fa fa-check"></i>Diagramme erstellen</a></li>
 <li><a href="abbildungen-i.html#geoms"><code>geom</code>s</a></li>
@@ -197,14 +214,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html"><i class="fa fa-check"></i>Abbildungen II</a>
 <ul>
-<li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#organisatorisches-6"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#gruppierte-darstellungen"><i class="fa fa-check"></i>Gruppierte Darstellungen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#layer-für-zusätzliche-informationen"><i class="fa fa-check"></i>Layer für zusätzliche Informationen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#zusätzliche-tweaks"><i class="fa fa-check"></i>Zusätzliche tweaks</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="literatur-1.html"><a href="literatur-1.html"><i class="fa fa-check"></i>Literatur</a></li>
 <li class="divider"></li>
-<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></li>
 
 </ul>
 
@@ -225,221 +241,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="aggregation-und-filemanagement" class="section level1">
 <h1>Aggregation und Filemanagement</h1>
-<div id="organisatorisches-4" class="section level2">
-<h2>Organisatorisches</h2>
-<div id="semesterplan-5" class="section level3">
-<h3>Semesterplan</h3>
-<table class=" lightable-paper" style="font-size: 15px; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-Einheit
-</th>
-<th style="text-align:left;">
-Vorlesung
-</th>
-<th style="text-align:left;">
-Übungswoche
-</th>
-<th style="text-align:left;">
-Thema
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-2.11.20
-</td>
-<td style="text-align:left;">
-keine Übung
-</td>
-<td style="text-align:left;">
-Grundlagen und Begriffe
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-16.11.20
-</td>
-<td style="text-align:left;">
-KW 48
-</td>
-<td style="text-align:left;">
-Vektoren und Indizierung
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datenformate erstellen und transformieren
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-30.11.20
-</td>
-<td style="text-align:left;">
-KW 50
-</td>
-<td style="text-align:left;">
-Pakete installieren und benutzen
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datensätze erstellen und ergänzen können
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datensätze sortieren und indizieren können
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-14.12.20
-</td>
-<td style="text-align:left;">
-KW 1
-</td>
-<td style="text-align:left;">
-Faktoren
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-deskriptive Kennwerte
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Aggregation I
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-11.01.21
-</td>
-<td style="text-align:left;">
-KW 3
-</td>
-<td style="text-align:left;">
-Aggregation II
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-In- und Export von Datensätzen
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-25.01.21
-</td>
-<td style="text-align:left;">
-KW 5
-</td>
-<td style="text-align:left;">
-Grafische Darstellungen I
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-7
-</td>
-<td style="text-align:left;">
-08.02.21
-</td>
-<td style="text-align:left;">
-KW 7
-</td>
-<td style="text-align:left;">
-Grafische Darstellungen II
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-8
-</td>
-<td style="text-align:left;">
-22.02.21
-</td>
-<td style="text-align:left;">
-keine Übung
-</td>
-<td style="text-align:left;">
-Puffer
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Probeklausur
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<!-- ## Organisatorisches -->
+<!-- ### Semesterplan -->
+<!-- ```{r, results='asis', echo=F} -->
+<!-- a <- read_csv('/home/brede/MEGA/Andres/EDV1/WS20/semesterplan.csv') %>%  -->
+<!--   mutate_all(~replace_na(., '')) -->
+<!-- a %>%  -->
+<!--   kableExtra::kable() %>%  -->
+<!--   kableExtra::kable_paper(font_size = 15)  -->
+<!-- ``` -->
 <div id="aggregation" class="section level2">
 <h2>Aggregation</h2>
 <div id="aggregation-über-mehrere-spalten" class="section level3">
@@ -452,7 +262,7 @@ Probeklausur
 <span id="cb341-5"><a href="aggregation-und-filemanagement.html#cb341-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t1 =</span> <span class="fu">sd</span>(points_t1),</span>
 <span id="cb341-6"><a href="aggregation-und-filemanagement.html#cb341-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">m_t2 =</span> <span class="fu">mean</span>(points_t2),</span>
 <span id="cb341-7"><a href="aggregation-und-filemanagement.html#cb341-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t2 =</span> <span class="fu">sd</span>(points_t2))</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 5
+<pre><code>## # A tibble: 3 × 5
 ##   group  m_t1 sd_t1  m_t2 sd_t2
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1     1  3.8  0.889  4.3  1.32 
@@ -465,7 +275,7 @@ Probeklausur
 <p>Dazu benutzen wir die <code>select</code>-helper, die wir schon kennen:</p>
 <div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="aggregation-und-filemanagement.html#cb343-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
 <span id="cb343-2"><a href="aggregation-und-filemanagement.html#cb343-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&#39;points&#39;</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 10 x 2
+<pre><code>## # A tibble: 10 × 2
 ##    points_t1 points_t2
 ##        &lt;dbl&gt;     &lt;dbl&gt;
 ##  1       4.8       2.8
@@ -488,7 +298,7 @@ Probeklausur
 <span id="cb345-6"><a href="aggregation-und-filemanagement.html#cb345-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">across</span>(<span class="fu">contains</span>(<span class="st">&#39;points&#39;</span>),</span>
 <span id="cb345-7"><a href="aggregation-und-filemanagement.html#cb345-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> sd,</span>
 <span id="cb345-8"><a href="aggregation-und-filemanagement.html#cb345-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.names =</span> <span class="st">&#39;sd_{.col}&#39;</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 7
+<pre><code>## # A tibble: 3 × 7
 ##   group m_points_t1 m_points_t2 sd_points_t1
 ##   &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
 ## 1     1        3.8         4.3         0.889
@@ -502,7 +312,7 @@ Probeklausur
 </div>
 <div id="frage" class="section level3 smaller">
 <h3>Frage</h3>
-<pre><code>## # A tibble: 3 x 7
+<pre><code>## # A tibble: 3 × 7
 ##   group m_points_t1 m_points_t2 sd_points_t1
 ##   &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
 ## 1     1        3.8         4.3         0.889
@@ -530,7 +340,7 @@ Probeklausur
 <span id="cb348-4"><a href="aggregation-und-filemanagement.html#cb348-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> <span class="fu">list</span>(<span class="at">mean =</span> mean,</span>
 <span id="cb348-5"><a href="aggregation-und-filemanagement.html#cb348-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">sd =</span> sd), </span>
 <span id="cb348-6"><a href="aggregation-und-filemanagement.html#cb348-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.names =</span> <span class="st">&#39;{.fn}_{.col}&#39;</span>))</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 5
+<pre><code>## # A tibble: 3 × 5
 ##   group mean_points_t1 sd_points_t1 mean_points_t2
 ##   &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;          &lt;dbl&gt;
 ## 1     1           3.8         0.889           4.3 
@@ -549,7 +359,7 @@ Da die <code>summarise</code>-Argumente Schritt für Schritt ausgeführt werden,
 <span id="cb350-3"><a href="aggregation-und-filemanagement.html#cb350-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(),</span>
 <span id="cb350-4"><a href="aggregation-und-filemanagement.html#cb350-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(points_t1),</span>
 <span id="cb350-5"><a href="aggregation-und-filemanagement.html#cb350-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sem =</span> sd <span class="sc">/</span> <span class="fu">sqrt</span>(n))</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 4
+<pre><code>## # A tibble: 3 × 4
 ##   group     n    sd   sem
 ##   &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1     1     3 0.889 0.513
@@ -564,7 +374,7 @@ Da die <code>summarise</code>-Argumente Schritt für Schritt ausgeführt werden,
 <span id="cb352-3"><a href="aggregation-und-filemanagement.html#cb352-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb352-4"><a href="aggregation-und-filemanagement.html#cb352-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb352-5"><a href="aggregation-und-filemanagement.html#cb352-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">rel_n =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 3
+<pre><code>## # A tibble: 3 × 3
 ##   group     n rel_n
 ##   &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
 ## 1     1     3   0.3
@@ -606,12 +416,12 @@ Da die <code>summarise</code>-Argumente Schritt für Schritt ausgeführt werden,
 <span id="cb354-15"><a href="aggregation-und-filemanagement.html#cb354-15" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(stadtteile)</span></code></pre></div>
 <pre><code>## Rows: 30
 ## Columns: 6
-## $ Land      &lt;chr&gt; &quot;de-sh&quot;, &quot;de-sh&quot;, &quot;de-sh&quot;, &quot;de-sh…
-## $ Stadt     &lt;chr&gt; &quot;Kiel&quot;, &quot;Kiel&quot;, &quot;Kiel&quot;, &quot;Kiel&quot;, &quot;…
-## $ Kategorie &lt;chr&gt; &quot;geo&quot;, &quot;geo&quot;, &quot;geo&quot;, &quot;geo&quot;, &quot;geo&quot;…
-## $ Merkmal   &lt;chr&gt; &quot;Flächen in Hektar&quot;, &quot;Flächen in …
-## $ Stadtteil &lt;chr&gt; &quot;Altstadt&quot;, &quot;Vorstadt&quot;, &quot;Exerzier…
-## $ Hektar    &lt;dbl&gt; 35.0983, 45.8515, 42.0120, 45.133…</code></pre>
+## $ Land      &lt;chr&gt; &quot;de-sh&quot;, &quot;de-sh&quot;, &quot;de-sh&quot;, &quot;de-sh&quot;…
+## $ Stadt     &lt;chr&gt; &quot;Kiel&quot;, &quot;Kiel&quot;, &quot;Kiel&quot;, &quot;Kiel&quot;, &quot;K…
+## $ Kategorie &lt;chr&gt; &quot;geo&quot;, &quot;geo&quot;, &quot;geo&quot;, &quot;geo&quot;, &quot;geo&quot;,…
+## $ Merkmal   &lt;chr&gt; &quot;Flächen in Hektar&quot;, &quot;Flächen in H…
+## $ Stadtteil &lt;chr&gt; &quot;Altstadt&quot;, &quot;Vorstadt&quot;, &quot;Exerzierp…
+## $ Hektar    &lt;dbl&gt; 35.0983, 45.8515, 42.0120, 45.1336…</code></pre>
 </div>
 <div id="daten-aus-excel-dateien" class="section level3">
 <h3>Daten aus Excel-Dateien</h3>
@@ -624,13 +434,13 @@ Da die <code>summarise</code>-Argumente Schritt für Schritt ausgeführt werden,
 <span id="cb356-4"><a href="aggregation-und-filemanagement.html#cb356-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(kiel_haushalte)</span></code></pre></div>
 <pre><code>## Rows: 30
 ## Columns: 7
-## $ Stadtteile                     &lt;chr&gt; &quot;Altstadt&quot;, …
-## $ Einpersonen                    &lt;dbl&gt; 384, 657, 32…
-## $ `Paar ohne Kind`               &lt;dbl&gt; 305, 303, 14…
-## $ `Paar mit Kindern`             &lt;dbl&gt; 165, 167, 92…
-## $ `Paar mit Nachkommen`          &lt;dbl&gt; 29, 13, 56, …
-## $ Alleinerziehende               &lt;dbl&gt; 28, 34, 215,…
-## $ `Sonst. Mehrpersonenhaushalte` &lt;dbl&gt; 118, 110, 44…</code></pre>
+## $ Stadtteile                     &lt;chr&gt; &quot;Altstadt&quot;, &quot;…
+## $ Einpersonen                    &lt;dbl&gt; 384, 657, 321…
+## $ `Paar ohne Kind`               &lt;dbl&gt; 305, 303, 143…
+## $ `Paar mit Kindern`             &lt;dbl&gt; 165, 167, 921…
+## $ `Paar mit Nachkommen`          &lt;dbl&gt; 29, 13, 56, 4…
+## $ Alleinerziehende               &lt;dbl&gt; 28, 34, 215, …
+## $ `Sonst. Mehrpersonenhaushalte` &lt;dbl&gt; 118, 110, 444…</code></pre>
 </div>
 <div id="kombinieren-von-datensätzen" class="section level3">
 <h3>Kombinieren von Datensätzen</h3>
@@ -643,18 +453,18 @@ Da die <code>summarise</code>-Argumente Schritt für Schritt ausgeführt werden,
 <span id="cb358-4"><a href="aggregation-und-filemanagement.html#cb358-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df)</span></code></pre></div>
 <pre><code>## Rows: 30
 ## Columns: 12
-## $ Land                           &lt;chr&gt; &quot;de-sh&quot;, &quot;de…
-## $ Stadt                          &lt;chr&gt; &quot;Kiel&quot;, &quot;Kie…
-## $ Kategorie                      &lt;chr&gt; &quot;geo&quot;, &quot;geo&quot;…
-## $ Merkmal                        &lt;chr&gt; &quot;Flächen in …
-## $ Stadtteil                      &lt;chr&gt; &quot;Altstadt&quot;, …
-## $ Hektar                         &lt;dbl&gt; 35.0983, 45.…
-## $ Einpersonen                    &lt;dbl&gt; 384, 657, 32…
-## $ `Paar ohne Kind`               &lt;dbl&gt; 305, 303, 14…
-## $ `Paar mit Kindern`             &lt;dbl&gt; 165, 167, 92…
-## $ `Paar mit Nachkommen`          &lt;dbl&gt; 29, 13, 56, …
-## $ Alleinerziehende               &lt;dbl&gt; 28, 34, 215,…
-## $ `Sonst. Mehrpersonenhaushalte` &lt;dbl&gt; 118, 110, 44…</code></pre>
+## $ Land                           &lt;chr&gt; &quot;de-sh&quot;, &quot;de-…
+## $ Stadt                          &lt;chr&gt; &quot;Kiel&quot;, &quot;Kiel…
+## $ Kategorie                      &lt;chr&gt; &quot;geo&quot;, &quot;geo&quot;,…
+## $ Merkmal                        &lt;chr&gt; &quot;Flächen in H…
+## $ Stadtteil                      &lt;chr&gt; &quot;Altstadt&quot;, &quot;…
+## $ Hektar                         &lt;dbl&gt; 35.0983, 45.8…
+## $ Einpersonen                    &lt;dbl&gt; 384, 657, 321…
+## $ `Paar ohne Kind`               &lt;dbl&gt; 305, 303, 143…
+## $ `Paar mit Kindern`             &lt;dbl&gt; 165, 167, 921…
+## $ `Paar mit Nachkommen`          &lt;dbl&gt; 29, 13, 56, 4…
+## $ Alleinerziehende               &lt;dbl&gt; 28, 34, 215, …
+## $ `Sonst. Mehrpersonenhaushalte` &lt;dbl&gt; 118, 110, 444…</code></pre>
 <!-- ### Kombinieren von Datensätzen {.smaller} -->
 <p>Das sieht ja sehr nett aus, wir können den zusammengefügten Datensatz nun benutzen, um eine Korrelationsmatrix für alle numerischen Spalten zu erstellen:</p>
 <div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="aggregation-und-filemanagement.html#cb360-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
@@ -948,6 +758,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

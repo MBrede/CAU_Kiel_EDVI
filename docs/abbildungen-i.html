@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Abbildungen I | EDV1</title>
-  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Abbildungen I | EDV1" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Abbildungen I | EDV1" />
   
-  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R" />
   
 
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-02-07" />
+<meta name="date" content="2021-10-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="aggregation-und-filemanagement.html"/>
 <link rel="next" href="abbildungen-ii.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -122,6 +122,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -135,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">EDV 1 <br> WiSe 20</a></li>
+<li><a href="./">EDV 1</li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Vorwort</a></li>
@@ -148,7 +171,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html"><i class="fa fa-check"></i>Vorlesung I - Rste Schritte</a>
 <ul>
-<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#organisatorisches"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#einführung"><i class="fa fa-check"></i>Einführung</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#grundlegende-rechenoperationen"><i class="fa fa-check"></i>Grundlegende Rechenoperationen</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-funktionen-argumente"><i class="fa fa-check"></i>Ausdrücke, Funktionen, Argumente</a></li>
@@ -157,7 +179,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html"><i class="fa fa-check"></i>elementare Datenverarbeitung</a>
 <ul>
-<li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#organisatorisches-1"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren"><i class="fa fa-check"></i>Vektoren</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#indizierung"><i class="fa fa-check"></i>Indizierung</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#systematische-wertefolgen-erzeugen"><i class="fa fa-check"></i>Systematische Wertefolgen erzeugen</a></li>
@@ -166,28 +187,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="tidyverse-und-tibbles.html#tidyverse-und-tibbles"><code>tidyverse</code> und <code>tibbles</code></a>
 <ul>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Organisatorisches</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#pakete-benutzen"><i class="fa fa-check"></i>Pakete benutzen</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Pakete benutzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen-und-ergänzen"><i class="fa fa-check"></i>Datensätze erstellen und ergänzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren-und-indizieren"><i class="fa fa-check"></i>Datensätze sortieren und indizieren</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#vorlesung"><i class="fa fa-check"></i>Vorlesung</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html"><i class="fa fa-check"></i>Faktoren und Aggregation</a>
 <ul>
-<li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#organisatorisches-3"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#faktoren"><i class="fa fa-check"></i>Faktoren</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#daten-einlesen-i"><i class="fa fa-check"></i>Daten einlesen I</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#deskriptive-kennwerte"><i class="fa fa-check"></i>deskriptive Kennwerte</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html"><i class="fa fa-check"></i>Aggregation und Filemanagement</a>
 <ul>
-<li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#organisatorisches-4"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#aggregation"><i class="fa fa-check"></i>Aggregation</a></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#daten-einlesen-ii-und-zusammenfügen"><i class="fa fa-check"></i>Daten einlesen II und zusammenfügen</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html"><i class="fa fa-check"></i>Abbildungen I</a>
 <ul>
-<li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#organisatorisches-5"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#pivotieren-von-datensätzen"><i class="fa fa-check"></i>Pivotieren von Datensätzen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#diagramme-erstellen"><i class="fa fa-check"></i>Diagramme erstellen</a></li>
 <li><a href="abbildungen-i.html#geoms"><code>geom</code>s</a></li>
@@ -197,14 +214,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html"><i class="fa fa-check"></i>Abbildungen II</a>
 <ul>
-<li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#organisatorisches-6"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#gruppierte-darstellungen"><i class="fa fa-check"></i>Gruppierte Darstellungen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#layer-für-zusätzliche-informationen"><i class="fa fa-check"></i>Layer für zusätzliche Informationen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#zusätzliche-tweaks"><i class="fa fa-check"></i>Zusätzliche tweaks</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="literatur-1.html"><a href="literatur-1.html"><i class="fa fa-check"></i>Literatur</a></li>
 <li class="divider"></li>
-<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></li>
 
 </ul>
 
@@ -225,257 +241,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="abbildungen-i" class="section level1">
 <h1>Abbildungen I</h1>
-<div id="organisatorisches-5" class="section level2">
-<h2>Organisatorisches</h2>
-<div id="semesterplan-6" class="section level3">
-<h3>Semesterplan</h3>
-<table class=" lightable-paper" style="font-size: 15px; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-Einheit
-</th>
-<th style="text-align:left;">
-Vorlesung
-</th>
-<th style="text-align:left;">
-Übungswoche
-</th>
-<th style="text-align:left;">
-Thema
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-2.11.20
-</td>
-<td style="text-align:left;">
-keine Übung
-</td>
-<td style="text-align:left;">
-Grundlagen und Begriffe
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-16.11.20
-</td>
-<td style="text-align:left;">
-KW 48
-</td>
-<td style="text-align:left;">
-Vektoren und Indizierung
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datenformate erstellen und transformieren
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-30.11.20
-</td>
-<td style="text-align:left;">
-KW 50
-</td>
-<td style="text-align:left;">
-Pakete installieren und benutzen
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datensätze erstellen und ergänzen können
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datensätze sortieren und indizieren können
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-14.12.20
-</td>
-<td style="text-align:left;">
-KW 1
-</td>
-<td style="text-align:left;">
-Faktoren
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-deskriptive Kennwerte
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Aggregation I
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-11.01.21
-</td>
-<td style="text-align:left;">
-KW 3
-</td>
-<td style="text-align:left;">
-Aggregation II
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-In- und Export von Datensätzen
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-25.01.21
-</td>
-<td style="text-align:left;">
-KW 5
-</td>
-<td style="text-align:left;">
-Grafische Darstellungen I
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-7
-</td>
-<td style="text-align:left;">
-08.02.21
-</td>
-<td style="text-align:left;">
-KW 7
-</td>
-<td style="text-align:left;">
-Grafische Darstellungen II
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-8
-</td>
-<td style="text-align:left;">
-22.02.21
-</td>
-<td style="text-align:left;">
-keine Übung
-</td>
-<td style="text-align:left;">
-Puffer
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Probeklausur
-</td>
-</tr>
-</tbody>
-</table>
-<!-- # Präsenzaufgabe -->
-<!-- ### Präsenzaufgabe: (fast) Prüfungsformat -->
-<!-- \scriptsize -->
-<!-- An einer Stichprobe von 100 Rosen soll überprüft werden, ob ein neuer Dünger-Zusatz dem Wachstum der Pflanze hilft. Zusätzlich zur endgültigen Größe der Pflanze wurde die Farbe der Pflanze erhoben, um einen Einfluss der Sorte zu kontrollieren. -->
-<!-- \begin{enumerate} -->
-<!-- \item Erstellen Sie dazu...:  -->
-<!-- \begin{itemize}  -->
-<!-- \item {\scriptsize Einen Faktor, der, mit gleicher Wahrscheinlichkeit zugeteilt, die möglichen Farben in der Stichprobe (rot, gelb und weiß) angibt.} -->
-<!-- \item {\scriptsize Einen Vektor, der die Größe der Pflanzen in Zentimeter angibt. Diese sollen entsprechend der U(50,150)-Verteilung erstellt und auf eine Nachkommastelle gerundet werden.} -->
-<!-- \item {\scriptsize Einen logischen Vektor, der angibt, ob die Pflanze den Dünger mit oder ohne Zusatz erhalten hat. Dabei sollen die möglichen Werte mit gleicher Auftretens-Wahrscheinlichkeit gezogen werden.} -->
-<!-- \end{itemize} -->
-<!-- \item Fügen Sie diese Variablen zu einem Datensatz zusammen. -->
-<!-- \item Berechnen Sie jeweils den auf eine Nachkommastelle gerundeten Mittelwert der beiden Zusatz-Gruppen. -->
-<!-- \item Erstellen Sie eine Kontingenztafel mit den relativen Häufigkeiten der jeweiligen Farben. -->
-<!-- \item Berechnen Sie die auf eine Nachkommastelle gerundeten Mittelwerte der jeweiligen Wuchshöhe der Rosen pro Farbe.  -->
-<!-- \end{enumerate} -->
-<!-- ### Präsenzaufgabe -->
-<!-- \begin{minipage}{.6\textwidth} -->
-<!-- \textbf{Konnte ich alles nachvollziehen!} -->
-<!-- \begin{itemize} -->
-<!-- \item[A] Ja! -->
-<!--   \item[B] Nein! -->
-<!--   \end{itemize} -->
-<!-- \end{minipage} -->
-<!-- \begin{minipage}{.4\textwidth} -->
-<!-- \centering -->
-<!-- https://tweedback.de/x56 -->
-<!-- \includegraphics[width=.8\textwidth]{tweedback.png} -->
-<!-- \end{minipage} -->
-</div>
-</div>
+<!-- ## Organisatorisches -->
+<!-- ### Semesterplan -->
+<!-- ```{r, results='asis', echo=F} -->
+<!-- a <- read_csv('/home/brede/MEGA/Andres/EDV1/WS20/semesterplan.csv') %>%  -->
+<!--   mutate_all(~replace_na(., '')) -->
+<!-- a %>%  -->
+<!--   kableExtra::kable() %>%  -->
+<!--   kableExtra::kable_paper(font_size = 15)  -->
+<!-- ``` -->
 <div id="pivotieren-von-datensätzen" class="section level2">
 <h2>Pivotieren von Datensätzen</h2>
 <!-- ### Pivotieren von Datensätzen  -->
 <p>Als Vorbereitung auf die Darstellung von Daten brauchen wir noch eine Funktion.</p>
 <p>Für das Grafikpaket, das wir benutzen wollen, müssen die Daten im <code>long format</code> vorliegen. Das heißt, dass jede Variable eine Spalte und jede Zeile eine Beobachtung darstellt.</p>
-<div class="cols">
-<div class="col">
 <table class=" lightable-paper" style="font-size: 15px; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -559,8 +338,6 @@ t_3
 </tr>
 </tbody>
 </table>
-</div>
-<div class="col">
 <table class=" lightable-paper" style="font-size: 15px; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -609,8 +386,6 @@ Vera Baum
 </tr>
 </tbody>
 </table>
-</div>
-</div>
 <p>Insbesondere müssen wir darauf achten, dass alle Werte, die wir zum Beispiel an einer Achse darstellen wollen in einer Variable vorliegen.</p>
 <div id="datensatz" class="section level3">
 <h3>Datensatz</h3>
@@ -672,7 +447,7 @@ Vera Baum
 <span id="cb365-8"><a href="abbildungen-i.html#cb365-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&#39;Haushaltsform&#39;</span>,</span>
 <span id="cb365-9"><a href="abbildungen-i.html#cb365-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&#39;Anzahl&#39;</span>)</span>
 <span id="cb365-10"><a href="abbildungen-i.html#cb365-10" aria-hidden="true" tabindex="-1"></a>df_long</span></code></pre></div>
-<pre><code>## # A tibble: 180 x 8
+<pre><code>## # A tibble: 180 × 8
 ##    Land  Stadt Kategorie Merkmal           Stadtteil
 ##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;             &lt;chr&gt;    
 ##  1 de-sh Kiel  geo       Flächen in Hektar Altstadt 
@@ -729,7 +504,7 @@ Der Datensatz dient dazu einen Variablenraum für die Darstellungen zur Verfügu
 <span id="cb367-4"><a href="abbildungen-i.html#cb367-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Hektar =</span> Hektar) <span class="sc">%&gt;%</span> </span>
 <span id="cb367-5"><a href="abbildungen-i.html#cb367-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
 <span id="cb367-6"><a href="abbildungen-i.html#cb367-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">mittlere Anzahl</span><span class="st">`</span>))</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-159-1.png" width="600px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-151-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="geoms" class="section level2">
@@ -743,7 +518,7 @@ Der Datensatz dient dazu einen Variablenraum für die Darstellungen zur Verfügu
 <span id="cb368-5"><a href="abbildungen-i.html#cb368-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
 <span id="cb368-6"><a href="abbildungen-i.html#cb368-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">mittlere Anzahl</span><span class="st">`</span>)) <span class="sc">+</span></span>
 <span id="cb368-7"><a href="abbildungen-i.html#cb368-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-160-1.png" width="600px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-152-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <div id="aesthetics-zur-darstellung-zusätzlicher-variablen" class="section level3">
 <h3><code>aesthetics</code> zur Darstellung zusätzlicher Variablen</h3>
 <p>Die <code>aes</code>-Funktion kann mit einer ganzen Reihe von zusätzlichen Argumenten umgehen und so mehr grafische Eigenschaften des Plots anpassen.</p>
@@ -761,7 +536,7 @@ Um das ganze übersichtlich zu halten, legen wir uns aber auf die Stadtteile Alt
 <span id="cb369-10"><a href="abbildungen-i.html#cb369-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> Haushaltsform,</span>
 <span id="cb369-11"><a href="abbildungen-i.html#cb369-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> Anzahl)) <span class="sc">+</span></span>
 <span id="cb369-12"><a href="abbildungen-i.html#cb369-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="imgs/point_aes.png" width="600px" style="display: block; margin: auto;" /></p>
+<p><img src="imgs/point_aes.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Schön ist das jetzt nicht, aber es gibt einen Eindruck für die Möglichkeiten, die <code>ggplot</code> bietet.</p>
 <p>Die möglichen <code>aes()</code>-Argumente sind die folgenden:</p>
 <ul>
@@ -789,7 +564,7 @@ Um das ganze übersichtlich zu halten, legen wir uns aber auf die Stadtteile Alt
 <span id="cb370-11"><a href="abbildungen-i.html#cb370-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> Anzahl)) <span class="sc">+</span></span>
 <span id="cb370-12"><a href="abbildungen-i.html#cb370-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb370-13"><a href="abbildungen-i.html#cb370-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;bottom&#39;</span>)</span></code></pre></div>
-<p><img src="imgs/point_aes2.png" width="600px" style="display: block; margin: auto;" /></p>
+<p><img src="imgs/point_aes2.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Nicht viel besser, wir bleiben bei der alten Variante.</p>
 </div>
 <div id="parameter-mit-den-scale-funktionen-anpassen" class="section level3">
@@ -808,7 +583,7 @@ Um das ganze übersichtlich zu halten, legen wir uns aber auf die Stadtteile Alt
 <span id="cb371-11"><a href="abbildungen-i.html#cb371-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> Anzahl)) <span class="sc">+</span></span>
 <span id="cb371-12"><a href="abbildungen-i.html#cb371-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb371-13"><a href="abbildungen-i.html#cb371-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Set1&#39;</span>)</span></code></pre></div>
-<p><img src="imgs/point_aes3.png" width="600px" style="display: block; margin: auto;" /></p>
+<p><img src="imgs/point_aes3.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="line-charts" class="section level2">
@@ -829,14 +604,14 @@ Um das ganze übersichtlich zu halten, legen wir uns aber auf die Stadtteile Alt
 <span id="cb374-2"><a href="abbildungen-i.html#cb374-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
 <span id="cb374-3"><a href="abbildungen-i.html#cb374-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> temp)) <span class="sc">+</span></span>
 <span id="cb374-4"><a href="abbildungen-i.html#cb374-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-171-1.png" width="600px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-163-1.png" width="500px" style="display: block; margin: auto;" />
 Da wir Temperaturen darstellen liegt nahe, die Werte mit einer Farbskala einzufärben:</p>
 <div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="abbildungen-i.html#cb375-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="sc">%&gt;%</span> </span>
 <span id="cb375-2"><a href="abbildungen-i.html#cb375-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
 <span id="cb375-3"><a href="abbildungen-i.html#cb375-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> temp,</span>
 <span id="cb375-4"><a href="abbildungen-i.html#cb375-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> temp)) <span class="sc">+</span></span>
 <span id="cb375-5"><a href="abbildungen-i.html#cb375-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-172-1.png" width="600px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-164-1.png" width="500px" style="display: block; margin: auto;" />
 Da es sich um Temperaturen handelt ist eine Farbskala von blau bis rot vielleicht näher an der Konvention, dafür können wir eine andere <code>scale</code>-Funktion benutzen:</p>
 <div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="abbildungen-i.html#cb376-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="sc">%&gt;%</span> </span>
 <span id="cb376-2"><a href="abbildungen-i.html#cb376-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
@@ -845,7 +620,7 @@ Da es sich um Temperaturen handelt ist eine Farbskala von blau bis rot vielleich
 <span id="cb376-5"><a href="abbildungen-i.html#cb376-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb376-6"><a href="abbildungen-i.html#cb376-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
 <span id="cb376-7"><a href="abbildungen-i.html#cb376-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-173-1.png" width="600px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-165-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Um das ein bisschen eindeutiger zu machen, können wir noch die Achsenbeschriftungen ändern und eine Überschrift hinzufügen:</p>
 <div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="abbildungen-i.html#cb377-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="sc">%&gt;%</span> </span>
 <span id="cb377-2"><a href="abbildungen-i.html#cb377-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
@@ -858,7 +633,7 @@ Da es sich um Temperaturen handelt ist eine Farbskala von blau bis rot vielleich
 <span id="cb377-9"><a href="abbildungen-i.html#cb377-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Jahr&#39;</span>,</span>
 <span id="cb377-10"><a href="abbildungen-i.html#cb377-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;mittlere Temperatur °C&#39;</span>,</span>
 <span id="cb377-11"><a href="abbildungen-i.html#cb377-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-174-1.png" width="600px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-166-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="balkendiagramme" class="section level2">
 <h2>Balkendiagramme</h2>
@@ -877,28 +652,28 @@ Da es sich um Temperaturen handelt ist eine Farbskala von blau bis rot vielleich
 <span id="cb379-3"><a href="abbildungen-i.html#cb379-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> m_anzahl))</span></code></pre></div>
 <p>Auf deren Ergebnis wir dann das <code>geom_col</code>-<code>geom</code> addieren:</p>
 <div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="abbildungen-i.html#cb380-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-177-1.png" width="600px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-169-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Das können wir ein bisschen schöner machen, indem wir die Balken einfärben:</p>
 <div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="abbildungen-i.html#cb381-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Haushaltsform)) <span class="sc">+</span></span>
 <span id="cb381-2"><a href="abbildungen-i.html#cb381-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Set1&#39;</span>)</span>
 <span id="cb381-3"><a href="abbildungen-i.html#cb381-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb381-4"><a href="abbildungen-i.html#cb381-4" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-178-1.png" width="600px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-170-1.png" width="500px" style="display: block; margin: auto;" />
 Jetzt fügen wir der Grafik mit <code>geom_errorbar</code> die SEM-Fehlerbalken hinzu:</p>
 <div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="abbildungen-i.html#cb382-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, </span>
 <span id="cb382-2"><a href="abbildungen-i.html#cb382-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ymax =</span> upper),</span>
 <span id="cb382-3"><a href="abbildungen-i.html#cb382-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> .<span class="dv">25</span>)</span>
 <span id="cb382-4"><a href="abbildungen-i.html#cb382-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb382-5"><a href="abbildungen-i.html#cb382-5" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-179-1.png" width="600px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-171-1.png" width="500px" style="display: block; margin: auto;" />
 Um den Graphen ein bisschen lesbarer zu machen, tauschen wir x- und y-Achse:</p>
 <div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="abbildungen-i.html#cb383-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">coord_flip</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-180-1.png" width="600px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-172-1.png" width="500px" style="display: block; margin: auto;" />
 …und ändern wieder die Achsenbeschriftung:</p>
 <div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="abbildungen-i.html#cb384-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
 <span id="cb384-2"><a href="abbildungen-i.html#cb384-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere Anzahl +/- SEM&#39;</span>,</span>
 <span id="cb384-3"><a href="abbildungen-i.html#cb384-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Haushaltsform&#39;</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-181-1.png" width="600px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-173-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="verteilungsdarstellungen" class="section level2">
 <h2>Verteilungsdarstellungen</h2>
@@ -908,27 +683,27 @@ Um den Graphen ein bisschen lesbarer zu machen, tauschen wir x- und y-Achse:</p>
 <div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="abbildungen-i.html#cb385-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb385-2"><a href="abbildungen-i.html#cb385-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
 <span id="cb385-3"><a href="abbildungen-i.html#cb385-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-182-1.png" width="600px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-174-1.png" width="500px" style="display: block; margin: auto;" />
 Das ist jetzt nicht besonders schön, mit einem Festlegen von aesthetics außerhalb der <code>aes</code>-Funktion können wir aber für alle Teile des Plots einen Wert festlegen. So können wir die Flächen mit weiß füllen und hellgrau umreißen:</p>
 <div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="abbildungen-i.html#cb386-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb386-2"><a href="abbildungen-i.html#cb386-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
 <span id="cb386-3"><a href="abbildungen-i.html#cb386-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;white&#39;</span>,</span>
 <span id="cb386-4"><a href="abbildungen-i.html#cb386-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&#39;grey&#39;</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-183-1.png" width="600px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-175-1.png" width="500px" style="display: block; margin: auto;" />
 Wir können außerdem die Breite der dargestellten Balken anpassen. mit dem <code>bins</code>-Argument können wir eine Anzahl an Balken festlegen…</p>
 <div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="abbildungen-i.html#cb387-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb387-2"><a href="abbildungen-i.html#cb387-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
 <span id="cb387-3"><a href="abbildungen-i.html#cb387-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;white&#39;</span>,</span>
 <span id="cb387-4"><a href="abbildungen-i.html#cb387-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&#39;grey&#39;</span>,</span>
 <span id="cb387-5"><a href="abbildungen-i.html#cb387-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">10</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-184-1.png" width="600px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-176-1.png" width="500px" style="display: block; margin: auto;" />
 …mit dem <code>binwidth</code>-Argument eine Breite für die Balken:</p>
 <div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="abbildungen-i.html#cb388-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb388-2"><a href="abbildungen-i.html#cb388-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
 <span id="cb388-3"><a href="abbildungen-i.html#cb388-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;white&#39;</span>,</span>
 <span id="cb388-4"><a href="abbildungen-i.html#cb388-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&#39;grey&#39;</span>,</span>
 <span id="cb388-5"><a href="abbildungen-i.html#cb388-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binwidth =</span> <span class="dv">50</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-185-1.png" width="600px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-177-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="boxplots" class="section level3">
 <h3>Boxplots</h3>
@@ -937,14 +712,14 @@ Wir können außerdem die Breite der dargestellten Balken anpassen. mit dem <cod
 <span id="cb389-2"><a href="abbildungen-i.html#cb389-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Stadtteil, </span>
 <span id="cb389-3"><a href="abbildungen-i.html#cb389-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl)) <span class="sc">+</span></span>
 <span id="cb389-4"><a href="abbildungen-i.html#cb389-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-186-1.png" width="600px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-178-1.png" width="500px" style="display: block; margin: auto;" />
 Um die Achsenbeschriftung lesbarer zu machen könnten wir jetzt entweder erneut die Achsen flippen:</p>
 <div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="abbildungen-i.html#cb390-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
 <span id="cb390-2"><a href="abbildungen-i.html#cb390-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Stadtteil, </span>
 <span id="cb390-3"><a href="abbildungen-i.html#cb390-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl)) <span class="sc">+</span></span>
 <span id="cb390-4"><a href="abbildungen-i.html#cb390-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb390-5"><a href="abbildungen-i.html#cb390-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-187-1.png" width="600px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-179-1.png" width="500px" style="display: block; margin: auto;" />
 Oder die Achsenbeschriftung mit einem neuen Argument der <code>theme</code>-Funktion drehen. Dieses erwartet ein Ergebnis der <code>element_text</code>-Funktion, die die Möglichkeit bietet, ästhetische Parameter für Schriftzüge festzulegen, so zum Beispiel den Winkel (<code>angle</code> in °) und die Adjustierung entlang der x-Achse (<code>hjust</code>):</p>
 <div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="abbildungen-i.html#cb391-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
 <span id="cb391-2"><a href="abbildungen-i.html#cb391-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Stadtteil, </span>
@@ -952,502 +727,7 @@ Oder die Achsenbeschriftung mit einem neuen Argument der <code>theme</code>-Funk
 <span id="cb391-4"><a href="abbildungen-i.html#cb391-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb391-5"><a href="abbildungen-i.html#cb391-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,</span>
 <span id="cb391-6"><a href="abbildungen-i.html#cb391-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-188-1.png" width="600px" style="display: block; margin: auto;" /></p>
-<!-- # Diagrammtypen -->
-<!-- ### Diagrammtypen -->
-<!-- Hier behandelt werden sollen: -->
-<!-- * `geom_point()` für Punkt- und Streudiagramme -->
-<!-- * `geom_line()` für Liniendiagramme -->
-<!-- * `geom_bar()` für Säulendiagramme -->
-<!--     + `coord_polar()` für Kreisdiagramme -->
-<!-- * `geom_histogram()` für Histogramme -->
-<!-- * `geom_boxplot()` für Boxplots -->
-<!-- ## Liniendiagramme -->
-<!-- ### Liniendiagramme -->
-<!--   \begin{minipage}{.6\textwidth} -->
-<!-- \textbf{Wofür kann man Liniendiagramme verwenden?} -->
-<!-- \begin{itemize} -->
-<!-- \item[A] Um sich einen Überblick über die Verteilung zu verschaffen. -->
-<!--   \item[B] Um Zusammenhangsmaße zu illustrieren. -->
-<!--   \item[C] Um Mittelwertsverläufe darzustellen. -->
-<!--   \item[D] Um Gruppenunterschiede herauszustellen. -->
-<!--   \item[E] Um Häufigkeiten darzustellen -->
-<!--   \end{itemize} -->
-<!-- \end{minipage} -->
-<!-- \begin{minipage}{.4\textwidth} -->
-<!-- \centering -->
-<!-- https://tweedback.de/x56 -->
-<!-- \includegraphics[width=.8\textwidth]{tweedback.png} -->
-<!-- \end{minipage} -->
-<!-- ### Liniendiagramme -->
-<!-- Liniendiagramme werden genutzt um Verläufe zeitlicher oder inhaltlicher Natur darzustellen. -->
-<!-- Dazu wird in `ggplot2` die `geom_line()`-Funktion verwendet.  -->
-<!-- In unserem Beispiel verwenden wir die Funktion um dem Punktdiagramm der Mittelwerte Verlaufslinien hinzuzufügen. -->
-<!-- ```{r} -->
-<!-- meanLines <- meanPoints + geom_line() -->
-<!-- ``` -->
-<!-- ### Lineindiagramme -->
-<!-- ```{r} -->
-<!-- meanLines -->
-<!-- ``` -->
-<!-- ## Säulendiagramme -->
-<!-- ### Balkendiagramme -->
-<!--   \begin{minipage}{.6\textwidth} -->
-<!-- \textbf{Wofür kann man Säulen-/ Balkendiagramme verwenden?} -->
-<!-- \begin{itemize} -->
-<!-- \item[A] Um sich einen Überblick über die Verteilung zu verschaffen. -->
-<!--   \item[B] Um Zusammenhangsmaße zu illustrieren. -->
-<!--   \item[C] Um Mittelwertsverläufe darzustellen. -->
-<!--   \item[D] Um Gruppenunterschiede herauszustellen. -->
-<!--   \item[E] Um Häufigkeiten darzustellen -->
-<!--   \end{itemize} -->
-<!-- \end{minipage} -->
-<!-- \begin{minipage}{.4\textwidth} -->
-<!-- \centering -->
-<!-- https://tweedback.de/x56 -->
-<!-- \includegraphics[width=.8\textwidth]{tweedback.png} -->
-<!-- \end{minipage} -->
-<!-- ### Säulendiagramme absoluter Häufigkeiten -->
-<!-- Säulendiagramme können mit `ggplot2` in der üblichen Verwendung dazu genutzt werden, um Häufigkeitsverteilungen darzustellen. Dazu muss bei der Erstellung der Plot-Basis an das `x`-Argument eine kategoriale Variable übergeben werden, deren absolute Häufigkeiten dann von `geom_bar(stat='count')` ausgezählt und als Balkenhöhe dargestellt werden. -->
-<!-- ```{r} -->
-<!-- absFreqBar <- ggplot(sampleSet,  -->
-<!--                      aes(x=rating, group=sex,  -->
-<!--                          fill=sex)) + -->
-<!--   geom_bar(stat = 'count') -->
-<!-- ``` -->
-<!-- ### Säulendiagramme absoluter Häufigkeiten -->
-<!-- ```{r} -->
-<!-- absFreqBar -->
-<!-- ``` -->
-<!-- ### Säulendiagramme -->
-<!-- Das `position`-Argument von `geom_bar()` kann genutzt werden, um die Balken statt gestapelt gruppiert darzustellen. -->
-<!-- Dafür muss dieses auf `position_dodge()` gesetzt werden. -->
-<!-- ```{r} -->
-<!-- absFreqBar <- ggplot(sampleSet,  -->
-<!--                      aes(x=rating,  -->
-<!--                          group=sex, -->
-<!--                          fill=sex)) + -->
-<!--   geom_bar(stat = 'count', -->
-<!--            position = position_dodge()) -->
-<!-- ``` -->
-<!-- ### Säulendiagramme absoluter Häufigkeiten -->
-<!-- ```{r} -->
-<!-- absFreqBar -->
-<!-- ``` -->
-<!-- ### Säulendiagramme anderer Kennwerte -->
-<!-- Es kann um relative Häufigkeiten oder Mittelwerte darzustellen sinnvoll sein, `geom_bar()` nicht Kategorien auszählen zu lassen, sonder Die Werte zu übergeben, die ausgezählt werden sollen. -->
-<!-- Dafür muss das `stat`-Argument auf `'identity'` gesetzt werden und ein geeigneter Datensatz übergeben werden. Die an `y` übergebene Variable wird dann als Balkenhöhe dargestellt. -->
-<!-- ```{r} -->
-<!-- meanBar <- ggplot(groupMeans,  -->
-<!--                   aes(x=group,y=means,  -->
-<!--                       group=sex, fill=sex)) + -->
-<!--   geom_bar(stat = 'identity',  -->
-<!--            position = position_dodge()) -->
-<!-- ``` -->
-<!-- ### Säulendiagramme anderer Kennwerte -->
-<!-- ```{r} -->
-<!-- meanBar -->
-<!-- ``` -->
-<!-- ### Säulendiagramme relativer Häufigkeiten -->
-<!-- So ähnlich lassen sich dann auch Balkendiagramme relativer Häufigkeiten darstellen.  -->
-<!-- \scriptsize -->
-<!-- ```{r} -->
-<!-- relFreq <- data.frame( prop.table( with( sampleSet, -->
-<!--                                          ftable(rating,sex, -->
-<!--                                                 row.vars = c('rating', -->
-<!--                                                              'sex'))))) -->
-<!-- relFreqBar <- ggplot(relFreq, aes(x=rating,y=Freq, -->
-<!--                                   group=sex, fill=sex)) + -->
-<!--   geom_bar(stat = 'identity', position = position_dodge()) -->
-<!-- ``` -->
-<!-- ### Säulendiagramme relativer Häufigkeiten -->
-<!-- ```{r} -->
-<!-- relFreqBar -->
-<!-- ``` -->
-<!-- ### Säulendiagramme relativer Häufigkeiten -->
-<!-- Alternativ lassen sich Säulendiagramme relativer Häufigkeiten auch mit der internen Variable `...count...` realisieren. Diese Art spart ein paar Zwischenschritte. -->
-<!-- ```{r} -->
-<!--  relFreqBar <- ggplot(sampleSet,  -->
-<!--                      aes(x=rating, group=sex,  -->
-<!--                          fill=sex)) + -->
-<!--   geom_bar(stat="count", -->
-<!--            aes(y=(..count..) / sum(..count..)), -->
-<!--            position=position_dodge()) -->
-<!-- ``` -->
-<!-- ### Säulendiagramme relativer Häufigkeiten -->
-<!-- ```{r} -->
-<!-- relFreqBar -->
-<!-- ``` -->
-<!-- ### Kreisdiagramme -->
-<!-- Fügt man einem Barplot relativer Häufigkeiten mit nur einer Gruppierungsvariable noch den Parameter `coord_polar()` mit Angabe über die zu nutzende Variable hinzu, lassen sich die Daten als Torten-Diagramm darstellen. -->
-<!-- ```{r} -->
-<!-- pieChart <- ggplot(relFreq,  -->
-<!--                      aes(x='', -->
-<!--                          y=Freq, -->
-<!--                          fill=rating)) + -->
-<!--   geom_bar(stat = 'identity') + -->
-<!--   coord_polar('y', start = 0) -->
-<!-- ``` -->
-<!-- ### Kreisdiagramme -->
-<!-- ```{r, out.height= '6cm', out.width='7cm'} -->
-<!-- pieChart -->
-<!-- ``` -->
-<!-- ### Kreisdiagramme -->
-<!-- An dieser Stelle ist die Benutzung der R - Basisfunktion (`pie()`) einfacher. -->
-<!-- ```{r, out.height= '5cm', out.width='6cm'} -->
-<!-- pie(table(sampleSet$rating)) -->
-<!-- ``` -->
-<!-- ## Boxplots -->
-<!-- ### Boxplots  -->
-<!-- \small -->
-<!-- Boxplots sind Abbildungen, in denen die Datenlage als Visualisierung verschiedener Kennwerte dargestellt werden. Der Median wird durch eine Linie dargestellt, um die eine Box gezeichnet wird. Die obere und untere Grenze dieser Box liegen genau beim 3. und 1. Quartil respektive, in dem Rechteck befinden sich also die mittleren 50% der Werte. \newline -->
-<!-- Aus der Box laufen oben und unten die sogenannten *whiskers*, deren Ende diejenigen Werte darstellen, die noch keine Ausreißer sind. Als Außreißer sind solche Werte definiert, die weiter als den anderthalbfachen Interquartilabstand von einem der Quartile entfernt sind. -->
-<!-- Ausreißer werden dann als einzelne Punkte dargestellt. -->
-<!-- ```{r, echo=F, out.height='2cm', out.width='6cm'} -->
-<!-- ggplot(data.frame('data'=c(20,45:67,80,87,95)),  -->
-<!--                 aes(x = '',y = data)) + -->
-<!--   geom_boxplot() + coord_flip() -->
-<!-- ``` -->
-<!-- ### Boxplots -->
-<!--   \begin{minipage}{.6\textwidth} -->
-<!-- \textbf{Wofür kann man Boxplots verwenden?} -->
-<!-- \begin{itemize} -->
-<!-- \item[A] Um sich einen Überblick über die Verteilung zu verschaffen. -->
-<!--   \item[B] Um Zusammenhangsmaße zu illustrieren. -->
-<!--   \item[C] Um Mittelwertsverläufe darzustellen. -->
-<!--   \item[D] Um Gruppenunterschiede herauszustellen. -->
-<!--   \item[E] Um Häufigkeiten darzustellen -->
-<!--   \end{itemize} -->
-<!-- \end{minipage} -->
-<!-- \begin{minipage}{.4\textwidth} -->
-<!-- \centering -->
-<!-- https://tweedback.de/x56 -->
-<!-- \includegraphics[width=.8\textwidth]{tweedback.png} -->
-<!-- \end{minipage} -->
-<!-- ### Boxplots -->
-<!--  Boxplots werden genutzt, um die (nach Gruppen getrennte) Verteilung von Variablen übersichtlich darzustellen. In `ggplot2` funktioniert dies mit einem zusätzlichen `geom_boxplot` zur Grafik-Grundebene. Diese muss auf der `x`-Achse den Gruppierenungsfaktor definiert haben, sollte einer gewünscht sein.Jeder einzelne Boxplot stellt dann für eine Gruppe von `x` die Verteilung der in `y` genannten Variable dar.  -->
-<!-- ```{r} -->
-<!-- boxes <- ggplot(sampleSet,  -->
-<!--                 aes(x = sex, y = weight)) + -->
-<!--   geom_boxplot() -->
-<!-- ``` -->
-<!-- ### Boxplots -->
-<!-- ```{r} -->
-<!-- boxes -->
-<!-- ``` -->
-<!-- ## Histogramme -->
-<!-- ### Histogramme -->
-<!--   \begin{minipage}{.6\textwidth} -->
-<!-- \textbf{Wofür kann man Histogramme verwenden?} -->
-<!-- \begin{itemize} -->
-<!-- \item[A] Um sich einen Überblick über die Verteilung zu verschaffen. -->
-<!--   \item[B] Um Zusammenhangsmaße zu illustrieren. -->
-<!--   \item[C] Um Mittelwertsverläufe darzustellen. -->
-<!--   \item[D] Um Gruppenunterschiede herauszustellen. -->
-<!--   \item[E] Um Häufigkeiten darzustellen -->
-<!--   \end{itemize} -->
-<!-- \end{minipage} -->
-<!-- \begin{minipage}{.4\textwidth} -->
-<!-- \centering -->
-<!-- https://tweedback.de/x56 -->
-<!-- \includegraphics[width=.8\textwidth]{tweedback.png} -->
-<!-- \end{minipage} -->
-<!-- ### Histogramme -->
-<!-- Histogramme werden genutzt, um Häufigkeitsverteilungen stetiger Variablen darzustellen. Diese werden dazu in Intervalle fester größen eingeteilt. -->
-<!-- In `ggplot2` geschieht das über die Verwendung von `geom_histogram()`. Mit dem `binwidth`-Argument lässt sich, wenn gewünscht, die Breite der Intervalle regulieren. Als Standard wird die Intervalbreite gewählt, die in genau 30 bins resultiert. -->
-<!-- ```{r} -->
-<!-- histPlot <- ggplot(sampleSet, aes(x=mood)) + -->
-<!--   geom_histogram(binwidth=5) -->
-<!-- ``` -->
-<!-- ### Histogramme -->
-<!-- ```{r} -->
-<!-- histPlot -->
-<!-- ``` -->
-<!-- ### Histogramme -->
-<!-- Da die Form eines Histogramms von der willkürlichen Breite der Intervalle entschieden wird, kann es sinnvoll sein, eine Schätzung der Kerndichte zusätzlich darzustellen. Dafür kann die `geom_densitiy()`-Funktion verwendet werden. Dafür muss dem Histogrammaufruf ein Aufruf der Funktion `aes` übergeben werden, dessen `y`-Wert auf die interne Variable `..density..` gesetzt wird. -->
-<!-- ```{r} -->
-<!-- histPlotDens <- ggplot(sampleSet, aes(x=mood)) + -->
-<!--   geom_histogram(aes(y = ..density..),  -->
-<!--                  binwidth = 10) + -->
-<!--   geom_density() -->
-<!-- ``` -->
-<!-- ### Histogramme -->
-<!-- ```{r} -->
-<!-- histPlotDens -->
-<!-- ``` -->
-<!-- # Diagramme formatieren -->
-<!-- ### Diagrammeigenschaften verändern -->
-<!-- `ggplot2` bietet natürlich die Möglichkeit, einige Diagrammeigenschaften zusätzlich zu den Standardeinstellungen zu manipulieren und weitere Elemente zu einem Diagramm hinzuzufügen. -->
-<!-- Die (nicht vollständige) Auswahl , mit der wir uns hier beschäftigen wollen ist: -->
-<!-- * das Anpassen von Achsen -->
-<!-- * Änderungen der Legende -->
-<!-- * Änderungen von Farben, Datenpunktsymbolen und Linientypen -->
-<!-- * das Hinzufügen einzelner Grafikelemente -->
-<!-- ## Achsen -->
-<!-- ### Achsen anpassen -->
-<!-- `ggplot2` bietet eine Vielzahl von Möglichkeiten, das Aussehen und Verhalten der Achsen zu manipulieren und seinen Vorstellungen anzupassen. Hier wird nur auf die Achsenbeschriftung eingegangen. -->
-<!-- Es ist in so gut wie allen Fällen sinnvoll, die default-Beschriftung der *x*- und *y*-Achsen zu verändern. Dies geschieht bei `ggplot2` durch das hinzufügen der `labs()`-Funktion zu einer Grundschicht. Dazu wird wie bei dem Aufschalten von Plots auch ein `+` verwendet. -->
-<!-- Durch das setzen des `x`- und/oder des `y`-Arguments auf einen Textwert überschreibt man die Achsenbeschriftung. -->
-<!-- Mit `title` lässt sich außerdem eine Überschrift vergeben werden, sollte dies gewünscht sein. -->
-<!-- ```{r} -->
-<!-- histPlotDens <- histPlotDens + -->
-<!--   labs(x='Stimmung', y='Dichte',  -->
-<!--        title='Histogramm der Stimmung mit Dichtschätzer') -->
-<!-- ``` -->
-<!-- ### Achsen anpassen -->
-<!-- ```{r} -->
-<!-- histPlotDens -->
-<!-- ``` -->
-<!-- ## Legende -->
-<!-- ### Anpassen der Legende -->
-<!-- Die automatisch generierte Legende lässt sich genau wie die Achsen quasi frei anpassen. -->
-<!-- Mit dem Argument `legend.position` der Funktion `theme()` lässt sich die Legende an eine Seite des Plots verschieben oder auch unterdrücken. -->
-<!-- ```{r} -->
-<!-- boxes <- ggplot(sampleSet,  -->
-<!--                 aes(x = sex, -->
-<!--                     y = weight, -->
-<!--                     fill = sex)) + -->
-<!--   geom_boxplot() + -->
-<!--   theme(legend.position = 'left') -->
-<!-- ``` -->
-<!-- ### Legendenposition -->
-<!-- \small -->
-<!-- ```{r, eval=F} -->
-<!-- boxes -->
-<!-- boxes+theme(legend.position = 'none') -->
-<!-- boxes+theme(legend.position = 'bottom') -->
-<!-- boxes+theme(legend.position = 'top') -->
-<!-- ``` -->
-<!-- ```{r,echo=F, out.height= '6cm', out.width= '6cm' } -->
-<!-- library(gridExtra) -->
-<!-- grid.arrange(boxes, -->
-<!-- boxes+theme(legend.position = 'none'), -->
-<!-- boxes+theme(legend.position = 'bottom'), -->
-<!-- boxes+theme(legend.position = 'top')) -->
-<!-- ``` -->
-<!-- ### Unnötige Einträge entfernen -->
-<!-- \small -->
-<!-- Mit der Funktion `guides()` lassen sich außerdem einzelne, nicht erwünschte Elemente der Legende unterdrücken. -->
-<!-- ```{r, eval=FALSE} -->
-<!-- meanLines -->
-<!-- meanLines + guides(shape=FALSE) -->
-<!-- meanLines + guides(colour=FALSE) -->
-<!-- ``` -->
-<!-- ```{r, echo=FALSE, out.height= '5cm', out.width='7cm'} -->
-<!-- grid.arrange( -->
-<!-- meanLines, -->
-<!-- meanLines + guides(shape=FALSE), -->
-<!-- meanLines + guides(colour=FALSE)) -->
-<!-- ``` -->
-<!-- ### Formatierungsdetails -->
-<!-- Formatierungsdetails aller Grafikelemente lassen sich über `theme` steuern. Für eine Übersicht `?theme` in der Konsole eingeben. -->
-<!-- ## Farben, Datenpunktsymbole und Linientypen -->
-<!-- ### Farben, Datenpunktsymbole und Linientypen -->
-<!-- Man kann die Farben, Datenpunktsymbole und Linientypen seines Plots entweder direkt im `ggplot()`-Aufruf, oder in dem der gewünschten Grafikfunktion setzen, in `aes()` mit den Variablen eines Datensatzes verknüpfen oder außerhalb von `aes()` auf einen festen Wert setzen. -->
-<!-- Hier werden wir aber nur auf die Farbwahl eingehen. -->
-<!-- ## Farben -->
-<!-- ### Farben  -->
-<!-- Dabei lassen sich für die erste Möglichkeit an `colour` eine ganze Palette an Farben übergeben, das Basis `graphics`-Paket bietet alleine eine große Zahl an vordefinierten, benannten Farben: -->
-<!-- ```{r} -->
-<!-- length(colours()) -->
-<!-- colours()[1:20] -->
-<!-- ``` -->
-<!-- ### Farben -->
-<!-- Zusätzlich kann dann noch mit `alpha` die simulierte Transparenz der ausgewählten Farben bestimmt werden. Bei zu füllenden Flächen kann mit dem `fill`-Argument für diese eine Fabre bestimmt werden. -->
-<!-- ```{r} -->
-<!-- histPlotDens <- ggplot(sampleSet, aes(x=mood)) + -->
-<!--   geom_histogram(aes(y = ..density..),  -->
-<!--                  binwidth = 10, -->
-<!--                  fill='white', -->
-<!--                  colour= 'black') + -->
-<!--   geom_density(colour='red', -->
-<!--                fill = 'red', -->
-<!--                alpha= 0.2) -->
-<!-- ``` -->
-<!-- ### Farben -->
-<!-- ```{r} -->
-<!-- histPlotDens -->
-<!-- ``` -->
-<!-- ### Farben -->
-<!-- Diese Art der nachträglichen Kolorierung hat aber ihre Grenzen -->
-<!-- ```{r} -->
-<!-- absFreqBar <- ggplot(sampleSet,  -->
-<!--                      aes(x=rating,  -->
-<!--                          group=sex, -->
-<!--                          fill=sex)) + -->
-<!--   geom_bar(stat = 'count', -->
-<!--            position = position_dodge(), -->
-<!--            colour=c('grey'), -->
-<!--            fill=rep(c('chartreuse', 'tomato'),4)) -->
-<!-- ``` -->
-<!-- ### Farben -->
-<!-- ```{r} -->
-<!-- absFreqBar -->
-<!-- ``` -->
-<!-- ### Farbpalette ändern -->
-<!-- Mit den Funktionen `scale_fill_manual()` und `scale_colour_manual()` lassen sich selbstdefinierte Farbvektoren ohne Verlust von Grafikelementen übergeben. -->
-<!-- ```{r} -->
-<!-- absFreqBar <- ggplot(sampleSet,  -->
-<!--                      aes(x=rating,  -->
-<!--                          group=sex, -->
-<!--                          fill=sex)) + -->
-<!--   geom_bar(stat = 'count', -->
-<!--            position = position_dodge())+ -->
-<!--   scale_fill_manual(values=c('chartreuse', -->
-<!--                              'tomato')) -->
-<!-- ``` -->
-<!-- ### Farbpalette ändern -->
-<!-- ```{r} -->
-<!-- absFreqBar -->
-<!-- ``` -->
-<!-- ### Farbpalette ändern -->
-<!-- Es ist aber eleganter, eine vordefinierte Farbpalette zum Austauschen zu benutzen. Beispielsweise mit den Funktionen `scale_fill_hue()` und `scale_colour_hue()`. Diese erwarten als Argumente  -->
-<!-- * `h`, den Abgedeckten Farbbereich als Vektor mit zwei Winkeln des Farbkreises im Gradmaß, -->
-<!-- * `c`, die Sättigung der Farben und -->
-<!-- * `l`, die gewünschte Helligkeit. -->
-<!-- `scale_fill_grey()` und `scale_colour_grey()` machen dies Für Graustufen-Werte. Dabei sind nur zwei Argumente nötig, nämlich `start`, der Startwert des gewünschten Sättigungsbereichs und `end`, dessen Ende. -->
-<!-- ### Farbpalette ändern -->
-<!-- ```{r, eval=F} -->
-<!-- meanLines + scale_colour_hue(h=c(90,270),c=c(75,75), -->
-<!--                              l=75) -->
-<!-- meanLines + scale_colour_grey(start = 0.1,end = 0.9) -->
-<!-- ``` -->
-<!-- ```{r, echo=F, out.height='6cm'} -->
-<!-- grid.arrange( -->
-<!-- meanLines + scale_colour_hue(h=c(90,270),c=c(75,75), l=75), -->
-<!-- meanLines + scale_colour_grey(start = 0.3,end = 0.7), nrow=1, ncol=2) -->
-<!-- ``` -->
-<!-- ## Zusätzliche Elemente -->
-<!-- ### Punkte -->
-<!-- Die schon bekannte Funktion `geom_point()` kann genutzt werden, um einem bestehenden Graphen Punkte hinzuzufügen. Zum Beispiel kann das sinnvoll sein, wenn man in einen Boxplot zusätzlich die Stichprobenmittelwerte eintragen möchte. -->
-<!-- ```{r} -->
-<!-- weightMeans <- with(sampleSet, -->
-<!--                     aggregate(weight, by=list(sex = sex), -->
-<!--                               FUN=mean)) -->
-<!-- boxesWMeans <- boxes + geom_point(data=weightMeans,aes(x=sex,y=x),  -->
-<!--                                   colour='red') -->
-<!-- ``` -->
-<!-- ### Punkte -->
-<!-- ```{r} -->
-<!-- boxesWMeans -->
-<!-- ``` -->
-<!-- ### Linien -->
-<!-- Mit `geom_vline` und `geom_hline` lassen sich einem Graphen an einem oder mehreren WErten vertikale oder horizontale Linien einzeichnen. Das kann beispielsweise bei Balkendiagrammen genutzt werden, um den Mittelwert der Gesamtstichprobe einzuzeichnen -->
-<!-- ```{r} -->
-<!-- overAllM <- mean(groupMeans$means) -->
-<!-- meanBarWOAMean <- meanBar +  -->
-<!--   geom_hline(yintercept = overAllM, -->
-<!--              colour='chartreuse') -->
-<!-- ``` -->
-<!-- ### Linien -->
-<!-- ```{r} -->
-<!-- meanBarWOAMean -->
-<!-- ``` -->
-<!-- ### Funktionsgraphen -->
-<!-- Mit der Funktion `stat_function` lassen sich wie folgt Verteilungsfunktionen einzeichnen. Das kann bei Histogrammen sinnvoll sein. -->
-<!-- ```{r} -->
-<!-- histWNorm <- ggplot(sampleSet, aes(x=mood)) + -->
-<!--   geom_histogram(aes(y = ..density..),  -->
-<!--                  binwidth = 10, -->
-<!--                  fill='white', -->
-<!--                  colour= 'black')+ -->
-<!--   stat_function(fun=dnorm,  -->
-<!--                 args = list(mean=mean(sampleSet$mood), -->
-<!--                             sd=sd(sampleSet$mood)), -->
-<!--                 colour = 'tan') -->
-<!-- ``` -->
-<!-- ### Funktionsgraphen -->
-<!-- ```{r} -->
-<!-- histWNorm -->
-<!-- ``` -->
-<!-- ### Funktionsgraphen -->
-<!--   \begin{minipage}{.6\textwidth} -->
-<!-- \textbf{Warum sollte man einen Funktionsgraphen in ein Histogramm einzeichnen?} -->
-<!-- \begin{itemize} -->
-<!--   \item[A] Um sich einen Überblick über die Verteilung zu verschaffen. -->
-<!--   \item[B] Als graphischen Test der Verteilungsklasse. -->
-<!--   \item[C] Als Illustration der Abweichnungen von der Verteilungsklasse. -->
-<!--   \end{itemize} -->
-<!-- \end{minipage} -->
-<!-- \begin{minipage}{.4\textwidth} -->
-<!-- \centering -->
-<!-- https://tweedback.de/x56 -->
-<!-- \includegraphics[width=.8\textwidth]{tweedback.png} -->
-<!-- \end{minipage} -->
-<!-- ### Fehlerbalken -->
-<!-- Fehlerbalken lassen sich entweder mit `geom_linerange()` oder `geom_errorbar()` hinzufügen. Dabei müssen beide im ersten Aufruf von `aes()` über die Argumente `ymin` und `ymax` definiert werden. -->
-<!-- `geom_errorbar()` zeichnet dabei im Gegensatz zu `geom_linerange()` am Ende der Fehlerbalken horizontale Linien ein. -->
-<!-- Dafür müssen zuerst die Gruppenweisen *SEM*-Werte berechnet werden. -->
-<!-- ```{r} -->
-<!-- sems <- with(sampleSet,  -->
-<!--                    aggregate(mood, -->
-<!--                              list('sex'=sex,  -->
-<!--                                      'group'=group), -->
-<!--                              FUN=sd)) -->
-<!-- n <- with(sampleSet,  -->
-<!--                    aggregate(mood, -->
-<!--                              list('sex'=sex,  -->
-<!--                                      'group'=group), -->
-<!--                              FUN=length)) -->
-<!-- ``` -->
-<!-- ### Fehlerbalken -->
-<!-- ```{r} -->
-<!-- sems[,3] <- sems[,3]/sqrt(n[,3]) -->
-<!-- names(sems)[3] <- 'sems' -->
-<!-- groupMeans$sems <- sems$sems -->
-<!-- ``` -->
-<!-- Dann die Mittelwerte +/- die SEMs als Variable dem Datensatz hinzugefügt werden: -->
-<!-- ```{r} -->
-<!-- groupMeans$upperSEM <- groupMeans$means+groupMeans$sems -->
-<!-- groupMeans$lowerSEM <- groupMeans$means-groupMeans$sems -->
-<!-- ``` -->
-<!-- ### Fehlerbalken -->
-<!-- \scriptsize -->
-<!-- Dann können die o.g. Fuktionen verwendet werden um Balken-oder Liniendiagramme mit Fehlerbalken zu erstellen. -->
-<!-- Dabei muss aber beachtet werden, dass bei Balkendiagrammen die Verwendung des `position`-Arguments nötig ist. -->
-<!-- ```{r} -->
-<!-- meanPoints <- ggplot(groupMeans, -->
-<!--                    aes(x=group, y=means, color=sex, -->
-<!--                        shape=sex, group=sex, -->
-<!--                        ymin=lowerSEM, -->
-<!--                        ymax = upperSEM)) + -->
-<!--   geom_point() + -->
-<!--   geom_line() + -->
-<!--   geom_linerange() -->
-<!-- meanBar <- ggplot(groupMeans,  -->
-<!--                   aes(x=group,y=means,  -->
-<!--                       group=sex, fill=sex, -->
-<!--                        ymin=lowerSEM, -->
-<!--                        ymax = upperSEM)) + -->
-<!--   geom_bar(stat = 'identity',  -->
-<!--            position = position_dodge(), -->
-<!--            width = .9) + -->
-<!--   geom_errorbar(position = position_dodge(width = .9), -->
-<!--                 width=.2) -->
-<!-- ``` -->
-<!-- ### Fehlerbalken -->
-<!-- ```{r,eval=F} -->
-<!-- meanPoints -->
-<!-- meanBar -->
-<!-- ``` -->
-<!-- ```{r,echo=F, out.height='6cm'} -->
-<!-- grid.arrange( -->
-<!-- meanPoints, -->
-<!-- meanBar, ncol=2) -->
-<!-- ``` -->
-<!-- # Präsenzaufgabe -->
-<!-- ### Präsenzaufgabe: Prüfungsformat -->
-<!-- \scriptsize -->
-<!-- Die Leistung von 108 Studierenden aus 2 Gruppen in einer gemeinsamen, aus 2 Aufgaben bestehenden Prüfung soll untersucht werden. -->
-<!-- 1. Erstellen Sie dazu -->
-<!--   * Einen Faktor, der die Gruppenzugehörigkeit der Studierenden als 'M' oder 'B' codiert enthält, wobei 'M' 53 und 'B' 55 mal in zufälliger Reihenfolge auftauchen soll. -->
-<!--   * Einen Vektor, der die Punktzahl der Studierenden in Aufgabe 1 enthält, wobei die möglichen Punkte in Schritten von 0.5 zwischen 0 und 20 mit gleicher Auftretenswahrscheinlichkeit gezogen werden sollen. -->
-<!--   * Einen Vektor, der die Punktzahl der Studierenden in Aufgabe 2 enthält, wobei die möglichen Punkte mit der N(10,2.5)-Verteilung generiert und auf eine Nachkommastelle gerundet werden sollen. -->
-<!-- 2. Fügen Sie die Variablen zu einem Datensatz zusammen. -->
-<!-- 3. Erstellen Sie einen Vektor, der die aufsummierte Gesamtpunktzahl für jeden Studierenden enthält und fügen Sie diesen dem Datensatz hinzu. -->
-<!-- 4. Erstellen Sie einen Faktor, der angibt ob der jeweilige Studierende bestanden hat oder nicht. Dabei gelten alle Gesamtpunktzahlen unter deren Median als durchgefallen. -->
-<!-- 5. Erstellen Sie eine Kontingenztafel mit den absoluten Häufigkeiten der gemeinsamen Verteilung der Gruppe und des das Durchfallen codierenden Faktors. -->
-<!-- 6. Stellen Sie die Verteilung der Gesamtpunktzahlen in einem  Boxplot dar und Fügen Sie eine rote horizontale Linie ein, die den Mittelwert darstellt. -->
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-180-1.png" width="500px" style="display: block; margin: auto;" /></p>
 
 <!-- #--- -->
 <!-- title: 'Psy_B_11: EDV I - Kapitel 7' -->
@@ -1493,6 +773,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

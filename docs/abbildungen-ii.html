@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Abbildungen II | EDV1</title>
-  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Abbildungen II | EDV1" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Abbildungen II | EDV1" />
   
-  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R" />
   
 
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-02-07" />
+<meta name="date" content="2021-10-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="abbildungen-i.html"/>
 <link rel="next" href="literatur-1.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -122,6 +122,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -135,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">EDV 1 <br> WiSe 20</a></li>
+<li><a href="./">EDV 1</li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Vorwort</a></li>
@@ -148,7 +171,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html"><i class="fa fa-check"></i>Vorlesung I - Rste Schritte</a>
 <ul>
-<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#organisatorisches"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#einführung"><i class="fa fa-check"></i>Einführung</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#grundlegende-rechenoperationen"><i class="fa fa-check"></i>Grundlegende Rechenoperationen</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-funktionen-argumente"><i class="fa fa-check"></i>Ausdrücke, Funktionen, Argumente</a></li>
@@ -157,7 +179,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html"><i class="fa fa-check"></i>elementare Datenverarbeitung</a>
 <ul>
-<li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#organisatorisches-1"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren"><i class="fa fa-check"></i>Vektoren</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#indizierung"><i class="fa fa-check"></i>Indizierung</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#systematische-wertefolgen-erzeugen"><i class="fa fa-check"></i>Systematische Wertefolgen erzeugen</a></li>
@@ -166,28 +187,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="tidyverse-und-tibbles.html#tidyverse-und-tibbles"><code>tidyverse</code> und <code>tibbles</code></a>
 <ul>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Organisatorisches</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#pakete-benutzen"><i class="fa fa-check"></i>Pakete benutzen</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Pakete benutzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen-und-ergänzen"><i class="fa fa-check"></i>Datensätze erstellen und ergänzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren-und-indizieren"><i class="fa fa-check"></i>Datensätze sortieren und indizieren</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#vorlesung"><i class="fa fa-check"></i>Vorlesung</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html"><i class="fa fa-check"></i>Faktoren und Aggregation</a>
 <ul>
-<li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#organisatorisches-3"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#faktoren"><i class="fa fa-check"></i>Faktoren</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#daten-einlesen-i"><i class="fa fa-check"></i>Daten einlesen I</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#deskriptive-kennwerte"><i class="fa fa-check"></i>deskriptive Kennwerte</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html"><i class="fa fa-check"></i>Aggregation und Filemanagement</a>
 <ul>
-<li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#organisatorisches-4"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#aggregation"><i class="fa fa-check"></i>Aggregation</a></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#daten-einlesen-ii-und-zusammenfügen"><i class="fa fa-check"></i>Daten einlesen II und zusammenfügen</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html"><i class="fa fa-check"></i>Abbildungen I</a>
 <ul>
-<li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#organisatorisches-5"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#pivotieren-von-datensätzen"><i class="fa fa-check"></i>Pivotieren von Datensätzen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#diagramme-erstellen"><i class="fa fa-check"></i>Diagramme erstellen</a></li>
 <li><a href="abbildungen-i.html#geoms"><code>geom</code>s</a></li>
@@ -197,14 +214,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html"><i class="fa fa-check"></i>Abbildungen II</a>
 <ul>
-<li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#organisatorisches-6"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#gruppierte-darstellungen"><i class="fa fa-check"></i>Gruppierte Darstellungen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#layer-für-zusätzliche-informationen"><i class="fa fa-check"></i>Layer für zusätzliche Informationen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#zusätzliche-tweaks"><i class="fa fa-check"></i>Zusätzliche tweaks</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="literatur-1.html"><a href="literatur-1.html"><i class="fa fa-check"></i>Literatur</a></li>
 <li class="divider"></li>
-<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></li>
 
 </ul>
 
@@ -225,228 +241,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="abbildungen-ii" class="section level1">
 <h1>Abbildungen II</h1>
-<div id="organisatorisches-6" class="section level2">
-<h2>Organisatorisches</h2>
-<div id="semesterplan-7" class="section level3">
-<h3>Semesterplan</h3>
-<table class=" lightable-paper" style="font-size: 15px; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-Einheit
-</th>
-<th style="text-align:left;">
-Vorlesung
-</th>
-<th style="text-align:left;">
-Übungswoche
-</th>
-<th style="text-align:left;">
-Thema
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-2.11.20
-</td>
-<td style="text-align:left;">
-keine Übung
-</td>
-<td style="text-align:left;">
-Grundlagen und Begriffe
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-16.11.20
-</td>
-<td style="text-align:left;">
-KW 48
-</td>
-<td style="text-align:left;">
-Vektoren und Indizierung
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datenformate erstellen und transformieren
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-30.11.20
-</td>
-<td style="text-align:left;">
-KW 50
-</td>
-<td style="text-align:left;">
-Pakete installieren und benutzen
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datensätze erstellen und ergänzen können
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datensätze sortieren und indizieren können
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-14.12.20
-</td>
-<td style="text-align:left;">
-KW 1
-</td>
-<td style="text-align:left;">
-Faktoren
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-deskriptive Kennwerte
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Aggregation I
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-11.01.21
-</td>
-<td style="text-align:left;">
-KW 3
-</td>
-<td style="text-align:left;">
-Aggregation II
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-In- und Export von Datensätzen
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-25.01.21
-</td>
-<td style="text-align:left;">
-KW 5
-</td>
-<td style="text-align:left;">
-Grafische Darstellungen I
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-7
-</td>
-<td style="text-align:left;">
-08.02.21
-</td>
-<td style="text-align:left;">
-KW 7
-</td>
-<td style="text-align:left;">
-Grafische Darstellungen II
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-8
-</td>
-<td style="text-align:left;">
-22.02.21
-</td>
-<td style="text-align:left;">
-keine Übung
-</td>
-<td style="text-align:left;">
-Puffer
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Probeklausur
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<!-- ## Organisatorisches -->
+<!-- ### Semesterplan -->
+<!-- ```{r, results='asis', echo=F} -->
+<!-- a <- read_csv('/home/brede/MEGA/Andres/EDV1/WS20/semesterplan.csv') %>%  -->
+<!--   mutate_all(~replace_na(., '')) -->
+<!-- a %>%  -->
+<!--   kableExtra::kable() %>%  -->
+<!--   kableExtra::kable_paper(font_size = 15)  -->
+<!-- ``` -->
 <div id="gruppierte-darstellungen" class="section level2">
 <h2>Gruppierte Darstellungen</h2>
 <div id="balkendiagramme-1" class="section level3">
 <h3>Balkendiagramme</h3>
 <p>Bei dem Versuch zwei kategoriale mit einer numerischen zu kombinieren oder kombinierte Häufigkeiten von zwei Gruppierungsfaktoren darzustellen kommen wir mit den bisher benutzten <code>aesthetics</code> nicht unbedingt weiter.</p>
 <p>Als Beispiel betrachten wir folgenden Ausschnitt des <a href="https://data.europa.eu/euodp/de/data/dataset/VarZwbQ6Vy3cFkW2UbITzA">hier</a> verfügbaren Datensatz:</p>
-<pre><code>## # A tibble: 21 x 3
+<pre><code>## # A tibble: 21 × 3
 ##    sex   age       DE
 ##    &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;
 ##  1 F     Y15-19  82.7
@@ -464,12 +274,12 @@ Probeklausur
 <div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="abbildungen-ii.html#cb393-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb393-2"><a href="abbildungen-ii.html#cb393-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">fill =</span> sex, <span class="at">y =</span> DE)) <span class="sc">+</span></span>
 <span id="cb393-3"><a href="abbildungen-ii.html#cb393-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-191-1.png" width="500px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-182-1.png" width="500px" style="display: block; margin: auto;" />
 Diese Darstellung ist zwar ganz nett um einen Eindruck für den den Verlauf über die Kohorten zu sehen, die Balken nebeneinander zu gruppieren ist aber vielleicht eher wünschenswert. Dafür können wir das <code>position</code>-Argument und die <code>position_dodge()</code>-Funktion benutzen:</p>
 <div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="abbildungen-ii.html#cb394-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb394-2"><a href="abbildungen-ii.html#cb394-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">fill =</span> sex, <span class="at">y =</span> DE)) <span class="sc">+</span></span>
 <span id="cb394-3"><a href="abbildungen-ii.html#cb394-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>())</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-192-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-183-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Den Graphen können wir jetzt wie gewohnt verschönern, zum Beispiel indem wir die Farben ändern und die Achsenbeschriftung anpassen:</p>
 <div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="abbildungen-ii.html#cb395-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb395-2"><a href="abbildungen-ii.html#cb395-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">fill =</span> sex, <span class="at">y =</span> DE)) <span class="sc">+</span></span>
@@ -482,12 +292,12 @@ Diese Darstellung ist zwar ganz nett um einen Eindruck für den den Verlauf übe
 <span id="cb395-9"><a href="abbildungen-ii.html#cb395-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
 <span id="cb395-10"><a href="abbildungen-ii.html#cb395-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
 <span id="cb395-11"><a href="abbildungen-ii.html#cb395-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Deutschland im Jahr 2014&#39;</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-193-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-184-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="boxplots-1" class="section level3">
 <h3>Boxplots</h3>
 <p>Wenn wir den Datensatz ein bisschen anders aufbereiten, können wir die Verteilungen der Raucher-Anteile über Europa darstellen.</p>
-<pre><code>## # A tibble: 651 x 4
+<pre><code>## # A tibble: 651 × 4
 ##    sex   age    country percentage
 ##    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;
 ##  1 F     Y15-19 BE            76.6
@@ -507,7 +317,7 @@ Diese Darstellung ist zwar ganz nett um einen Eindruck für den den Verlauf übe
 <span id="cb397-3"><a href="abbildungen-ii.html#cb397-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
 <span id="cb397-4"><a href="abbildungen-ii.html#cb397-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
 <span id="cb397-5"><a href="abbildungen-ii.html#cb397-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-195-1.png" width="500px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-186-1.png" width="500px" style="display: block; margin: auto;" />
 Hier können wir auch wieder die grafischen Optimierungen anwenden, die wir beim Balkendiagramm genutzt haben:</p>
 <div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="abbildungen-ii.html#cb398-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb398-2"><a href="abbildungen-ii.html#cb398-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
@@ -522,7 +332,7 @@ Hier können wir auch wieder die grafischen Optimierungen anwenden, die wir beim
 <span id="cb398-11"><a href="abbildungen-ii.html#cb398-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
 <span id="cb398-12"><a href="abbildungen-ii.html#cb398-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
 <span id="cb398-13"><a href="abbildungen-ii.html#cb398-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-196-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-187-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="layer-für-zusätzliche-informationen" class="section level2">
@@ -535,7 +345,7 @@ Hier können wir auch wieder die grafischen Optimierungen anwenden, die wir beim
 <span id="cb399-2"><a href="abbildungen-ii.html#cb399-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex) <span class="sc">%&gt;%</span> </span>
 <span id="cb399-3"><a href="abbildungen-ii.html#cb399-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">percentage =</span> <span class="fu">mean</span>(percentage,<span class="at">na.rm =</span> T))</span>
 <span id="cb399-4"><a href="abbildungen-ii.html#cb399-4" aria-hidden="true" tabindex="-1"></a>mean_per_sex</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 2
+<pre><code>## # A tibble: 3 × 2
 ##   sex   percentage
 ##   &lt;chr&gt;      &lt;dbl&gt;
 ## 1 F           79.0
@@ -558,7 +368,7 @@ Hier können wir auch wieder die grafischen Optimierungen anwenden, die wir beim
 <span id="cb401-14"><a href="abbildungen-ii.html#cb401-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
 <span id="cb401-15"><a href="abbildungen-ii.html#cb401-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
 <span id="cb401-16"><a href="abbildungen-ii.html#cb401-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex))</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-198-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-189-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Mit außerhalb der <code>aes</code>-Funktion gesetzten ‘aesthetics’ können wir die Linien noch ein bisschen mehr von den Boxplots abheben.</p>
 <div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="abbildungen-ii.html#cb402-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb402-2"><a href="abbildungen-ii.html#cb402-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
@@ -578,7 +388,7 @@ Hier können wir auch wieder die grafischen Optimierungen anwenden, die wir beim
 <span id="cb402-16"><a href="abbildungen-ii.html#cb402-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex),</span>
 <span id="cb402-17"><a href="abbildungen-ii.html#cb402-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
 <span id="cb402-18"><a href="abbildungen-ii.html#cb402-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-199-1.png" width="500px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-190-1.png" width="500px" style="display: block; margin: auto;" />
 Wir können auch komplexere Informationen nachträglich hinzufügen, so zum Beispiel wenn wir die jeweiligen Mittelwerte als Punkte und die SEMs als Fehlerbalken hinzufügen. Wir fangen wieder damit an, einen Datensatz zu erstellen:</p>
 <div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="abbildungen-ii.html#cb403-1" aria-hidden="true" tabindex="-1"></a>mean_sem_per_box <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
 <span id="cb403-2"><a href="abbildungen-ii.html#cb403-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex, age) <span class="sc">%&gt;%</span> </span>
@@ -587,7 +397,7 @@ Wir können auch komplexere Informationen nachträglich hinzufügen, so zum Beis
 <span id="cb403-5"><a href="abbildungen-ii.html#cb403-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">upper =</span> percentage <span class="sc">+</span> sem,</span>
 <span id="cb403-6"><a href="abbildungen-ii.html#cb403-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">lower =</span> percentage <span class="sc">-</span> sem)</span>
 <span id="cb403-7"><a href="abbildungen-ii.html#cb403-7" aria-hidden="true" tabindex="-1"></a>mean_sem_per_box</span></code></pre></div>
-<pre><code>## # A tibble: 21 x 6
+<pre><code>## # A tibble: 21 × 6
 ## # Groups:   sex [3]
 ##    sex   age      sem percentage upper lower
 ##    &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -625,7 +435,7 @@ Wir können auch komplexere Informationen nachträglich hinzufügen, so zum Beis
 <span id="cb405-20"><a href="abbildungen-ii.html#cb405-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">data =</span> mean_sem_per_box,</span>
 <span id="cb405-21"><a href="abbildungen-ii.html#cb405-21" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">ymin =</span> lower,</span>
 <span id="cb405-22"><a href="abbildungen-ii.html#cb405-22" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper))</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-201-1.png" width="500px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-192-1.png" width="500px" style="display: block; margin: auto;" />
 Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungsschritt benutzen wir wieder das <code>position</code>-Argument, vie vorher bei den Balkendiagrammen.</p>
 <div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="abbildungen-ii.html#cb406-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb406-2"><a href="abbildungen-ii.html#cb406-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
@@ -651,7 +461,7 @@ Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungssc
 <span id="cb406-22"><a href="abbildungen-ii.html#cb406-22" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">ymin =</span> lower,</span>
 <span id="cb406-23"><a href="abbildungen-ii.html#cb406-23" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper),</span>
 <span id="cb406-24"><a href="abbildungen-ii.html#cb406-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>())</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-202-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-193-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Die <code>position_dodge</code>-Funktion kann ein <code>width</code>-Argument annehmen, das uns die Menge der Verschiebung zu bestimmen erlaubt:</p>
 <div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="abbildungen-ii.html#cb407-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb407-2"><a href="abbildungen-ii.html#cb407-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
@@ -677,7 +487,7 @@ Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungssc
 <span id="cb407-22"><a href="abbildungen-ii.html#cb407-22" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">ymin =</span> lower,</span>
 <span id="cb407-23"><a href="abbildungen-ii.html#cb407-23" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper),</span>
 <span id="cb407-24"><a href="abbildungen-ii.html#cb407-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">75</span>))</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-203-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-194-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Um das noch ein bisschen zu verbessern, verkleinern wir die Breite der Fehlerbalken und machen die neuen Farben ein wenig transparent um sie abzuheben:</p>
 <div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="abbildungen-ii.html#cb408-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
 <span id="cb408-2"><a href="abbildungen-ii.html#cb408-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
@@ -707,7 +517,7 @@ Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungssc
 <span id="cb408-26"><a href="abbildungen-ii.html#cb408-26" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">75</span>),</span>
 <span id="cb408-27"><a href="abbildungen-ii.html#cb408-27" aria-hidden="true" tabindex="-1"></a>             <span class="at">width =</span> .<span class="dv">5</span>,</span>
 <span id="cb408-28"><a href="abbildungen-ii.html#cb408-28" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">3</span>) </span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-204-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-195-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="zusätzliche-tweaks" class="section level2">
@@ -717,7 +527,7 @@ Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungssc
 <p>Wir gucken uns den folgenden, von <a href="http://www.fao.org/faostat/en/#data/QC">dieser website</a> bezogenen Datensatz an, die die Produktion grüner Kaffeebohnen pro Land in hg/ha beinhaltet:</p>
 <div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="abbildungen-ii.html#cb409-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;data/coffee_data.csv&#39;</span>) </span>
 <span id="cb409-2"><a href="abbildungen-ii.html#cb409-2" aria-hidden="true" tabindex="-1"></a>coffee_df</span></code></pre></div>
-<pre><code>## # A tibble: 77 x 4
+<pre><code>## # A tibble: 77 × 4
 ##    Area                              Year Unit  Value
 ##    &lt;chr&gt;                            &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
 ##  1 Angola                            2019 hg/ha  3073
@@ -740,7 +550,7 @@ Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungssc
 <span id="cb412-3"><a href="abbildungen-ii.html#cb412-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">+</span></span>
 <span id="cb412-4"><a href="abbildungen-ii.html#cb412-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&#39;#59ca19&#39;</span>) <span class="sc">+</span></span>
 <span id="cb412-5"><a href="abbildungen-ii.html#cb412-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-207-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-198-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Das sind sehr, sehr viele Einträge. Wir fangen damit an alle Länder unter dem 3. Quartil in eine Kategorie “other” zusammenzufassen und diese Werte dann zu mitteln:</p>
 <div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="abbildungen-ii.html#cb413-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="sc">%&gt;%</span> </span>
 <span id="cb413-2"><a href="abbildungen-ii.html#cb413-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Area =</span> <span class="fu">ifelse</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span> <span class="sc">&lt;</span> <span class="fu">quantile</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>,<span class="at">probs =</span> .<span class="dv">75</span>),</span>
@@ -752,7 +562,7 @@ Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungssc
 <span id="cb413-8"><a href="abbildungen-ii.html#cb413-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">+</span></span>
 <span id="cb413-9"><a href="abbildungen-ii.html#cb413-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&#39;#59ca19&#39;</span>) <span class="sc">+</span></span>
 <span id="cb413-10"><a href="abbildungen-ii.html#cb413-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-208-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-199-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Die y-Achse ist jetzt alphabetisch sortiert. Für einen Länder-Vergleich ist aber eine Ordnung nach Größe vorzuziehen, also machen wir das mal:</p>
 <div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="abbildungen-ii.html#cb414-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="sc">%&gt;%</span> </span>
 <span id="cb414-2"><a href="abbildungen-ii.html#cb414-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Area =</span> <span class="fu">ifelse</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span> <span class="sc">&lt;</span> <span class="fu">quantile</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>,<span class="at">probs =</span> .<span class="dv">75</span>),</span>
@@ -768,14 +578,14 @@ Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungssc
 <span id="cb414-12"><a href="abbildungen-ii.html#cb414-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;&#39;</span>,</span>
 <span id="cb414-13"><a href="abbildungen-ii.html#cb414-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Kilogramm pro Hektar&#39;</span>,</span>
 <span id="cb414-14"><a href="abbildungen-ii.html#cb414-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Produktionsmenge grünen Kaffees&#39;</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-209-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-200-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="facets" class="section level3">
 <h3>facets</h3>
 <p>Wir betrachten den folgenden Datensatz, der ursprünglich von <a href="https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical/">der open-data Plattform des dwd</a> stammt.</p>
 <div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="abbildungen-ii.html#cb415-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/flensburg_kiel_weather.csv&quot;</span>)</span>
 <span id="cb415-2"><a href="abbildungen-ii.html#cb415-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(flensburg_kiel_weather)</span></code></pre></div>
-<pre><code>## tibble [78,283 × 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+<pre><code>## spec_tbl_df [78,283 × 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
 ##  $ station         : chr [1:78283] &quot;Flensburg&quot; &quot;Flensburg&quot; &quot;Flensburg&quot; &quot;Flensburg&quot; ...
 ##  $ jahr            : num [1:78283] 1985 1985 1985 1985 1985 ...
 ##  $ monat           : chr [1:78283] &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; ...
@@ -792,14 +602,15 @@ Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungssc
 ##   ..   tagesmittel = col_double(),
 ##   ..   niederschlaege = col_double(),
 ##   ..   niederschlagsart = col_character()
-##   .. )</code></pre>
+##   .. )
+##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
 <p>Diesen Datensatz können wir jetzt benutzen um die mittlere Monatstemperatur über die Jahre darzustellen:</p>
 <div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="abbildungen-ii.html#cb417-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
 <span id="cb417-2"><a href="abbildungen-ii.html#cb417-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat) <span class="sc">%&gt;%</span> </span>
 <span id="cb417-3"><a href="abbildungen-ii.html#cb417-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel)) <span class="sc">%&gt;%</span> </span>
 <span id="cb417-4"><a href="abbildungen-ii.html#cb417-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> monat, <span class="at">y =</span> mit_temp)) <span class="sc">+</span></span>
 <span id="cb417-5"><a href="abbildungen-ii.html#cb417-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-212-1.png" width="500px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-203-1.png" width="500px" style="display: block; margin: auto;" />
 Mit der <code>group</code>-aesthetic können wir diesen Graph jetzt per Jahreszahl aufteilen und mit color wieder die Temperatur verdeutlichen:</p>
 <div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="abbildungen-ii.html#cb418-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
 <span id="cb418-2"><a href="abbildungen-ii.html#cb418-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat) <span class="sc">%&gt;%</span> </span>
@@ -814,7 +625,7 @@ Mit der <code>group</code>-aesthetic können wir diesen Graph jetzt per Jahresza
 <span id="cb418-11"><a href="abbildungen-ii.html#cb418-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere °C&#39;</span>,</span>
 <span id="cb418-12"><a href="abbildungen-ii.html#cb418-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>,</span>
 <span id="cb418-13"><a href="abbildungen-ii.html#cb418-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Monat&#39;</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-213-1.png" width="500px" style="display: block; margin: auto;" />
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-204-1.png" width="500px" style="display: block; margin: auto;" />
 Das ist zwar ganz hübsch, aber nicht alle Informationen, die wir darstellen können.
 Im Datensatz sind noch Angaben zu den Messstationen, die wir auch gern unterscheiden würden.
 <code>facets</code> können uns helfen, wir können so die einzelnen Stationen in Unterplots darstellen:</p>
@@ -832,7 +643,7 @@ Im Datensatz sind noch Angaben zu den Messstationen, die wir auch gern untersche
 <span id="cb419-12"><a href="abbildungen-ii.html#cb419-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>,</span>
 <span id="cb419-13"><a href="abbildungen-ii.html#cb419-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Monat&#39;</span>) <span class="sc">+</span></span>
 <span id="cb419-14"><a href="abbildungen-ii.html#cb419-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>station)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-214-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-205-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Auf diesen Graphen können wir noch Zusatzinformationen legen, so zum Beipiel einen layer, der die mittleren Monatstemperaturen über alle Jahre pro Station darstellt:</p>
 <div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="abbildungen-ii.html#cb420-1" aria-hidden="true" tabindex="-1"></a>means_per_station <span class="ot">&lt;-</span> flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
 <span id="cb420-2"><a href="abbildungen-ii.html#cb420-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(monat, station) <span class="sc">%&gt;%</span> </span>
@@ -855,7 +666,7 @@ Im Datensatz sind noch Angaben zu den Messstationen, die wir auch gern untersche
 <span id="cb420-19"><a href="abbildungen-ii.html#cb420-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>,</span>
 <span id="cb420-20"><a href="abbildungen-ii.html#cb420-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Monat&#39;</span>) <span class="sc">+</span></span>
 <span id="cb420-21"><a href="abbildungen-ii.html#cb420-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>station)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-215-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-206-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Mit einem Layer nach dem <code>facet-wrap</code> kann man auch einen Wert für alle hinzufügen. So könnten wir uns überlegen, in jeden Plot noch einen Mittelwertsverlauf für alle Stationen aufnehmen zu wollen:</p>
 <div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="abbildungen-ii.html#cb421-1" aria-hidden="true" tabindex="-1"></a>means_per_station <span class="ot">&lt;-</span> flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
 <span id="cb421-2"><a href="abbildungen-ii.html#cb421-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(monat, station) <span class="sc">%&gt;%</span> </span>
@@ -885,7 +696,7 @@ Im Datensatz sind noch Angaben zu den Messstationen, die wir auch gern untersche
 <span id="cb421-26"><a href="abbildungen-ii.html#cb421-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>station)<span class="sc">+</span></span>
 <span id="cb421-27"><a href="abbildungen-ii.html#cb421-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> means_for_all,</span>
 <span id="cb421-28"><a href="abbildungen-ii.html#cb421-28" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&#39;green&#39;</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-216-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-207-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="deskripitv-statische-layer" class="section level3">
 <h3>Deskripitv-statische Layer</h3>
@@ -895,7 +706,7 @@ Im Datensatz sind noch Angaben zu den Messstationen, die wir auch gern untersche
 <span id="cb422-2"><a href="abbildungen-ii.html#cb422-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> niederschlaege, </span>
 <span id="cb422-3"><a href="abbildungen-ii.html#cb422-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> tagesmittel)) <span class="sc">+</span></span>
 <span id="cb422-4"><a href="abbildungen-ii.html#cb422-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-217-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-208-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Das ist ein bisschen unübersichtlich, wir aggregieren mal pro Niederschlagsart, Jahr und Station:</p>
 <div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="abbildungen-ii.html#cb423-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
 <span id="cb423-2"><a href="abbildungen-ii.html#cb423-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(niederschlagsart, jahr, station) <span class="sc">%&gt;%</span> </span>
@@ -903,7 +714,7 @@ Im Datensatz sind noch Angaben zu den Messstationen, die wir auch gern untersche
 <span id="cb423-4"><a href="abbildungen-ii.html#cb423-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> niederschlaege, </span>
 <span id="cb423-5"><a href="abbildungen-ii.html#cb423-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> tagesmittel)) <span class="sc">+</span></span>
 <span id="cb423-6"><a href="abbildungen-ii.html#cb423-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-218-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-209-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Jetzt könnten wir die Hypothese haben, dass es eine Korrelation zwischen Temperatur und Niederschlagsmenge gibt. <code>ggplot2</code> stellt mit der <code>geom_smooth</code>-Funktion eine einfache Möglichkeit dar, eine lineare Regression auf die Daten zu fitten. Wir setzen hier die Argumente <code>method = 'lm'</code> um anzugeben, dass wir ein lineares Modell fitten wollen und das Argument <code>se = F</code>, weil wir keine Fehlerbereiche anzeigen wollen:</p>
 <div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="abbildungen-ii.html#cb424-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
 <span id="cb424-2"><a href="abbildungen-ii.html#cb424-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(niederschlagsart, jahr, station) <span class="sc">%&gt;%</span> </span>
@@ -913,7 +724,7 @@ Im Datensatz sind noch Angaben zu den Messstationen, die wir auch gern untersche
 <span id="cb424-6"><a href="abbildungen-ii.html#cb424-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb424-7"><a href="abbildungen-ii.html#cb424-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>,</span>
 <span id="cb424-8"><a href="abbildungen-ii.html#cb424-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-219-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-210-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Das ist ein bisschen unbefriedigend. Wenn wir die Niederschlagsart als Gruppierung hinzufügen wird’s aber ein bisschen schicker:</p>
 <div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="abbildungen-ii.html#cb425-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
 <span id="cb425-2"><a href="abbildungen-ii.html#cb425-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(niederschlagsart, jahr, station) <span class="sc">%&gt;%</span> </span>
@@ -929,7 +740,7 @@ Im Datensatz sind noch Angaben zu den Messstationen, die wir auch gern untersche
 <span id="cb425-12"><a href="abbildungen-ii.html#cb425-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
 <span id="cb425-13"><a href="abbildungen-ii.html#cb425-13" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">color =</span> niederschlagsart)) <span class="sc">+</span></span>
 <span id="cb425-14"><a href="abbildungen-ii.html#cb425-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Set1&#39;</span>)</span></code></pre></div>
-<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-220-1.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-211-1.png" width="500px" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
@@ -963,6 +774,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

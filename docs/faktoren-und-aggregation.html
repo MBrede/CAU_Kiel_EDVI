@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Faktoren und Aggregation | EDV1</title>
-  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="description" content="Einführung in die computerunterstützte Datananalyse mit R" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Faktoren und Aggregation | EDV1" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta property="og:description" content="Einführung in die computerunterstützte Datananalyse mit R" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Faktoren und Aggregation | EDV1" />
   
-  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R im Wintersemester 2020" />
+  <meta name="twitter:description" content="Einführung in die computerunterstützte Datananalyse mit R" />
   
 
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-02-07" />
+<meta name="date" content="2021-10-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="tidyverse-und-tibbles.html"/>
 <link rel="next" href="aggregation-und-filemanagement.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -122,6 +122,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -135,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">EDV 1 <br> WiSe 20</a></li>
+<li><a href="./">EDV 1</li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Vorwort</a></li>
@@ -148,7 +171,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html"><i class="fa fa-check"></i>Vorlesung I - Rste Schritte</a>
 <ul>
-<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#organisatorisches"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#einführung"><i class="fa fa-check"></i>Einführung</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#grundlegende-rechenoperationen"><i class="fa fa-check"></i>Grundlegende Rechenoperationen</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-funktionen-argumente"><i class="fa fa-check"></i>Ausdrücke, Funktionen, Argumente</a></li>
@@ -157,7 +179,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html"><i class="fa fa-check"></i>elementare Datenverarbeitung</a>
 <ul>
-<li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#organisatorisches-1"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#vektoren"><i class="fa fa-check"></i>Vektoren</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#indizierung"><i class="fa fa-check"></i>Indizierung</a></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html#systematische-wertefolgen-erzeugen"><i class="fa fa-check"></i>Systematische Wertefolgen erzeugen</a></li>
@@ -166,28 +187,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="tidyverse-und-tibbles.html#tidyverse-und-tibbles"><code>tidyverse</code> und <code>tibbles</code></a>
 <ul>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Organisatorisches</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#pakete-benutzen"><i class="fa fa-check"></i>Pakete benutzen</a></li>
+<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Pakete benutzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen-und-ergänzen"><i class="fa fa-check"></i>Datensätze erstellen und ergänzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren-und-indizieren"><i class="fa fa-check"></i>Datensätze sortieren und indizieren</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#vorlesung"><i class="fa fa-check"></i>Vorlesung</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html"><i class="fa fa-check"></i>Faktoren und Aggregation</a>
 <ul>
-<li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#organisatorisches-3"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#faktoren"><i class="fa fa-check"></i>Faktoren</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#daten-einlesen-i"><i class="fa fa-check"></i>Daten einlesen I</a></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html#deskriptive-kennwerte"><i class="fa fa-check"></i>deskriptive Kennwerte</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html"><i class="fa fa-check"></i>Aggregation und Filemanagement</a>
 <ul>
-<li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#organisatorisches-4"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#aggregation"><i class="fa fa-check"></i>Aggregation</a></li>
 <li class="chapter" data-level="" data-path="aggregation-und-filemanagement.html"><a href="aggregation-und-filemanagement.html#daten-einlesen-ii-und-zusammenfügen"><i class="fa fa-check"></i>Daten einlesen II und zusammenfügen</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html"><i class="fa fa-check"></i>Abbildungen I</a>
 <ul>
-<li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#organisatorisches-5"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#pivotieren-von-datensätzen"><i class="fa fa-check"></i>Pivotieren von Datensätzen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-i.html"><a href="abbildungen-i.html#diagramme-erstellen"><i class="fa fa-check"></i>Diagramme erstellen</a></li>
 <li><a href="abbildungen-i.html#geoms"><code>geom</code>s</a></li>
@@ -197,14 +214,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html"><i class="fa fa-check"></i>Abbildungen II</a>
 <ul>
-<li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#organisatorisches-6"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#gruppierte-darstellungen"><i class="fa fa-check"></i>Gruppierte Darstellungen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#layer-für-zusätzliche-informationen"><i class="fa fa-check"></i>Layer für zusätzliche Informationen</a></li>
 <li class="chapter" data-level="" data-path="abbildungen-ii.html"><a href="abbildungen-ii.html#zusätzliche-tweaks"><i class="fa fa-check"></i>Zusätzliche tweaks</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="literatur-1.html"><a href="literatur-1.html"><i class="fa fa-check"></i>Literatur</a></li>
 <li class="divider"></li>
-<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></li>
 
 </ul>
 
@@ -225,221 +241,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="faktoren-und-aggregation" class="section level1">
 <h1>Faktoren und Aggregation</h1>
-<div id="organisatorisches-3" class="section level2">
-<h2>Organisatorisches</h2>
-<div id="semesterplan-4" class="section level3">
-<h3>Semesterplan</h3>
-<table class=" lightable-paper" style="font-size: 15px; font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-Einheit
-</th>
-<th style="text-align:left;">
-Vorlesung
-</th>
-<th style="text-align:left;">
-Übungswoche
-</th>
-<th style="text-align:left;">
-Thema
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-2.11.20
-</td>
-<td style="text-align:left;">
-keine Übung
-</td>
-<td style="text-align:left;">
-Grundlagen und Begriffe
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:left;">
-16.11.20
-</td>
-<td style="text-align:left;">
-KW 48
-</td>
-<td style="text-align:left;">
-Vektoren und Indizierung
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datenformate erstellen und transformieren
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-30.11.20
-</td>
-<td style="text-align:left;">
-KW 50
-</td>
-<td style="text-align:left;">
-Pakete installieren und benutzen
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datensätze erstellen und ergänzen können
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Datensätze sortieren und indizieren können
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-14.12.20
-</td>
-<td style="text-align:left;">
-KW 1
-</td>
-<td style="text-align:left;">
-Faktoren
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-deskriptive Kennwerte
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Aggregation I
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:left;">
-11.01.21
-</td>
-<td style="text-align:left;">
-KW 3
-</td>
-<td style="text-align:left;">
-Aggregation II
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-In- und Export von Datensätzen
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-25.01.21
-</td>
-<td style="text-align:left;">
-KW 5
-</td>
-<td style="text-align:left;">
-Grafische Darstellungen I
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-7
-</td>
-<td style="text-align:left;">
-08.02.21
-</td>
-<td style="text-align:left;">
-KW 7
-</td>
-<td style="text-align:left;">
-Grafische Darstellungen II
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-8
-</td>
-<td style="text-align:left;">
-22.02.21
-</td>
-<td style="text-align:left;">
-keine Übung
-</td>
-<td style="text-align:left;">
-Puffer
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Probeklausur
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<!-- ## Organisatorisches -->
+<!-- ### Semesterplan -->
+<!-- ```{r, results='asis', echo=F} -->
+<!-- a <- read_csv('/home/brede/MEGA/Andres/EDV1/WS20/semesterplan.csv') %>%  -->
+<!--   mutate_all(~replace_na(., '')) -->
+<!-- a %>%  -->
+<!--   kableExtra::kable() %>%  -->
+<!--   kableExtra::kable_paper(font_size = 15)  -->
+<!-- ``` -->
 <div id="faktoren" class="section level2">
 <h2>Faktoren</h2>
 <div id="gruppierungsfaktoren" class="section level3">
@@ -473,15 +283,15 @@ Probeklausur
 <h3>Mit Faktorstufen arbeiten</h3>
 <div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="faktoren-und-aggregation.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 0=Mann, 1=Frau</span></span>
 <span id="cb308-2"><a href="faktoren-und-aggregation.html#cb308-2" aria-hidden="true" tabindex="-1"></a>(sexNum <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">30</span>,T)) </span></code></pre></div>
-<pre><code>##  [1] 1 0 0 0 1 0 1 0 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 0 0
-## [26] 1 1 1 1 0</code></pre>
+<pre><code>##  [1] 1 1 0 0 0 0 1 1 1 1 1 0 0 1 1 1 1 1 0 0 1 1 1 1 0
+## [26] 1 1 1 0 0</code></pre>
 <div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="faktoren-und-aggregation.html#cb310-1" aria-hidden="true" tabindex="-1"></a>sexFac <span class="ot">&lt;-</span> <span class="fu">factor</span>(sexNum, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>))</span>
 <span id="cb310-2"><a href="faktoren-und-aggregation.html#cb310-2" aria-hidden="true" tabindex="-1"></a>sexFac</span></code></pre></div>
-<pre><code>##  [1] female male   male   male   female male   female
-##  [8] male   female female female male   female female
-## [15] female female female male   female female female
-## [22] male   female male   male   female female female
-## [29] female male  
+<pre><code>##  [1] female female male   male   male   male   female
+##  [8] female female female female male   male   female
+## [15] female female female female male   male   female
+## [22] female female female male   female female female
+## [29] male   male  
 ## Levels: male female</code></pre>
 <!-- ### Mit Faktorstufen arbeiten -->
 <div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="faktoren-und-aggregation.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ausgeben, wie häufig welche Stufe vorkommt</span></span>
@@ -490,7 +300,7 @@ Probeklausur
 ##     11     19</code></pre>
 <div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="faktoren-und-aggregation.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="do">## die Struktur des Faktors ausgeben</span></span>
 <span id="cb314-2"><a href="faktoren-und-aggregation.html#cb314-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sexFac)  </span></code></pre></div>
-<pre><code>##  Factor w/ 2 levels &quot;male&quot;,&quot;female&quot;: 2 1 1 1 2 1 2 1 2 2 ...</code></pre>
+<pre><code>##  Factor w/ 2 levels &quot;male&quot;,&quot;female&quot;: 2 2 1 1 1 1 2 2 2 2 ...</code></pre>
 <p><strong>Achtung:</strong> Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich “0” und “1” waren, s.o.).</p>
 </div>
 <div id="ändern-von-faktorstufen" class="section level3">
@@ -502,12 +312,12 @@ Probeklausur
 <span id="cb316-3"><a href="faktoren-und-aggregation.html#cb316-3" aria-hidden="true" tabindex="-1"></a><span class="fu">recode_factor</span>(sexFac,</span>
 <span id="cb316-4"><a href="faktoren-und-aggregation.html#cb316-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">male =</span> <span class="st">&#39;männlich&#39;</span>,</span>
 <span id="cb316-5"><a href="faktoren-und-aggregation.html#cb316-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">female =</span> <span class="st">&#39;weiblich&#39;</span>)</span></code></pre></div>
-<pre><code>##  [1] weiblich männlich männlich männlich weiblich
-##  [6] männlich weiblich männlich weiblich weiblich
-## [11] weiblich männlich weiblich weiblich weiblich
-## [16] weiblich weiblich männlich weiblich weiblich
-## [21] weiblich männlich weiblich männlich männlich
-## [26] weiblich weiblich weiblich weiblich männlich
+<pre><code>##  [1] weiblich weiblich männlich männlich männlich
+##  [6] männlich weiblich weiblich weiblich weiblich
+## [11] weiblich männlich männlich weiblich weiblich
+## [16] weiblich weiblich weiblich männlich männlich
+## [21] weiblich weiblich weiblich weiblich männlich
+## [26] weiblich weiblich weiblich männlich männlich
 ## Levels: männlich weiblich</code></pre>
 <!-- ### ändern von Faktorstufen -->
 <p>Was aber im Zweifel noch praktischer sein kann, ist unnötige Stufen zusammenzufassen:</p>
@@ -531,18 +341,18 @@ Probeklausur
 <span id="cb322-4"><a href="faktoren-und-aggregation.html#cb322-4" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(<span class="fu">ifelse</span>(a_numeric_variable <span class="sc">&gt;</span> <span class="fu">median</span>(a_numeric_variable),</span>
 <span id="cb322-5"><a href="faktoren-und-aggregation.html#cb322-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;high&#39;</span>,</span>
 <span id="cb322-6"><a href="faktoren-und-aggregation.html#cb322-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;low&#39;</span>))</span></code></pre></div>
-<pre><code>##   [1] high low  low  low  high high high low  low 
-##  [10] low  low  high low  low  high high low  high
-##  [19] high high low  high high high low  high low 
-##  [28] high low  high high low  high low  low  high
-##  [37] high high low  low  low  high low  low  high
-##  [46] low  low  high high high low  low  low  low 
-##  [55] high low  high low  high high low  low  high
-##  [64] low  low  low  low  high high high high low 
-##  [73] low  high low  high high low  high low  low 
-##  [82] low  low  high high high high high low  high
-##  [91] high high low  low  high high low  low  high
-## [100] low 
+<pre><code>##   [1] low  high high low  high low  low  low  low 
+##  [10] low  low  low  low  high high low  high low 
+##  [19] low  high high low  high low  high low  low 
+##  [28] low  low  high high high high high low  high
+##  [37] low  low  low  low  high high low  high high
+##  [46] low  low  low  high low  low  high low  high
+##  [55] low  high low  high high high low  high high
+##  [64] low  high high low  high low  low  high high
+##  [73] low  low  low  low  high high high low  high
+##  [82] high high high low  low  low  high high high
+##  [91] high high low  high high high low  low  low 
+## [100] high
 ## Levels: high low</code></pre>
 <!-- ### Quantitative in kategoriale Variablen umwandeln -->
 <p>Wenn mehr als 2 Gruppen gewünscht sind, hilft die <code>cut</code>-Funktion
@@ -553,7 +363,7 @@ IQ-Werte in 3 Klassen einteilen:</p>
 <span id="cb324-4"><a href="faktoren-und-aggregation.html#cb324-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;lo&quot;</span>, <span class="st">&quot;mid&quot;</span>, <span class="st">&quot;hi&quot;</span>))</span>
 <span id="cb324-5"><a href="faktoren-und-aggregation.html#cb324-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(IQfac)</span></code></pre></div>
 <pre><code>##  lo mid  hi 
-##  15  75  10</code></pre>
+##  13  74  13</code></pre>
 <!-- ### Quantitative in kategoriale Variablen umwandeln -->
 <p><code>cut</code> kann man außerdem ganz einfach zusammen mit der <code>quantile</code>-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:</p>
 <div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="faktoren-und-aggregation.html#cb326-1" aria-hidden="true" tabindex="-1"></a>quantSplit <span class="ot">&lt;-</span> <span class="fu">cut</span>(IQ,</span>
@@ -564,8 +374,8 @@ IQ-Werte in 3 Klassen einteilen:</p>
 <span id="cb326-6"><a href="faktoren-und-aggregation.html#cb326-6" aria-hidden="true" tabindex="-1"></a>                                            <span class="fl">0.75</span>)), </span>
 <span id="cb326-7"><a href="faktoren-und-aggregation.html#cb326-7" aria-hidden="true" tabindex="-1"></a>                           <span class="cn">Inf</span>))</span>
 <span id="cb326-8"><a href="faktoren-und-aggregation.html#cb326-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(quantSplit)</span></code></pre></div>
-<pre><code>##  (-Inf,89]   (89,101]  (101,111] (111, Inf] 
-##         29         22         24         25</code></pre>
+<pre><code>## (-Inf,93.8]  (93.8,101]   (101,112]  (112, Inf] 
+##          25          29          22          24</code></pre>
 </div>
 </div>
 <div id="daten-einlesen-i" class="section level2">
@@ -608,7 +418,7 @@ IQ-Werte in 3 Klassen einteilen:</p>
 <span id="cb331-3"><a href="faktoren-und-aggregation.html#cb331-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t1 =</span> <span class="fu">sd</span>(points_t1),</span>
 <span id="cb331-4"><a href="faktoren-und-aggregation.html#cb331-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">m_t2 =</span> <span class="fu">mean</span>(points_t2),</span>
 <span id="cb331-5"><a href="faktoren-und-aggregation.html#cb331-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t2 =</span> <span class="fu">sd</span>(points_t2),)</span></code></pre></div>
-<pre><code>## # A tibble: 1 x 4
+<pre><code>## # A tibble: 1 × 4
 ##    m_t1 sd_t1  m_t2 sd_t2
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1  3.79 0.689  4.96 0.989</code></pre>
@@ -621,7 +431,7 @@ IQ-Werte in 3 Klassen einteilen:</p>
 <span id="cb333-4"><a href="faktoren-und-aggregation.html#cb333-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t1 =</span> <span class="fu">sd</span>(points_t1),</span>
 <span id="cb333-5"><a href="faktoren-und-aggregation.html#cb333-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">m_t2 =</span> <span class="fu">mean</span>(points_t2),</span>
 <span id="cb333-6"><a href="faktoren-und-aggregation.html#cb333-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t2 =</span> <span class="fu">sd</span>(points_t2))</span></code></pre></div>
-<pre><code>## # A tibble: 3 x 5
+<pre><code>## # A tibble: 3 × 5
 ##   group  m_t1 sd_t1  m_t2 sd_t2
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1     1  3.8  0.889  4.3  1.32 
@@ -648,7 +458,7 @@ IQ-Werte in 3 Klassen einteilen:</p>
 <span id="cb335-16"><a href="faktoren-und-aggregation.html#cb335-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t1 =</span> <span class="fu">sd</span>(points_t1),</span>
 <span id="cb335-17"><a href="faktoren-und-aggregation.html#cb335-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">m_t2 =</span> <span class="fu">mean</span>(points_t2),</span>
 <span id="cb335-18"><a href="faktoren-und-aggregation.html#cb335-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t2 =</span> <span class="fu">sd</span>(points_t2))</span></code></pre></div>
-<pre><code>## # A tibble: 4 x 5
+<pre><code>## # A tibble: 4 × 5
 ##   quart_split  m_t1 sd_t1  m_t2 sd_t2
 ##   &lt;fct&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1 q1           4.57 0.321  3.93 1.10 
@@ -662,7 +472,7 @@ IQ-Werte in 3 Klassen einteilen:</p>
 <div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="faktoren-und-aggregation.html#cb337-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
 <span id="cb337-2"><a href="faktoren-und-aggregation.html#cb337-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(quart_split) <span class="sc">%&gt;%</span> </span>
 <span id="cb337-3"><a href="faktoren-und-aggregation.html#cb337-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code></pre></div>
-<pre><code>## # A tibble: 4 x 2
+<pre><code>## # A tibble: 4 × 2
 ## # Groups:   quart_split [4]
 ##   quart_split     n
 ##   &lt;fct&gt;       &lt;int&gt;
@@ -675,7 +485,7 @@ IQ-Werte in 3 Klassen einteilen:</p>
 <div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="faktoren-und-aggregation.html#cb339-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
 <span id="cb339-2"><a href="faktoren-und-aggregation.html#cb339-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(quart_split,group) <span class="sc">%&gt;%</span> </span>
 <span id="cb339-3"><a href="faktoren-und-aggregation.html#cb339-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code></pre></div>
-<pre><code>## # A tibble: 9 x 3
+<pre><code>## # A tibble: 9 × 3
 ## # Groups:   quart_split, group [9]
 ##   quart_split group     n
 ##   &lt;fct&gt;       &lt;dbl&gt; &lt;int&gt;
@@ -742,6 +552,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
