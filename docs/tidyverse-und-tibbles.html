@@ -24,7 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-10-01" />
+<meta name="date" content="2021-10-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -250,76 +250,6 @@ div.csl-indent {
 <!--   kableExtra::kable() %>%  -->
 <!--   kableExtra::kable_paper(font_size = 15)  -->
 <!-- ``` -->
-<!-- <!-- ## Aufgabe -->
-<p>–&gt;</p>
-<!-- <!-- ### Aufgabe: -->
-<p>–&gt;</p>
-<!-- <!-- \scriptsize -->
-<p>–&gt;</p>
-<!-- <!-- Erstellen Sie vier Vektoren entsprechend der folgenden Tabelle: -->
-<p>–&gt;</p>
-<!-- <!-- \centering -->
-<p>–&gt;</p>
-<!-- <!-- ```{r, echo = F, results='asis'} -->
-<p>–&gt;</p>
-<!-- <!-- matrix <- matrix(character(0), nrow = 8, ncol = 4) -->
-<p>–&gt;</p>
-<!-- <!-- matrix[,1] <- 8:1 -->
-<p>–&gt;</p>
-<!-- <!-- matrix[,2] <- c('Snake', 'Vera', 'Gabi', 'Horst', 'Joe', 'Frank', 'Jürgen', 'Klaus') -->
-<p>–&gt;</p>
-<!-- <!-- matrix[,3] <- round(rnorm(8,100,15)) -->
-<p>–&gt;</p>
-<!-- <!-- matrix[,4] <- round(runif(8,0,63)) -->
-<p>–&gt;</p>
-<!-- <!-- colnames(matrix) <- c('ID','Name','IQ','BDI-II') -->
-<p>–&gt;</p>
-<!-- <!-- usefullFunctions::convertMatrixToLatex(matrix, alignment = c('r','|l','|r','|r')) -->
-<p>–&gt;</p>
-<!-- <!-- ``` -->
-<p>–&gt;</p>
-<!-- <!-- \raggedright -->
-<p>–&gt;</p>
-<!-- <!-- Bestimmen Sie die Korrelation zwischen dem IQ und dem BDI-Score. -->
-<p>–&gt;</p>
-<!-- <!-- Lassen Sie sich anschließend mit Hilfe von logischer Indizierung die Namen der Versuchspersonen ausgeben, die einen BDI-Score haben, der unter dem Median liegt. -->
-<p>–&gt;</p>
-<!-- <!-- Berechnen Sie für die andere Hälfte der Stichprobe den Mittelwert des IQs. -->
-<p>–&gt;</p>
-<!-- <!-- Rechnen Sie zum Abschluss die IQ-Werte der Versuchspersonen, deren IQ über dem gerade berechneten Mittelwert liegt, in Wertpunkte(M=10, sd=3) um. \newline Kleiner Hinweis: hierfür müssen Sie mit der Formel zur z-Transformation arbeiten($z_x = \frac{x - M_x}{s_x}$). \newline Verwenden Sie zu dieser Berechnung bitte empirische Schätzer und nicht theoretische Kennwerte. -->
-<p>–&gt;</p>
-<!-- <!-- ### Interaktion -->
-<p>–&gt;</p>
-<!-- <!-- \begin{minipage}{.59\textwidth} -->
-<p>–&gt;</p>
-<!-- <!-- \textbf{Konnte ich alles nachvollziehen!} -->
-<p>–&gt;</p>
-<!-- <!-- \begin{itemize} -->
-<p>–&gt;</p>
-<!-- <!-- \item[A] Ja! -->
-<p>–&gt;</p>
-<!-- <!-- \item[B] zu 75% -->
-<p>–&gt;</p>
-<!-- <!-- \item[C] zu 50% -->
-<p>–&gt;</p>
-<!-- <!-- \item[D] zu 25% -->
-<p>–&gt;</p>
-<!-- <!-- \item[E] Nein! -->
-<p>–&gt;</p>
-<!-- <!-- \end{itemize} -->
-<p>–&gt;</p>
-<!-- <!-- \end{minipage} -->
-<p>–&gt;</p>
-<!-- <!-- \begin{minipage}{.39\textwidth} -->
-<p>–&gt;</p>
-<!-- <!-- \centering -->
-<p>–&gt;</p>
-<!-- <!-- https://tweedback.de/kkwn -->
-<p>–&gt;</p>
-<!-- <!-- \includegraphics[width=.8\textwidth]{/home/brede/MEGA/Andres/EDV1/Folien/tweedback.png} -->
-<p>–&gt;</p>
-<!-- <!-- \end{minipage} -->
-<p>–&gt;</p>
 <div id="pakete-benutzen" class="section level2">
 <h2>Pakete benutzen</h2>
 <div id="das-cran-und-paketinstallation" class="section level3">
@@ -865,9 +795,9 @@ Dafür können wir die <code>arrange</code>-Funktion und unseren pipe-Operator b
 <span id="cb295-15"><a href="tidyverse-und-tibbles.html#cb295-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&#39;iq&#39;</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb295-16"><a href="tidyverse-und-tibbles.html#cb295-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code></pre></div>
 <pre><code>##            spr_iq     log_iq    ges_iq
-## spr_iq  1.0000000 -0.6300002 0.2718888
-## log_iq -0.6300002  1.0000000 0.5760496
-## ges_iq  0.2718888  0.5760496 1.0000000</code></pre>
+## spr_iq  1.0000000 -0.9436832 0.0593182
+## log_iq -0.9436832  1.0000000 0.2742902
+## ges_iq  0.0593182  0.2742902 1.0000000</code></pre>
 <p>Als ergänzende Nebenbemerkung:</p>
 <p>mit <code>skim</code> aus dem <code>skimr</code>-Paket lässt sich der Überblick noch schöner gestalten:</p>
 <div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="tidyverse-und-tibbles.html#cb297-1" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(iris)</span></code></pre></div>
