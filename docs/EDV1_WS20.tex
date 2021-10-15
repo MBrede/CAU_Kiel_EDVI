@@ -275,18 +275,6 @@ Die Studierenden können nach dem Absolvieren der Übung\ldots{}
   kompliziertere Grafiken erstellen.
 \end{itemize}
 
-\hypertarget{einheit-8}{%
-\subsubsection*{Einheit 8}\label{einheit-8}}
-\addcontentsline{toc}{subsubsection}{Einheit 8}
-
-\begin{itemize}
-\tightlist
-\item
-  die Funktionsschreibweise lesen und anwenden.
-\item
-  erfolgreich an der Klausur teilnehmen.
-\end{itemize}
-
 \hypertarget{pruxfcfungsleistung}{%
 \section{Prüfungsleistung}\label{pruxfcfungsleistung}}
 
@@ -2986,9 +2974,9 @@ Das könnte in unserem Beispiel exemplarisch hilfreich sein, um die drei Versuch
 
 \begin{verbatim}
 ##            spr_iq     log_iq    ges_iq
-## spr_iq  1.0000000 -0.7586627 0.3131841
-## log_iq -0.7586627  1.0000000 0.3811080
-## ges_iq  0.3131841  0.3811080 1.0000000
+## spr_iq  1.0000000 -0.1684091 0.5684699
+## log_iq -0.1684091  1.0000000 0.7152181
+## ges_iq  0.5684699  0.7152181 1.0000000
 \end{verbatim}
 
 Als ergänzende Nebenbemerkung:
@@ -3087,8 +3075,8 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 0 1 1 1 0 1 0 0 1 1 0 1 0 1 0 1 1 1 0 1 1 0 0 0 0
-## [26] 1 1 0 0 0
+##  [1] 1 1 0 0 0 0 0 1 1 0 1 1 1 1 1 1 0 0 0 0 1 1 1 0 0
+## [26] 1 1 1 0 1
 \end{verbatim}
 
 \begin{Shaded}
@@ -3099,11 +3087,11 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] male   female female female male   female male  
-##  [8] male   female female male   female male   female
-## [15] male   female female female male   female female
-## [22] male   male   male   male   female female male  
-## [29] male   male  
+##  [1] female female male   male   male   male   male  
+##  [8] female female male   female female female female
+## [15] female female male   male   male   male   female
+## [22] female female male   male   female female female
+## [29] male   female
 ## Levels: male female
 \end{verbatim}
 
@@ -3116,7 +3104,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 
 \begin{verbatim}
 ##   male female 
-##     15     15
+##     13     17
 \end{verbatim}
 
 \begin{Shaded}
@@ -3127,7 +3115,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  Factor w/ 2 levels "male","female": 1 2 2 2 1 2 1 1 2 2 ...
+##  Factor w/ 2 levels "male","female": 2 2 1 1 1 1 1 2 2 1 ...
 \end{verbatim}
 
 \textbf{Achtung:} Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich ``0'' und ``1'' waren, s.o.).
@@ -3150,12 +3138,12 @@ Zuerst wandeln wir die Stufen unseres \texttt{sexFac} in andere labels um:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] männlich weiblich weiblich weiblich männlich
-##  [6] weiblich männlich männlich weiblich weiblich
-## [11] männlich weiblich männlich weiblich männlich
-## [16] weiblich weiblich weiblich männlich weiblich
-## [21] weiblich männlich männlich männlich männlich
-## [26] weiblich weiblich männlich männlich männlich
+##  [1] weiblich weiblich männlich männlich männlich
+##  [6] männlich männlich weiblich weiblich männlich
+## [11] weiblich weiblich weiblich weiblich weiblich
+## [16] weiblich männlich männlich männlich männlich
+## [21] weiblich weiblich weiblich männlich männlich
+## [26] weiblich weiblich weiblich männlich weiblich
 ## Levels: männlich weiblich
 \end{verbatim}
 
@@ -3204,17 +3192,17 @@ Für Median-Splits und ähnliches ist es sehr praktisch, direkt numerische Varia
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] low  high high high high low  high low  low 
-##  [10] low  high low  high high low  high low  high
-##  [19] low  low  high high low  low  low  high high
-##  [28] high low  low  low  high high low  high low 
-##  [37] high high low  high high high low  high high
-##  [46] high low  high high low  high high low  high
-##  [55] low  low  high low  low  high low  low  low 
-##  [64] low  low  low  high low  low  low  low  low 
-##  [73] low  high high low  low  low  low  low  low 
-##  [82] high high low  high low  high high low  low 
-##  [91] high high high high high high high low  high
+##   [1] low  low  low  low  high high high high low 
+##  [10] low  high high high high high high high low 
+##  [19] high low  low  high high low  low  low  low 
+##  [28] high low  high high low  low  high high low 
+##  [37] low  low  high high low  high low  high high
+##  [46] low  low  high low  high high low  high high
+##  [55] low  high high low  low  low  high high low 
+##  [64] high low  high high low  low  low  high low 
+##  [73] high low  low  high low  low  high low  high
+##  [82] high low  high low  high low  high low  high
+##  [91] low  low  high low  high high low  low  low 
 ## [100] low 
 ## Levels: high low
 \end{verbatim}
@@ -3234,7 +3222,7 @@ IQ-Werte in 3 Klassen einteilen:
 
 \begin{verbatim}
 ##  lo mid  hi 
-##  13  78   9
+##  17  71  12
 \end{verbatim}
 
 \texttt{cut} kann man außerdem ganz einfach zusammen mit der \texttt{quantile}-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:
@@ -3253,8 +3241,8 @@ IQ-Werte in 3 Klassen einteilen:
 \end{Shaded}
 
 \begin{verbatim}
-## (-Inf,91.8]  (91.8,100]   (100,108]  (108, Inf] 
-##          25          29          21          25
+##  (-Inf,88]    (88,98]   (98,109] (109, Inf] 
+##         30         23         23         24
 \end{verbatim}
 
 \hypertarget{daten-einlesen-i}{%

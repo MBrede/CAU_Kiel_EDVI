@@ -794,10 +794,10 @@ Dafür können wir die <code>arrange</code>-Funktion und unseren pipe-Operator b
 <span id="cb295-14"><a href="tidyverse-und-tibbles.html#cb295-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ges_iq <span class="sc">&gt;</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb295-15"><a href="tidyverse-und-tibbles.html#cb295-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&#39;iq&#39;</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb295-16"><a href="tidyverse-und-tibbles.html#cb295-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code></pre></div>
-<pre><code>##            spr_iq     log_iq    ges_iq
-## spr_iq  1.0000000 -0.1712792 0.7764731
-## log_iq -0.1712792  1.0000000 0.4878447
-## ges_iq  0.7764731  0.4878447 1.0000000</code></pre>
+<pre><code>##            spr_iq     log_iq     ges_iq
+## spr_iq  1.0000000 -0.9567787 -0.6046175
+## log_iq -0.9567787  1.0000000  0.8101256
+## ges_iq -0.6046175  0.8101256  1.0000000</code></pre>
 <p>Als ergänzende Nebenbemerkung:</p>
 <p>mit <code>skim</code> aus dem <code>skimr</code>-Paket lässt sich der Überblick noch schöner gestalten:</p>
 <div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="tidyverse-und-tibbles.html#cb297-1" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(iris)</span></code></pre></div>
