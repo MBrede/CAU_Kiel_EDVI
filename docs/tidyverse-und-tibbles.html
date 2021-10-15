@@ -24,7 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-10-05" />
+<meta name="date" content="2021-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="elementare-datenverarbeitung.html"/>
 <link rel="next" href="faktoren-und-aggregation.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -795,9 +795,9 @@ Dafür können wir die <code>arrange</code>-Funktion und unseren pipe-Operator b
 <span id="cb295-15"><a href="tidyverse-und-tibbles.html#cb295-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&#39;iq&#39;</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb295-16"><a href="tidyverse-und-tibbles.html#cb295-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code></pre></div>
 <pre><code>##            spr_iq     log_iq    ges_iq
-## spr_iq  1.0000000 -0.9436832 0.0593182
-## log_iq -0.9436832  1.0000000 0.2742902
-## ges_iq  0.0593182  0.2742902 1.0000000</code></pre>
+## spr_iq  1.0000000 -0.1712792 0.7764731
+## log_iq -0.1712792  1.0000000 0.4878447
+## ges_iq  0.7764731  0.4878447 1.0000000</code></pre>
 <p>Als ergänzende Nebenbemerkung:</p>
 <p>mit <code>skim</code> aus dem <code>skimr</code>-Paket lässt sich der Überblick noch schöner gestalten:</p>
 <div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="tidyverse-und-tibbles.html#cb297-1" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(iris)</span></code></pre></div>

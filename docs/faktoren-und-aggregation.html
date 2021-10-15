@@ -24,7 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-10-05" />
+<meta name="date" content="2021-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="tidyverse-und-tibbles.html"/>
 <link rel="next" href="aggregation-und-filemanagement.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -283,24 +283,24 @@ div.csl-indent {
 <h3>Mit Faktorstufen arbeiten</h3>
 <div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="faktoren-und-aggregation.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 0=Mann, 1=Frau</span></span>
 <span id="cb308-2"><a href="faktoren-und-aggregation.html#cb308-2" aria-hidden="true" tabindex="-1"></a>(sexNum <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">30</span>,T)) </span></code></pre></div>
-<pre><code>##  [1] 1 0 0 0 1 0 1 0 0 0 0 0 1 0 0 1 1 1 1 0 0 0 0 1 0
-## [26] 1 0 0 1 0</code></pre>
+<pre><code>##  [1] 0 0 1 1 1 0 0 0 1 0 1 0 1 0 1 0 1 1 1 1 1 0 0 0 0
+## [26] 0 1 1 0 1</code></pre>
 <div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="faktoren-und-aggregation.html#cb310-1" aria-hidden="true" tabindex="-1"></a>sexFac <span class="ot">&lt;-</span> <span class="fu">factor</span>(sexNum, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>))</span>
 <span id="cb310-2"><a href="faktoren-und-aggregation.html#cb310-2" aria-hidden="true" tabindex="-1"></a>sexFac</span></code></pre></div>
-<pre><code>##  [1] female male   male   male   female male   female
-##  [8] male   male   male   male   male   female male  
-## [15] male   female female female female male   male  
-## [22] male   male   female male   female male   male  
-## [29] female male  
+<pre><code>##  [1] male   male   female female female male   male  
+##  [8] male   female male   female male   female male  
+## [15] female male   female female female female female
+## [22] male   male   male   male   male   female female
+## [29] male   female
 ## Levels: male female</code></pre>
 <!-- ### Mit Faktorstufen arbeiten -->
 <div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="faktoren-und-aggregation.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ausgeben, wie häufig welche Stufe vorkommt</span></span>
 <span id="cb312-2"><a href="faktoren-und-aggregation.html#cb312-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sexFac)</span></code></pre></div>
 <pre><code>##   male female 
-##     19     11</code></pre>
+##     15     15</code></pre>
 <div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="faktoren-und-aggregation.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="do">## die Struktur des Faktors ausgeben</span></span>
 <span id="cb314-2"><a href="faktoren-und-aggregation.html#cb314-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sexFac)  </span></code></pre></div>
-<pre><code>##  Factor w/ 2 levels &quot;male&quot;,&quot;female&quot;: 2 1 1 1 2 1 2 1 1 1 ...</code></pre>
+<pre><code>##  Factor w/ 2 levels &quot;male&quot;,&quot;female&quot;: 1 1 2 2 2 1 1 1 2 1 ...</code></pre>
 <p><strong>Achtung:</strong> Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich “0” und “1” waren, s.o.).</p>
 </div>
 <div id="ändern-von-faktorstufen" class="section level3">
@@ -312,12 +312,12 @@ div.csl-indent {
 <span id="cb316-3"><a href="faktoren-und-aggregation.html#cb316-3" aria-hidden="true" tabindex="-1"></a><span class="fu">recode_factor</span>(sexFac,</span>
 <span id="cb316-4"><a href="faktoren-und-aggregation.html#cb316-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">male =</span> <span class="st">&#39;männlich&#39;</span>,</span>
 <span id="cb316-5"><a href="faktoren-und-aggregation.html#cb316-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">female =</span> <span class="st">&#39;weiblich&#39;</span>)</span></code></pre></div>
-<pre><code>##  [1] weiblich männlich männlich männlich weiblich
-##  [6] männlich weiblich männlich männlich männlich
-## [11] männlich männlich weiblich männlich männlich
-## [16] weiblich weiblich weiblich weiblich männlich
-## [21] männlich männlich männlich weiblich männlich
-## [26] weiblich männlich männlich weiblich männlich
+<pre><code>##  [1] männlich männlich weiblich weiblich weiblich
+##  [6] männlich männlich männlich weiblich männlich
+## [11] weiblich männlich weiblich männlich weiblich
+## [16] männlich weiblich weiblich weiblich weiblich
+## [21] weiblich männlich männlich männlich männlich
+## [26] männlich weiblich weiblich männlich weiblich
 ## Levels: männlich weiblich</code></pre>
 <!-- ### ändern von Faktorstufen -->
 <p>Was aber im Zweifel noch praktischer sein kann, ist unnötige Stufen zusammenzufassen:</p>
@@ -341,18 +341,18 @@ div.csl-indent {
 <span id="cb322-4"><a href="faktoren-und-aggregation.html#cb322-4" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(<span class="fu">ifelse</span>(a_numeric_variable <span class="sc">&gt;</span> <span class="fu">median</span>(a_numeric_variable),</span>
 <span id="cb322-5"><a href="faktoren-und-aggregation.html#cb322-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;high&#39;</span>,</span>
 <span id="cb322-6"><a href="faktoren-und-aggregation.html#cb322-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;low&#39;</span>))</span></code></pre></div>
-<pre><code>##   [1] low  low  high low  low  high low  high high
-##  [10] low  low  high low  low  high low  high high
-##  [19] high high high low  low  high high high high
-##  [28] low  high high high low  low  low  high high
-##  [37] low  low  low  high high high high high low 
-##  [46] high low  low  high low  low  low  low  high
-##  [55] high low  low  low  high low  low  high low 
-##  [64] high high low  low  high low  high high low 
-##  [73] low  high high low  high high high low  low 
-##  [82] high high low  low  high high low  low  high
-##  [91] high low  high low  low  low  low  high high
-## [100] low 
+<pre><code>##   [1] low  low  high low  low  low  low  high low 
+##  [10] high low  high low  high high low  low  high
+##  [19] high high high high low  high low  high low 
+##  [28] high low  low  low  low  high high low  high
+##  [37] low  high low  high low  low  high low  low 
+##  [46] low  high low  high high low  high high high
+##  [55] high low  high low  low  low  high high low 
+##  [64] high high low  high high high high low  high
+##  [73] low  low  low  high low  high high low  low 
+##  [82] high high low  low  low  high high low  high
+##  [91] low  low  high high low  high low  low  low 
+## [100] high
 ## Levels: high low</code></pre>
 <!-- ### Quantitative in kategoriale Variablen umwandeln -->
 <p>Wenn mehr als 2 Gruppen gewünscht sind, hilft die <code>cut</code>-Funktion
@@ -363,7 +363,7 @@ IQ-Werte in 3 Klassen einteilen:</p>
 <span id="cb324-4"><a href="faktoren-und-aggregation.html#cb324-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;lo&quot;</span>, <span class="st">&quot;mid&quot;</span>, <span class="st">&quot;hi&quot;</span>))</span>
 <span id="cb324-5"><a href="faktoren-und-aggregation.html#cb324-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(IQfac)</span></code></pre></div>
 <pre><code>##  lo mid  hi 
-##  23  62  15</code></pre>
+##  15  75  10</code></pre>
 <!-- ### Quantitative in kategoriale Variablen umwandeln -->
 <p><code>cut</code> kann man außerdem ganz einfach zusammen mit der <code>quantile</code>-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:</p>
 <div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="faktoren-und-aggregation.html#cb326-1" aria-hidden="true" tabindex="-1"></a>quantSplit <span class="ot">&lt;-</span> <span class="fu">cut</span>(IQ,</span>
@@ -374,8 +374,8 @@ IQ-Werte in 3 Klassen einteilen:</p>
 <span id="cb326-6"><a href="faktoren-und-aggregation.html#cb326-6" aria-hidden="true" tabindex="-1"></a>                                            <span class="fl">0.75</span>)), </span>
 <span id="cb326-7"><a href="faktoren-und-aggregation.html#cb326-7" aria-hidden="true" tabindex="-1"></a>                           <span class="cn">Inf</span>))</span>
 <span id="cb326-8"><a href="faktoren-und-aggregation.html#cb326-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(quantSplit)</span></code></pre></div>
-<pre><code>## (-Inf,88.5]  (88.5,101]   (101,112]  (112, Inf] 
-##          25          26          27          22</code></pre>
+<pre><code>##  (-Inf,89]  (89,99.5] (99.5,108] (108, Inf] 
+##         27         23         25         25</code></pre>
 </div>
 </div>
 <div id="daten-einlesen-i" class="section level2">
