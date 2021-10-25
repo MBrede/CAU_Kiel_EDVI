@@ -581,15 +581,13 @@ Anweisungen in R funktionieren grundsätzlich über das Ausführen von Ausdrück
 Beispielsweise enthält die Funktion <code>round()</code> die nötigen Anweisungen, um eine Zahl zu runden. Hierfür erwartet <code>round()</code> die zu rundende Zahl und die Anzahl an Nachkommastellen auf die zu runden ist. <br> <br>
 Man schreibt immer <em>Funktionsname</em>(<em>Argumentliste</em>). <br> Bei Funktionen müssen <em>immer</em> runde Klammern vorhanden sein, auch wenn keine einzelnen Argumente vorgegeben werden.</p>
 <!-- ### Funktionen & Argumente{-} -->
-<p>Es gibt <em>obligatorische Argumente</em>, ohne deren Übergabe das Aufrufen einer Funktion zu einer Fehlermeldung führt:
-</p>
+<p>Es gibt <em>obligatorische Argumente</em>, ohne deren Übergabe das Aufrufen einer Funktion zu einer Fehlermeldung führt:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="vorlesung-i-rste-schritte.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(pi)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="vorlesung-i-rste-schritte.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>() <span class="do">### Funktionsaufruf ohne Argument</span></span></code></pre></div>
 <pre><code>## Error in eval(expr, envir, enclos): 0 arguments passed to &#39;round&#39; which requires 1 or 2 arguments</code></pre>
 <!-- ### Funktionen & Argumente{-} -->
-<p>… und <em>optionale Argumente</em>:
-</p>
+<p>… und <em>optionale Argumente</em>:</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="vorlesung-i-rste-schritte.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(pi, <span class="at">digits=</span><span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 3.142</code></pre>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="vorlesung-i-rste-schritte.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(pi, <span class="at">digits=</span>pi)</span></code></pre></div>
@@ -597,8 +595,7 @@ Man schreibt immer <em>Funktionsname</em>(<em>Argumentliste</em>). <br> Bei Funk
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="vorlesung-i-rste-schritte.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(pi, <span class="at">digits=</span><span class="dv">15</span>)</span></code></pre></div>
 <pre><code>## [1] 3.141593</code></pre>
 <!-- ### Funktionen & Argumente{-} -->
-<p>Gibt man den Namen eines Arguments nicht an, entscheidet die Position in der Liste über die Interpretation des Arguments durch R. <strong>Achtung: Fehlerquelle!</strong>
-</p>
+<p>Gibt man den Namen eines Arguments nicht an, entscheidet die Position in der Liste über die Interpretation des Arguments durch R. <strong>Achtung: Fehlerquelle!</strong></p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="vorlesung-i-rste-schritte.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">42</span>, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.024</code></pre>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="vorlesung-i-rste-schritte.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">3</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">42</span>)</span></code></pre></div>
