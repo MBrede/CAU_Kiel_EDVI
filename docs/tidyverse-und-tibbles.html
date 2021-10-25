@@ -24,7 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-10-15" />
+<meta name="date" content="2021-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,11 +171,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html"><i class="fa fa-check"></i>Vorlesung I - Rste Schritte</a>
 <ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#organisatorisches"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#einführung"><i class="fa fa-check"></i>Einführung</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#grundlegende-rechenoperationen"><i class="fa fa-check"></i>Grundlegende Rechenoperationen</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-funktionen-argumente"><i class="fa fa-check"></i>Ausdrücke, Funktionen, Argumente</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte"><i class="fa fa-check"></i>Objekte</a></li>
-<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#hausaufgabe"><i class="fa fa-check"></i>Hausaufgabe</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html"><i class="fa fa-check"></i>elementare Datenverarbeitung</a>
 <ul>
@@ -581,7 +581,7 @@ Dafür können wir die <code>arrange</code>-Funktion und unseren pipe-Operator b
 ##  9     2 Samuel Vimes     2       3.2       5.8  2.6  
 ## 10     8 Leonard of …     2       2.8       6.2  3.4</code></pre>
 <!-- ### Datensätze sortieren -->
-<p>Wie man unschwer erkennen kann, ist hier der Standard, den Datensatz in aufsteigender Reihenfolge der Variable zu sortieren. Um das umzukehren, können wir die <code>desc</code>-Funktion nutzen, deren Name für ‘descending,’ also absteigend steht:</p>
+<p>Wie man unschwer erkennen kann, ist hier der Standard, den Datensatz in aufsteigender Reihenfolge der Variable zu sortieren. Um das umzukehren, können wir die <code>desc</code>-Funktion nutzen, deren Name für ‘descending’, also absteigend steht:</p>
 <div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="tidyverse-und-tibbles.html#cb271-1" aria-hidden="true" tabindex="-1"></a>my_1st_tibble <span class="sc">%&gt;%</span> </span>
 <span id="cb271-2"><a href="tidyverse-und-tibbles.html#cb271-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(change))</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 6
@@ -794,10 +794,10 @@ Dafür können wir die <code>arrange</code>-Funktion und unseren pipe-Operator b
 <span id="cb295-14"><a href="tidyverse-und-tibbles.html#cb295-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ges_iq <span class="sc">&gt;</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb295-15"><a href="tidyverse-und-tibbles.html#cb295-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&#39;iq&#39;</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb295-16"><a href="tidyverse-und-tibbles.html#cb295-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code></pre></div>
-<pre><code>##            spr_iq     log_iq     ges_iq
-## spr_iq  1.0000000 -0.9567787 -0.6046175
-## log_iq -0.9567787  1.0000000  0.8101256
-## ges_iq -0.6046175  0.8101256  1.0000000</code></pre>
+<pre><code>##            spr_iq      log_iq     ges_iq
+## spr_iq  1.0000000 -0.47080294 0.85575804
+## log_iq -0.4708029  1.00000000 0.05355579
+## ges_iq  0.8557580  0.05355579 1.00000000</code></pre>
 <p>Als ergänzende Nebenbemerkung:</p>
 <p>mit <code>skim</code> aus dem <code>skimr</code>-Paket lässt sich der Überblick noch schöner gestalten:</p>
 <div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="tidyverse-und-tibbles.html#cb297-1" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(iris)</span></code></pre></div>

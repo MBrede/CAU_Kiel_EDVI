@@ -4,10 +4,6 @@
 %
 \documentclass[
 ]{book}
-\title{EDV1}
-\author{Max Brede}
-\date{2021-10-15}
-
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -152,6 +148,10 @@
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
+\title{EDV1}
+\author{Max Brede}
+\date{2021-10-25}
+
 \begin{document}
 \maketitle
 
@@ -285,6 +285,9 @@ Mit maximal einer nicht sinnvoll bearbeiteten Serie werden die Studierenden zur 
 \hypertarget{vorlesung-i---rste-schritte}{%
 \chapter{Vorlesung I - Rste Schritte}\label{vorlesung-i---rste-schritte}}
 
+\hypertarget{organisatorisches}{%
+\section{Organisatorisches}\label{organisatorisches}}
+
 \hypertarget{uxfcbungsablauf}{%
 \subsection*{Übungsablauf}\label{uxfcbungsablauf}}
 \addcontentsline{toc}{subsection}{Übungsablauf}
@@ -292,6 +295,13 @@ Mit maximal einer nicht sinnvoll bearbeiteten Serie werden die Studierenden zur 
 Die Übung wird zur Hälfte als Vorlesung, zur anderen Hälfte in Kleingruppen abgehalten.
 
 Die Daten sind im Kalender und im Semesterplan im Olat ersichtlich.
+
+\hypertarget{tutorium}{%
+\subsection{Tutorium}\label{tutorium}}
+
+Dazu gibt es noch `Nachhilfe'-Tutorien, in denen offene Fragen besprochen werden können.
+
+Die Tutorien beginnen nächste Woche (ab 1.11.)
 
 \hypertarget{pruxfcfungsleistung-1}{%
 \subsection*{Prüfungsleistung}\label{pruxfcfungsleistung-1}}
@@ -313,7 +323,7 @@ Die Prüfungsleistung in dieser Veranstaltung besteht aus:
     Unter \emph{regelmäßigem Bearbeiten} versteht sich das Bestehen aller Serien \textbf{mit einer Ausnahme}. \medskip  
   \end{itemize}
 \item
-  Im Klausurzeitraum findet an einem Tag eine praktische Prüfung statt.
+  Im Klausurzeitraum findet über drei Tage eine Take-Home-Klausur statt.
 \end{enumerate}
 
 \hypertarget{einfuxfchrung}{%
@@ -1038,8 +1048,6 @@ Dabei ist das hier keine vollständige Liste, für den Anfang reicht sie aber.
 \subsection*{Datentypen konvertieren}\label{datentypen-konvertieren}}
 \addcontentsline{toc}{subsection}{Datentypen konvertieren}
 
-\scriptsize
-
 \texttt{as.character(answer)} konvertiert den Datentyp des Objekts von \texttt{numeric} nach \texttt{character} ohne den ursprünglichen Eintrag von \texttt{answer} zu überschreiben.
 
 \begin{Shaded}
@@ -1431,32 +1439,6 @@ Um \texttt{all.equal} sinnvoll in logischen Operationen benutzen zu können wird
 \begin{verbatim}
 ## [1] FALSE
 \end{verbatim}
-
-\hypertarget{hausaufgabe}{%
-\section{Hausaufgabe}\label{hausaufgabe}}
-
-\hypertarget{hausaufgabe-erstellen-eines-r-skripts}{%
-\subsection*{Hausaufgabe: Erstellen eines R-Skripts}\label{hausaufgabe-erstellen-eines-r-skripts}}
-\addcontentsline{toc}{subsection}{Hausaufgabe: Erstellen eines R-Skripts}
-
-Schreiben Sie den dem folgenden Ablauf entsprechenden Code in ein R-\emph{Skript} und führen Sie ihn von dort in der Konsole aus:
-
-Erstellen Sie drei Objekte wie folgt:
-
-\begin{itemize}
-\item
-  Als erstes ein Objekt namens \emph{whatDoIDoThis} mit der Zahl 4 als Inhalt.
-\item
-  Als zweites ein Objekt namens \emph{text} mit dem Inhalt : ``i\_like\_snake\_case\_better''.
-\item
-  Als drittes ein Objekt namens \emph{myFavouriteNumber} mit einer Zahl Ihrer Wahl als Inhalt.
-\end{itemize}
-
-Berechnen Sie nun den Mittelwert der Objekte mit numerischem Inhalt und legen Sie diesen in einem weiteren Objekt namens \emph{manualMean} ab.
-
-Lassen Sie sich in der Konsole durch eine Zeile in Ihrem Skript den Text \texttt{\textquotesingle{}I\ learned\ about\ the\ most\ important\ bugfixing\ tool\textquotesingle{}} ausgeben.
-
-Speichern Sie anschließend das R-\emph{Skript} unter `.R' ab.
 
 \hypertarget{elementare-datenverarbeitung}{%
 \chapter{elementare Datenverarbeitung}\label{elementare-datenverarbeitung}}
@@ -2974,9 +2956,9 @@ Das könnte in unserem Beispiel exemplarisch hilfreich sein, um die drei Versuch
 
 \begin{verbatim}
 ##            spr_iq     log_iq    ges_iq
-## spr_iq  1.0000000 -0.1684091 0.5684699
-## log_iq -0.1684091  1.0000000 0.7152181
-## ges_iq  0.5684699  0.7152181 1.0000000
+## spr_iq  1.0000000 -0.5708500 0.4090723
+## log_iq -0.5708500  1.0000000 0.5156948
+## ges_iq  0.4090723  0.5156948 1.0000000
 \end{verbatim}
 
 Als ergänzende Nebenbemerkung:
@@ -3075,8 +3057,8 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 1 1 0 0 0 0 0 1 1 0 1 1 1 1 1 1 0 0 0 0 1 1 1 0 0
-## [26] 1 1 1 0 1
+##  [1] 1 1 1 1 0 0 1 1 0 0 0 0 1 0 1 1 0 0 0 1 1 0 0 0 1
+## [26] 1 0 1 1 1
 \end{verbatim}
 
 \begin{Shaded}
@@ -3087,11 +3069,11 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] female female male   male   male   male   male  
-##  [8] female female male   female female female female
-## [15] female female male   male   male   male   female
-## [22] female female male   male   female female female
-## [29] male   female
+##  [1] female female female female male   male   female
+##  [8] female male   male   male   male   female male  
+## [15] female female male   male   male   female female
+## [22] male   male   male   female female male   female
+## [29] female female
 ## Levels: male female
 \end{verbatim}
 
@@ -3104,7 +3086,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 
 \begin{verbatim}
 ##   male female 
-##     13     17
+##     14     16
 \end{verbatim}
 
 \begin{Shaded}
@@ -3115,7 +3097,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  Factor w/ 2 levels "male","female": 2 2 1 1 1 1 1 2 2 1 ...
+##  Factor w/ 2 levels "male","female": 2 2 2 2 1 1 2 2 1 1 ...
 \end{verbatim}
 
 \textbf{Achtung:} Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich ``0'' und ``1'' waren, s.o.).
@@ -3138,12 +3120,12 @@ Zuerst wandeln wir die Stufen unseres \texttt{sexFac} in andere labels um:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] weiblich weiblich männlich männlich männlich
-##  [6] männlich männlich weiblich weiblich männlich
-## [11] weiblich weiblich weiblich weiblich weiblich
-## [16] weiblich männlich männlich männlich männlich
-## [21] weiblich weiblich weiblich männlich männlich
-## [26] weiblich weiblich weiblich männlich weiblich
+##  [1] weiblich weiblich weiblich weiblich männlich
+##  [6] männlich weiblich weiblich männlich männlich
+## [11] männlich männlich weiblich männlich weiblich
+## [16] weiblich männlich männlich männlich weiblich
+## [21] weiblich männlich männlich männlich weiblich
+## [26] weiblich männlich weiblich weiblich weiblich
 ## Levels: männlich weiblich
 \end{verbatim}
 
@@ -3192,18 +3174,18 @@ Für Median-Splits und ähnliches ist es sehr praktisch, direkt numerische Varia
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] low  low  low  low  high high high high low 
-##  [10] low  high high high high high high high low 
-##  [19] high low  low  high high low  low  low  low 
-##  [28] high low  high high low  low  high high low 
-##  [37] low  low  high high low  high low  high high
-##  [46] low  low  high low  high high low  high high
-##  [55] low  high high low  low  low  high high low 
-##  [64] high low  high high low  low  low  high low 
-##  [73] high low  low  high low  low  high low  high
-##  [82] high low  high low  high low  high low  high
-##  [91] low  low  high low  high high low  low  low 
-## [100] low 
+##   [1] high high high low  high high high high high
+##  [10] high high high low  high low  high high high
+##  [19] high high high low  high low  low  high low 
+##  [28] high high low  low  high low  low  low  low 
+##  [37] high low  low  high low  low  low  low  low 
+##  [46] high high low  high high high low  high low 
+##  [55] high high high high low  low  low  high high
+##  [64] high low  low  low  high low  low  high low 
+##  [73] low  low  high low  high high low  high high
+##  [82] high low  low  low  low  low  low  low  low 
+##  [91] low  high high high low  low  low  low  low 
+## [100] high
 ## Levels: high low
 \end{verbatim}
 
@@ -3222,7 +3204,7 @@ IQ-Werte in 3 Klassen einteilen:
 
 \begin{verbatim}
 ##  lo mid  hi 
-##  17  71  12
+##  10  76  14
 \end{verbatim}
 
 \texttt{cut} kann man außerdem ganz einfach zusammen mit der \texttt{quantile}-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:
@@ -3241,8 +3223,8 @@ IQ-Werte in 3 Klassen einteilen:
 \end{Shaded}
 
 \begin{verbatim}
-##  (-Inf,88]    (88,98]   (98,109] (109, Inf] 
-##         30         23         23         24
+## (-Inf,92.8] (92.8,99.5]  (99.5,109]  (109, Inf] 
+##          25          25          26          24
 \end{verbatim}
 
 \hypertarget{daten-einlesen-i}{%

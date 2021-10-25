@@ -24,7 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-10-15" />
+<meta name="date" content="2021-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,11 +171,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html"><i class="fa fa-check"></i>Vorlesung I - Rste Schritte</a>
 <ul>
+<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#organisatorisches"><i class="fa fa-check"></i>Organisatorisches</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#einführung"><i class="fa fa-check"></i>Einführung</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#grundlegende-rechenoperationen"><i class="fa fa-check"></i>Grundlegende Rechenoperationen</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#ausdrücke-funktionen-argumente"><i class="fa fa-check"></i>Ausdrücke, Funktionen, Argumente</a></li>
 <li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#objekte"><i class="fa fa-check"></i>Objekte</a></li>
-<li class="chapter" data-level="" data-path="vorlesung-i-rste-schritte.html"><a href="vorlesung-i-rste-schritte.html#hausaufgabe"><i class="fa fa-check"></i>Hausaufgabe</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="elementare-datenverarbeitung.html"><a href="elementare-datenverarbeitung.html"><i class="fa fa-check"></i>elementare Datenverarbeitung</a>
 <ul>
@@ -241,27 +241,30 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="vorlesung-i---rste-schritte" class="section level1">
 <h1>Vorlesung I - Rste Schritte</h1>
-<!-- ## Organisatorisches -->
+<div id="organisatorisches" class="section level2">
+<h2>Organisatorisches</h2>
 <!-- ### Semesterplan {-} -->
 <!-- ```{r, results='asis', echo=F, message = F} -->
 <!-- library(usefullFunctions) -->
-<!-- a <- read_csv('/home/brede/MEGA/Andres/EDV1/WS20/semesterplan.csv') %>%  -->
+<!-- a <- read_csv('/home/brede/MEGA/Andres/EDV1/WS21/semesterplan.csv') %>% -->
 <!--   mutate_all(~replace_na(., '')) -->
-<!-- a %>%  -->
-<!--   kableExtra::kable() %>%  -->
-<!--   kableExtra::kable_paper(font_size = 15)  -->
+<!-- a %>% -->
+<!--   kableExtra::kable() %>% -->
+<!--   kableExtra::kable_paper(font_size = 15) -->
 <!-- ``` -->
 <div id="übungsablauf" class="section level3 unnumbered">
 <h3>Übungsablauf</h3>
 <p>Die Übung wird zur Hälfte als Vorlesung, zur anderen Hälfte in Kleingruppen abgehalten.</p>
 <p>Die Daten sind im Kalender und im Semesterplan im Olat ersichtlich.</p>
-<!-- ### Tutorium -->
-<!-- Dazu gibt es noch 'Nachhilfe'-Tutorien, in denen offene Fragen besprochen werden können. -->
-<!-- Die Tutorien beginnen übernächste Woche (ab 18.11.) -->
+</div>
+<div id="tutorium" class="section level3">
+<h3>Tutorium</h3>
+<p>Dazu gibt es noch ‘Nachhilfe’-Tutorien, in denen offene Fragen besprochen werden können.</p>
+<p>Die Tutorien beginnen nächste Woche (ab 1.11.)</p>
 <!-- #### Tutorien: -->
-<!-- * Jannik: Mo, 12-14 Uhr -->
+<!-- * Adrian: Mo, 14-16 Uhr -->
 <!--     - PC-Labor -->
-<!-- * Ronja: Mi, 10-12 Uhr -->
+<!-- * Katharina: Fr, 14-16 Uhr -->
 <!--     - PC-Labor -->
 </div>
 <div id="prüfungsleistung-1" class="section level3 unnumbered">
@@ -273,8 +276,9 @@ div.csl-indent {
 <li>Als <em>Bestanden</em> gilt eine Serie, wenn alle Aufgaben <strong>sinnvoll</strong> bearbeitet wurden. <br></li>
 <li>Unter <em>regelmäßigem Bearbeiten</em> versteht sich das Bestehen aller Serien <strong>mit einer Ausnahme</strong>. </li>
 </ul></li>
-<li>Im Klausurzeitraum findet an einem Tag eine praktische Prüfung statt.</li>
+<li>Im Klausurzeitraum findet über drei Tage eine Take-Home-Klausur statt.</li>
 </ol>
+</div>
 </div>
 <div id="einführung" class="section level2">
 <h2>Einführung</h2>
@@ -433,8 +437,8 @@ R kann <strong>Alles</strong></p>
 <!-- ``` -->
 <!-- </div> -->
 <ol style="list-style-type: decimal">
-<li><p><span class="citation"><a href="#ref-wollschlaegerKompaktSchnelleEinstieg2016" role="doc-biblioref">Wollschläger</a> (<a href="#ref-wollschlaegerKompaktSchnelleEinstieg2016" role="doc-biblioref">2016</a>)</span> . R kompakt.<a href="https://www.springer.com/de/book/9783662491010">(Link aus dem Uni-Netz)</a>.</p></li>
-<li><p><span class="citation"><a href="#ref-grolemundDataScience" role="doc-biblioref">Grolemund and Wickham</a> (<a href="#ref-grolemundDataScience" role="doc-biblioref">2017</a>)</span> . R for Data Science <a href="https://r4ds.had.co.nz/">(Link)</a>.</p></li>
+<li><p><span class="citation">Wollschläger (<a href="#ref-wollschlaegerKompaktSchnelleEinstieg2016" role="doc-biblioref">2016</a>)</span> . R kompakt.<a href="https://www.springer.com/de/book/9783662491010">(Link aus dem Uni-Netz)</a>.</p></li>
+<li><p><span class="citation">Grolemund and Wickham (<a href="#ref-grolemundDataScience" role="doc-biblioref">2017</a>)</span> . R for Data Science <a href="https://r4ds.had.co.nz/">(Link)</a>.</p></li>
 </ol>
 </div>
 <div id="installation-verwendung" class="section level3 unnumbered">
@@ -620,7 +624,7 @@ Dabei ist Objekt der Überbegriff für eine Vielzahl von möglichen Datenstruktu
 <li>Immer mit einem Buchstaben beginnen</li>
 <li>Groß-/Kleinschreibung ist relevant</li>
 <li>Keine anderen Sonderzeichen</li>
-<li>Keine durch R reservierte Namen von Funktionen, Konstanten, etc. (z.B. “mean,” “pi,” “if,” etc.) <br> (im Zweifel Überprüfen mit <code>exists()</code>)</li>
+<li>Keine durch R reservierte Namen von Funktionen, Konstanten, etc. (z.B. “mean”, “pi”, “if”, etc.) <br> (im Zweifel Überprüfen mit <code>exists()</code>)</li>
 </ul>
 <p>Hier nochmal der nachdrückliche Hinweis: <br> Tun Sie sich selbst den Gefallen, Ihre Objekte eindeutig und nachvollziehbar zu benennen!</p>
 </div>
@@ -772,6 +776,7 @@ Buchstaben- o. Zeichenfolgen (immer in &lt;br&gt; Anführungszeichen)
 </div>
 <div id="datentypen-konvertieren" class="section level3 unnumbered">
 <h3>Datentypen konvertieren</h3>
+<!-- \scriptsize -->
 <p><code>as.character(answer)</code> konvertiert den Datentyp des Objekts von <code>numeric</code> nach <code>character</code> ohne den ursprünglichen Eintrag von <code>answer</code> zu überschreiben.</p>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="vorlesung-i-rste-schritte.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mode</span>(answer)</span></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
@@ -1000,23 +1005,16 @@ Die Funktion <code>all.equal()</code> löst dieses Problem.</p>
 <span id="cb130-2"><a href="vorlesung-i-rste-schritte.html#cb130-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">current =</span> <span class="fl">0.424243</span>,</span>
 <span id="cb130-3"><a href="vorlesung-i-rste-schritte.html#cb130-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">tolerance =</span> <span class="fl">1e-6</span>))</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-</div>
-</div>
-</div>
-<div id="hausaufgabe" class="section level2">
-<h2>Hausaufgabe</h2>
-<div id="hausaufgabe-erstellen-eines-r-skripts" class="section level3 unnumbered">
-<h3>Hausaufgabe: Erstellen eines R-Skripts</h3>
-<p>Schreiben Sie den dem folgenden Ablauf entsprechenden Code in ein R-<em>Skript</em> und führen Sie ihn von dort in der Konsole aus:</p>
-<p>Erstellen Sie drei Objekte wie folgt:</p>
-<ul>
-<li><p>Als erstes ein Objekt namens <em>whatDoIDoThis</em> mit der Zahl 4 als Inhalt.</p></li>
-<li><p>Als zweites ein Objekt namens <em>text</em> mit dem Inhalt : “i_like_snake_case_better.”</p></li>
-<li><p>Als drittes ein Objekt namens <em>myFavouriteNumber</em> mit einer Zahl Ihrer Wahl als Inhalt.</p></li>
-</ul>
-<p>Berechnen Sie nun den Mittelwert der Objekte mit numerischem Inhalt und legen Sie diesen in einem weiteren Objekt namens <em>manualMean</em> ab.</p>
-<p>Lassen Sie sich in der Konsole durch eine Zeile in Ihrem Skript den Text <code>'I learned about the most important bugfixing tool'</code> ausgeben.</p>
-<p>Speichern Sie anschließend das R-<em>Skript</em> unter ‘<ihrVorUndNachname>.R’ ab.</p>
+<!-- ## Hausaufgabe -->
+<!-- ### Hausaufgabe: Erstellen eines R-Skripts{-} -->
+<!-- Schreiben Sie den dem folgenden Ablauf entsprechenden Code in ein R-_Skript_ und führen Sie ihn von dort in der Konsole aus: -->
+<!-- Erstellen Sie drei Objekte wie folgt: -->
+<!-- * Als erstes ein Objekt namens _whatDoIDoThis_ mit der Zahl 4 als Inhalt. -->
+<!-- * Als zweites ein Objekt namens _text_ mit dem Inhalt : "i_like_snake_case_better". -->
+<!-- * Als drittes ein Objekt namens _myFavouriteNumber_ mit einer Zahl Ihrer Wahl als Inhalt. -->
+<!-- Berechnen Sie nun den Mittelwert der Objekte mit numerischem Inhalt und legen Sie diesen in einem weiteren Objekt namens _manualMean_ ab. -->
+<!-- Lassen Sie sich in der Konsole durch eine Zeile in Ihrem Skript den Text `'I learned about the most important bugfixing tool'` ausgeben. -->
+<!-- Speichern Sie anschließend das R-_Skript_ unter '<ihrVorUndNachname>.R' ab. -->
 
 <!-- #--- -->
 <!-- title: 'Psy_B_11: EDV I - Einheit 2' -->
@@ -1030,6 +1028,7 @@ Die Funktion <code>all.equal()</code> löst dieses Problem.</p>
 <!--     slide_level: 3 -->
 <!-- widescreen: true -->
 <!-- --- -->
+</div>
 </div>
 </div>
 </div>
