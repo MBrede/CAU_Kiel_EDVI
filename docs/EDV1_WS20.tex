@@ -1009,13 +1009,13 @@ In R, wie in so gut wie jeder anderen Sprache, werden Objekte in unterschiedlich
 \hline
 Beschreibung & Beispiel & Datentyp\\
 \hline
-leere Menge & `NULL` & `NULL`\\
+leere Menge & `NULL` & NULL\\
 \hline
-logische Werte & `TRUE, FALSE, T,  F` & `logical`\\
+logische Werte & `TRUE, FALSE, T,  F` & logical\\
 \hline
-ganze und reelle Zahlen & `42` & `numeric`\\
+ganze und reelle Zahlen & `42` & numeric\\
 \hline
-Buchstaben- o. Zeichenfolgen (immer in <br> Anführungszeichen) & `beware of the leopard.` & `character`\\
+Buchstaben- o. Zeichenfolgen (immer in <br> Anführungszeichen) & `beware of the leopard.` & character\\
 \hline
 \end{tabular}
 
@@ -1202,27 +1202,27 @@ Logische Vergleiche, Verknüpfungen und andere Operatoren:
 \hline
 Operator & Operation\\
 \hline
-\textbackslash{}texttt\{==\} & ist gleich\\
+== & ist gleich\\
 \hline
-\textbackslash{}texttt\{!=\} & ist ungleich\\
+!= & ist ungleich\\
 \hline
-\textbackslash{}texttt\{>\} & ist größer\\
+> & ist größer\\
 \hline
-\textbackslash{}texttt\{>=\} & ist größer gleich\\
+>= & ist größer gleich\\
 \hline
-\textbackslash{}texttt\{<\} & ist kleiner\\
+< & ist kleiner\\
 \hline
-\textbackslash{}texttt\{<=\} & ist kleiner gleich\\
+<= & ist kleiner gleich\\
 \hline
-\textbackslash{}texttt\{!\} & logisches NICHT\\
+! & logisches NICHT\\
 \hline
-\textbackslash{}texttt\{\&\} & logisches UND\\
+\& & logisches UND\\
 \hline
-\textbackslash{}texttt\{|\} & logisches ODER\\
+| & logisches ODER\\
 \hline
-\textbackslash{}texttt\{isTRUE()\} & gibt an, ob übergebenes Argument TRUE ist\\
+isTRUE() & gibt an, ob übergebenes Argument TRUE ist\\
 \hline
-\textbackslash{}texttt\{ \} & \\
+ & \\
 \hline
 \end{tabular}
 \endgroup{}
@@ -2948,8 +2948,8 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 1 1 1 1 1 0 0 1 0 1 0 0 0 1 0 1 0 0 1 1 0 0 0 1 0
-## [26] 1 1 0 0 0
+##  [1] 1 1 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 1 1 0 1 1 0 0
+## [26] 0 0 1 1 0
 \end{verbatim}
 
 \begin{Shaded}
@@ -2960,11 +2960,11 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] female female female female female male   male  
-##  [8] female male   female male   male   male   female
-## [15] male   female male   male   female female male  
-## [22] male   male   female male   female female male  
-## [29] male   male  
+##  [1] female female male   male   male   female male  
+##  [8] male   male   male   male   male   female female
+## [15] male   male   male   male   female female male  
+## [22] female female male   male   male   male   female
+## [29] female male  
 ## Levels: male female
 \end{verbatim}
 
@@ -2977,7 +2977,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 
 \begin{verbatim}
 ##   male female 
-##     16     14
+##     19     11
 \end{verbatim}
 
 \begin{Shaded}
@@ -2988,7 +2988,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  Factor w/ 2 levels "male","female": 2 2 2 2 2 1 1 2 1 2 ...
+##  Factor w/ 2 levels "male","female": 2 2 1 1 1 2 1 1 1 1 ...
 \end{verbatim}
 
 \textbf{Achtung:} Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich ``0'' und ``1'' waren, s.o.).
@@ -3011,12 +3011,12 @@ Zuerst wandeln wir die Stufen unseres \texttt{sexFac} in andere labels um:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] weiblich weiblich weiblich weiblich weiblich
-##  [6] männlich männlich weiblich männlich weiblich
-## [11] männlich männlich männlich weiblich männlich
-## [16] weiblich männlich männlich weiblich weiblich
-## [21] männlich männlich männlich weiblich männlich
-## [26] weiblich weiblich männlich männlich männlich
+##  [1] weiblich weiblich männlich männlich männlich
+##  [6] weiblich männlich männlich männlich männlich
+## [11] männlich männlich weiblich weiblich männlich
+## [16] männlich männlich männlich weiblich weiblich
+## [21] männlich weiblich weiblich männlich männlich
+## [26] männlich männlich weiblich weiblich männlich
 ## Levels: männlich weiblich
 \end{verbatim}
 
@@ -3065,17 +3065,17 @@ Für Median-Splits und ähnliches ist es sehr praktisch, direkt numerische Varia
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] low  high low  high low  high low  high low 
-##  [10] high low  high low  low  high high low  low 
-##  [19] low  high high low  low  high high low  high
-##  [28] high low  high low  low  high high low  high
-##  [37] low  high high low  high low  high low  high
-##  [46] low  high low  high high low  low  high high
-##  [55] low  high low  high low  high low  low  low 
-##  [64] low  high high low  high high high low  high
-##  [73] low  high low  low  high high low  low  high
-##  [82] high high high low  low  high high high low 
-##  [91] low  low  low  high high low  low  low  high
+##   [1] low  low  low  high low  high low  high high
+##  [10] high low  low  low  high low  low  low  low 
+##  [19] high low  high low  high high high high high
+##  [28] high low  low  low  high low  low  low  low 
+##  [37] low  high high high low  low  high high high
+##  [46] low  low  high high high low  high low  high
+##  [55] low  low  low  high high high low  high low 
+##  [64] high high low  low  high low  high high high
+##  [73] low  low  low  low  high high high low  low 
+##  [82] low  high high low  low  low  low  high high
+##  [91] high low  high high high high low  high low 
 ## [100] low 
 ## Levels: high low
 \end{verbatim}
@@ -3095,7 +3095,7 @@ IQ-Werte in 3 Klassen einteilen:
 
 \begin{verbatim}
 ##  lo mid  hi 
-##  23  68   9
+##  13  78   9
 \end{verbatim}
 
 \texttt{cut} kann man außerdem ganz einfach zusammen mit der \texttt{quantile}-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:
@@ -3114,8 +3114,8 @@ IQ-Werte in 3 Klassen einteilen:
 \end{Shaded}
 
 \begin{verbatim}
-##  (-Inf,87]  (87,98.5] (98.5,108] (108, Inf] 
-##         27         23         25         25
+##  (-Inf,88]  (88,99.5] (99.5,109] (109, Inf] 
+##         26         24         27         23
 \end{verbatim}
 
 \hypertarget{daten-einlesen-i}{%
