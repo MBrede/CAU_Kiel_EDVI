@@ -24,7 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-10-25" />
+<meta name="date" content="2021-11-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -190,7 +190,6 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Pakete benutzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen-und-ergänzen"><i class="fa fa-check"></i>Datensätze erstellen und ergänzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren-und-indizieren"><i class="fa fa-check"></i>Datensätze sortieren und indizieren</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#vorlesung"><i class="fa fa-check"></i>Vorlesung</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html"><i class="fa fa-check"></i>Faktoren und Aggregation</a>
 <ul>
@@ -244,11 +243,11 @@ div.csl-indent {
 <!-- ## Organisatorisches -->
 <!-- ### Semesterplan -->
 <!-- ```{r, results='asis', echo=F} -->
-<!-- a <- read_csv('/home/brede/MEGA/Andres/EDV1/WS20/semesterplan.csv') %>%  -->
+<!-- a <- read_csv('/home/brede/MEGA/Andres/EDV1/WS21/semesterplan.csv') %>% -->
 <!--   mutate_all(~replace_na(., '')) -->
-<!-- a %>%  -->
-<!--   kableExtra::kable() %>%  -->
-<!--   kableExtra::kable_paper(font_size = 15)  -->
+<!-- a %>% -->
+<!--   kableExtra::kable() %>% -->
+<!--   kableExtra::kable_paper(font_size = 15) -->
 <!-- ``` -->
 <div id="vektoren" class="section level2">
 <h2>Vektoren</h2>
@@ -586,116 +585,6 @@ Umgehen lässt sich dieses Problem mit der <code>which()</code>-Funktion, die di
 <pre><code>##  [1] 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42
 ## [17] 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42 42
 ## [33] 42 42 42 42 42 42 42 42 42 42 16 12 12 12 12 12</code></pre>
-<!-- ### Zufällig aus einer Urne ziehen -->
-<!-- \small -->
-<!-- Um aus einem vordefinierten Pool an Werten gleichverteilt zufällig zu ziehen verwendet man die `sample`-Funktion -->
-<!-- ```{r, error=TRUE} -->
-<!-- urn <- c(1:6) -->
-<!-- sample(urn, size = 42, replace = T) ## 42* ZmZ  -->
-<!-- ## 42* ZoZ aus 6 Werten nicht möglich -->
-<!-- sample(urn, size = 42, replace = F)  -->
-<!-- sample(urn, size = 6, replace = F) ## 6x ZoZ aus 6 -->
-<!-- ``` -->
-<!-- ### Zufällig aus irgendeiner Urne ziehen -->
-<!--  -->
-<!-- Dabei kann der Pool aus einem Vektor eines beliebigen Datentyps bestehen. -->
-<!-- ```{r} -->
-<!-- colorUrn <- c('green', 'red', 'blue') -->
-<!-- sample(colorUrn, size = 42, replace = TRUE) -->
-<!-- logicalUrn <-  c(TRUE, FALSE) -->
-<!-- sample(logicalUrn, size = 12, replace = TRUE) -->
-<!-- ``` -->
-<!-- Was natürlich bedeutet, dass man mit der `sample()`-Funktion jeden Vektor in randomisierte Reihenfolge bringen kann. -->
-<!-- ### Zufallszahlen aus bestimmten Verteilungen: Gleichverteilung -->
-<!-- ```{r} -->
-<!-- runif(n=20, min=1, max=100) -->
-<!-- round(runif(n=20, min=1, max=100)) ## ganzzahlige Werte -->
-<!-- ``` -->
-<!-- ### Zufallszahlen aus Gleichverteilung -->
-<!-- ```{r, out.width='10cm'} -->
-<!--  ## Histogramm von 20000 gleichverteilten Werten -->
-<!-- hist(runif(n=20000, min=0, max=1), breaks=50) -->
-<!-- ``` -->
-<!-- ### Zufallszahlen aus bestimmten Verteilungen: Binomialverteilung -->
-<!-- ```{r} -->
-<!-- rbinom(n=20, size=10, prob=0.5) -->
-<!-- ``` -->
-<!-- ### Zufallszahlen aus Binomialverteilung -->
-<!-- ```{r, out.width='10cm', eval=F} -->
-<!-- ## Histogramm von 20000 B(10,0.5) Werten -->
-<!-- hist(rbinom(n=20000, size=10, prob=0.5), breaks=11) -->
-<!-- ``` -->
-<!-- ```{r, out.width='10cm', echo=F} -->
-<!-- ## Histogramm von 20000 B(10,0.5) Werten -->
-<!-- hist(rnorm(n=20000, mean=0, sd=1), breaks=50, main = 'Histogram of rbinom(n=20000, size=10, prob=0.5)', xlab = 'rbinom(n=20000, size=10, prob=0.5)') -->
-<!-- ``` -->
-<!-- ### Zufallszahlen aus bestimmten Verteilungen: Normalverteilung -->
-<!--  -->
-<!-- ```{r} -->
-<!-- rnorm(n=20, mean=100, sd=15) ## IQ-Verteilung -->
-<!-- rnorm(n=20, mean=0, sd=1) ## Standard-Normalverteilung -->
-<!-- ``` -->
-<!-- ### Zufallszahlen aus Normalverteilung -->
-<!-- ```{r, out.width='10cm', eval=F} -->
-<!-- ## Histogramm von 20000 N(0,1) Werten -->
-<!-- hist(rnorm(n=20000, mean=0, sd=1), breaks=50) -->
-<!-- ``` -->
-<!-- ```{r, out.width='10cm', echo=F} -->
-<!-- ## Histogramm von 20000 B(10,0.5) Werten -->
-<!-- hist(rbinom(n=20000, size=10, prob=0.5), breaks=11, main = 'Histogram of rnorm(n=20000, mean=0, sd=1)', xlab = 'rnorm(n=20000, mean=0, sd=1)') -->
-<!-- ``` -->
-<!-- ### Zufallszahlen aus bestimmten Verteilungen: ${\chi}$²-Verteilung -->
-<!-- ```{r} -->
-<!-- rchisq(n=20, df=5, ncp=0) -->
-<!-- ``` -->
-<!-- ###  Zufallszahlen aus ${\chi}$²-Verteilung -->
-<!-- ```{r, out.width='10cm'} -->
-<!-- ## Histogramm von 20000 chi^2(5,0) Werten -->
-<!-- hist(rchisq(n=20000, df=5, ncp=0), breaks=50) -->
-<!-- ``` -->
-<!-- ### Zufallszahlen aus bestimmten Verteilungen: t-Verteilung -->
-<!-- ```{r} -->
-<!-- rt(n=20, df=5, ncp=0) -->
-<!-- ``` -->
-<!-- ###  Zufallszahlen aus t-Verteilung -->
-<!-- ```{r, out.width='10cm'} -->
-<!-- ## Histogramm von 20000 t(5,0) Werten -->
-<!-- hist(rt(n=20000, df=5, ncp=0), breaks=50) -->
-<!-- ``` -->
-<!-- ### Zufallszahlen aus bestimmten Verteilungen: F-Verteilung -->
-<!-- ```{r} -->
-<!-- rf(n=20, df1=5, df2=10, ncp=0) -->
-<!-- ``` -->
-<!-- ###  Zufallszahlen aus F-Verteilung -->
-<!-- ```{r, out.width='10cm'} -->
-<!-- ## Histogramm von 20000 F(5;10) Werten -->
-<!-- hist(rf(n=20000, df1=5, df2=10, ncp=0), breaks=50) -->
-<!-- ``` -->
-<!-- ### Interaktion -->
-<!-- Zwei Grafiken waren vertauscht. Welche? -->
-<!-- ```{r, echo = FALSE, out.width='10cm'} -->
-<!-- par(mfrow=c(2,3)) -->
-<!-- hist(runif(n=20000, min=0, max=1), breaks=50) -->
-<!-- hist(rnorm(n=20000, mean=0, sd=1), breaks=50, main = 'Histogram of rbinom(n=20000, size=10, prob=0.5)', xlab = 'rbinom(n=20000, size=10, prob=0.5)') -->
-<!-- hist(rbinom(n=20000, size=10, prob=0.5), breaks=11, main = 'Histogram of rnorm(n=20000, mean=0, sd=1)', xlab = 'rnorm(n=20000, mean=0, sd=1)') -->
-<!-- hist(rchisq(n=20000, df=5, ncp=0), breaks=50) -->
-<!-- hist(rt(n=20000, df=5, ncp=0), breaks=50) -->
-<!-- hist(rf(n=20000, df1=5, df2=10, ncp=0), breaks=50) -->
-<!-- ``` -->
-<!-- ### Interaktion -->
-<!-- \begin{minipage}{.58\textwidth} -->
-<!-- \textbf{Zwei Grafiken waren vertauscht. Welche?} -->
-<!-- \begin{itemize} -->
-<!-- \item[A] die zu \texttt{rbinom} und \texttt{rnorm} -->
-<!-- \item[B] die zu \texttt{rt} und \texttt{rchisq} -->
-<!-- \item[C] die zu \texttt{rf} und \texttt{runif} -->
-<!-- \item[D] die zu \texttt{rchisq} und \texttt{rbinom} -->
-<!-- \end{itemize} -->
-<!-- \end{minipage} -->
-<!-- \begin{minipage}{.4\textwidth} -->
-<!--  -->
-<!-- https://tweedback.de/qya/ -->
-<!-- \end{minipage} -->
 </div>
 </div>
 <div id="daten-transformieren" class="section level2">
@@ -747,59 +636,12 @@ Umgehen lässt sich dieses Problem mit der <code>which()</code>-Funktion, die di
 ## [5] &quot;India&quot;                  &quot;not a number&quot;          
 ## [7] &quot;Tango&quot;                  &quot;Whiskey&quot;               
 ## [9] &quot;Zulu&quot;</code></pre>
-<!-- ## Teilmengen von Daten auswählen -->
-<!-- ### Teilmengen von Daten auswählen -->
-<!-- Für die kommenden Beispiele  -->
-<!-- ```{r} -->
-<!-- urn <- rep(c('red', 'green', 'blue'), -->
-<!--            times = c(15,15,12)) -->
-<!-- sample(urn, size = 5, replace=F) -->
-<!-- ``` -->
-<!-- ### Teilmengen von Daten auswählen -->
-<!-- \small -->
-<!-- 'Wählen Sie jedes 6. Element der Urne aus!' -->
-<!-- ```{r} -->
-<!-- (colorSample <- sample(urn, size = 42, replace = F)) -->
-<!-- idx <- seq(from = 6, to = 42, by = 6) -->
-<!-- colorSample[idx] -->
-<!-- ``` -->
-<!-- ### Teilmengen von Daten auswählen -->
-<!-- \small -->
-<!-- 'Wählen Sie im Mittel von 10 Elementen 1 aus!' -->
-<!-- ```{r} -->
-<!-- (idx <- as.logical(rbinom(n=length(colorSample), -->
-<!--                           size = 1, -->
-<!--                           prob = 0.1))) -->
-<!-- colorSample[idx] -->
-<!-- ``` -->
-<!-- ### Teilmengen von Daten auswählen -->
-<!--  -->
-<!-- 'Wählen Sie nur die roten und grünen Bälle aus!' -->
-<!-- Entweder über: -->
-<!-- ```{r} -->
-<!-- (idx <- (colorSample == 'red' | colorSample == 'green')) -->
-<!-- colorSample[idx] -->
-<!-- ``` -->
-<!-- ### Teilmengen von Daten auswählen -->
-<!--  -->
-<!-- oder: -->
-<!-- ```{r} -->
-<!-- (idx <- is.element(colorSample,c('red', 'green'))) -->
-<!-- colorSample[idx] -->
-<!-- ``` -->
-<!-- `is.element()` gibt aus, welche Elemente des ersten Arguments auch im zweiten Argument auftreten. -->
-<!-- ### Teilmengen von Daten auswählen -->
-<!--  'Geben Sie an, wie viele verschiedene Elemente in einem Vektor vorkommen!' -->
-<!-- ```{r} -->
-<!-- unique(colorSample) -->
-<!-- length(unique(colorSample)) -->
-<!-- ``` -->
-<!-- `unique()` gibt aus, welche Elemente mindestens einmal in einem Vektor auftauchen. -->
 </div>
 </div>
 <div id="einfache-deskriptiv-statistische-kennwerte" class="section level2">
 <h2>Einfache deskriptiv-statistische Kennwerte</h2>
-<!-- ### Einfache deskriptiv-statistische Kennwerte -->
+<div id="einfache-deskriptiv-statistische-kennwerte-1" class="section level3">
+<h3>Einfache deskriptiv-statistische Kennwerte</h3>
 <div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="elementare-datenverarbeitung.html#cb241-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">60</span>, <span class="dv">44</span>, <span class="dv">56</span>, <span class="dv">8</span>, <span class="dv">58</span>, <span class="dv">87</span>, <span class="dv">8</span>, <span class="dv">55</span>, <span class="dv">83</span>)</span>
 <span id="cb241-2"><a href="elementare-datenverarbeitung.html#cb241-2" aria-hidden="true" tabindex="-1"></a>IQ <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">91</span>, <span class="dv">104</span>, <span class="dv">109</span>, <span class="dv">92</span>, <span class="dv">90</span>, <span class="dv">101</span>, <span class="dv">99</span>, <span class="dv">93</span>, <span class="dv">89</span>, <span class="dv">118</span>)</span>
 <span id="cb241-3"><a href="elementare-datenverarbeitung.html#cb241-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -819,23 +661,6 @@ Umgehen lässt sich dieses Problem mit der <code>which()</code>-Funktion, die di
 <pre><code>## [1] 167.6667</code></pre>
 <div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="elementare-datenverarbeitung.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x=</span>age, <span class="at">y=</span>IQ, <span class="at">method=</span><span class="st">&quot;pearson&quot;</span>)  <span class="do">## Korrelation</span></span></code></pre></div>
 <pre><code>## [1] 0.5875238</code></pre>
-<!-- ## Aufgabe -->
-<!-- ### Aufgabe für nächste Woche: -->
-<!--  -->
-<!-- Erstellen Sie vier Vektoren entsprechend der folgenden Tabelle: -->
-<!-- ```{r, echo = F, results='asis'} -->
-<!-- matrix <- matrix(character(0), nrow = 8, ncol = 4) -->
-<!-- matrix[,1] <- 8:1 -->
-<!-- matrix[,2] <- c('Snake', 'Vera', 'Gabi', 'Horst', 'Joe', 'Frank', 'Jürgen', 'Klaus') -->
-<!-- matrix[,3] <- round(rnorm(8,100,15)) -->
-<!-- matrix[,4] <- round(runif(8,0,63)) -->
-<!-- colnames(matrix) <- c('ID','Name','IQ','BDI-II') -->
-<!-- usefullFunctions::convertMatrixToLatex(matrix, alignment = c('r','|l','|r','|r')) -->
-<!-- ``` -->
-<!-- Bestimmen Sie die Korrelation zwischen dem IQ und dem BDI-Score. -->
-<!-- Lassen Sie sich anschließend mit Hilfe von logischer Indizierung die Namen der Versuchspersonen ausgeben, die einen BDI-Score haben, der unter dem Median liegt. -->
-<!-- Berechnen Sie für die andere Hälfte der Stichprobe den Mittelwert des IQs. -->
-<!-- Rechnen Sie zum Abschluss die IQ-Werte der Versuchspersonen, deren IQ über dem gerade berechneten Mittelwert liegt, in Wertpunkte(M=10, sd=3) um. \newline Kleiner Hinweis: hierfür müssen Sie mit der Formel zur z-Transformation arbeiten($z_x = \frac{x - M_x}{s_x}$). \newline Verwenden Sie zu dieser Berechnung bitte empirische Schätzer und nicht theoretische Kennwerte. -->
 
 <!-- # --- -->
 <!-- # title: 'Psy_B_11: EDV I - Kapitel 3' -->
@@ -849,6 +674,7 @@ Umgehen lässt sich dieses Problem mit der <code>which()</code>-Funktion, die di
 <!-- #     slide_level: 3 -->
 <!-- # widescreen: true -->
 <!-- # --- -->
+</div>
 </div>
 </div>
             </section>

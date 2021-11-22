@@ -24,7 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-10-25" />
+<meta name="date" content="2021-11-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -190,7 +190,6 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Pakete benutzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen-und-ergänzen"><i class="fa fa-check"></i>Datensätze erstellen und ergänzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren-und-indizieren"><i class="fa fa-check"></i>Datensätze sortieren und indizieren</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#vorlesung"><i class="fa fa-check"></i>Vorlesung</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html"><i class="fa fa-check"></i>Faktoren und Aggregation</a>
 <ul>
@@ -255,13 +254,13 @@ div.csl-indent {
 <div id="aggregation-über-mehrere-spalten" class="section level3">
 <h3>Aggregation über mehrere Spalten</h3>
 <p>Beispiel aus der letzten Sitzung:</p>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="aggregation-und-filemanagement.html#cb341-1" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/test.csv&quot;</span>)</span>
-<span id="cb341-2"><a href="aggregation-und-filemanagement.html#cb341-2" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span></span>
-<span id="cb341-3"><a href="aggregation-und-filemanagement.html#cb341-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span> </span>
-<span id="cb341-4"><a href="aggregation-und-filemanagement.html#cb341-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">m_t1 =</span> <span class="fu">mean</span>(points_t1),</span>
-<span id="cb341-5"><a href="aggregation-und-filemanagement.html#cb341-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t1 =</span> <span class="fu">sd</span>(points_t1),</span>
-<span id="cb341-6"><a href="aggregation-und-filemanagement.html#cb341-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">m_t2 =</span> <span class="fu">mean</span>(points_t2),</span>
-<span id="cb341-7"><a href="aggregation-und-filemanagement.html#cb341-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t2 =</span> <span class="fu">sd</span>(points_t2))</span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="aggregation-und-filemanagement.html#cb332-1" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/test.csv&quot;</span>)</span>
+<span id="cb332-2"><a href="aggregation-und-filemanagement.html#cb332-2" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span></span>
+<span id="cb332-3"><a href="aggregation-und-filemanagement.html#cb332-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span> </span>
+<span id="cb332-4"><a href="aggregation-und-filemanagement.html#cb332-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">m_t1 =</span> <span class="fu">mean</span>(points_t1),</span>
+<span id="cb332-5"><a href="aggregation-und-filemanagement.html#cb332-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t1 =</span> <span class="fu">sd</span>(points_t1),</span>
+<span id="cb332-6"><a href="aggregation-und-filemanagement.html#cb332-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">m_t2 =</span> <span class="fu">mean</span>(points_t2),</span>
+<span id="cb332-7"><a href="aggregation-und-filemanagement.html#cb332-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd_t2 =</span> <span class="fu">sd</span>(points_t2))</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 5
 ##   group  m_t1 sd_t1  m_t2 sd_t2
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -273,8 +272,8 @@ div.csl-indent {
 <h3><code>across</code>-Funktion</h3>
 <p>Statt die Spalten auf denen wir Operationen durchführen wollen alle einzeln auszuwählen, können wir mit der <code>across</code>-Funktion auch eine Stapelweise Operation anstoßen.</p>
 <p>Dazu benutzen wir die <code>select</code>-helper, die wir schon kennen:</p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="aggregation-und-filemanagement.html#cb343-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
-<span id="cb343-2"><a href="aggregation-und-filemanagement.html#cb343-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&#39;points&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="aggregation-und-filemanagement.html#cb334-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
+<span id="cb334-2"><a href="aggregation-und-filemanagement.html#cb334-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&#39;points&#39;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 2
 ##    points_t1 points_t2
 ##        &lt;dbl&gt;     &lt;dbl&gt;
@@ -290,14 +289,14 @@ div.csl-indent {
 ## 10       4         5.2</code></pre>
 <!-- ### `across`-Funktion {.smaller} -->
 <p>Diese praktischen Tools können wir jetzt mit der <code>across</code>-Funktion in unsere <code>summarise</code>-pipeline integrieren:</p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="aggregation-und-filemanagement.html#cb345-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
-<span id="cb345-2"><a href="aggregation-und-filemanagement.html#cb345-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span> </span>
-<span id="cb345-3"><a href="aggregation-und-filemanagement.html#cb345-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">contains</span>(<span class="st">&#39;points&#39;</span>),</span>
-<span id="cb345-4"><a href="aggregation-und-filemanagement.html#cb345-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> mean,</span>
-<span id="cb345-5"><a href="aggregation-und-filemanagement.html#cb345-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.names =</span> <span class="st">&#39;m_{.col}&#39;</span>),</span>
-<span id="cb345-6"><a href="aggregation-und-filemanagement.html#cb345-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">across</span>(<span class="fu">contains</span>(<span class="st">&#39;points&#39;</span>),</span>
-<span id="cb345-7"><a href="aggregation-und-filemanagement.html#cb345-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> sd,</span>
-<span id="cb345-8"><a href="aggregation-und-filemanagement.html#cb345-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.names =</span> <span class="st">&#39;sd_{.col}&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="aggregation-und-filemanagement.html#cb336-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
+<span id="cb336-2"><a href="aggregation-und-filemanagement.html#cb336-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span> </span>
+<span id="cb336-3"><a href="aggregation-und-filemanagement.html#cb336-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">contains</span>(<span class="st">&#39;points&#39;</span>),</span>
+<span id="cb336-4"><a href="aggregation-und-filemanagement.html#cb336-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> mean,</span>
+<span id="cb336-5"><a href="aggregation-und-filemanagement.html#cb336-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.names =</span> <span class="st">&#39;m_{.col}&#39;</span>),</span>
+<span id="cb336-6"><a href="aggregation-und-filemanagement.html#cb336-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">across</span>(<span class="fu">contains</span>(<span class="st">&#39;points&#39;</span>),</span>
+<span id="cb336-7"><a href="aggregation-und-filemanagement.html#cb336-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> sd,</span>
+<span id="cb336-8"><a href="aggregation-und-filemanagement.html#cb336-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.names =</span> <span class="st">&#39;sd_{.col}&#39;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 7
 ##   group m_points_t1 m_points_t2 sd_points_t1
 ##   &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;
@@ -334,12 +333,12 @@ div.csl-indent {
 <h3>lazy evaluation</h3>
 <p>Die <code>tidyverse</code>-Funktionen folgen dem Prinzip der ‘lazy evaluation’, das heißt ein Argument wird nach dem anderen ausgeführt.</p>
 <p>Wenn wir also im ersten Argument Spalten erstellen, die zusätzlich zum ursprünglichen Datensatz von <code>contains</code> betroffen werden, werden die folgenden Funktionen auch auf diese angewandt. Um das zu verhindern, können wir das <code>.fn</code>-Argument erweitern und im <code>.names</code>- Argument einen weiteren Platzhalter verwenden:</p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="aggregation-und-filemanagement.html#cb348-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
-<span id="cb348-2"><a href="aggregation-und-filemanagement.html#cb348-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span> </span>
-<span id="cb348-3"><a href="aggregation-und-filemanagement.html#cb348-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">contains</span>(<span class="st">&#39;points&#39;</span>),</span>
-<span id="cb348-4"><a href="aggregation-und-filemanagement.html#cb348-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> <span class="fu">list</span>(<span class="at">mean =</span> mean,</span>
-<span id="cb348-5"><a href="aggregation-und-filemanagement.html#cb348-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">sd =</span> sd), </span>
-<span id="cb348-6"><a href="aggregation-und-filemanagement.html#cb348-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.names =</span> <span class="st">&#39;{.fn}_{.col}&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="aggregation-und-filemanagement.html#cb339-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
+<span id="cb339-2"><a href="aggregation-und-filemanagement.html#cb339-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span> </span>
+<span id="cb339-3"><a href="aggregation-und-filemanagement.html#cb339-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">contains</span>(<span class="st">&#39;points&#39;</span>),</span>
+<span id="cb339-4"><a href="aggregation-und-filemanagement.html#cb339-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.fns =</span> <span class="fu">list</span>(<span class="at">mean =</span> mean,</span>
+<span id="cb339-5"><a href="aggregation-und-filemanagement.html#cb339-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">sd =</span> sd), </span>
+<span id="cb339-6"><a href="aggregation-und-filemanagement.html#cb339-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">.names =</span> <span class="st">&#39;{.fn}_{.col}&#39;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 5
 ##   group mean_points_t1 sd_points_t1 mean_points_t2
 ##   &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;          &lt;dbl&gt;
@@ -354,11 +353,11 @@ div.csl-indent {
 <!-- ### lazy evaluation -->
 <p>Die lazy evaluation ist ein feature, das wir zum Beispiel dazu benutzen können, Zwischenergebnisse zu benutzen.
 Da die <code>summarise</code>-Argumente Schritt für Schritt ausgeführt werden, funktioniert der folgende Code:</p>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="aggregation-und-filemanagement.html#cb350-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
-<span id="cb350-2"><a href="aggregation-und-filemanagement.html#cb350-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span> </span>
-<span id="cb350-3"><a href="aggregation-und-filemanagement.html#cb350-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb350-4"><a href="aggregation-und-filemanagement.html#cb350-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(points_t1),</span>
-<span id="cb350-5"><a href="aggregation-und-filemanagement.html#cb350-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sem =</span> sd <span class="sc">/</span> <span class="fu">sqrt</span>(n))</span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="aggregation-und-filemanagement.html#cb341-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
+<span id="cb341-2"><a href="aggregation-und-filemanagement.html#cb341-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span> </span>
+<span id="cb341-3"><a href="aggregation-und-filemanagement.html#cb341-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb341-4"><a href="aggregation-und-filemanagement.html#cb341-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(points_t1),</span>
+<span id="cb341-5"><a href="aggregation-und-filemanagement.html#cb341-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sem =</span> sd <span class="sc">/</span> <span class="fu">sqrt</span>(n))</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 4
 ##   group     n    sd   sem
 ##   &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -369,11 +368,11 @@ Da die <code>summarise</code>-Argumente Schritt für Schritt ausgeführt werden,
 <div id="mit-aggregierten-daten-weiterarbeiten" class="section level3">
 <h3>Mit aggregierten Daten weiterarbeiten</h3>
 <p>Um die Ergebnisse einer nach einer <code>group</code>ierten <code>summarise</code>-Funktion für weitere Manipulationen zu verwenden, müssen wir noch ein <code>ungroup</code> in die pipe einfügen, um R mitzuteilen dass die folgenden Operationen wieder Datensatz-übergreifend gedacht sind. So können wir zum Beispiel aus absoluten relative Häufigkeiten errechnen.</p>
-<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="aggregation-und-filemanagement.html#cb352-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
-<span id="cb352-2"><a href="aggregation-und-filemanagement.html#cb352-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span></span>
-<span id="cb352-3"><a href="aggregation-und-filemanagement.html#cb352-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb352-4"><a href="aggregation-und-filemanagement.html#cb352-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb352-5"><a href="aggregation-und-filemanagement.html#cb352-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">rel_n =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="aggregation-und-filemanagement.html#cb343-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span> </span>
+<span id="cb343-2"><a href="aggregation-und-filemanagement.html#cb343-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span></span>
+<span id="cb343-3"><a href="aggregation-und-filemanagement.html#cb343-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb343-4"><a href="aggregation-und-filemanagement.html#cb343-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb343-5"><a href="aggregation-und-filemanagement.html#cb343-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">rel_n =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 3
 ##   group     n rel_n
 ##   &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
@@ -399,21 +398,21 @@ Da die <code>summarise</code>-Argumente Schritt für Schritt ausgeführt werden,
 <p><img src="imgs/read_txt.png" width="600px" style="display: block; margin: auto;" /></p>
 <!-- ### Daten aus Textfiles -->
 <p>Der mit der grafischen Oberfläche erstellte Code lässt sich dann einfach in’s R-Skript kopieren:</p>
-<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="aggregation-und-filemanagement.html#cb354-1" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/test.csv&quot;</span>)</span>
-<span id="cb354-2"><a href="aggregation-und-filemanagement.html#cb354-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-3"><a href="aggregation-und-filemanagement.html#cb354-3" aria-hidden="true" tabindex="-1"></a>test2 <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">&quot;data/test2.txt&quot;</span>, </span>
-<span id="cb354-4"><a href="aggregation-und-filemanagement.html#cb354-4" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>,</span>
-<span id="cb354-5"><a href="aggregation-und-filemanagement.html#cb354-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">escape_double =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb354-6"><a href="aggregation-und-filemanagement.html#cb354-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">trim_ws =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb354-7"><a href="aggregation-und-filemanagement.html#cb354-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb354-8"><a href="aggregation-und-filemanagement.html#cb354-8" aria-hidden="true" tabindex="-1"></a>stadtteile <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">&quot;data/test3.csv&quot;</span>, </span>
-<span id="cb354-9"><a href="aggregation-und-filemanagement.html#cb354-9" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;;&quot;</span>, </span>
-<span id="cb354-10"><a href="aggregation-und-filemanagement.html#cb354-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">escape_double =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb354-11"><a href="aggregation-und-filemanagement.html#cb354-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">decimal_mark =</span> <span class="st">&quot;,&quot;</span>, </span>
-<span id="cb354-12"><a href="aggregation-und-filemanagement.html#cb354-12" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">encoding =</span> <span class="st">&quot;ISO-8859-2&quot;</span>, </span>
-<span id="cb354-13"><a href="aggregation-und-filemanagement.html#cb354-13" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">asciify =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb354-14"><a href="aggregation-und-filemanagement.html#cb354-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">trim_ws =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb354-15"><a href="aggregation-und-filemanagement.html#cb354-15" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(stadtteile)</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="aggregation-und-filemanagement.html#cb345-1" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/test.csv&quot;</span>)</span>
+<span id="cb345-2"><a href="aggregation-und-filemanagement.html#cb345-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb345-3"><a href="aggregation-und-filemanagement.html#cb345-3" aria-hidden="true" tabindex="-1"></a>test2 <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">&quot;data/test2.txt&quot;</span>, </span>
+<span id="cb345-4"><a href="aggregation-und-filemanagement.html#cb345-4" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>,</span>
+<span id="cb345-5"><a href="aggregation-und-filemanagement.html#cb345-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">escape_double =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb345-6"><a href="aggregation-und-filemanagement.html#cb345-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">trim_ws =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb345-7"><a href="aggregation-und-filemanagement.html#cb345-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb345-8"><a href="aggregation-und-filemanagement.html#cb345-8" aria-hidden="true" tabindex="-1"></a>stadtteile <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">&quot;data/test3.csv&quot;</span>, </span>
+<span id="cb345-9"><a href="aggregation-und-filemanagement.html#cb345-9" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;;&quot;</span>, </span>
+<span id="cb345-10"><a href="aggregation-und-filemanagement.html#cb345-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">escape_double =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb345-11"><a href="aggregation-und-filemanagement.html#cb345-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">decimal_mark =</span> <span class="st">&quot;,&quot;</span>, </span>
+<span id="cb345-12"><a href="aggregation-und-filemanagement.html#cb345-12" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">encoding =</span> <span class="st">&quot;ISO-8859-2&quot;</span>, </span>
+<span id="cb345-13"><a href="aggregation-und-filemanagement.html#cb345-13" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">asciify =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb345-14"><a href="aggregation-und-filemanagement.html#cb345-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">trim_ws =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb345-15"><a href="aggregation-und-filemanagement.html#cb345-15" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(stadtteile)</span></code></pre></div>
 <pre><code>## Rows: 30
 ## Columns: 6
 ## $ Land      &lt;chr&gt; &quot;de-sh&quot;, &quot;de-sh&quot;, &quot;de-sh&quot;, &quot;de-sh&quot;…
@@ -428,10 +427,10 @@ Da die <code>summarise</code>-Argumente Schritt für Schritt ausgeführt werden,
 <p>Daten aus Excel-Dateien lassen sich ganz ähnlich einlesen, nur dass wir statt ‘From Text (readr)…’ nun ‘From Excel…’ auswählen.</p>
 <p><img src="imgs/read_excel.png" width="600px" style="display: block; margin: auto;" /></p>
 <!-- ### Daten aus Excel-Dateien -->
-<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="aggregation-und-filemanagement.html#cb356-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb356-2"><a href="aggregation-und-filemanagement.html#cb356-2" aria-hidden="true" tabindex="-1"></a>kiel_haushalte <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/kiel.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;Haushalte&quot;</span>)</span>
-<span id="cb356-3"><a href="aggregation-und-filemanagement.html#cb356-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb356-4"><a href="aggregation-und-filemanagement.html#cb356-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(kiel_haushalte)</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="aggregation-und-filemanagement.html#cb347-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb347-2"><a href="aggregation-und-filemanagement.html#cb347-2" aria-hidden="true" tabindex="-1"></a>kiel_haushalte <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/kiel.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;Haushalte&quot;</span>)</span>
+<span id="cb347-3"><a href="aggregation-und-filemanagement.html#cb347-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb347-4"><a href="aggregation-und-filemanagement.html#cb347-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(kiel_haushalte)</span></code></pre></div>
 <pre><code>## Rows: 30
 ## Columns: 7
 ## $ Stadtteile                     &lt;chr&gt; &quot;Altstadt&quot;, &quot;…
@@ -447,10 +446,10 @@ Da die <code>summarise</code>-Argumente Schritt für Schritt ausgeführt werden,
 <p>Das <code>tidyverse</code> bietet eine sehr praktische Familie von Funktionen, um Datensätze zusammenzufügen, die <code>join</code>-Funktionen.</p>
 <p>Wir werden hier erstmal nur eine davon benutzen, die <code>left_join</code>-Funktion. Sie nimmt zwei Datensätze als Argumente, gerne auch den ersten als Ergebnis einer pipeline, und fügt diese anhand einer im <code>by</code>-Argument angegebenen Spalte zusammen.</p>
 <p>Wir wollen mal die Datensätze zu den Haushalten und der Fläche der Kieler Stadtteile zusammenfügen:</p>
-<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="aggregation-und-filemanagement.html#cb358-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> stadtteile <span class="sc">%&gt;%</span> </span>
-<span id="cb358-2"><a href="aggregation-und-filemanagement.html#cb358-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(kiel_haushalte,<span class="at">by =</span> <span class="fu">c</span>(<span class="st">&#39;Stadtteil&#39;</span> <span class="ot">=</span> <span class="st">&#39;Stadtteile&#39;</span>))</span>
-<span id="cb358-3"><a href="aggregation-und-filemanagement.html#cb358-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb358-4"><a href="aggregation-und-filemanagement.html#cb358-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="aggregation-und-filemanagement.html#cb349-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> stadtteile <span class="sc">%&gt;%</span> </span>
+<span id="cb349-2"><a href="aggregation-und-filemanagement.html#cb349-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(kiel_haushalte,<span class="at">by =</span> <span class="fu">c</span>(<span class="st">&#39;Stadtteil&#39;</span> <span class="ot">=</span> <span class="st">&#39;Stadtteile&#39;</span>))</span>
+<span id="cb349-3"><a href="aggregation-und-filemanagement.html#cb349-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb349-4"><a href="aggregation-und-filemanagement.html#cb349-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df)</span></code></pre></div>
 <pre><code>## Rows: 30
 ## Columns: 12
 ## $ Land                           &lt;chr&gt; &quot;de-sh&quot;, &quot;de-…
@@ -467,9 +466,9 @@ Da die <code>summarise</code>-Argumente Schritt für Schritt ausgeführt werden,
 ## $ `Sonst. Mehrpersonenhaushalte` &lt;dbl&gt; 118, 110, 444…</code></pre>
 <!-- ### Kombinieren von Datensätzen {.smaller} -->
 <p>Das sieht ja sehr nett aus, wir können den zusammengefügten Datensatz nun benutzen, um eine Korrelationsmatrix für alle numerischen Spalten zu erstellen:</p>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="aggregation-und-filemanagement.html#cb360-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb360-2"><a href="aggregation-und-filemanagement.html#cb360-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> </span>
-<span id="cb360-3"><a href="aggregation-und-filemanagement.html#cb360-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="aggregation-und-filemanagement.html#cb351-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb351-2"><a href="aggregation-und-filemanagement.html#cb351-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> </span>
+<span id="cb351-3"><a href="aggregation-und-filemanagement.html#cb351-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>() </span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -688,31 +687,31 @@ Sonst. Mehrpersonenhaushalte
 <h3>Exportieren von Datensätzen in csv-Format</h3>
 <p>Um diesen Datensatz jetzt wieder zu exportieren, können wir uns eins von den schon beim Einlesen kennengelernten Formaten aussuchen. Hier können wir dann aber leider nicht so einfach die GUI benutzen, wenn wir nicht ein <code>.RData</code>-File erstellen wollen (was wir dieses Semester nicht tun).</p>
 <p>Um in <code>csv</code>-Dateien zu exportieren, können wir einfach die <code>write_csv</code>-Funktion aus dem <code>tidyverse</code> verwenden. Sie nimmt wieder einen Datensatz als erstes Argument (pipeline!) und dazu einen Pfad, in den wir unser Ergebnis abspeichern wollen. Wir versuchen mal unsere Korrelationstabelle von eben abzuspeichern. Dabei müssen wir aber darauf achten, dass wir aus der Tabelle ein <code>tibble</code> und am Besten noch die Zeilennamen zu einer Spalte machen, damit diese erhalten bleiben:</p>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="aggregation-und-filemanagement.html#cb361-1" aria-hidden="true" tabindex="-1"></a>correlations <span class="ot">&lt;-</span> </span>
-<span id="cb361-2"><a href="aggregation-und-filemanagement.html#cb361-2" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span> </span>
-<span id="cb361-3"><a href="aggregation-und-filemanagement.html#cb361-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> </span>
-<span id="cb361-4"><a href="aggregation-und-filemanagement.html#cb361-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb361-5"><a href="aggregation-und-filemanagement.html#cb361-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">&#39;Masseinheit&#39;</span>)</span>
-<span id="cb361-6"><a href="aggregation-und-filemanagement.html#cb361-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb361-7"><a href="aggregation-und-filemanagement.html#cb361-7" aria-hidden="true" tabindex="-1"></a>correlations <span class="sc">%&gt;%</span> </span>
-<span id="cb361-8"><a href="aggregation-und-filemanagement.html#cb361-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">&#39;data/correlations.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="aggregation-und-filemanagement.html#cb352-1" aria-hidden="true" tabindex="-1"></a>correlations <span class="ot">&lt;-</span> </span>
+<span id="cb352-2"><a href="aggregation-und-filemanagement.html#cb352-2" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span> </span>
+<span id="cb352-3"><a href="aggregation-und-filemanagement.html#cb352-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> </span>
+<span id="cb352-4"><a href="aggregation-und-filemanagement.html#cb352-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb352-5"><a href="aggregation-und-filemanagement.html#cb352-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">&#39;Masseinheit&#39;</span>)</span>
+<span id="cb352-6"><a href="aggregation-und-filemanagement.html#cb352-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb352-7"><a href="aggregation-und-filemanagement.html#cb352-7" aria-hidden="true" tabindex="-1"></a>correlations <span class="sc">%&gt;%</span> </span>
+<span id="cb352-8"><a href="aggregation-und-filemanagement.html#cb352-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">&#39;data/correlations.csv&#39;</span>)</span></code></pre></div>
 </div>
 <div id="exportieren-von-datensätzen-in-excel-format" class="section level3">
 <h3>Exportieren von Datensätzen in Excel-Format</h3>
 <p>Manchmal ist es aber praktischer (vor allem wenn man einen Bericht in MS Office erstellt), die Ergebnisse als <code>.xlsx</code> zu exportieren.</p>
 <p>Das ist leider nicht mit dem <code>readxl</code>-Paket möglich. Dafür benötigen wir das <code>openxlsx</code>-Paket, das natürlich zuerst mit <code>install.packages</code> installiert werden muss.</p>
 <p>Mit den Funktionen <code>createWorkbook</code> und <code>addWorksheet</code> können wir ein Excel-Dokument und Tabellen in diesem anlegen, die wir dann mit <code>writeData</code> füllen und mit <code>saveWorkbook</code> abspeichern können.</p>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="aggregation-und-filemanagement.html#cb362-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb362-2"><a href="aggregation-und-filemanagement.html#cb362-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb362-3"><a href="aggregation-und-filemanagement.html#cb362-3" aria-hidden="true" tabindex="-1"></a>excel_output <span class="ot">&lt;-</span> <span class="fu">createWorkbook</span>()</span>
-<span id="cb362-4"><a href="aggregation-und-filemanagement.html#cb362-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb362-5"><a href="aggregation-und-filemanagement.html#cb362-5" aria-hidden="true" tabindex="-1"></a><span class="fu">addWorksheet</span>(excel_output, <span class="st">&#39;correlations&#39;</span>)</span>
-<span id="cb362-6"><a href="aggregation-und-filemanagement.html#cb362-6" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(excel_output, <span class="st">&#39;correlations&#39;</span>, correlations)</span>
-<span id="cb362-7"><a href="aggregation-und-filemanagement.html#cb362-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb362-8"><a href="aggregation-und-filemanagement.html#cb362-8" aria-hidden="true" tabindex="-1"></a><span class="fu">addWorksheet</span>(excel_output, <span class="st">&#39;original_data&#39;</span>)</span>
-<span id="cb362-9"><a href="aggregation-und-filemanagement.html#cb362-9" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(excel_output, <span class="st">&#39;original_data&#39;</span>, df)</span>
-<span id="cb362-10"><a href="aggregation-und-filemanagement.html#cb362-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb362-11"><a href="aggregation-und-filemanagement.html#cb362-11" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWorkbook</span>(excel_output,<span class="st">&#39;data/output.xlsx&#39;</span>,<span class="at">overwrite =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="aggregation-und-filemanagement.html#cb353-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb353-2"><a href="aggregation-und-filemanagement.html#cb353-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb353-3"><a href="aggregation-und-filemanagement.html#cb353-3" aria-hidden="true" tabindex="-1"></a>excel_output <span class="ot">&lt;-</span> <span class="fu">createWorkbook</span>()</span>
+<span id="cb353-4"><a href="aggregation-und-filemanagement.html#cb353-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb353-5"><a href="aggregation-und-filemanagement.html#cb353-5" aria-hidden="true" tabindex="-1"></a><span class="fu">addWorksheet</span>(excel_output, <span class="st">&#39;correlations&#39;</span>)</span>
+<span id="cb353-6"><a href="aggregation-und-filemanagement.html#cb353-6" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(excel_output, <span class="st">&#39;correlations&#39;</span>, correlations)</span>
+<span id="cb353-7"><a href="aggregation-und-filemanagement.html#cb353-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb353-8"><a href="aggregation-und-filemanagement.html#cb353-8" aria-hidden="true" tabindex="-1"></a><span class="fu">addWorksheet</span>(excel_output, <span class="st">&#39;original_data&#39;</span>)</span>
+<span id="cb353-9"><a href="aggregation-und-filemanagement.html#cb353-9" aria-hidden="true" tabindex="-1"></a><span class="fu">writeData</span>(excel_output, <span class="st">&#39;original_data&#39;</span>, df)</span>
+<span id="cb353-10"><a href="aggregation-und-filemanagement.html#cb353-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb353-11"><a href="aggregation-und-filemanagement.html#cb353-11" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWorkbook</span>(excel_output,<span class="st">&#39;data/output.xlsx&#39;</span>,<span class="at">overwrite =</span> T)</span></code></pre></div>
 
 <!-- #--- -->
 <!-- title: 'Psy_B_11: EDV I - Kapitel 6' -->

@@ -24,7 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-10-25" />
+<meta name="date" content="2021-11-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -190,7 +190,6 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Pakete benutzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen-und-ergänzen"><i class="fa fa-check"></i>Datensätze erstellen und ergänzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren-und-indizieren"><i class="fa fa-check"></i>Datensätze sortieren und indizieren</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#vorlesung"><i class="fa fa-check"></i>Vorlesung</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html"><i class="fa fa-check"></i>Faktoren und Aggregation</a>
 <ul>
@@ -271,27 +270,27 @@ div.csl-indent {
 ## 10 M     Y25-29  65.1
 ## # … with 11 more rows</code></pre>
 <p>Diese Anteile an Rauchern pro Altersgruppe wollen wir jetzt in einem Balkendiagramm darstellen, in dem an der x-Achse die Altersgruppen abgetragen sind. Außerdem wollen wir die Balken nach Geschlecht gruppieren:</p>
-<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="abbildungen-ii.html#cb393-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb393-2"><a href="abbildungen-ii.html#cb393-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">fill =</span> sex, <span class="at">y =</span> DE)) <span class="sc">+</span></span>
-<span id="cb393-3"><a href="abbildungen-ii.html#cb393-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="abbildungen-ii.html#cb384-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb384-2"><a href="abbildungen-ii.html#cb384-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">fill =</span> sex, <span class="at">y =</span> DE)) <span class="sc">+</span></span>
+<span id="cb384-3"><a href="abbildungen-ii.html#cb384-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-182-1.png" width="500px" style="display: block; margin: auto;" />
 Diese Darstellung ist zwar ganz nett um einen Eindruck für den den Verlauf über die Kohorten zu sehen, die Balken nebeneinander zu gruppieren ist aber vielleicht eher wünschenswert. Dafür können wir das <code>position</code>-Argument und die <code>position_dodge()</code>-Funktion benutzen:</p>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="abbildungen-ii.html#cb394-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb394-2"><a href="abbildungen-ii.html#cb394-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">fill =</span> sex, <span class="at">y =</span> DE)) <span class="sc">+</span></span>
-<span id="cb394-3"><a href="abbildungen-ii.html#cb394-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="abbildungen-ii.html#cb385-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb385-2"><a href="abbildungen-ii.html#cb385-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">fill =</span> sex, <span class="at">y =</span> DE)) <span class="sc">+</span></span>
+<span id="cb385-3"><a href="abbildungen-ii.html#cb385-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>())</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-183-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Den Graphen können wir jetzt wie gewohnt verschönern, zum Beispiel indem wir die Farben ändern und die Achsenbeschriftung anpassen:</p>
-<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="abbildungen-ii.html#cb395-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb395-2"><a href="abbildungen-ii.html#cb395-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">fill =</span> sex, <span class="at">y =</span> DE)) <span class="sc">+</span></span>
-<span id="cb395-3"><a href="abbildungen-ii.html#cb395-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
-<span id="cb395-4"><a href="abbildungen-ii.html#cb395-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb395-5"><a href="abbildungen-ii.html#cb395-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
-<span id="cb395-6"><a href="abbildungen-ii.html#cb395-6" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb395-7"><a href="abbildungen-ii.html#cb395-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
-<span id="cb395-8"><a href="abbildungen-ii.html#cb395-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
-<span id="cb395-9"><a href="abbildungen-ii.html#cb395-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
-<span id="cb395-10"><a href="abbildungen-ii.html#cb395-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
-<span id="cb395-11"><a href="abbildungen-ii.html#cb395-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Deutschland im Jahr 2014&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="abbildungen-ii.html#cb386-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb386-2"><a href="abbildungen-ii.html#cb386-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">fill =</span> sex, <span class="at">y =</span> DE)) <span class="sc">+</span></span>
+<span id="cb386-3"><a href="abbildungen-ii.html#cb386-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb386-4"><a href="abbildungen-ii.html#cb386-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb386-5"><a href="abbildungen-ii.html#cb386-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
+<span id="cb386-6"><a href="abbildungen-ii.html#cb386-6" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb386-7"><a href="abbildungen-ii.html#cb386-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
+<span id="cb386-8"><a href="abbildungen-ii.html#cb386-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
+<span id="cb386-9"><a href="abbildungen-ii.html#cb386-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
+<span id="cb386-10"><a href="abbildungen-ii.html#cb386-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
+<span id="cb386-11"><a href="abbildungen-ii.html#cb386-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Deutschland im Jahr 2014&#39;</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-184-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="boxplots-1" class="section level3">
@@ -312,26 +311,26 @@ Diese Darstellung ist zwar ganz nett um einen Eindruck für den den Verlauf übe
 ## 10 F     Y15-19 FR            80.8
 ## # … with 641 more rows</code></pre>
 <p>Um einen Eindruck über die Verteilung der Raucherzahlen über Europa zu bekommen, stellen wir diesen Datensatz als gruppierte Boxplots dar:</p>
-<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="abbildungen-ii.html#cb397-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb397-2"><a href="abbildungen-ii.html#cb397-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
-<span id="cb397-3"><a href="abbildungen-ii.html#cb397-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
-<span id="cb397-4"><a href="abbildungen-ii.html#cb397-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb397-5"><a href="abbildungen-ii.html#cb397-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="abbildungen-ii.html#cb388-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb388-2"><a href="abbildungen-ii.html#cb388-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
+<span id="cb388-3"><a href="abbildungen-ii.html#cb388-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
+<span id="cb388-4"><a href="abbildungen-ii.html#cb388-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb388-5"><a href="abbildungen-ii.html#cb388-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-186-1.png" width="500px" style="display: block; margin: auto;" />
 Hier können wir auch wieder die grafischen Optimierungen anwenden, die wir beim Balkendiagramm genutzt haben:</p>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="abbildungen-ii.html#cb398-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb398-2"><a href="abbildungen-ii.html#cb398-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
-<span id="cb398-3"><a href="abbildungen-ii.html#cb398-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
-<span id="cb398-4"><a href="abbildungen-ii.html#cb398-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb398-5"><a href="abbildungen-ii.html#cb398-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb398-6"><a href="abbildungen-ii.html#cb398-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb398-7"><a href="abbildungen-ii.html#cb398-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
-<span id="cb398-8"><a href="abbildungen-ii.html#cb398-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb398-9"><a href="abbildungen-ii.html#cb398-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
-<span id="cb398-10"><a href="abbildungen-ii.html#cb398-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
-<span id="cb398-11"><a href="abbildungen-ii.html#cb398-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
-<span id="cb398-12"><a href="abbildungen-ii.html#cb398-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
-<span id="cb398-13"><a href="abbildungen-ii.html#cb398-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="abbildungen-ii.html#cb389-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb389-2"><a href="abbildungen-ii.html#cb389-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
+<span id="cb389-3"><a href="abbildungen-ii.html#cb389-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
+<span id="cb389-4"><a href="abbildungen-ii.html#cb389-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb389-5"><a href="abbildungen-ii.html#cb389-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb389-6"><a href="abbildungen-ii.html#cb389-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb389-7"><a href="abbildungen-ii.html#cb389-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
+<span id="cb389-8"><a href="abbildungen-ii.html#cb389-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb389-9"><a href="abbildungen-ii.html#cb389-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
+<span id="cb389-10"><a href="abbildungen-ii.html#cb389-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
+<span id="cb389-11"><a href="abbildungen-ii.html#cb389-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
+<span id="cb389-12"><a href="abbildungen-ii.html#cb389-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
+<span id="cb389-13"><a href="abbildungen-ii.html#cb389-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-187-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 </div>
@@ -341,10 +340,10 @@ Hier können wir auch wieder die grafischen Optimierungen anwenden, die wir beim
 <h3>Gruppenzusammenfassungen</h3>
 <p>Zu unserem gerade erstellten Boxplot wollen wir jetzt die mittleren Raucherquoten als horizontale Linie einfügen.</p>
 <p>Dazu erstellen wir zuerst einen Datensatz mit den Mittelwerten:</p>
-<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="abbildungen-ii.html#cb399-1" aria-hidden="true" tabindex="-1"></a>mean_per_sex <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb399-2"><a href="abbildungen-ii.html#cb399-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex) <span class="sc">%&gt;%</span> </span>
-<span id="cb399-3"><a href="abbildungen-ii.html#cb399-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">percentage =</span> <span class="fu">mean</span>(percentage,<span class="at">na.rm =</span> T))</span>
-<span id="cb399-4"><a href="abbildungen-ii.html#cb399-4" aria-hidden="true" tabindex="-1"></a>mean_per_sex</span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="abbildungen-ii.html#cb390-1" aria-hidden="true" tabindex="-1"></a>mean_per_sex <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb390-2"><a href="abbildungen-ii.html#cb390-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb390-3"><a href="abbildungen-ii.html#cb390-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">percentage =</span> <span class="fu">mean</span>(percentage,<span class="at">na.rm =</span> T))</span>
+<span id="cb390-4"><a href="abbildungen-ii.html#cb390-4" aria-hidden="true" tabindex="-1"></a>mean_per_sex</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 2
 ##   sex   percentage
 ##   &lt;chr&gt;      &lt;dbl&gt;
@@ -352,51 +351,51 @@ Hier können wir auch wieder die grafischen Optimierungen anwenden, die wir beim
 ## 2 M           68.5
 ## 3 T           73.9</code></pre>
 <p>Diese können wir dann als eigenen Datensatz einem neuen <code>geom</code> hinzufügen. Da wir horizontale Linien hinzufügen wollen, nutzen wir dafür <code>geom_hline</code>.</p>
-<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="abbildungen-ii.html#cb401-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb401-2"><a href="abbildungen-ii.html#cb401-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
-<span id="cb401-3"><a href="abbildungen-ii.html#cb401-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
-<span id="cb401-4"><a href="abbildungen-ii.html#cb401-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb401-5"><a href="abbildungen-ii.html#cb401-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb401-6"><a href="abbildungen-ii.html#cb401-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb401-7"><a href="abbildungen-ii.html#cb401-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
-<span id="cb401-8"><a href="abbildungen-ii.html#cb401-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb401-9"><a href="abbildungen-ii.html#cb401-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
-<span id="cb401-10"><a href="abbildungen-ii.html#cb401-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
-<span id="cb401-11"><a href="abbildungen-ii.html#cb401-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
-<span id="cb401-12"><a href="abbildungen-ii.html#cb401-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
-<span id="cb401-13"><a href="abbildungen-ii.html#cb401-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>) <span class="sc">+</span></span>
-<span id="cb401-14"><a href="abbildungen-ii.html#cb401-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
-<span id="cb401-15"><a href="abbildungen-ii.html#cb401-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
-<span id="cb401-16"><a href="abbildungen-ii.html#cb401-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex))</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="abbildungen-ii.html#cb392-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb392-2"><a href="abbildungen-ii.html#cb392-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
+<span id="cb392-3"><a href="abbildungen-ii.html#cb392-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
+<span id="cb392-4"><a href="abbildungen-ii.html#cb392-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb392-5"><a href="abbildungen-ii.html#cb392-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb392-6"><a href="abbildungen-ii.html#cb392-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb392-7"><a href="abbildungen-ii.html#cb392-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
+<span id="cb392-8"><a href="abbildungen-ii.html#cb392-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb392-9"><a href="abbildungen-ii.html#cb392-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
+<span id="cb392-10"><a href="abbildungen-ii.html#cb392-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
+<span id="cb392-11"><a href="abbildungen-ii.html#cb392-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
+<span id="cb392-12"><a href="abbildungen-ii.html#cb392-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
+<span id="cb392-13"><a href="abbildungen-ii.html#cb392-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>) <span class="sc">+</span></span>
+<span id="cb392-14"><a href="abbildungen-ii.html#cb392-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
+<span id="cb392-15"><a href="abbildungen-ii.html#cb392-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
+<span id="cb392-16"><a href="abbildungen-ii.html#cb392-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex))</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-189-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Mit außerhalb der <code>aes</code>-Funktion gesetzten ‘aesthetics’ können wir die Linien noch ein bisschen mehr von den Boxplots abheben.</p>
-<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="abbildungen-ii.html#cb402-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb402-2"><a href="abbildungen-ii.html#cb402-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
-<span id="cb402-3"><a href="abbildungen-ii.html#cb402-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
-<span id="cb402-4"><a href="abbildungen-ii.html#cb402-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb402-5"><a href="abbildungen-ii.html#cb402-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb402-6"><a href="abbildungen-ii.html#cb402-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb402-7"><a href="abbildungen-ii.html#cb402-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
-<span id="cb402-8"><a href="abbildungen-ii.html#cb402-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb402-9"><a href="abbildungen-ii.html#cb402-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
-<span id="cb402-10"><a href="abbildungen-ii.html#cb402-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
-<span id="cb402-11"><a href="abbildungen-ii.html#cb402-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
-<span id="cb402-12"><a href="abbildungen-ii.html#cb402-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
-<span id="cb402-13"><a href="abbildungen-ii.html#cb402-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>) <span class="sc">+</span></span>
-<span id="cb402-14"><a href="abbildungen-ii.html#cb402-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
-<span id="cb402-15"><a href="abbildungen-ii.html#cb402-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
-<span id="cb402-16"><a href="abbildungen-ii.html#cb402-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex),</span>
-<span id="cb402-17"><a href="abbildungen-ii.html#cb402-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
-<span id="cb402-18"><a href="abbildungen-ii.html#cb402-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="abbildungen-ii.html#cb393-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb393-2"><a href="abbildungen-ii.html#cb393-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
+<span id="cb393-3"><a href="abbildungen-ii.html#cb393-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
+<span id="cb393-4"><a href="abbildungen-ii.html#cb393-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb393-5"><a href="abbildungen-ii.html#cb393-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb393-6"><a href="abbildungen-ii.html#cb393-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb393-7"><a href="abbildungen-ii.html#cb393-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
+<span id="cb393-8"><a href="abbildungen-ii.html#cb393-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb393-9"><a href="abbildungen-ii.html#cb393-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
+<span id="cb393-10"><a href="abbildungen-ii.html#cb393-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
+<span id="cb393-11"><a href="abbildungen-ii.html#cb393-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
+<span id="cb393-12"><a href="abbildungen-ii.html#cb393-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
+<span id="cb393-13"><a href="abbildungen-ii.html#cb393-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>) <span class="sc">+</span></span>
+<span id="cb393-14"><a href="abbildungen-ii.html#cb393-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
+<span id="cb393-15"><a href="abbildungen-ii.html#cb393-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
+<span id="cb393-16"><a href="abbildungen-ii.html#cb393-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex),</span>
+<span id="cb393-17"><a href="abbildungen-ii.html#cb393-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
+<span id="cb393-18"><a href="abbildungen-ii.html#cb393-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-190-1.png" width="500px" style="display: block; margin: auto;" />
 Wir können auch komplexere Informationen nachträglich hinzufügen, so zum Beispiel wenn wir die jeweiligen Mittelwerte als Punkte und die SEMs als Fehlerbalken hinzufügen. Wir fangen wieder damit an, einen Datensatz zu erstellen:</p>
-<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="abbildungen-ii.html#cb403-1" aria-hidden="true" tabindex="-1"></a>mean_sem_per_box <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb403-2"><a href="abbildungen-ii.html#cb403-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex, age) <span class="sc">%&gt;%</span> </span>
-<span id="cb403-3"><a href="abbildungen-ii.html#cb403-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sem =</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(percentage,<span class="at">na.rm =</span> T) <span class="sc">/</span> <span class="fu">length</span>(percentage)),</span>
-<span id="cb403-4"><a href="abbildungen-ii.html#cb403-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">percentage =</span> <span class="fu">mean</span>(percentage,<span class="at">na.rm =</span> T),</span>
-<span id="cb403-5"><a href="abbildungen-ii.html#cb403-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">upper =</span> percentage <span class="sc">+</span> sem,</span>
-<span id="cb403-6"><a href="abbildungen-ii.html#cb403-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">lower =</span> percentage <span class="sc">-</span> sem)</span>
-<span id="cb403-7"><a href="abbildungen-ii.html#cb403-7" aria-hidden="true" tabindex="-1"></a>mean_sem_per_box</span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="abbildungen-ii.html#cb394-1" aria-hidden="true" tabindex="-1"></a>mean_sem_per_box <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb394-2"><a href="abbildungen-ii.html#cb394-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex, age) <span class="sc">%&gt;%</span> </span>
+<span id="cb394-3"><a href="abbildungen-ii.html#cb394-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sem =</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(percentage,<span class="at">na.rm =</span> T) <span class="sc">/</span> <span class="fu">length</span>(percentage)),</span>
+<span id="cb394-4"><a href="abbildungen-ii.html#cb394-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">percentage =</span> <span class="fu">mean</span>(percentage,<span class="at">na.rm =</span> T),</span>
+<span id="cb394-5"><a href="abbildungen-ii.html#cb394-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">upper =</span> percentage <span class="sc">+</span> sem,</span>
+<span id="cb394-6"><a href="abbildungen-ii.html#cb394-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">lower =</span> percentage <span class="sc">-</span> sem)</span>
+<span id="cb394-7"><a href="abbildungen-ii.html#cb394-7" aria-hidden="true" tabindex="-1"></a>mean_sem_per_box</span></code></pre></div>
 <pre><code>## # A tibble: 21 × 6
 ## # Groups:   sex [3]
 ##    sex   age      sem percentage upper lower
@@ -413,110 +412,110 @@ Wir können auch komplexere Informationen nachträglich hinzufügen, so zum Beis
 ## 10 M     Y25-29 1.75        59.3  61.0  57.5
 ## # … with 11 more rows</code></pre>
 <p>Diesen Datensatz können wir dann wieder zu dem Plot hinzufügen:</p>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="abbildungen-ii.html#cb405-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb405-2"><a href="abbildungen-ii.html#cb405-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
-<span id="cb405-3"><a href="abbildungen-ii.html#cb405-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
-<span id="cb405-4"><a href="abbildungen-ii.html#cb405-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb405-5"><a href="abbildungen-ii.html#cb405-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb405-6"><a href="abbildungen-ii.html#cb405-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb405-7"><a href="abbildungen-ii.html#cb405-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
-<span id="cb405-8"><a href="abbildungen-ii.html#cb405-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb405-9"><a href="abbildungen-ii.html#cb405-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
-<span id="cb405-10"><a href="abbildungen-ii.html#cb405-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
-<span id="cb405-11"><a href="abbildungen-ii.html#cb405-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
-<span id="cb405-12"><a href="abbildungen-ii.html#cb405-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
-<span id="cb405-13"><a href="abbildungen-ii.html#cb405-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>) <span class="sc">+</span></span>
-<span id="cb405-14"><a href="abbildungen-ii.html#cb405-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
-<span id="cb405-15"><a href="abbildungen-ii.html#cb405-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
-<span id="cb405-16"><a href="abbildungen-ii.html#cb405-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex),</span>
-<span id="cb405-17"><a href="abbildungen-ii.html#cb405-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
-<span id="cb405-18"><a href="abbildungen-ii.html#cb405-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb405-19"><a href="abbildungen-ii.html#cb405-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mean_sem_per_box) <span class="sc">+</span></span>
-<span id="cb405-20"><a href="abbildungen-ii.html#cb405-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">data =</span> mean_sem_per_box,</span>
-<span id="cb405-21"><a href="abbildungen-ii.html#cb405-21" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">ymin =</span> lower,</span>
-<span id="cb405-22"><a href="abbildungen-ii.html#cb405-22" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper))</span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="abbildungen-ii.html#cb396-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb396-2"><a href="abbildungen-ii.html#cb396-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
+<span id="cb396-3"><a href="abbildungen-ii.html#cb396-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
+<span id="cb396-4"><a href="abbildungen-ii.html#cb396-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb396-5"><a href="abbildungen-ii.html#cb396-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb396-6"><a href="abbildungen-ii.html#cb396-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb396-7"><a href="abbildungen-ii.html#cb396-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
+<span id="cb396-8"><a href="abbildungen-ii.html#cb396-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb396-9"><a href="abbildungen-ii.html#cb396-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
+<span id="cb396-10"><a href="abbildungen-ii.html#cb396-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
+<span id="cb396-11"><a href="abbildungen-ii.html#cb396-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
+<span id="cb396-12"><a href="abbildungen-ii.html#cb396-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
+<span id="cb396-13"><a href="abbildungen-ii.html#cb396-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>) <span class="sc">+</span></span>
+<span id="cb396-14"><a href="abbildungen-ii.html#cb396-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
+<span id="cb396-15"><a href="abbildungen-ii.html#cb396-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
+<span id="cb396-16"><a href="abbildungen-ii.html#cb396-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex),</span>
+<span id="cb396-17"><a href="abbildungen-ii.html#cb396-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
+<span id="cb396-18"><a href="abbildungen-ii.html#cb396-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb396-19"><a href="abbildungen-ii.html#cb396-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mean_sem_per_box) <span class="sc">+</span></span>
+<span id="cb396-20"><a href="abbildungen-ii.html#cb396-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">data =</span> mean_sem_per_box,</span>
+<span id="cb396-21"><a href="abbildungen-ii.html#cb396-21" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">ymin =</span> lower,</span>
+<span id="cb396-22"><a href="abbildungen-ii.html#cb396-22" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper))</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-192-1.png" width="500px" style="display: block; margin: auto;" />
 Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungsschritt benutzen wir wieder das <code>position</code>-Argument, vie vorher bei den Balkendiagrammen.</p>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="abbildungen-ii.html#cb406-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb406-2"><a href="abbildungen-ii.html#cb406-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
-<span id="cb406-3"><a href="abbildungen-ii.html#cb406-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
-<span id="cb406-4"><a href="abbildungen-ii.html#cb406-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb406-5"><a href="abbildungen-ii.html#cb406-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb406-6"><a href="abbildungen-ii.html#cb406-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb406-7"><a href="abbildungen-ii.html#cb406-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
-<span id="cb406-8"><a href="abbildungen-ii.html#cb406-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb406-9"><a href="abbildungen-ii.html#cb406-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
-<span id="cb406-10"><a href="abbildungen-ii.html#cb406-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
-<span id="cb406-11"><a href="abbildungen-ii.html#cb406-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
-<span id="cb406-12"><a href="abbildungen-ii.html#cb406-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
-<span id="cb406-13"><a href="abbildungen-ii.html#cb406-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>) <span class="sc">+</span></span>
-<span id="cb406-14"><a href="abbildungen-ii.html#cb406-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
-<span id="cb406-15"><a href="abbildungen-ii.html#cb406-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
-<span id="cb406-16"><a href="abbildungen-ii.html#cb406-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex),</span>
-<span id="cb406-17"><a href="abbildungen-ii.html#cb406-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
-<span id="cb406-18"><a href="abbildungen-ii.html#cb406-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb406-19"><a href="abbildungen-ii.html#cb406-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mean_sem_per_box,</span>
-<span id="cb406-20"><a href="abbildungen-ii.html#cb406-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
-<span id="cb406-21"><a href="abbildungen-ii.html#cb406-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">data =</span> mean_sem_per_box,</span>
-<span id="cb406-22"><a href="abbildungen-ii.html#cb406-22" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">ymin =</span> lower,</span>
-<span id="cb406-23"><a href="abbildungen-ii.html#cb406-23" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper),</span>
-<span id="cb406-24"><a href="abbildungen-ii.html#cb406-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="abbildungen-ii.html#cb397-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb397-2"><a href="abbildungen-ii.html#cb397-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
+<span id="cb397-3"><a href="abbildungen-ii.html#cb397-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
+<span id="cb397-4"><a href="abbildungen-ii.html#cb397-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb397-5"><a href="abbildungen-ii.html#cb397-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb397-6"><a href="abbildungen-ii.html#cb397-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb397-7"><a href="abbildungen-ii.html#cb397-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
+<span id="cb397-8"><a href="abbildungen-ii.html#cb397-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb397-9"><a href="abbildungen-ii.html#cb397-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
+<span id="cb397-10"><a href="abbildungen-ii.html#cb397-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
+<span id="cb397-11"><a href="abbildungen-ii.html#cb397-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
+<span id="cb397-12"><a href="abbildungen-ii.html#cb397-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
+<span id="cb397-13"><a href="abbildungen-ii.html#cb397-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>) <span class="sc">+</span></span>
+<span id="cb397-14"><a href="abbildungen-ii.html#cb397-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
+<span id="cb397-15"><a href="abbildungen-ii.html#cb397-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
+<span id="cb397-16"><a href="abbildungen-ii.html#cb397-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex),</span>
+<span id="cb397-17"><a href="abbildungen-ii.html#cb397-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
+<span id="cb397-18"><a href="abbildungen-ii.html#cb397-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb397-19"><a href="abbildungen-ii.html#cb397-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mean_sem_per_box,</span>
+<span id="cb397-20"><a href="abbildungen-ii.html#cb397-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb397-21"><a href="abbildungen-ii.html#cb397-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">data =</span> mean_sem_per_box,</span>
+<span id="cb397-22"><a href="abbildungen-ii.html#cb397-22" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">ymin =</span> lower,</span>
+<span id="cb397-23"><a href="abbildungen-ii.html#cb397-23" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper),</span>
+<span id="cb397-24"><a href="abbildungen-ii.html#cb397-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>())</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-193-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Die <code>position_dodge</code>-Funktion kann ein <code>width</code>-Argument annehmen, das uns die Menge der Verschiebung zu bestimmen erlaubt:</p>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="abbildungen-ii.html#cb407-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb407-2"><a href="abbildungen-ii.html#cb407-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
-<span id="cb407-3"><a href="abbildungen-ii.html#cb407-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
-<span id="cb407-4"><a href="abbildungen-ii.html#cb407-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb407-5"><a href="abbildungen-ii.html#cb407-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb407-6"><a href="abbildungen-ii.html#cb407-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb407-7"><a href="abbildungen-ii.html#cb407-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
-<span id="cb407-8"><a href="abbildungen-ii.html#cb407-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb407-9"><a href="abbildungen-ii.html#cb407-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
-<span id="cb407-10"><a href="abbildungen-ii.html#cb407-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
-<span id="cb407-11"><a href="abbildungen-ii.html#cb407-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
-<span id="cb407-12"><a href="abbildungen-ii.html#cb407-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
-<span id="cb407-13"><a href="abbildungen-ii.html#cb407-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>) <span class="sc">+</span></span>
-<span id="cb407-14"><a href="abbildungen-ii.html#cb407-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
-<span id="cb407-15"><a href="abbildungen-ii.html#cb407-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
-<span id="cb407-16"><a href="abbildungen-ii.html#cb407-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex),</span>
-<span id="cb407-17"><a href="abbildungen-ii.html#cb407-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
-<span id="cb407-18"><a href="abbildungen-ii.html#cb407-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb407-19"><a href="abbildungen-ii.html#cb407-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mean_sem_per_box,</span>
-<span id="cb407-20"><a href="abbildungen-ii.html#cb407-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">75</span>)) <span class="sc">+</span></span>
-<span id="cb407-21"><a href="abbildungen-ii.html#cb407-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">data =</span> mean_sem_per_box,</span>
-<span id="cb407-22"><a href="abbildungen-ii.html#cb407-22" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">ymin =</span> lower,</span>
-<span id="cb407-23"><a href="abbildungen-ii.html#cb407-23" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper),</span>
-<span id="cb407-24"><a href="abbildungen-ii.html#cb407-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">75</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="abbildungen-ii.html#cb398-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb398-2"><a href="abbildungen-ii.html#cb398-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
+<span id="cb398-3"><a href="abbildungen-ii.html#cb398-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
+<span id="cb398-4"><a href="abbildungen-ii.html#cb398-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb398-5"><a href="abbildungen-ii.html#cb398-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb398-6"><a href="abbildungen-ii.html#cb398-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb398-7"><a href="abbildungen-ii.html#cb398-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
+<span id="cb398-8"><a href="abbildungen-ii.html#cb398-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb398-9"><a href="abbildungen-ii.html#cb398-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
+<span id="cb398-10"><a href="abbildungen-ii.html#cb398-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
+<span id="cb398-11"><a href="abbildungen-ii.html#cb398-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
+<span id="cb398-12"><a href="abbildungen-ii.html#cb398-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
+<span id="cb398-13"><a href="abbildungen-ii.html#cb398-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>) <span class="sc">+</span></span>
+<span id="cb398-14"><a href="abbildungen-ii.html#cb398-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
+<span id="cb398-15"><a href="abbildungen-ii.html#cb398-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
+<span id="cb398-16"><a href="abbildungen-ii.html#cb398-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex),</span>
+<span id="cb398-17"><a href="abbildungen-ii.html#cb398-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
+<span id="cb398-18"><a href="abbildungen-ii.html#cb398-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb398-19"><a href="abbildungen-ii.html#cb398-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mean_sem_per_box,</span>
+<span id="cb398-20"><a href="abbildungen-ii.html#cb398-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">75</span>)) <span class="sc">+</span></span>
+<span id="cb398-21"><a href="abbildungen-ii.html#cb398-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">data =</span> mean_sem_per_box,</span>
+<span id="cb398-22"><a href="abbildungen-ii.html#cb398-22" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">ymin =</span> lower,</span>
+<span id="cb398-23"><a href="abbildungen-ii.html#cb398-23" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper),</span>
+<span id="cb398-24"><a href="abbildungen-ii.html#cb398-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">75</span>))</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-194-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Um das noch ein bisschen zu verbessern, verkleinern wir die Breite der Fehlerbalken und machen die neuen Farben ein wenig transparent um sie abzuheben:</p>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="abbildungen-ii.html#cb408-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb408-2"><a href="abbildungen-ii.html#cb408-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
-<span id="cb408-3"><a href="abbildungen-ii.html#cb408-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
-<span id="cb408-4"><a href="abbildungen-ii.html#cb408-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb408-5"><a href="abbildungen-ii.html#cb408-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb408-6"><a href="abbildungen-ii.html#cb408-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb408-7"><a href="abbildungen-ii.html#cb408-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
-<span id="cb408-8"><a href="abbildungen-ii.html#cb408-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb408-9"><a href="abbildungen-ii.html#cb408-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
-<span id="cb408-10"><a href="abbildungen-ii.html#cb408-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
-<span id="cb408-11"><a href="abbildungen-ii.html#cb408-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
-<span id="cb408-12"><a href="abbildungen-ii.html#cb408-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
-<span id="cb408-13"><a href="abbildungen-ii.html#cb408-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>,</span>
-<span id="cb408-14"><a href="abbildungen-ii.html#cb408-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">&quot;Punkte und Fehlerbalken stellen die jeweiligen Mittelwerte +/- SEM dar, </span><span class="sc">\n</span><span class="st"> die gestrichelten Linien stellen die Mittelwerte pro Geschlechtsgruppe dar.&quot;</span>) <span class="sc">+</span></span>
-<span id="cb408-15"><a href="abbildungen-ii.html#cb408-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
-<span id="cb408-16"><a href="abbildungen-ii.html#cb408-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
-<span id="cb408-17"><a href="abbildungen-ii.html#cb408-17" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex),</span>
-<span id="cb408-18"><a href="abbildungen-ii.html#cb408-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
-<span id="cb408-19"><a href="abbildungen-ii.html#cb408-19" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb408-20"><a href="abbildungen-ii.html#cb408-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mean_sem_per_box,</span>
-<span id="cb408-21"><a href="abbildungen-ii.html#cb408-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">75</span>),</span>
-<span id="cb408-22"><a href="abbildungen-ii.html#cb408-22" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb408-23"><a href="abbildungen-ii.html#cb408-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">data =</span> mean_sem_per_box,</span>
-<span id="cb408-24"><a href="abbildungen-ii.html#cb408-24" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">ymin =</span> lower,</span>
-<span id="cb408-25"><a href="abbildungen-ii.html#cb408-25" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper),</span>
-<span id="cb408-26"><a href="abbildungen-ii.html#cb408-26" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">75</span>),</span>
-<span id="cb408-27"><a href="abbildungen-ii.html#cb408-27" aria-hidden="true" tabindex="-1"></a>             <span class="at">width =</span> .<span class="dv">5</span>,</span>
-<span id="cb408-28"><a href="abbildungen-ii.html#cb408-28" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">3</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="abbildungen-ii.html#cb399-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb399-2"><a href="abbildungen-ii.html#cb399-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age,</span>
+<span id="cb399-3"><a href="abbildungen-ii.html#cb399-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage,</span>
+<span id="cb399-4"><a href="abbildungen-ii.html#cb399-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb399-5"><a href="abbildungen-ii.html#cb399-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb399-6"><a href="abbildungen-ii.html#cb399-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">F =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb399-7"><a href="abbildungen-ii.html#cb399-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">M =</span> <span class="st">&#39;brown3&#39;</span>,</span>
+<span id="cb399-8"><a href="abbildungen-ii.html#cb399-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">T =</span> <span class="st">&#39;darkorchid4&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb399-9"><a href="abbildungen-ii.html#cb399-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Alter&#39;</span>,</span>
+<span id="cb399-10"><a href="abbildungen-ii.html#cb399-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Prozent Raucher&#39;</span>,</span>
+<span id="cb399-11"><a href="abbildungen-ii.html#cb399-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;Geschlecht&#39;</span>,</span>
+<span id="cb399-12"><a href="abbildungen-ii.html#cb399-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Anteil Raucher&#39;</span>,</span>
+<span id="cb399-13"><a href="abbildungen-ii.html#cb399-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&#39;Pro Altergruppe in Europa im Jahr 2014&#39;</span>,</span>
+<span id="cb399-14"><a href="abbildungen-ii.html#cb399-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">&quot;Punkte und Fehlerbalken stellen die jeweiligen Mittelwerte +/- SEM dar, </span><span class="sc">\n</span><span class="st"> die gestrichelten Linien stellen die Mittelwerte pro Geschlechtsgruppe dar.&quot;</span>) <span class="sc">+</span></span>
+<span id="cb399-15"><a href="abbildungen-ii.html#cb399-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">data =</span> mean_per_sex,</span>
+<span id="cb399-16"><a href="abbildungen-ii.html#cb399-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">yintercept =</span> percentage,</span>
+<span id="cb399-17"><a href="abbildungen-ii.html#cb399-17" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> sex),</span>
+<span id="cb399-18"><a href="abbildungen-ii.html#cb399-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>,</span>
+<span id="cb399-19"><a href="abbildungen-ii.html#cb399-19" aria-hidden="true" tabindex="-1"></a>             <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb399-20"><a href="abbildungen-ii.html#cb399-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mean_sem_per_box,</span>
+<span id="cb399-21"><a href="abbildungen-ii.html#cb399-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">75</span>),</span>
+<span id="cb399-22"><a href="abbildungen-ii.html#cb399-22" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb399-23"><a href="abbildungen-ii.html#cb399-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">data =</span> mean_sem_per_box,</span>
+<span id="cb399-24"><a href="abbildungen-ii.html#cb399-24" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">ymin =</span> lower,</span>
+<span id="cb399-25"><a href="abbildungen-ii.html#cb399-25" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper),</span>
+<span id="cb399-26"><a href="abbildungen-ii.html#cb399-26" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">75</span>),</span>
+<span id="cb399-27"><a href="abbildungen-ii.html#cb399-27" aria-hidden="true" tabindex="-1"></a>             <span class="at">width =</span> .<span class="dv">5</span>,</span>
+<span id="cb399-28"><a href="abbildungen-ii.html#cb399-28" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">3</span>) </span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-195-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 </div>
@@ -525,8 +524,8 @@ Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungssc
 <div id="sortieren-von-labels" class="section level3">
 <h3>Sortieren von labels</h3>
 <p>Wir gucken uns den folgenden, von <a href="http://www.fao.org/faostat/en/#data/QC">dieser website</a> bezogenen Datensatz an, die die Produktion grüner Kaffeebohnen pro Land in hg/ha beinhaltet:</p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="abbildungen-ii.html#cb409-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;data/coffee_data.csv&#39;</span>) </span>
-<span id="cb409-2"><a href="abbildungen-ii.html#cb409-2" aria-hidden="true" tabindex="-1"></a>coffee_df</span></code></pre></div>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="abbildungen-ii.html#cb400-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;data/coffee_data.csv&#39;</span>) </span>
+<span id="cb400-2"><a href="abbildungen-ii.html#cb400-2" aria-hidden="true" tabindex="-1"></a>coffee_df</span></code></pre></div>
 <pre><code>## # A tibble: 77 × 4
 ##    Area                              Year Unit  Value
 ##    &lt;chr&gt;                            &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
@@ -542,49 +541,49 @@ Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungssc
 ## 10 China                             2019 hg/ha 30298
 ## # … with 67 more rows</code></pre>
 <p>Hektogramm pro Hektar ist ein bisschen ungewöhnlich, deshalb rechnen wir die Angabe in Kilogramm pro Hektar um:</p>
-<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="abbildungen-ii.html#cb411-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="ot">&lt;-</span> coffee_df <span class="sc">%&gt;%</span> </span>
-<span id="cb411-2"><a href="abbildungen-ii.html#cb411-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">&#39;kg/ha&#39;</span> <span class="ot">=</span> .<span class="dv">1</span> <span class="sc">*</span> Value)</span></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="abbildungen-ii.html#cb402-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="ot">&lt;-</span> coffee_df <span class="sc">%&gt;%</span> </span>
+<span id="cb402-2"><a href="abbildungen-ii.html#cb402-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">&#39;kg/ha&#39;</span> <span class="ot">=</span> .<span class="dv">1</span> <span class="sc">*</span> Value)</span></code></pre></div>
 <p>Diesen Datensatz wollen wir jetzt als Balkendiagramm darstellen:</p>
-<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="abbildungen-ii.html#cb412-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="sc">%&gt;%</span> </span>
-<span id="cb412-2"><a href="abbildungen-ii.html#cb412-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Area,</span>
-<span id="cb412-3"><a href="abbildungen-ii.html#cb412-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">+</span></span>
-<span id="cb412-4"><a href="abbildungen-ii.html#cb412-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&#39;#59ca19&#39;</span>) <span class="sc">+</span></span>
-<span id="cb412-5"><a href="abbildungen-ii.html#cb412-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="abbildungen-ii.html#cb403-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="sc">%&gt;%</span> </span>
+<span id="cb403-2"><a href="abbildungen-ii.html#cb403-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Area,</span>
+<span id="cb403-3"><a href="abbildungen-ii.html#cb403-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb403-4"><a href="abbildungen-ii.html#cb403-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&#39;#59ca19&#39;</span>) <span class="sc">+</span></span>
+<span id="cb403-5"><a href="abbildungen-ii.html#cb403-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-198-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Das sind sehr, sehr viele Einträge. Wir fangen damit an alle Länder unter dem 3. Quartil in eine Kategorie “other” zusammenzufassen und diese Werte dann zu mitteln:</p>
-<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="abbildungen-ii.html#cb413-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="sc">%&gt;%</span> </span>
-<span id="cb413-2"><a href="abbildungen-ii.html#cb413-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Area =</span> <span class="fu">ifelse</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span> <span class="sc">&lt;</span> <span class="fu">quantile</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>,<span class="at">probs =</span> .<span class="dv">75</span>),</span>
-<span id="cb413-3"><a href="abbildungen-ii.html#cb413-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&#39;other (mean)&#39;</span>,</span>
-<span id="cb413-4"><a href="abbildungen-ii.html#cb413-4" aria-hidden="true" tabindex="-1"></a>                       Area)) <span class="sc">%&gt;%</span> </span>
-<span id="cb413-5"><a href="abbildungen-ii.html#cb413-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Area) <span class="sc">%&gt;%</span> </span>
-<span id="cb413-6"><a href="abbildungen-ii.html#cb413-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb413-7"><a href="abbildungen-ii.html#cb413-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Area,</span>
-<span id="cb413-8"><a href="abbildungen-ii.html#cb413-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">+</span></span>
-<span id="cb413-9"><a href="abbildungen-ii.html#cb413-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&#39;#59ca19&#39;</span>) <span class="sc">+</span></span>
-<span id="cb413-10"><a href="abbildungen-ii.html#cb413-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="abbildungen-ii.html#cb404-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="sc">%&gt;%</span> </span>
+<span id="cb404-2"><a href="abbildungen-ii.html#cb404-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Area =</span> <span class="fu">ifelse</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span> <span class="sc">&lt;</span> <span class="fu">quantile</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>,<span class="at">probs =</span> .<span class="dv">75</span>),</span>
+<span id="cb404-3"><a href="abbildungen-ii.html#cb404-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&#39;other (mean)&#39;</span>,</span>
+<span id="cb404-4"><a href="abbildungen-ii.html#cb404-4" aria-hidden="true" tabindex="-1"></a>                       Area)) <span class="sc">%&gt;%</span> </span>
+<span id="cb404-5"><a href="abbildungen-ii.html#cb404-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Area) <span class="sc">%&gt;%</span> </span>
+<span id="cb404-6"><a href="abbildungen-ii.html#cb404-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb404-7"><a href="abbildungen-ii.html#cb404-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Area,</span>
+<span id="cb404-8"><a href="abbildungen-ii.html#cb404-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb404-9"><a href="abbildungen-ii.html#cb404-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&#39;#59ca19&#39;</span>) <span class="sc">+</span></span>
+<span id="cb404-10"><a href="abbildungen-ii.html#cb404-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-199-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Die y-Achse ist jetzt alphabetisch sortiert. Für einen Länder-Vergleich ist aber eine Ordnung nach Größe vorzuziehen, also machen wir das mal:</p>
-<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="abbildungen-ii.html#cb414-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="sc">%&gt;%</span> </span>
-<span id="cb414-2"><a href="abbildungen-ii.html#cb414-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Area =</span> <span class="fu">ifelse</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span> <span class="sc">&lt;</span> <span class="fu">quantile</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>,<span class="at">probs =</span> .<span class="dv">75</span>),</span>
-<span id="cb414-3"><a href="abbildungen-ii.html#cb414-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&#39;other (mean)&#39;</span>,</span>
-<span id="cb414-4"><a href="abbildungen-ii.html#cb414-4" aria-hidden="true" tabindex="-1"></a>                       Area)) <span class="sc">%&gt;%</span> </span>
-<span id="cb414-5"><a href="abbildungen-ii.html#cb414-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Area) <span class="sc">%&gt;%</span> </span>
-<span id="cb414-6"><a href="abbildungen-ii.html#cb414-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb414-7"><a href="abbildungen-ii.html#cb414-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Area =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(Area, <span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb414-8"><a href="abbildungen-ii.html#cb414-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Area,</span>
-<span id="cb414-9"><a href="abbildungen-ii.html#cb414-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">+</span></span>
-<span id="cb414-10"><a href="abbildungen-ii.html#cb414-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&#39;#59ca19&#39;</span>) <span class="sc">+</span></span>
-<span id="cb414-11"><a href="abbildungen-ii.html#cb414-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb414-12"><a href="abbildungen-ii.html#cb414-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;&#39;</span>,</span>
-<span id="cb414-13"><a href="abbildungen-ii.html#cb414-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Kilogramm pro Hektar&#39;</span>,</span>
-<span id="cb414-14"><a href="abbildungen-ii.html#cb414-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Produktionsmenge grünen Kaffees&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="abbildungen-ii.html#cb405-1" aria-hidden="true" tabindex="-1"></a>coffee_df <span class="sc">%&gt;%</span> </span>
+<span id="cb405-2"><a href="abbildungen-ii.html#cb405-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Area =</span> <span class="fu">ifelse</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span> <span class="sc">&lt;</span> <span class="fu">quantile</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>,<span class="at">probs =</span> .<span class="dv">75</span>),</span>
+<span id="cb405-3"><a href="abbildungen-ii.html#cb405-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&#39;other (mean)&#39;</span>,</span>
+<span id="cb405-4"><a href="abbildungen-ii.html#cb405-4" aria-hidden="true" tabindex="-1"></a>                       Area)) <span class="sc">%&gt;%</span> </span>
+<span id="cb405-5"><a href="abbildungen-ii.html#cb405-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Area) <span class="sc">%&gt;%</span> </span>
+<span id="cb405-6"><a href="abbildungen-ii.html#cb405-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb405-7"><a href="abbildungen-ii.html#cb405-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Area =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(Area, <span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb405-8"><a href="abbildungen-ii.html#cb405-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Area,</span>
+<span id="cb405-9"><a href="abbildungen-ii.html#cb405-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">kg/ha</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb405-10"><a href="abbildungen-ii.html#cb405-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&#39;#59ca19&#39;</span>) <span class="sc">+</span></span>
+<span id="cb405-11"><a href="abbildungen-ii.html#cb405-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb405-12"><a href="abbildungen-ii.html#cb405-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;&#39;</span>,</span>
+<span id="cb405-13"><a href="abbildungen-ii.html#cb405-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Kilogramm pro Hektar&#39;</span>,</span>
+<span id="cb405-14"><a href="abbildungen-ii.html#cb405-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Produktionsmenge grünen Kaffees&#39;</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-200-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="facets" class="section level3">
 <h3>facets</h3>
 <p>Wir betrachten den folgenden Datensatz, der ursprünglich von <a href="https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical/">der open-data Plattform des dwd</a> stammt.</p>
-<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="abbildungen-ii.html#cb415-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/flensburg_kiel_weather.csv&quot;</span>)</span>
-<span id="cb415-2"><a href="abbildungen-ii.html#cb415-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(flensburg_kiel_weather)</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="abbildungen-ii.html#cb406-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/flensburg_kiel_weather.csv&quot;</span>)</span>
+<span id="cb406-2"><a href="abbildungen-ii.html#cb406-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(flensburg_kiel_weather)</span></code></pre></div>
 <pre><code>## spec_tbl_df [78,283 × 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
 ##  $ station         : chr [1:78283] &quot;Flensburg&quot; &quot;Flensburg&quot; &quot;Flensburg&quot; &quot;Flensburg&quot; ...
 ##  $ jahr            : num [1:78283] 1985 1985 1985 1985 1985 ...
@@ -605,141 +604,141 @@ Nicht wirklich optimal, aber in der Richtung sinnvoll. Als ersten Optimierungssc
 ##   .. )
 ##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
 <p>Diesen Datensatz können wir jetzt benutzen um die mittlere Monatstemperatur über die Jahre darzustellen:</p>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="abbildungen-ii.html#cb417-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb417-2"><a href="abbildungen-ii.html#cb417-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat) <span class="sc">%&gt;%</span> </span>
-<span id="cb417-3"><a href="abbildungen-ii.html#cb417-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel)) <span class="sc">%&gt;%</span> </span>
-<span id="cb417-4"><a href="abbildungen-ii.html#cb417-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> monat, <span class="at">y =</span> mit_temp)) <span class="sc">+</span></span>
-<span id="cb417-5"><a href="abbildungen-ii.html#cb417-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="abbildungen-ii.html#cb408-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb408-2"><a href="abbildungen-ii.html#cb408-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat) <span class="sc">%&gt;%</span> </span>
+<span id="cb408-3"><a href="abbildungen-ii.html#cb408-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel)) <span class="sc">%&gt;%</span> </span>
+<span id="cb408-4"><a href="abbildungen-ii.html#cb408-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> monat, <span class="at">y =</span> mit_temp)) <span class="sc">+</span></span>
+<span id="cb408-5"><a href="abbildungen-ii.html#cb408-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-203-1.png" width="500px" style="display: block; margin: auto;" />
 Mit der <code>group</code>-aesthetic können wir diesen Graph jetzt per Jahreszahl aufteilen und mit color wieder die Temperatur verdeutlichen:</p>
-<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="abbildungen-ii.html#cb418-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb418-2"><a href="abbildungen-ii.html#cb418-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat) <span class="sc">%&gt;%</span> </span>
-<span id="cb418-3"><a href="abbildungen-ii.html#cb418-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel)) <span class="sc">%&gt;%</span> </span>
-<span id="cb418-4"><a href="abbildungen-ii.html#cb418-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> monat, </span>
-<span id="cb418-5"><a href="abbildungen-ii.html#cb418-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> mit_temp,</span>
-<span id="cb418-6"><a href="abbildungen-ii.html#cb418-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">group =</span> jahr,</span>
-<span id="cb418-7"><a href="abbildungen-ii.html#cb418-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> mit_temp)) <span class="sc">+</span></span>
-<span id="cb418-8"><a href="abbildungen-ii.html#cb418-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb418-9"><a href="abbildungen-ii.html#cb418-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb418-10"><a href="abbildungen-ii.html#cb418-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
-<span id="cb418-11"><a href="abbildungen-ii.html#cb418-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere °C&#39;</span>,</span>
-<span id="cb418-12"><a href="abbildungen-ii.html#cb418-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>,</span>
-<span id="cb418-13"><a href="abbildungen-ii.html#cb418-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Monat&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="abbildungen-ii.html#cb409-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb409-2"><a href="abbildungen-ii.html#cb409-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat) <span class="sc">%&gt;%</span> </span>
+<span id="cb409-3"><a href="abbildungen-ii.html#cb409-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel)) <span class="sc">%&gt;%</span> </span>
+<span id="cb409-4"><a href="abbildungen-ii.html#cb409-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> monat, </span>
+<span id="cb409-5"><a href="abbildungen-ii.html#cb409-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> mit_temp,</span>
+<span id="cb409-6"><a href="abbildungen-ii.html#cb409-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">group =</span> jahr,</span>
+<span id="cb409-7"><a href="abbildungen-ii.html#cb409-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> mit_temp)) <span class="sc">+</span></span>
+<span id="cb409-8"><a href="abbildungen-ii.html#cb409-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb409-9"><a href="abbildungen-ii.html#cb409-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb409-10"><a href="abbildungen-ii.html#cb409-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb409-11"><a href="abbildungen-ii.html#cb409-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere °C&#39;</span>,</span>
+<span id="cb409-12"><a href="abbildungen-ii.html#cb409-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>,</span>
+<span id="cb409-13"><a href="abbildungen-ii.html#cb409-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Monat&#39;</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-204-1.png" width="500px" style="display: block; margin: auto;" />
 Das ist zwar ganz hübsch, aber nicht alle Informationen, die wir darstellen können.
 Im Datensatz sind noch Angaben zu den Messstationen, die wir auch gern unterscheiden würden.
 <code>facets</code> können uns helfen, wir können so die einzelnen Stationen in Unterplots darstellen:</p>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="abbildungen-ii.html#cb419-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb419-2"><a href="abbildungen-ii.html#cb419-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat, station) <span class="sc">%&gt;%</span> </span>
-<span id="cb419-3"><a href="abbildungen-ii.html#cb419-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel)) <span class="sc">%&gt;%</span> </span>
-<span id="cb419-4"><a href="abbildungen-ii.html#cb419-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> monat, </span>
-<span id="cb419-5"><a href="abbildungen-ii.html#cb419-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> mit_temp,</span>
-<span id="cb419-6"><a href="abbildungen-ii.html#cb419-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">group =</span> jahr,</span>
-<span id="cb419-7"><a href="abbildungen-ii.html#cb419-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> mit_temp)) <span class="sc">+</span></span>
-<span id="cb419-8"><a href="abbildungen-ii.html#cb419-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb419-9"><a href="abbildungen-ii.html#cb419-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb419-10"><a href="abbildungen-ii.html#cb419-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
-<span id="cb419-11"><a href="abbildungen-ii.html#cb419-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere °C&#39;</span>,</span>
-<span id="cb419-12"><a href="abbildungen-ii.html#cb419-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>,</span>
-<span id="cb419-13"><a href="abbildungen-ii.html#cb419-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Monat&#39;</span>) <span class="sc">+</span></span>
-<span id="cb419-14"><a href="abbildungen-ii.html#cb419-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>station)</span></code></pre></div>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="abbildungen-ii.html#cb410-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb410-2"><a href="abbildungen-ii.html#cb410-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat, station) <span class="sc">%&gt;%</span> </span>
+<span id="cb410-3"><a href="abbildungen-ii.html#cb410-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel)) <span class="sc">%&gt;%</span> </span>
+<span id="cb410-4"><a href="abbildungen-ii.html#cb410-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> monat, </span>
+<span id="cb410-5"><a href="abbildungen-ii.html#cb410-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> mit_temp,</span>
+<span id="cb410-6"><a href="abbildungen-ii.html#cb410-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">group =</span> jahr,</span>
+<span id="cb410-7"><a href="abbildungen-ii.html#cb410-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> mit_temp)) <span class="sc">+</span></span>
+<span id="cb410-8"><a href="abbildungen-ii.html#cb410-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb410-9"><a href="abbildungen-ii.html#cb410-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb410-10"><a href="abbildungen-ii.html#cb410-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb410-11"><a href="abbildungen-ii.html#cb410-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere °C&#39;</span>,</span>
+<span id="cb410-12"><a href="abbildungen-ii.html#cb410-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>,</span>
+<span id="cb410-13"><a href="abbildungen-ii.html#cb410-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Monat&#39;</span>) <span class="sc">+</span></span>
+<span id="cb410-14"><a href="abbildungen-ii.html#cb410-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>station)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-205-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Auf diesen Graphen können wir noch Zusatzinformationen legen, so zum Beipiel einen layer, der die mittleren Monatstemperaturen über alle Jahre pro Station darstellt:</p>
-<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="abbildungen-ii.html#cb420-1" aria-hidden="true" tabindex="-1"></a>means_per_station <span class="ot">&lt;-</span> flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb420-2"><a href="abbildungen-ii.html#cb420-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(monat, station) <span class="sc">%&gt;%</span> </span>
-<span id="cb420-3"><a href="abbildungen-ii.html#cb420-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel,<span class="at">na.rm =</span> T),</span>
-<span id="cb420-4"><a href="abbildungen-ii.html#cb420-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">jahr =</span> <span class="st">&#39;mean&#39;</span>)</span>
-<span id="cb420-5"><a href="abbildungen-ii.html#cb420-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb420-6"><a href="abbildungen-ii.html#cb420-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb420-7"><a href="abbildungen-ii.html#cb420-7" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb420-8"><a href="abbildungen-ii.html#cb420-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat, station) <span class="sc">%&gt;%</span> </span>
-<span id="cb420-9"><a href="abbildungen-ii.html#cb420-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel)) <span class="sc">%&gt;%</span> </span>
-<span id="cb420-10"><a href="abbildungen-ii.html#cb420-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> monat, </span>
-<span id="cb420-11"><a href="abbildungen-ii.html#cb420-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> mit_temp,</span>
-<span id="cb420-12"><a href="abbildungen-ii.html#cb420-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">group =</span> jahr,</span>
-<span id="cb420-13"><a href="abbildungen-ii.html#cb420-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> mit_temp)) <span class="sc">+</span></span>
-<span id="cb420-14"><a href="abbildungen-ii.html#cb420-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb420-15"><a href="abbildungen-ii.html#cb420-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> means_per_station) <span class="sc">+</span></span>
-<span id="cb420-16"><a href="abbildungen-ii.html#cb420-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb420-17"><a href="abbildungen-ii.html#cb420-17" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
-<span id="cb420-18"><a href="abbildungen-ii.html#cb420-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere °C&#39;</span>,</span>
-<span id="cb420-19"><a href="abbildungen-ii.html#cb420-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>,</span>
-<span id="cb420-20"><a href="abbildungen-ii.html#cb420-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Monat&#39;</span>) <span class="sc">+</span></span>
-<span id="cb420-21"><a href="abbildungen-ii.html#cb420-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>station)</span></code></pre></div>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="abbildungen-ii.html#cb411-1" aria-hidden="true" tabindex="-1"></a>means_per_station <span class="ot">&lt;-</span> flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb411-2"><a href="abbildungen-ii.html#cb411-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(monat, station) <span class="sc">%&gt;%</span> </span>
+<span id="cb411-3"><a href="abbildungen-ii.html#cb411-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel,<span class="at">na.rm =</span> T),</span>
+<span id="cb411-4"><a href="abbildungen-ii.html#cb411-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">jahr =</span> <span class="st">&#39;mean&#39;</span>)</span>
+<span id="cb411-5"><a href="abbildungen-ii.html#cb411-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb411-6"><a href="abbildungen-ii.html#cb411-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb411-7"><a href="abbildungen-ii.html#cb411-7" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb411-8"><a href="abbildungen-ii.html#cb411-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat, station) <span class="sc">%&gt;%</span> </span>
+<span id="cb411-9"><a href="abbildungen-ii.html#cb411-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel)) <span class="sc">%&gt;%</span> </span>
+<span id="cb411-10"><a href="abbildungen-ii.html#cb411-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> monat, </span>
+<span id="cb411-11"><a href="abbildungen-ii.html#cb411-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> mit_temp,</span>
+<span id="cb411-12"><a href="abbildungen-ii.html#cb411-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">group =</span> jahr,</span>
+<span id="cb411-13"><a href="abbildungen-ii.html#cb411-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> mit_temp)) <span class="sc">+</span></span>
+<span id="cb411-14"><a href="abbildungen-ii.html#cb411-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb411-15"><a href="abbildungen-ii.html#cb411-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> means_per_station) <span class="sc">+</span></span>
+<span id="cb411-16"><a href="abbildungen-ii.html#cb411-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb411-17"><a href="abbildungen-ii.html#cb411-17" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb411-18"><a href="abbildungen-ii.html#cb411-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere °C&#39;</span>,</span>
+<span id="cb411-19"><a href="abbildungen-ii.html#cb411-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>,</span>
+<span id="cb411-20"><a href="abbildungen-ii.html#cb411-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Monat&#39;</span>) <span class="sc">+</span></span>
+<span id="cb411-21"><a href="abbildungen-ii.html#cb411-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>station)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-206-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Mit einem Layer nach dem <code>facet-wrap</code> kann man auch einen Wert für alle hinzufügen. So könnten wir uns überlegen, in jeden Plot noch einen Mittelwertsverlauf für alle Stationen aufnehmen zu wollen:</p>
-<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="abbildungen-ii.html#cb421-1" aria-hidden="true" tabindex="-1"></a>means_per_station <span class="ot">&lt;-</span> flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb421-2"><a href="abbildungen-ii.html#cb421-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(monat, station) <span class="sc">%&gt;%</span> </span>
-<span id="cb421-3"><a href="abbildungen-ii.html#cb421-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel,<span class="at">na.rm =</span> T),</span>
-<span id="cb421-4"><a href="abbildungen-ii.html#cb421-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">jahr =</span> <span class="st">&#39;mean&#39;</span>)</span>
-<span id="cb421-5"><a href="abbildungen-ii.html#cb421-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb421-6"><a href="abbildungen-ii.html#cb421-6" aria-hidden="true" tabindex="-1"></a>means_for_all <span class="ot">&lt;-</span> flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb421-7"><a href="abbildungen-ii.html#cb421-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(monat) <span class="sc">%&gt;%</span> </span>
-<span id="cb421-8"><a href="abbildungen-ii.html#cb421-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel,<span class="at">na.rm =</span> T),</span>
-<span id="cb421-9"><a href="abbildungen-ii.html#cb421-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">jahr =</span> <span class="st">&#39;mean&#39;</span>)</span>
-<span id="cb421-10"><a href="abbildungen-ii.html#cb421-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb421-11"><a href="abbildungen-ii.html#cb421-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb421-12"><a href="abbildungen-ii.html#cb421-12" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb421-13"><a href="abbildungen-ii.html#cb421-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat, station) <span class="sc">%&gt;%</span> </span>
-<span id="cb421-14"><a href="abbildungen-ii.html#cb421-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel)) <span class="sc">%&gt;%</span> </span>
-<span id="cb421-15"><a href="abbildungen-ii.html#cb421-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> monat, </span>
-<span id="cb421-16"><a href="abbildungen-ii.html#cb421-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> mit_temp,</span>
-<span id="cb421-17"><a href="abbildungen-ii.html#cb421-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">group =</span> jahr,</span>
-<span id="cb421-18"><a href="abbildungen-ii.html#cb421-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> mit_temp)) <span class="sc">+</span></span>
-<span id="cb421-19"><a href="abbildungen-ii.html#cb421-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb421-20"><a href="abbildungen-ii.html#cb421-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> means_per_station) <span class="sc">+</span></span>
-<span id="cb421-21"><a href="abbildungen-ii.html#cb421-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb421-22"><a href="abbildungen-ii.html#cb421-22" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
-<span id="cb421-23"><a href="abbildungen-ii.html#cb421-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere °C&#39;</span>,</span>
-<span id="cb421-24"><a href="abbildungen-ii.html#cb421-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>,</span>
-<span id="cb421-25"><a href="abbildungen-ii.html#cb421-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Monat&#39;</span>) <span class="sc">+</span></span>
-<span id="cb421-26"><a href="abbildungen-ii.html#cb421-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>station)<span class="sc">+</span></span>
-<span id="cb421-27"><a href="abbildungen-ii.html#cb421-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> means_for_all,</span>
-<span id="cb421-28"><a href="abbildungen-ii.html#cb421-28" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&#39;green&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="abbildungen-ii.html#cb412-1" aria-hidden="true" tabindex="-1"></a>means_per_station <span class="ot">&lt;-</span> flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb412-2"><a href="abbildungen-ii.html#cb412-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(monat, station) <span class="sc">%&gt;%</span> </span>
+<span id="cb412-3"><a href="abbildungen-ii.html#cb412-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel,<span class="at">na.rm =</span> T),</span>
+<span id="cb412-4"><a href="abbildungen-ii.html#cb412-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">jahr =</span> <span class="st">&#39;mean&#39;</span>)</span>
+<span id="cb412-5"><a href="abbildungen-ii.html#cb412-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb412-6"><a href="abbildungen-ii.html#cb412-6" aria-hidden="true" tabindex="-1"></a>means_for_all <span class="ot">&lt;-</span> flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb412-7"><a href="abbildungen-ii.html#cb412-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(monat) <span class="sc">%&gt;%</span> </span>
+<span id="cb412-8"><a href="abbildungen-ii.html#cb412-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel,<span class="at">na.rm =</span> T),</span>
+<span id="cb412-9"><a href="abbildungen-ii.html#cb412-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">jahr =</span> <span class="st">&#39;mean&#39;</span>)</span>
+<span id="cb412-10"><a href="abbildungen-ii.html#cb412-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb412-11"><a href="abbildungen-ii.html#cb412-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb412-12"><a href="abbildungen-ii.html#cb412-12" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb412-13"><a href="abbildungen-ii.html#cb412-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jahr, monat, station) <span class="sc">%&gt;%</span> </span>
+<span id="cb412-14"><a href="abbildungen-ii.html#cb412-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mit_temp =</span> <span class="fu">mean</span>(tagesmittel)) <span class="sc">%&gt;%</span> </span>
+<span id="cb412-15"><a href="abbildungen-ii.html#cb412-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> monat, </span>
+<span id="cb412-16"><a href="abbildungen-ii.html#cb412-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> mit_temp,</span>
+<span id="cb412-17"><a href="abbildungen-ii.html#cb412-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">group =</span> jahr,</span>
+<span id="cb412-18"><a href="abbildungen-ii.html#cb412-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> mit_temp)) <span class="sc">+</span></span>
+<span id="cb412-19"><a href="abbildungen-ii.html#cb412-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb412-20"><a href="abbildungen-ii.html#cb412-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> means_per_station) <span class="sc">+</span></span>
+<span id="cb412-21"><a href="abbildungen-ii.html#cb412-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb412-22"><a href="abbildungen-ii.html#cb412-22" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb412-23"><a href="abbildungen-ii.html#cb412-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere °C&#39;</span>,</span>
+<span id="cb412-24"><a href="abbildungen-ii.html#cb412-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>,</span>
+<span id="cb412-25"><a href="abbildungen-ii.html#cb412-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Monat&#39;</span>) <span class="sc">+</span></span>
+<span id="cb412-26"><a href="abbildungen-ii.html#cb412-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>station)<span class="sc">+</span></span>
+<span id="cb412-27"><a href="abbildungen-ii.html#cb412-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> means_for_all,</span>
+<span id="cb412-28"><a href="abbildungen-ii.html#cb412-28" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&#39;green&#39;</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-207-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="deskripitv-statische-layer" class="section level3">
 <h3>Deskripitv-statische Layer</h3>
 <p>In dem Datensatz von eben waren auch Werte zur Niederschlagsmenge. Wir könntn uns jetzt die Frage stellen, ob es einen Zusammenhang zwischen der Art und Menge des Niederschlags und der Temperatur gibt.</p>
 <p>Dafür erstellen wir zuerst einen Scatterplot, der die Niederschlagsmenge gegen die Temperatur abträgt:</p>
-<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="abbildungen-ii.html#cb422-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb422-2"><a href="abbildungen-ii.html#cb422-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> niederschlaege, </span>
-<span id="cb422-3"><a href="abbildungen-ii.html#cb422-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> tagesmittel)) <span class="sc">+</span></span>
-<span id="cb422-4"><a href="abbildungen-ii.html#cb422-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="abbildungen-ii.html#cb413-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb413-2"><a href="abbildungen-ii.html#cb413-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> niederschlaege, </span>
+<span id="cb413-3"><a href="abbildungen-ii.html#cb413-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> tagesmittel)) <span class="sc">+</span></span>
+<span id="cb413-4"><a href="abbildungen-ii.html#cb413-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-208-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Das ist ein bisschen unübersichtlich, wir aggregieren mal pro Niederschlagsart, Jahr und Station:</p>
-<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="abbildungen-ii.html#cb423-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb423-2"><a href="abbildungen-ii.html#cb423-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(niederschlagsart, jahr, station) <span class="sc">%&gt;%</span> </span>
-<span id="cb423-3"><a href="abbildungen-ii.html#cb423-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric),mean)) <span class="sc">%&gt;%</span> </span>
-<span id="cb423-4"><a href="abbildungen-ii.html#cb423-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> niederschlaege, </span>
-<span id="cb423-5"><a href="abbildungen-ii.html#cb423-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> tagesmittel)) <span class="sc">+</span></span>
-<span id="cb423-6"><a href="abbildungen-ii.html#cb423-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="abbildungen-ii.html#cb414-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb414-2"><a href="abbildungen-ii.html#cb414-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(niederschlagsart, jahr, station) <span class="sc">%&gt;%</span> </span>
+<span id="cb414-3"><a href="abbildungen-ii.html#cb414-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric),mean)) <span class="sc">%&gt;%</span> </span>
+<span id="cb414-4"><a href="abbildungen-ii.html#cb414-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> niederschlaege, </span>
+<span id="cb414-5"><a href="abbildungen-ii.html#cb414-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> tagesmittel)) <span class="sc">+</span></span>
+<span id="cb414-6"><a href="abbildungen-ii.html#cb414-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-209-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Jetzt könnten wir die Hypothese haben, dass es eine Korrelation zwischen Temperatur und Niederschlagsmenge gibt. <code>ggplot2</code> stellt mit der <code>geom_smooth</code>-Funktion eine einfache Möglichkeit dar, eine lineare Regression auf die Daten zu fitten. Wir setzen hier die Argumente <code>method = 'lm'</code> um anzugeben, dass wir ein lineares Modell fitten wollen und das Argument <code>se = F</code>, weil wir keine Fehlerbereiche anzeigen wollen:</p>
-<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="abbildungen-ii.html#cb424-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb424-2"><a href="abbildungen-ii.html#cb424-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(niederschlagsart, jahr, station) <span class="sc">%&gt;%</span> </span>
-<span id="cb424-3"><a href="abbildungen-ii.html#cb424-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric),mean)) <span class="sc">%&gt;%</span> </span>
-<span id="cb424-4"><a href="abbildungen-ii.html#cb424-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> niederschlaege, </span>
-<span id="cb424-5"><a href="abbildungen-ii.html#cb424-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> tagesmittel)) <span class="sc">+</span></span>
-<span id="cb424-6"><a href="abbildungen-ii.html#cb424-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb424-7"><a href="abbildungen-ii.html#cb424-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>,</span>
-<span id="cb424-8"><a href="abbildungen-ii.html#cb424-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="abbildungen-ii.html#cb415-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb415-2"><a href="abbildungen-ii.html#cb415-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(niederschlagsart, jahr, station) <span class="sc">%&gt;%</span> </span>
+<span id="cb415-3"><a href="abbildungen-ii.html#cb415-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric),mean)) <span class="sc">%&gt;%</span> </span>
+<span id="cb415-4"><a href="abbildungen-ii.html#cb415-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> niederschlaege, </span>
+<span id="cb415-5"><a href="abbildungen-ii.html#cb415-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> tagesmittel)) <span class="sc">+</span></span>
+<span id="cb415-6"><a href="abbildungen-ii.html#cb415-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb415-7"><a href="abbildungen-ii.html#cb415-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>,</span>
+<span id="cb415-8"><a href="abbildungen-ii.html#cb415-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-210-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Das ist ein bisschen unbefriedigend. Wenn wir die Niederschlagsart als Gruppierung hinzufügen wird’s aber ein bisschen schicker:</p>
-<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="abbildungen-ii.html#cb425-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
-<span id="cb425-2"><a href="abbildungen-ii.html#cb425-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(niederschlagsart, jahr, station) <span class="sc">%&gt;%</span> </span>
-<span id="cb425-3"><a href="abbildungen-ii.html#cb425-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric),mean)) <span class="sc">%&gt;%</span> </span>
-<span id="cb425-4"><a href="abbildungen-ii.html#cb425-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> niederschlaege, </span>
-<span id="cb425-5"><a href="abbildungen-ii.html#cb425-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> tagesmittel)) <span class="sc">+</span></span>
-<span id="cb425-6"><a href="abbildungen-ii.html#cb425-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> niederschlagsart),</span>
-<span id="cb425-7"><a href="abbildungen-ii.html#cb425-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb425-8"><a href="abbildungen-ii.html#cb425-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>,</span>
-<span id="cb425-9"><a href="abbildungen-ii.html#cb425-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
-<span id="cb425-10"><a href="abbildungen-ii.html#cb425-10" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&#39;gesamt&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb425-11"><a href="abbildungen-ii.html#cb425-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>,</span>
-<span id="cb425-12"><a href="abbildungen-ii.html#cb425-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
-<span id="cb425-13"><a href="abbildungen-ii.html#cb425-13" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">color =</span> niederschlagsart)) <span class="sc">+</span></span>
-<span id="cb425-14"><a href="abbildungen-ii.html#cb425-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Set1&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="abbildungen-ii.html#cb416-1" aria-hidden="true" tabindex="-1"></a>flensburg_kiel_weather <span class="sc">%&gt;%</span> </span>
+<span id="cb416-2"><a href="abbildungen-ii.html#cb416-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(niederschlagsart, jahr, station) <span class="sc">%&gt;%</span> </span>
+<span id="cb416-3"><a href="abbildungen-ii.html#cb416-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric),mean)) <span class="sc">%&gt;%</span> </span>
+<span id="cb416-4"><a href="abbildungen-ii.html#cb416-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> niederschlaege, </span>
+<span id="cb416-5"><a href="abbildungen-ii.html#cb416-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> tagesmittel)) <span class="sc">+</span></span>
+<span id="cb416-6"><a href="abbildungen-ii.html#cb416-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> niederschlagsart),</span>
+<span id="cb416-7"><a href="abbildungen-ii.html#cb416-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb416-8"><a href="abbildungen-ii.html#cb416-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>,</span>
+<span id="cb416-9"><a href="abbildungen-ii.html#cb416-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
+<span id="cb416-10"><a href="abbildungen-ii.html#cb416-10" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&#39;gesamt&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb416-11"><a href="abbildungen-ii.html#cb416-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>,</span>
+<span id="cb416-12"><a href="abbildungen-ii.html#cb416-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
+<span id="cb416-13"><a href="abbildungen-ii.html#cb416-13" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">color =</span> niederschlagsart)) <span class="sc">+</span></span>
+<span id="cb416-14"><a href="abbildungen-ii.html#cb416-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Set1&#39;</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-211-1.png" width="500px" style="display: block; margin: auto;" /></p>
 
 </div>

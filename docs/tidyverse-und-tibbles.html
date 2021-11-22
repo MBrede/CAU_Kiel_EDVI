@@ -24,7 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-10-25" />
+<meta name="date" content="2021-11-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -190,7 +190,6 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Pakete benutzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen-und-ergänzen"><i class="fa fa-check"></i>Datensätze erstellen und ergänzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren-und-indizieren"><i class="fa fa-check"></i>Datensätze sortieren und indizieren</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#vorlesung"><i class="fa fa-check"></i>Vorlesung</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html"><i class="fa fa-check"></i>Faktoren und Aggregation</a>
 <ul>
@@ -731,389 +730,37 @@ Dafür können wir die <code>arrange</code>-Funktion und unseren pipe-Operator b
 <!-- Bestimmen Sie anschließend das Maximum, das Minimum, den Range, den Median, die Quartile, den Mittelwert, die Standardabweichung, die korrigierte Stichprobenvarianz und die unkorrigierte Stichprobenvarianz der ersten ZVA. -->
 <!-- Bestimmen Sie mit Hilfe der Faktoren gruppenweise Median, Mittelwert und Standardabweichung für den zweiten Vektor. -->
 <!-- Bestimmen Sie zuletzt die Kovarianz und die Korrelation der beiden ZVA. -->
-</div>
-</div>
-<div id="vorlesung" class="section level2">
-<h2>Vorlesung</h2>
-<div id="skript-aus-der-vorlesung" class="section level3">
-<h3>Skript aus der Vorlesung:</h3>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="tidyverse-und-tibbles.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb289-2"><a href="tidyverse-und-tibbles.html#cb289-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb289-3"><a href="tidyverse-und-tibbles.html#cb289-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,</span>
-<span id="cb289-4"><a href="tidyverse-und-tibbles.html#cb289-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="dv">201</span><span class="sc">:</span><span class="dv">300</span>)</span>
-<span id="cb289-5"><a href="tidyverse-und-tibbles.html#cb289-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb289-6"><a href="tidyverse-und-tibbles.html#cb289-6" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,</span>
-<span id="cb289-7"><a href="tidyverse-und-tibbles.html#cb289-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">y =</span> <span class="dv">201</span><span class="sc">:</span><span class="dv">300</span>)</span>
-<span id="cb289-8"><a href="tidyverse-und-tibbles.html#cb289-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb289-9"><a href="tidyverse-und-tibbles.html#cb289-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">x =</span> <span class="dv">1</span>, </span>
-<span id="cb289-10"><a href="tidyverse-und-tibbles.html#cb289-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, </span>
-<span id="cb289-11"><a href="tidyverse-und-tibbles.html#cb289-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">z =</span> <span class="st">&#39;10&#39;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 3 × 3
-##       x     y z    
-##   &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;
-## 1     1     1 10   
-## 2     1     2 10   
-## 3     1     3 10</code></pre>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="tidyverse-und-tibbles.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(iris)</span></code></pre></div>
-<pre><code>## # A tibble: 150 × 5
-##    Sepal.Length Sepal.Width Petal.Length Petal.Width
-##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
-##  1          5.1         3.5          1.4         0.2
-##  2          4.9         3            1.4         0.2
-##  3          4.7         3.2          1.3         0.2
-##  4          4.6         3.1          1.5         0.2
-##  5          5           3.6          1.4         0.2
-##  6          5.4         3.9          1.7         0.4
-##  7          4.6         3.4          1.4         0.3
-##  8          5           3.4          1.5         0.2
-##  9          4.4         2.9          1.4         0.2
-## 10          4.9         3.1          1.5         0.1
-## # … with 140 more rows, and 1 more variable:
-## #   Species &lt;fct&gt;</code></pre>
-<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="tidyverse-und-tibbles.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(iris)</span></code></pre></div>
-<pre><code>## Rows: 150
-## Columns: 5
-## $ Sepal.Length &lt;dbl&gt; 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4…
-## $ Sepal.Width  &lt;dbl&gt; 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3…
-## $ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1…
-## $ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0…
-## $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa,…</code></pre>
-<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="tidyverse-und-tibbles.html#cb295-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> iris</span>
-<span id="cb295-2"><a href="tidyverse-und-tibbles.html#cb295-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb295-3"><a href="tidyverse-und-tibbles.html#cb295-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">mutate</span>(a, <span class="at">new_column =</span> <span class="dv">1</span>)</span>
-<span id="cb295-4"><a href="tidyverse-und-tibbles.html#cb295-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb295-5"><a href="tidyverse-und-tibbles.html#cb295-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb295-6"><a href="tidyverse-und-tibbles.html#cb295-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">id =</span> <span class="fu">sample</span>(letters, <span class="dv">20</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb295-7"><a href="tidyverse-und-tibbles.html#cb295-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">spr_iq =</span> <span class="fu">sample</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">115</span>, <span class="dv">20</span>, T),</span>
-<span id="cb295-8"><a href="tidyverse-und-tibbles.html#cb295-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">log_iq =</span> <span class="fu">sample</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">115</span>, <span class="dv">20</span>, T),</span>
-<span id="cb295-9"><a href="tidyverse-und-tibbles.html#cb295-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">smokes =</span> <span class="fu">sample</span>(<span class="fu">c</span>(T,F), <span class="dv">20</span>, T))</span>
-<span id="cb295-10"><a href="tidyverse-und-tibbles.html#cb295-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb295-11"><a href="tidyverse-und-tibbles.html#cb295-11" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb295-12"><a href="tidyverse-und-tibbles.html#cb295-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ges_iq =</span> (spr_iq <span class="sc">+</span> log_iq) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb295-13"><a href="tidyverse-und-tibbles.html#cb295-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(ges_iq) <span class="sc">%&gt;%</span> </span>
-<span id="cb295-14"><a href="tidyverse-und-tibbles.html#cb295-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ges_iq <span class="sc">&gt;</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb295-15"><a href="tidyverse-und-tibbles.html#cb295-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&#39;iq&#39;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb295-16"><a href="tidyverse-und-tibbles.html#cb295-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cor</span>()</span></code></pre></div>
-<pre><code>##            spr_iq     log_iq    ges_iq
-## spr_iq  1.0000000 -0.4150668 0.7481315
-## log_iq -0.4150668  1.0000000 0.2931677
-## ges_iq  0.7481315  0.2931677 1.0000000</code></pre>
-<p>Als ergänzende Nebenbemerkung:</p>
-<p>mit <code>skim</code> aus dem <code>skimr</code>-Paket lässt sich der Überblick noch schöner gestalten:</p>
-<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="tidyverse-und-tibbles.html#cb297-1" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(iris)</span></code></pre></div>
-<table style="width: auto;" class="table table-condensed">
-<caption>
-<span id="tab:unnamed-chunk-105">Tab. 1: </span>Data summary
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Name
-</td>
-<td style="text-align:left;">
-iris
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Number of rows
-</td>
-<td style="text-align:left;">
-150
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Number of columns
-</td>
-<td style="text-align:left;">
-5
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-_______________________
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Column type frequency:
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-factor
-</td>
-<td style="text-align:left;">
-1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-4
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-________________________
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Group variables
-</td>
-<td style="text-align:left;">
-None
-</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: factor</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-skim_variable
-</th>
-<th style="text-align:right;">
-n_missing
-</th>
-<th style="text-align:right;">
-complete_rate
-</th>
-<th style="text-align:left;">
-ordered
-</th>
-<th style="text-align:right;">
-n_unique
-</th>
-<th style="text-align:left;">
-top_counts
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Species
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:left;">
-set: 50, ver: 50, vir: 50
-</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: numeric</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-skim_variable
-</th>
-<th style="text-align:right;">
-n_missing
-</th>
-<th style="text-align:right;">
-complete_rate
-</th>
-<th style="text-align:right;">
-mean
-</th>
-<th style="text-align:right;">
-sd
-</th>
-<th style="text-align:right;">
-p0
-</th>
-<th style="text-align:right;">
-p25
-</th>
-<th style="text-align:right;">
-p50
-</th>
-<th style="text-align:right;">
-p75
-</th>
-<th style="text-align:right;">
-p100
-</th>
-<th style="text-align:left;">
-hist
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Sepal.Length
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-5.84
-</td>
-<td style="text-align:right;">
-0.83
-</td>
-<td style="text-align:right;">
-4.3
-</td>
-<td style="text-align:right;">
-5.1
-</td>
-<td style="text-align:right;">
-5.80
-</td>
-<td style="text-align:right;">
-6.4
-</td>
-<td style="text-align:right;">
-7.9
-</td>
-<td style="text-align:left;">
-▆▇▇▅▂
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Sepal.Width
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-3.06
-</td>
-<td style="text-align:right;">
-0.44
-</td>
-<td style="text-align:right;">
-2.0
-</td>
-<td style="text-align:right;">
-2.8
-</td>
-<td style="text-align:right;">
-3.00
-</td>
-<td style="text-align:right;">
-3.3
-</td>
-<td style="text-align:right;">
-4.4
-</td>
-<td style="text-align:left;">
-▁▆▇▂▁
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Petal.Length
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-3.76
-</td>
-<td style="text-align:right;">
-1.77
-</td>
-<td style="text-align:right;">
-1.0
-</td>
-<td style="text-align:right;">
-1.6
-</td>
-<td style="text-align:right;">
-4.35
-</td>
-<td style="text-align:right;">
-5.1
-</td>
-<td style="text-align:right;">
-6.9
-</td>
-<td style="text-align:left;">
-▇▁▆▇▂
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Petal.Width
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-1.20
-</td>
-<td style="text-align:right;">
-0.76
-</td>
-<td style="text-align:right;">
-0.1
-</td>
-<td style="text-align:right;">
-0.3
-</td>
-<td style="text-align:right;">
-1.30
-</td>
-<td style="text-align:right;">
-1.8
-</td>
-<td style="text-align:right;">
-2.5
-</td>
-<td style="text-align:left;">
-▇▁▇▅▃
-</td>
-</tr>
-</tbody>
-</table>
+<!-- ## Vorlesung -->
+<!-- ### Skript aus der Vorlesung: -->
+<!-- ```{r results_of_lecture} -->
+<!-- library(tidyverse) -->
+<!-- a <- data.frame(x = 1:100, -->
+<!--                 y = 201:300) -->
+<!-- b <- tibble(x = 1:100, -->
+<!--             y = 201:300) -->
+<!-- tibble(x = 1,  -->
+<!--        y = 1:3,  -->
+<!--        z = '10') -->
+<!-- tibble(iris) -->
+<!-- glimpse(iris) -->
+<!-- a <- iris -->
+<!-- a <- mutate(a, new_column = 1) -->
+<!-- df <- tibble(id = sample(letters, 20, replace = TRUE), -->
+<!--              spr_iq = sample(80:115, 20, T), -->
+<!--              log_iq = sample(80:115, 20, T), -->
+<!--              smokes = sample(c(T,F), 20, T)) -->
+<!-- df %>%  -->
+<!--   mutate(ges_iq = (spr_iq + log_iq) / 2) %>%  -->
+<!--   arrange(ges_iq) %>%  -->
+<!--   filter(ges_iq > 100) %>%  -->
+<!--   select(contains('iq')) %>%  -->
+<!--   cor() -->
+<!-- ``` -->
+<!-- Als ergänzende Nebenbemerkung: -->
+<!-- mit `skim` aus dem `skimr`-Paket lässt sich der Überblick noch schöner gestalten: -->
+<!-- ```{r, eval = knitr::is_html_output()} -->
+<!-- skimr::skim(iris) -->
+<!-- ``` -->
 
 <!-- # --- -->
 <!-- title: 'Psy_B_11: EDV I - Kapitel 4' -->

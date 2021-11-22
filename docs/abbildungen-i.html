@@ -24,7 +24,7 @@
 <meta name="author" content="Max Brede" />
 
 
-<meta name="date" content="2021-10-25" />
+<meta name="date" content="2021-11-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -190,7 +190,6 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html"><i class="fa fa-check"></i>Pakete benutzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-erstellen-und-ergänzen"><i class="fa fa-check"></i>Datensätze erstellen und ergänzen</a></li>
 <li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#datensätze-sortieren-und-indizieren"><i class="fa fa-check"></i>Datensätze sortieren und indizieren</a></li>
-<li class="chapter" data-level="" data-path="tidyverse-und-tibbles.html"><a href="tidyverse-und-tibbles.html#vorlesung"><i class="fa fa-check"></i>Vorlesung</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="faktoren-und-aggregation.html"><a href="faktoren-und-aggregation.html"><i class="fa fa-check"></i>Faktoren und Aggregation</a>
 <ul>
@@ -390,10 +389,10 @@ Vera Baum
 <div id="datensatz" class="section level3">
 <h3>Datensatz</h3>
 <p>Wir nutzen den zusammengefügten Datensatz aus der letzten Sitzung:</p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="abbildungen-i.html#cb363-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb363-2"><a href="abbildungen-i.html#cb363-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&#39;data/output.xlsx&#39;</span>, <span class="at">sheet =</span> <span class="dv">2</span>)</span>
-<span id="cb363-3"><a href="abbildungen-i.html#cb363-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb363-4"><a href="abbildungen-i.html#cb363-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="abbildungen-i.html#cb354-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb354-2"><a href="abbildungen-i.html#cb354-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&#39;data/output.xlsx&#39;</span>, <span class="at">sheet =</span> <span class="dv">2</span>)</span>
+<span id="cb354-3"><a href="abbildungen-i.html#cb354-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb354-4"><a href="abbildungen-i.html#cb354-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code></pre></div>
 <pre><code>##      Land              Stadt          
 ##  Length:30          Length:30         
 ##  Class :character   Class :character  
@@ -437,16 +436,16 @@ Vera Baum
 ##  3rd Qu.: 850.8              
 ##  Max.   :1763.0</code></pre>
 <p>Um den Datensatz richtig darstellen zu können, müssen wir nun alle Werte, die auf einer Dimension dargestellt werden, in eine Variable pivotieren. Wir wollen als erstes die Anzahl der einzelnen Haushalte in einer Grafik darstellen, pivotieren den Datensatz also so, dass alle Haushalts-Spalten in einer Spalte landen. Dafür nutzen wir die <code>pivot_longer</code>-Funktion:</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="abbildungen-i.html#cb365-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb365-2"><a href="abbildungen-i.html#cb365-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">all_of</span>(<span class="fu">c</span>(<span class="st">&quot;Einpersonen&quot;</span>, </span>
-<span id="cb365-3"><a href="abbildungen-i.html#cb365-3" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Paar ohne Kind&quot;</span>, </span>
-<span id="cb365-4"><a href="abbildungen-i.html#cb365-4" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Paar mit Kindern&quot;</span>, </span>
-<span id="cb365-5"><a href="abbildungen-i.html#cb365-5" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Paar mit Nachkommen&quot;</span>,</span>
-<span id="cb365-6"><a href="abbildungen-i.html#cb365-6" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Alleinerziehende&quot;</span>, </span>
-<span id="cb365-7"><a href="abbildungen-i.html#cb365-7" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Sonst. Mehrpersonenhaushalte&quot;</span>)),</span>
-<span id="cb365-8"><a href="abbildungen-i.html#cb365-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&#39;Haushaltsform&#39;</span>,</span>
-<span id="cb365-9"><a href="abbildungen-i.html#cb365-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&#39;Anzahl&#39;</span>)</span>
-<span id="cb365-10"><a href="abbildungen-i.html#cb365-10" aria-hidden="true" tabindex="-1"></a>df_long</span></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="abbildungen-i.html#cb356-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb356-2"><a href="abbildungen-i.html#cb356-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">all_of</span>(<span class="fu">c</span>(<span class="st">&quot;Einpersonen&quot;</span>, </span>
+<span id="cb356-3"><a href="abbildungen-i.html#cb356-3" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Paar ohne Kind&quot;</span>, </span>
+<span id="cb356-4"><a href="abbildungen-i.html#cb356-4" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Paar mit Kindern&quot;</span>, </span>
+<span id="cb356-5"><a href="abbildungen-i.html#cb356-5" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Paar mit Nachkommen&quot;</span>,</span>
+<span id="cb356-6"><a href="abbildungen-i.html#cb356-6" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Alleinerziehende&quot;</span>, </span>
+<span id="cb356-7"><a href="abbildungen-i.html#cb356-7" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Sonst. Mehrpersonenhaushalte&quot;</span>)),</span>
+<span id="cb356-8"><a href="abbildungen-i.html#cb356-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&#39;Haushaltsform&#39;</span>,</span>
+<span id="cb356-9"><a href="abbildungen-i.html#cb356-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&#39;Anzahl&#39;</span>)</span>
+<span id="cb356-10"><a href="abbildungen-i.html#cb356-10" aria-hidden="true" tabindex="-1"></a>df_long</span></code></pre></div>
 <pre><code>## # A tibble: 180 × 8
 ##    Land  Stadt Kategorie Merkmal           Stadtteil
 ##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;             &lt;chr&gt;    
@@ -498,12 +497,12 @@ Dabei wird beim Erstellen der ‘Leinwand’ direkt festgelegt, auf welchen Date
 <p>Diese ‘leere Leinwand’ erwartet einen Datensatz als 1. und das Ergebnis eines Aufrufes der <code>aes()</code>-Funktion als 2. Argument.
 Der Datensatz dient dazu einen Variablenraum für die Darstellungen zur Verfügung zu stellen, die <code>aesthetics</code> geben unter anderem an, welche Werte für <em>x</em>- und <em>y</em>-Achse herangezogen werden.</p>
 <p>So wollen wir einen Plot vorbereiten, in dem die mittlere Anzahl der Haushalte als Scatterplot gegen die Größe des Viertels abgetragen wird. Dafür pipen wir einfach die mittleren Größen in eine <code>ggplot</code>-Funktion und legen fest, was auf der x und was auf der y-Achse abgetragen werden soll:</p>
-<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="abbildungen-i.html#cb367-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
-<span id="cb367-2"><a href="abbildungen-i.html#cb367-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Stadtteil) <span class="sc">%&gt;%</span> </span>
-<span id="cb367-3"><a href="abbildungen-i.html#cb367-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">mittlere Anzahl</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(Anzahl),</span>
-<span id="cb367-4"><a href="abbildungen-i.html#cb367-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Hektar =</span> Hektar) <span class="sc">%&gt;%</span> </span>
-<span id="cb367-5"><a href="abbildungen-i.html#cb367-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
-<span id="cb367-6"><a href="abbildungen-i.html#cb367-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">mittlere Anzahl</span><span class="st">`</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="abbildungen-i.html#cb358-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
+<span id="cb358-2"><a href="abbildungen-i.html#cb358-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Stadtteil) <span class="sc">%&gt;%</span> </span>
+<span id="cb358-3"><a href="abbildungen-i.html#cb358-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">mittlere Anzahl</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(Anzahl),</span>
+<span id="cb358-4"><a href="abbildungen-i.html#cb358-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Hektar =</span> Hektar) <span class="sc">%&gt;%</span> </span>
+<span id="cb358-5"><a href="abbildungen-i.html#cb358-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
+<span id="cb358-6"><a href="abbildungen-i.html#cb358-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">mittlere Anzahl</span><span class="st">`</span>))</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-151-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 </div>
@@ -511,31 +510,31 @@ Der Datensatz dient dazu einen Variablenraum für die Darstellungen zur Verfügu
 <h2><code>geom</code>s</h2>
 <!-- ### `geom`s -->
 <p>Auf diese <em>‘Leinwand’</em> können wir jetzt sogenannte <code>geom</code>s legen, die unsere Daten darstellen. Da wir einen Scatterplot planen, müssen wir nur noch Punkte hinzufügen. Dafür können wir einfach ein <code>point</code>-<code>geom</code> mit der <code>geom_point</code>-Funktion hinzufügen. Um den layer abzutragen, addieren wir einfach das geom hinzu.</p>
-<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="abbildungen-i.html#cb368-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
-<span id="cb368-2"><a href="abbildungen-i.html#cb368-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Stadtteil) <span class="sc">%&gt;%</span> </span>
-<span id="cb368-3"><a href="abbildungen-i.html#cb368-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">mittlere Anzahl</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(Anzahl),</span>
-<span id="cb368-4"><a href="abbildungen-i.html#cb368-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Hektar =</span> Hektar) <span class="sc">%&gt;%</span> </span>
-<span id="cb368-5"><a href="abbildungen-i.html#cb368-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
-<span id="cb368-6"><a href="abbildungen-i.html#cb368-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">mittlere Anzahl</span><span class="st">`</span>)) <span class="sc">+</span></span>
-<span id="cb368-7"><a href="abbildungen-i.html#cb368-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="abbildungen-i.html#cb359-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
+<span id="cb359-2"><a href="abbildungen-i.html#cb359-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Stadtteil) <span class="sc">%&gt;%</span> </span>
+<span id="cb359-3"><a href="abbildungen-i.html#cb359-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">mittlere Anzahl</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(Anzahl),</span>
+<span id="cb359-4"><a href="abbildungen-i.html#cb359-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Hektar =</span> Hektar) <span class="sc">%&gt;%</span> </span>
+<span id="cb359-5"><a href="abbildungen-i.html#cb359-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
+<span id="cb359-6"><a href="abbildungen-i.html#cb359-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">`</span><span class="at">mittlere Anzahl</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb359-7"><a href="abbildungen-i.html#cb359-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-152-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <div id="aesthetics-zur-darstellung-zusätzlicher-variablen" class="section level3">
 <h3><code>aesthetics</code> zur Darstellung zusätzlicher Variablen</h3>
 <p>Die <code>aes</code>-Funktion kann mit einer ganzen Reihe von zusätzlichen Argumenten umgehen und so mehr grafische Eigenschaften des Plots anpassen.</p>
 <p>So könnten wir zum Beispiel die Original-Haushaltsgrößen darstellen wollen, jetzt aber ohne zu mitteln sondern als nach den Stadtteilen eingefärbten Punkten. Außerdem wollen wir jetzt mal die Größe der Punkte mit der Anzahl an Haushalten skalieren und mit den für die Punkte genutzten Symbolen die Haushalte.
 Um das ganze übersichtlich zu halten, legen wir uns aber auf die Stadtteile Altstadt, Schreventeich, Exerzierplatz, Gaarden-Ost und Blücherplatz fest.</p>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="abbildungen-i.html#cb369-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
-<span id="cb369-2"><a href="abbildungen-i.html#cb369-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Stadtteil <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;Altstadt&#39;</span>, </span>
-<span id="cb369-3"><a href="abbildungen-i.html#cb369-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Schreventeich&#39;</span>, </span>
-<span id="cb369-4"><a href="abbildungen-i.html#cb369-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Exerzierplatz&#39;</span>, </span>
-<span id="cb369-5"><a href="abbildungen-i.html#cb369-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Blücherplatz&#39;</span>,</span>
-<span id="cb369-6"><a href="abbildungen-i.html#cb369-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Gaarden-Ost&#39;</span>))<span class="sc">%&gt;%</span> </span>
-<span id="cb369-7"><a href="abbildungen-i.html#cb369-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
-<span id="cb369-8"><a href="abbildungen-i.html#cb369-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl,</span>
-<span id="cb369-9"><a href="abbildungen-i.html#cb369-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> Stadtteil,</span>
-<span id="cb369-10"><a href="abbildungen-i.html#cb369-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> Haushaltsform,</span>
-<span id="cb369-11"><a href="abbildungen-i.html#cb369-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> Anzahl)) <span class="sc">+</span></span>
-<span id="cb369-12"><a href="abbildungen-i.html#cb369-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="abbildungen-i.html#cb360-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
+<span id="cb360-2"><a href="abbildungen-i.html#cb360-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Stadtteil <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;Altstadt&#39;</span>, </span>
+<span id="cb360-3"><a href="abbildungen-i.html#cb360-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Schreventeich&#39;</span>, </span>
+<span id="cb360-4"><a href="abbildungen-i.html#cb360-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Exerzierplatz&#39;</span>, </span>
+<span id="cb360-5"><a href="abbildungen-i.html#cb360-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Blücherplatz&#39;</span>,</span>
+<span id="cb360-6"><a href="abbildungen-i.html#cb360-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Gaarden-Ost&#39;</span>))<span class="sc">%&gt;%</span> </span>
+<span id="cb360-7"><a href="abbildungen-i.html#cb360-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
+<span id="cb360-8"><a href="abbildungen-i.html#cb360-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl,</span>
+<span id="cb360-9"><a href="abbildungen-i.html#cb360-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> Stadtteil,</span>
+<span id="cb360-10"><a href="abbildungen-i.html#cb360-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> Haushaltsform,</span>
+<span id="cb360-11"><a href="abbildungen-i.html#cb360-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> Anzahl)) <span class="sc">+</span></span>
+<span id="cb360-12"><a href="abbildungen-i.html#cb360-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="imgs/point_aes.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Schön ist das jetzt nicht, aber es gibt einen Eindruck für die Möglichkeiten, die <code>ggplot</code> bietet.</p>
 <p>Die möglichen <code>aes()</code>-Argumente sind die folgenden:</p>
@@ -551,38 +550,38 @@ Um das ganze übersichtlich zu halten, legen wir uns aber auf die Stadtteile Alt
 <div id="grafiken-fine-tunen" class="section level3">
 <h3>Grafiken fine-tunen</h3>
 <p>Zusätzlich zu der Grundebene und den <code>geom</code>s bietet ggplot noch eine Reihe von Oprimierungs-Stellschrauben an denen wir schrauben können. Die erste die wir angucken, ist die <code>theme</code>-Funktion. Mit der können wir sehr sehr viele Parameter der Grafik anpassen, wir geben uns hier jetzt aber mal mit der Legenden-Position zufrieden:</p>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="abbildungen-i.html#cb370-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
-<span id="cb370-2"><a href="abbildungen-i.html#cb370-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Stadtteil <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;Altstadt&#39;</span>, </span>
-<span id="cb370-3"><a href="abbildungen-i.html#cb370-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Schreventeich&#39;</span>, </span>
-<span id="cb370-4"><a href="abbildungen-i.html#cb370-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Exerzierplatz&#39;</span>, </span>
-<span id="cb370-5"><a href="abbildungen-i.html#cb370-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Blücherplatz&#39;</span>,</span>
-<span id="cb370-6"><a href="abbildungen-i.html#cb370-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Gaarden-Ost&#39;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb370-7"><a href="abbildungen-i.html#cb370-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
-<span id="cb370-8"><a href="abbildungen-i.html#cb370-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl,</span>
-<span id="cb370-9"><a href="abbildungen-i.html#cb370-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> Stadtteil,</span>
-<span id="cb370-10"><a href="abbildungen-i.html#cb370-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> Haushaltsform,</span>
-<span id="cb370-11"><a href="abbildungen-i.html#cb370-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> Anzahl)) <span class="sc">+</span></span>
-<span id="cb370-12"><a href="abbildungen-i.html#cb370-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb370-13"><a href="abbildungen-i.html#cb370-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;bottom&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="abbildungen-i.html#cb361-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
+<span id="cb361-2"><a href="abbildungen-i.html#cb361-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Stadtteil <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;Altstadt&#39;</span>, </span>
+<span id="cb361-3"><a href="abbildungen-i.html#cb361-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Schreventeich&#39;</span>, </span>
+<span id="cb361-4"><a href="abbildungen-i.html#cb361-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Exerzierplatz&#39;</span>, </span>
+<span id="cb361-5"><a href="abbildungen-i.html#cb361-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Blücherplatz&#39;</span>,</span>
+<span id="cb361-6"><a href="abbildungen-i.html#cb361-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Gaarden-Ost&#39;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb361-7"><a href="abbildungen-i.html#cb361-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
+<span id="cb361-8"><a href="abbildungen-i.html#cb361-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl,</span>
+<span id="cb361-9"><a href="abbildungen-i.html#cb361-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> Stadtteil,</span>
+<span id="cb361-10"><a href="abbildungen-i.html#cb361-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> Haushaltsform,</span>
+<span id="cb361-11"><a href="abbildungen-i.html#cb361-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> Anzahl)) <span class="sc">+</span></span>
+<span id="cb361-12"><a href="abbildungen-i.html#cb361-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb361-13"><a href="abbildungen-i.html#cb361-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;bottom&#39;</span>)</span></code></pre></div>
 <p><img src="imgs/point_aes2.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Nicht viel besser, wir bleiben bei der alten Variante.</p>
 </div>
 <div id="parameter-mit-den-scale-funktionen-anpassen" class="section level3">
 <h3>Parameter mit den <code>scale</code>-Funktionen anpassen</h3>
 <p>Wir könnten zum Beispiel neue Farben für unseren Plot festlegen.</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="abbildungen-i.html#cb371-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
-<span id="cb371-2"><a href="abbildungen-i.html#cb371-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Stadtteil <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;Altstadt&#39;</span>, </span>
-<span id="cb371-3"><a href="abbildungen-i.html#cb371-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Schreventeich&#39;</span>, </span>
-<span id="cb371-4"><a href="abbildungen-i.html#cb371-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Exerzierplatz&#39;</span>, </span>
-<span id="cb371-5"><a href="abbildungen-i.html#cb371-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Blücherplatz&#39;</span>,</span>
-<span id="cb371-6"><a href="abbildungen-i.html#cb371-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Gaarden-Ost&#39;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb371-7"><a href="abbildungen-i.html#cb371-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
-<span id="cb371-8"><a href="abbildungen-i.html#cb371-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl,</span>
-<span id="cb371-9"><a href="abbildungen-i.html#cb371-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> Stadtteil,</span>
-<span id="cb371-10"><a href="abbildungen-i.html#cb371-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> Haushaltsform,</span>
-<span id="cb371-11"><a href="abbildungen-i.html#cb371-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> Anzahl)) <span class="sc">+</span></span>
-<span id="cb371-12"><a href="abbildungen-i.html#cb371-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb371-13"><a href="abbildungen-i.html#cb371-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Set1&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="abbildungen-i.html#cb362-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
+<span id="cb362-2"><a href="abbildungen-i.html#cb362-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Stadtteil <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;Altstadt&#39;</span>, </span>
+<span id="cb362-3"><a href="abbildungen-i.html#cb362-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Schreventeich&#39;</span>, </span>
+<span id="cb362-4"><a href="abbildungen-i.html#cb362-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Exerzierplatz&#39;</span>, </span>
+<span id="cb362-5"><a href="abbildungen-i.html#cb362-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Blücherplatz&#39;</span>,</span>
+<span id="cb362-6"><a href="abbildungen-i.html#cb362-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">&#39;Gaarden-Ost&#39;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb362-7"><a href="abbildungen-i.html#cb362-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar,</span>
+<span id="cb362-8"><a href="abbildungen-i.html#cb362-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl,</span>
+<span id="cb362-9"><a href="abbildungen-i.html#cb362-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> Stadtteil,</span>
+<span id="cb362-10"><a href="abbildungen-i.html#cb362-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> Haushaltsform,</span>
+<span id="cb362-11"><a href="abbildungen-i.html#cb362-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> Anzahl)) <span class="sc">+</span></span>
+<span id="cb362-12"><a href="abbildungen-i.html#cb362-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb362-13"><a href="abbildungen-i.html#cb362-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Set1&#39;</span>)</span></code></pre></div>
 <p><img src="imgs/point_aes3.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 </div>
@@ -590,8 +589,8 @@ Um das ganze übersichtlich zu halten, legen wir uns aber auf die Stadtteile Alt
 <h2>line-charts</h2>
 <!-- ### line-charts -->
 <p>Andere Darstellungsformen lassen sich dann einfach mit anderen geomen umsetzen. So könnten wir zum Beispiel versuchen die mittleren Temperaturen in Kiel seit beginn der Aufzeichnungen darstellen. Dafür lesen wir zuerst den Datensatz ein:</p>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="abbildungen-i.html#cb372-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;data/mean_weather.csv&#39;</span>)</span>
-<span id="cb372-2"><a href="abbildungen-i.html#cb372-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(weather_df)</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="abbildungen-i.html#cb363-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;data/mean_weather.csv&#39;</span>)</span>
+<span id="cb363-2"><a href="abbildungen-i.html#cb363-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(weather_df)</span></code></pre></div>
 <pre><code>##       year           temp       
 ##  Min.   :1880   Min.   : 6.250  
 ##  1st Qu.:1914   1st Qu.: 7.662  
@@ -600,39 +599,39 @@ Um das ganze übersichtlich zu halten, legen wir uns aber auf die Stadtteile Alt
 ##  3rd Qu.:1984   3rd Qu.: 9.051  
 ##  Max.   :2019   Max.   :10.710</code></pre>
 <p>Diese Daten können wir jetzt einfach wieder einer <code>ggplot</code>-Funktion übergeben, auf die wir dann ein Linien-<code>geom</code> layern:</p>
-<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="abbildungen-i.html#cb374-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="sc">%&gt;%</span> </span>
-<span id="cb374-2"><a href="abbildungen-i.html#cb374-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
-<span id="cb374-3"><a href="abbildungen-i.html#cb374-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> temp)) <span class="sc">+</span></span>
-<span id="cb374-4"><a href="abbildungen-i.html#cb374-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="abbildungen-i.html#cb365-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="sc">%&gt;%</span> </span>
+<span id="cb365-2"><a href="abbildungen-i.html#cb365-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb365-3"><a href="abbildungen-i.html#cb365-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> temp)) <span class="sc">+</span></span>
+<span id="cb365-4"><a href="abbildungen-i.html#cb365-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-163-1.png" width="500px" style="display: block; margin: auto;" />
 Da wir Temperaturen darstellen liegt nahe, die Werte mit einer Farbskala einzufärben:</p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="abbildungen-i.html#cb375-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="sc">%&gt;%</span> </span>
-<span id="cb375-2"><a href="abbildungen-i.html#cb375-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
-<span id="cb375-3"><a href="abbildungen-i.html#cb375-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> temp,</span>
-<span id="cb375-4"><a href="abbildungen-i.html#cb375-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> temp)) <span class="sc">+</span></span>
-<span id="cb375-5"><a href="abbildungen-i.html#cb375-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="abbildungen-i.html#cb366-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="sc">%&gt;%</span> </span>
+<span id="cb366-2"><a href="abbildungen-i.html#cb366-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb366-3"><a href="abbildungen-i.html#cb366-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> temp,</span>
+<span id="cb366-4"><a href="abbildungen-i.html#cb366-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> temp)) <span class="sc">+</span></span>
+<span id="cb366-5"><a href="abbildungen-i.html#cb366-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-164-1.png" width="500px" style="display: block; margin: auto;" />
 Da es sich um Temperaturen handelt ist eine Farbskala von blau bis rot vielleicht näher an der Konvention, dafür können wir eine andere <code>scale</code>-Funktion benutzen:</p>
-<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="abbildungen-i.html#cb376-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="sc">%&gt;%</span> </span>
-<span id="cb376-2"><a href="abbildungen-i.html#cb376-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
-<span id="cb376-3"><a href="abbildungen-i.html#cb376-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> temp,</span>
-<span id="cb376-4"><a href="abbildungen-i.html#cb376-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> temp)) <span class="sc">+</span></span>
-<span id="cb376-5"><a href="abbildungen-i.html#cb376-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb376-6"><a href="abbildungen-i.html#cb376-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb376-7"><a href="abbildungen-i.html#cb376-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="abbildungen-i.html#cb367-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="sc">%&gt;%</span> </span>
+<span id="cb367-2"><a href="abbildungen-i.html#cb367-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb367-3"><a href="abbildungen-i.html#cb367-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> temp,</span>
+<span id="cb367-4"><a href="abbildungen-i.html#cb367-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> temp)) <span class="sc">+</span></span>
+<span id="cb367-5"><a href="abbildungen-i.html#cb367-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb367-6"><a href="abbildungen-i.html#cb367-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb367-7"><a href="abbildungen-i.html#cb367-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-165-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Um das ein bisschen eindeutiger zu machen, können wir noch die Achsenbeschriftungen ändern und eine Überschrift hinzufügen:</p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="abbildungen-i.html#cb377-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="sc">%&gt;%</span> </span>
-<span id="cb377-2"><a href="abbildungen-i.html#cb377-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
-<span id="cb377-3"><a href="abbildungen-i.html#cb377-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> temp,</span>
-<span id="cb377-4"><a href="abbildungen-i.html#cb377-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> temp)) <span class="sc">+</span></span>
-<span id="cb377-5"><a href="abbildungen-i.html#cb377-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb377-6"><a href="abbildungen-i.html#cb377-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb377-7"><a href="abbildungen-i.html#cb377-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
-<span id="cb377-8"><a href="abbildungen-i.html#cb377-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;mittlere Jahrestemperatur in Kiel&#39;</span>,</span>
-<span id="cb377-9"><a href="abbildungen-i.html#cb377-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Jahr&#39;</span>,</span>
-<span id="cb377-10"><a href="abbildungen-i.html#cb377-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;mittlere Temperatur °C&#39;</span>,</span>
-<span id="cb377-11"><a href="abbildungen-i.html#cb377-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="abbildungen-i.html#cb368-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="sc">%&gt;%</span> </span>
+<span id="cb368-2"><a href="abbildungen-i.html#cb368-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb368-3"><a href="abbildungen-i.html#cb368-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> temp,</span>
+<span id="cb368-4"><a href="abbildungen-i.html#cb368-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> temp)) <span class="sc">+</span></span>
+<span id="cb368-5"><a href="abbildungen-i.html#cb368-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb368-6"><a href="abbildungen-i.html#cb368-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb368-7"><a href="abbildungen-i.html#cb368-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">high =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb368-8"><a href="abbildungen-i.html#cb368-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;mittlere Jahrestemperatur in Kiel&#39;</span>,</span>
+<span id="cb368-9"><a href="abbildungen-i.html#cb368-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Jahr&#39;</span>,</span>
+<span id="cb368-10"><a href="abbildungen-i.html#cb368-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;mittlere Temperatur °C&#39;</span>,</span>
+<span id="cb368-11"><a href="abbildungen-i.html#cb368-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&#39;°C&#39;</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-166-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="balkendiagramme" class="section level2">
@@ -640,39 +639,39 @@ Da es sich um Temperaturen handelt ist eine Farbskala von blau bis rot vielleich
 <!-- ### Balkendiagramme zur Darstellung von festen Werten -->
 <p>In vielen Publikationen finden sich Balkendiagramme mit Streuungsbalken, die zur Illustration von Mittelwertsvergleichen eingesetzt werden.</p>
 <p>Um so ein Diagramm zu erstellen, beginnen wir mit der Aggregation unserer Werte. Da wir die oberen un unteren Grenzen der Fehlerbalken festlegen müssen, erstellen wir gleich je eine Spalte mit den Mittelwerten plus und minus den SEM.</p>
-<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="abbildungen-i.html#cb378-1" aria-hidden="true" tabindex="-1"></a>agg_df <span class="ot">&lt;-</span> df_long <span class="sc">%&gt;%</span> </span>
-<span id="cb378-2"><a href="abbildungen-i.html#cb378-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Haushaltsform) <span class="sc">%&gt;%</span> </span>
-<span id="cb378-3"><a href="abbildungen-i.html#cb378-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">m_anzahl =</span> <span class="fu">mean</span>(Anzahl),</span>
-<span id="cb378-4"><a href="abbildungen-i.html#cb378-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sem_anzahl =</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(Anzahl) <span class="sc">/</span> <span class="fu">length</span>(Anzahl)),</span>
-<span id="cb378-5"><a href="abbildungen-i.html#cb378-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">lower =</span> m_anzahl <span class="sc">-</span> sem_anzahl,</span>
-<span id="cb378-6"><a href="abbildungen-i.html#cb378-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">upper =</span> m_anzahl <span class="sc">+</span> sem_anzahl)</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="abbildungen-i.html#cb369-1" aria-hidden="true" tabindex="-1"></a>agg_df <span class="ot">&lt;-</span> df_long <span class="sc">%&gt;%</span> </span>
+<span id="cb369-2"><a href="abbildungen-i.html#cb369-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Haushaltsform) <span class="sc">%&gt;%</span> </span>
+<span id="cb369-3"><a href="abbildungen-i.html#cb369-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">m_anzahl =</span> <span class="fu">mean</span>(Anzahl),</span>
+<span id="cb369-4"><a href="abbildungen-i.html#cb369-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sem_anzahl =</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(Anzahl) <span class="sc">/</span> <span class="fu">length</span>(Anzahl)),</span>
+<span id="cb369-5"><a href="abbildungen-i.html#cb369-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">lower =</span> m_anzahl <span class="sc">-</span> sem_anzahl,</span>
+<span id="cb369-6"><a href="abbildungen-i.html#cb369-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">upper =</span> m_anzahl <span class="sc">+</span> sem_anzahl)</span></code></pre></div>
 <p>Diesen Datensatz übergeben wir jetzt wieder der <code>ggplot</code>-Funktion:</p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="abbildungen-i.html#cb379-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> agg_df <span class="sc">%&gt;%</span> </span>
-<span id="cb379-2"><a href="abbildungen-i.html#cb379-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Haushaltsform,</span>
-<span id="cb379-3"><a href="abbildungen-i.html#cb379-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> m_anzahl))</span></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="abbildungen-i.html#cb370-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> agg_df <span class="sc">%&gt;%</span> </span>
+<span id="cb370-2"><a href="abbildungen-i.html#cb370-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Haushaltsform,</span>
+<span id="cb370-3"><a href="abbildungen-i.html#cb370-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> m_anzahl))</span></code></pre></div>
 <p>Auf deren Ergebnis wir dann das <code>geom_col</code>-<code>geom</code> addieren:</p>
-<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="abbildungen-i.html#cb380-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="abbildungen-i.html#cb371-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-169-1.png" width="500px" style="display: block; margin: auto;" /></p>
 <p>Das können wir ein bisschen schöner machen, indem wir die Balken einfärben:</p>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="abbildungen-i.html#cb381-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Haushaltsform)) <span class="sc">+</span></span>
-<span id="cb381-2"><a href="abbildungen-i.html#cb381-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Set1&#39;</span>)</span>
-<span id="cb381-3"><a href="abbildungen-i.html#cb381-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb381-4"><a href="abbildungen-i.html#cb381-4" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="abbildungen-i.html#cb372-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Haushaltsform)) <span class="sc">+</span></span>
+<span id="cb372-2"><a href="abbildungen-i.html#cb372-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Set1&#39;</span>)</span>
+<span id="cb372-3"><a href="abbildungen-i.html#cb372-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb372-4"><a href="abbildungen-i.html#cb372-4" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-170-1.png" width="500px" style="display: block; margin: auto;" />
 Jetzt fügen wir der Grafik mit <code>geom_errorbar</code> die SEM-Fehlerbalken hinzu:</p>
-<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="abbildungen-i.html#cb382-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, </span>
-<span id="cb382-2"><a href="abbildungen-i.html#cb382-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ymax =</span> upper),</span>
-<span id="cb382-3"><a href="abbildungen-i.html#cb382-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> .<span class="dv">25</span>)</span>
-<span id="cb382-4"><a href="abbildungen-i.html#cb382-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb382-5"><a href="abbildungen-i.html#cb382-5" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="abbildungen-i.html#cb373-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, </span>
+<span id="cb373-2"><a href="abbildungen-i.html#cb373-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ymax =</span> upper),</span>
+<span id="cb373-3"><a href="abbildungen-i.html#cb373-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> .<span class="dv">25</span>)</span>
+<span id="cb373-4"><a href="abbildungen-i.html#cb373-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb373-5"><a href="abbildungen-i.html#cb373-5" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-171-1.png" width="500px" style="display: block; margin: auto;" />
 Um den Graphen ein bisschen lesbarer zu machen, tauschen wir x- und y-Achse:</p>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="abbildungen-i.html#cb383-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="abbildungen-i.html#cb374-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">coord_flip</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-172-1.png" width="500px" style="display: block; margin: auto;" />
 …und ändern wieder die Achsenbeschriftung:</p>
-<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="abbildungen-i.html#cb384-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb384-2"><a href="abbildungen-i.html#cb384-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere Anzahl +/- SEM&#39;</span>,</span>
-<span id="cb384-3"><a href="abbildungen-i.html#cb384-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Haushaltsform&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="abbildungen-i.html#cb375-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb375-2"><a href="abbildungen-i.html#cb375-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;mittlere Anzahl +/- SEM&#39;</span>,</span>
+<span id="cb375-3"><a href="abbildungen-i.html#cb375-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Haushaltsform&#39;</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-173-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="verteilungsdarstellungen" class="section level2">
@@ -680,53 +679,53 @@ Um den Graphen ein bisschen lesbarer zu machen, tauschen wir x- und y-Achse:</p>
 <div id="histogramme" class="section level3">
 <h3>Histogramme</h3>
 <p>Um ein Histogramm zu erstellen, müssen wir nur auf einen <code>ggplot</code> mit einem festgelegt <code>x</code>-aesthetic ein <code>geom_histogram</code> addieren. So könnten wir uns die Hektarzahlen in unserem originalen, nicht pivotierten Kiel-Datensatz anschauen:</p>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="abbildungen-i.html#cb385-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb385-2"><a href="abbildungen-i.html#cb385-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
-<span id="cb385-3"><a href="abbildungen-i.html#cb385-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="abbildungen-i.html#cb376-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb376-2"><a href="abbildungen-i.html#cb376-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
+<span id="cb376-3"><a href="abbildungen-i.html#cb376-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-174-1.png" width="500px" style="display: block; margin: auto;" />
 Das ist jetzt nicht besonders schön, mit einem Festlegen von aesthetics außerhalb der <code>aes</code>-Funktion können wir aber für alle Teile des Plots einen Wert festlegen. So können wir die Flächen mit weiß füllen und hellgrau umreißen:</p>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="abbildungen-i.html#cb386-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb386-2"><a href="abbildungen-i.html#cb386-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
-<span id="cb386-3"><a href="abbildungen-i.html#cb386-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;white&#39;</span>,</span>
-<span id="cb386-4"><a href="abbildungen-i.html#cb386-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&#39;grey&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="abbildungen-i.html#cb377-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb377-2"><a href="abbildungen-i.html#cb377-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
+<span id="cb377-3"><a href="abbildungen-i.html#cb377-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb377-4"><a href="abbildungen-i.html#cb377-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&#39;grey&#39;</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-175-1.png" width="500px" style="display: block; margin: auto;" />
 Wir können außerdem die Breite der dargestellten Balken anpassen. mit dem <code>bins</code>-Argument können wir eine Anzahl an Balken festlegen…</p>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="abbildungen-i.html#cb387-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb387-2"><a href="abbildungen-i.html#cb387-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
-<span id="cb387-3"><a href="abbildungen-i.html#cb387-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;white&#39;</span>,</span>
-<span id="cb387-4"><a href="abbildungen-i.html#cb387-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&#39;grey&#39;</span>,</span>
-<span id="cb387-5"><a href="abbildungen-i.html#cb387-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="abbildungen-i.html#cb378-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb378-2"><a href="abbildungen-i.html#cb378-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
+<span id="cb378-3"><a href="abbildungen-i.html#cb378-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb378-4"><a href="abbildungen-i.html#cb378-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&#39;grey&#39;</span>,</span>
+<span id="cb378-5"><a href="abbildungen-i.html#cb378-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">10</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-176-1.png" width="500px" style="display: block; margin: auto;" />
 …mit dem <code>binwidth</code>-Argument eine Breite für die Balken:</p>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="abbildungen-i.html#cb388-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb388-2"><a href="abbildungen-i.html#cb388-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
-<span id="cb388-3"><a href="abbildungen-i.html#cb388-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;white&#39;</span>,</span>
-<span id="cb388-4"><a href="abbildungen-i.html#cb388-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&#39;grey&#39;</span>,</span>
-<span id="cb388-5"><a href="abbildungen-i.html#cb388-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binwidth =</span> <span class="dv">50</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="abbildungen-i.html#cb379-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb379-2"><a href="abbildungen-i.html#cb379-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Hektar)) <span class="sc">+</span></span>
+<span id="cb379-3"><a href="abbildungen-i.html#cb379-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb379-4"><a href="abbildungen-i.html#cb379-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&#39;grey&#39;</span>,</span>
+<span id="cb379-5"><a href="abbildungen-i.html#cb379-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binwidth =</span> <span class="dv">50</span>)</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-177-1.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="boxplots" class="section level3">
 <h3>Boxplots</h3>
 <p>Eine sehr praktische Art und Weise Verteilungen darzustellen, vor allem wenn man die Verteilungen von Gruppen darstellen möchte, sind <em>Boxplots</em>. Hierfür definieren wir einfach einen base-layer mit der Gruppierungsvariable auf der x-Achse und einer numerischen Variable auf der y-Achse:</p>
-<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="abbildungen-i.html#cb389-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
-<span id="cb389-2"><a href="abbildungen-i.html#cb389-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Stadtteil, </span>
-<span id="cb389-3"><a href="abbildungen-i.html#cb389-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl)) <span class="sc">+</span></span>
-<span id="cb389-4"><a href="abbildungen-i.html#cb389-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="abbildungen-i.html#cb380-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
+<span id="cb380-2"><a href="abbildungen-i.html#cb380-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Stadtteil, </span>
+<span id="cb380-3"><a href="abbildungen-i.html#cb380-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl)) <span class="sc">+</span></span>
+<span id="cb380-4"><a href="abbildungen-i.html#cb380-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-178-1.png" width="500px" style="display: block; margin: auto;" />
 Um die Achsenbeschriftung lesbarer zu machen könnten wir jetzt entweder erneut die Achsen flippen:</p>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="abbildungen-i.html#cb390-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
-<span id="cb390-2"><a href="abbildungen-i.html#cb390-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Stadtteil, </span>
-<span id="cb390-3"><a href="abbildungen-i.html#cb390-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl)) <span class="sc">+</span></span>
-<span id="cb390-4"><a href="abbildungen-i.html#cb390-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb390-5"><a href="abbildungen-i.html#cb390-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="abbildungen-i.html#cb381-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
+<span id="cb381-2"><a href="abbildungen-i.html#cb381-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Stadtteil, </span>
+<span id="cb381-3"><a href="abbildungen-i.html#cb381-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl)) <span class="sc">+</span></span>
+<span id="cb381-4"><a href="abbildungen-i.html#cb381-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb381-5"><a href="abbildungen-i.html#cb381-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-179-1.png" width="500px" style="display: block; margin: auto;" />
 Oder die Achsenbeschriftung mit einem neuen Argument der <code>theme</code>-Funktion drehen. Dieses erwartet ein Ergebnis der <code>element_text</code>-Funktion, die die Möglichkeit bietet, ästhetische Parameter für Schriftzüge festzulegen, so zum Beispiel den Winkel (<code>angle</code> in °) und die Adjustierung entlang der x-Achse (<code>hjust</code>):</p>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="abbildungen-i.html#cb391-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
-<span id="cb391-2"><a href="abbildungen-i.html#cb391-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Stadtteil, </span>
-<span id="cb391-3"><a href="abbildungen-i.html#cb391-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl)) <span class="sc">+</span></span>
-<span id="cb391-4"><a href="abbildungen-i.html#cb391-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb391-5"><a href="abbildungen-i.html#cb391-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,</span>
-<span id="cb391-6"><a href="abbildungen-i.html#cb391-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="abbildungen-i.html#cb382-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="sc">%&gt;%</span> </span>
+<span id="cb382-2"><a href="abbildungen-i.html#cb382-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Stadtteil, </span>
+<span id="cb382-3"><a href="abbildungen-i.html#cb382-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> Anzahl)) <span class="sc">+</span></span>
+<span id="cb382-4"><a href="abbildungen-i.html#cb382-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb382-5"><a href="abbildungen-i.html#cb382-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,</span>
+<span id="cb382-6"><a href="abbildungen-i.html#cb382-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
 <p><img src="EDV1_WS20_files/figure-html/unnamed-chunk-180-1.png" width="500px" style="display: block; margin: auto;" /></p>
 
 <!-- #--- -->
