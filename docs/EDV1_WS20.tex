@@ -150,7 +150,7 @@
 
 \title{EDV1}
 \author{Max Brede}
-\date{2021-11-22}
+\date{2021-12-01}
 
 \begin{document}
 \maketitle
@@ -2948,8 +2948,8 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 1 1 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 1 1 0 1 1 0 0
-## [26] 0 0 1 1 0
+##  [1] 1 0 0 0 1 0 0 1 0 1 1 0 1 1 1 0 1 0 0 0 1 0 1 0 0
+## [26] 1 1 1 1 0
 \end{verbatim}
 
 \begin{Shaded}
@@ -2960,10 +2960,10 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] female female male   male   male   female male  
-##  [8] male   male   male   male   male   female female
-## [15] male   male   male   male   female female male  
-## [22] female female male   male   male   male   female
+##  [1] female male   male   male   female male   male  
+##  [8] female male   female female male   female female
+## [15] female male   female male   male   male   female
+## [22] male   female male   male   female female female
 ## [29] female male  
 ## Levels: male female
 \end{verbatim}
@@ -2977,7 +2977,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 
 \begin{verbatim}
 ##   male female 
-##     19     11
+##     15     15
 \end{verbatim}
 
 \begin{Shaded}
@@ -2988,7 +2988,7 @@ Ebenso funktioniert dies mit numerischen Faktorstufen.
 \end{Shaded}
 
 \begin{verbatim}
-##  Factor w/ 2 levels "male","female": 2 2 1 1 1 2 1 1 1 1 ...
+##  Factor w/ 2 levels "male","female": 2 1 1 1 2 1 1 2 1 2 ...
 \end{verbatim}
 
 \textbf{Achtung:} Die Struktur des Faktors ist immer numerisch von 1 aufsteigend (auch wenn es ursprünglich ``0'' und ``1'' waren, s.o.).
@@ -3011,12 +3011,12 @@ Zuerst wandeln wir die Stufen unseres \texttt{sexFac} in andere labels um:
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] weiblich weiblich männlich männlich männlich
-##  [6] weiblich männlich männlich männlich männlich
-## [11] männlich männlich weiblich weiblich männlich
-## [16] männlich männlich männlich weiblich weiblich
-## [21] männlich weiblich weiblich männlich männlich
-## [26] männlich männlich weiblich weiblich männlich
+##  [1] weiblich männlich männlich männlich weiblich
+##  [6] männlich männlich weiblich männlich weiblich
+## [11] weiblich männlich weiblich weiblich weiblich
+## [16] männlich weiblich männlich männlich männlich
+## [21] weiblich männlich weiblich männlich männlich
+## [26] weiblich weiblich weiblich weiblich männlich
 ## Levels: männlich weiblich
 \end{verbatim}
 
@@ -3065,18 +3065,18 @@ Für Median-Splits und ähnliches ist es sehr praktisch, direkt numerische Varia
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] low  low  low  high low  high low  high high
-##  [10] high low  low  low  high low  low  low  low 
-##  [19] high low  high low  high high high high high
-##  [28] high low  low  low  high low  low  low  low 
-##  [37] low  high high high low  low  high high high
-##  [46] low  low  high high high low  high low  high
-##  [55] low  low  low  high high high low  high low 
-##  [64] high high low  low  high low  high high high
-##  [73] low  low  low  low  high high high low  low 
-##  [82] low  high high low  low  low  low  high high
-##  [91] high low  high high high high low  high low 
-## [100] low 
+##   [1] high high high low  low  high high high low 
+##  [10] high low  high high low  low  low  high high
+##  [19] low  high low  high high high high low  low 
+##  [28] high low  high high high low  low  low  high
+##  [37] low  low  low  high low  high low  low  high
+##  [46] low  high high low  high high high high low 
+##  [55] low  high high low  low  low  low  low  low 
+##  [64] high low  low  high low  low  high low  low 
+##  [73] high low  low  low  high low  high low  high
+##  [82] high high low  high high low  high low  high
+##  [91] low  high low  low  low  low  high high high
+## [100] high
 ## Levels: high low
 \end{verbatim}
 
@@ -3095,7 +3095,7 @@ IQ-Werte in 3 Klassen einteilen:
 
 \begin{verbatim}
 ##  lo mid  hi 
-##  13  78   9
+##  10  79  11
 \end{verbatim}
 
 \texttt{cut} kann man außerdem ganz einfach zusammen mit der \texttt{quantile}-Funktion benutzen um beliebige Perzentil-Splits durchzuführen:
@@ -3114,8 +3114,8 @@ IQ-Werte in 3 Klassen einteilen:
 \end{Shaded}
 
 \begin{verbatim}
-##  (-Inf,88]  (88,99.5] (99.5,109] (109, Inf] 
-##         26         24         27         23
+##  (-Inf,91]   (91,101]  (101,110] (110, Inf] 
+##         26         27         24         23
 \end{verbatim}
 
 \hypertarget{daten-einlesen-i}{%
